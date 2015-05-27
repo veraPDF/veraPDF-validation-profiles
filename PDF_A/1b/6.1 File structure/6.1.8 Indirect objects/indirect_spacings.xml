@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>Implementations limits profile</name>
+    <description>STR_ID_101</description>
+    <creator>Evgeniy Muravitskiy</creator>
+    <created>2015-05-8T15:46:15Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+		<rule id="rule15" object="CosIndirect"><!-- need to control -->
+			<description>Header of object and 'endobj' tags must comply PDFA</description>
+			<test>spacingComplyPDFA</test>
+			<error>
+				<message>Spacings of object doesn`t comply PDFA</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.8</clause>
+			</reference>
+		</rule>
+	</rules>
+</profile>
