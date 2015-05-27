@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>Implementations limits profile</name>
+    <description>STR_ID_101</description>
+    <creator>Evgeniy Muravitskiy</creator>
+    <created>2015-05-8T15:46:15Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+		<rule id="rule10" object="CosDocument">
+            <description>Maximum number of indirect objects is less than 8388608</description>
+            <test>nrIndirects &lt; 8388608</test>
+            <error>
+                <message>Capacity of array greater than 8388607 (%1)</message>
+				<argument>nrIndirects</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+	</rules>
+</profile>

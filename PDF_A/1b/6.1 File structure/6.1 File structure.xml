@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>Implementations limits profile</name>
+    <description>STR_ID_101</description>
+    <creator>Evgeniy Muravitskiy</creator>
+    <created>2015-05-8T15:46:15Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+        <rule id="rule1" object="CosInteger">
+            <description>Max value of integer must be 2147483647</description>
+            <test>intValue &lt; 2147483648</test>
+            <error>
+                <message>%1 value greater than 2147483648</message>
+				<argument>intValue</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="rule2" object="CosInteger">
+            <description>Min value of integer must be -2147483648</description>
+            <test>intValue &gt; -2147483649</test>
+            <error>
+                <message>%1 value less than -2147483648</message>
+				<argument>intValue</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+        <rule id="rule3" object="CosReal">
+            <description>Absolute real value must be less than or equal to -32767</description>
+            <test>realValue &gt;= -32767 &amp;&amp; realValue &lt;= 32767</test>
+            <error>
+                <message>Absolute value greater than 32768</message>
+				<argument>realValue</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="rule5" object="CosReal">
+            <description>Absolute real value must be greater than or equal to 0.0000152587890625</description>
+            <test>realValue &lt;= -0.0000152587890625 || realValue &gt;= 0.0000152587890625 || realValue == 0</test>
+            <error>
+                <message>%1 absolute value less than 0.0000152587890625</message>
+				<argument>realValue</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+        <rule id="rule6" object="CosString">
+            <description>Maximum length of string in bytes less than 65536</description>
+            <test>origValue.length() &lt; 65536</test>
+            <error>
+                <message>Length of string greater than 65535 (%1)</message>
+				<argument>origValue.length()</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="rule7" object="CosName">
+            <description>Maximum length of name in bytes less than 128</description>
+            <test>origLength &lt; 128</test>
+            <error>
+                <message>Length of name greater than 127 (origLength)</message>
+				<argument>origLength</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="rule8" object="CosArray">
+            <description>Maximum capacity of array in elements less than 8192</description>
+            <test>size &lt; 8192</test>
+            <error>
+                <message>Capacity of array greater than 8191 (%1)</message>
+				<argument>size</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="rule9" object="CosDict">
+            <description>Maximum capacity of array in entries less than 4096</description>
+            <test>size &lt; 4096</test>
+            <error>
+                <message>Capacity of array greater than 4095 (%1)</message>
+				<argument>size</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="rule10" object="CosDocument">
+            <description>Maximum number of indirect objects is less than 8388608</description>
+            <test>nrIndirects &lt; 8388608</test>
+            <error>
+                <message>Capacity of array greater than 8388607 (%1)</message>
+				<argument>nrIndirects</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="rule11" object="CosDocument">
+			<description>Header must comply PDFA specification</description>
+			<test>spacingComplyPDFA</test>
+			<error>
+				<message>Header not comply PDFA.</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.2</clause>
+			</reference>
+		</rule>
+		<rule id="rule12" object="CosString"><!-- need to change -->
+			<description>Hexadecimal strings shall contain an even number of non-white-space characters, each in the range 0 to 9, A to F or a to f.</description>
+			<test>isHex ? (origLength % 2 == 0 &amp;&amp; value != origValue) : true</test><!-- discover more readable way -->
+			<error>
+				<message>Hexadecimal string contain not even number of symbols</message>
+				<argument>origLength</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.6</clause>
+			</reference>
+		</rule>
+		<rule id="rule13" object="CosStream">
+			<description>Spacings for 'stream' and 'endstream' keywords must comply PDFA specification</description>
+			<test>spacingComplyPDFA</test>
+			<error>
+				<message>Spacings for keywords not comply PDFA</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.7</clause>
+			</reference>
+		</rule>
+		<rule id="rule14" object="CosStream"><!-- need to change -->
+			<description>Length of stream must match with value of the Length key</description>
+			<test>false</test> <!-- Need to discuss about representation of this property -->
+			<error>
+				<message>Length of the stream not match with value of the Length key</message>
+				<argument>length</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.7</clause>
+			</reference>
+		</rule>
+		<rule id="rule15" object="CosIndirect"><!-- need to control -->
+			<description>Header of object and 'endobj' tags must comply PDFA</description>
+			<test>spacingComplyPDFA</test>
+			<error>
+				<message>Spacings of object doesn`t comply PDFA</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.8</clause>
+			</reference>
+		</rule>
+		<rule id="rule16" object="CosStream">
+			<description>The LZWDecode filter shall not be permitted.</description>
+			<test>filters.indexOf("LZWDecode") == -1</test>
+			<error>
+				<message>LZWDecode permitted</message>
+				<argument>filters</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.10</clause>
+			</reference>
+		</rule>
+	</rules>
+</profile>

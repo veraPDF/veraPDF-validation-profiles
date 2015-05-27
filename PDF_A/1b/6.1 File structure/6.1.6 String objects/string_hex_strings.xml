@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>Implementations limits profile</name>
+    <description>STR_ID_101</description>
+    <creator>Evgeniy Muravitskiy</creator>
+    <created>2015-05-8T15:46:15Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+		<rule id="rule12" object="CosString"><!-- need to change -->
+			<description>Hexadecimal strings shall contain an even number of non-white-space characters, each in the range 0 to 9, A to F or a to f.</description>
+			<test>isHex ? (origLength % 2 == 0 &amp;&amp; value != origValue) : true</test><!-- discover more readable way -->
+			<error>
+				<message>Hexadecimal string contain not even number of symbols</message>
+				<argument>origLength</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.6</clause>
+			</reference>
+		</rule>
+	</rules>
+</profile>
