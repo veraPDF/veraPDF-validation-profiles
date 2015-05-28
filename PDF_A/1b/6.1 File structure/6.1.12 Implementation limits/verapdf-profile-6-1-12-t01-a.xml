@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Implementation limits profile</name>
+    <description>Max value of integer must be 2147483647</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule6" object="CosString">
-            <description>Maximum length of string in bytes less than 65536</description>
-            <test>origValue.length() &lt; 65536</test>
+		<rule id="6-1-12-t01-a" object="CosInteger">
+            <description>Max value of integer must be 2147483647</description>
+            <test>intValue &lt; 2147483648</test>
             <error>
-                <message>Length of string greater than 65535 (%1)</message>
-				<argument>origValue.length()</argument>
+                <message>Integer value out of range</message>
+				<argument>intValue</argument>
             </error>
             <reference>
                 <specification>ISO19005-1</specification>

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Stream profile</name>
+    <description>Spacings for 'stream' and 'endstream' keywords must comply PDF/A specification</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule15" object="CosIndirect"><!-- need to control -->
-			<description>Header of object and 'endobj' tags must comply PDFA</description>
+		<rule id="6-1-7-t02" object="CosStream">
+			<description>Spacings for 'stream' and 'endstream' keywords must comply PDF/A specification</description>
 			<test>spacingComplyPDFA</test>
 			<error>
-				<message>Spacings of object doesn`t comply PDFA</message>
+				<message>Spacings for keywords not comply PDF/A</message>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
-				<clause>6.1.8</clause>
+				<clause>6.1.7</clause>
 			</reference>
 		</rule>
 	</rules>

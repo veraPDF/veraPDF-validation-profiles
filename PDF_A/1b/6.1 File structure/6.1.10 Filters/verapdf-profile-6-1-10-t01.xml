@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Filter profile</name>
+    <description>The LZWDecode filter shall not be permitted.</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule16" object="CosStream">
+		<rule id="6-1-10-t01" object="CosStream">
 			<description>The LZWDecode filter shall not be permitted.</description>
 			<test>filters.indexOf("LZWDecode") == -1</test>
 			<error>

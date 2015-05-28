@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Implementation limits profile</name>
+    <description>Maximum number of indirect objects must be less than 8388608</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule3" object="CosReal">
-            <description>Absolute real value must be less than or equal to -32767</description>
-            <test>realValue &gt;= -32767 &amp;&amp; realValue &lt;= 32767</test>
+		<rule id="6-1-12-t07" object="CosDocument">
+            <description>Maximum number of indirect objects must be less than 8388608</description>
+            <test>nrIndirects &lt; 8388608</test>
             <error>
-                <message>Absolute value greater than 32768</message>
-				<argument>realValue</argument>
+                <message>Indirect objects more than 8388607</message>
+				<argument>nrIndirects</argument>
             </error>
             <reference>
                 <specification>ISO19005-1</specification>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Implementation limits profile</name>
+    <description>Maximum capacity of dictionary in entries less than 4095</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule7" object="CosName">
-            <description>Maximum length of name in bytes less than 128</description>
-            <test>origLength &lt; 128</test>
+		<rule id="6-1-12-t06" object="CosDict">
+            <description>Maximum capacity of dictionary in entries less than 4095</description>
+            <test>size &lt; 4096</test>
             <error>
-                <message>Length of name greater than 127 (origLength)</message>
-				<argument>origLength</argument>
+                <message>Dictionary contains more than 4095 elements</message>
+				<argument>size</argument>
             </error>
             <reference>
                 <specification>ISO19005-1</specification>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Implementation limits profile</name>
+    <description>Min value of integer must be -2147483648</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule8" object="CosArray">
-            <description>Maximum capacity of array in elements less than 8192</description>
-            <test>size &lt; 8192</test>
+		<rule id="6-1-12-t01-b" object="CosInteger">
+            <description>Min value of integer must be -2147483648</description>
+            <test>intValue &gt; -2147483649</test>
             <error>
-                <message>Capacity of array greater than 8191 (%1)</message>
-				<argument>size</argument>
+                <message>Integer value out of range</message>
+				<argument>intValue</argument>
             </error>
             <reference>
                 <specification>ISO19005-1</specification>

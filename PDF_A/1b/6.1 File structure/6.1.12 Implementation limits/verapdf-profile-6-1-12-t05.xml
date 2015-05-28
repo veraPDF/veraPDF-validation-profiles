@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Implementation limits profile</name>
+    <description>Maximum capacity of array in elements less than 8192</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule9" object="CosDict">
-            <description>Maximum capacity of array in entries less than 4096</description>
-            <test>size &lt; 4096</test>
+		<rule id="6-1-12-t05" object="CosArray">
+            <description>Maximum capacity of array in elements less than 8192</description>
+            <test>size &lt; 8192</test>
             <error>
-                <message>Capacity of array greater than 4095 (%1)</message>
+                <message>Array contains more than 8192 elements</message>
 				<argument>size</argument>
             </error>
             <reference>

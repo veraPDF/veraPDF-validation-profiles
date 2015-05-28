@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Stream profile</name>
+    <description>Length of stream must match with value of the Length key</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule14" object="CosStream"><!-- need to change -->
+		<rule id="6-1-7-t01" object="CosStream">
 			<description>Length of stream must match with value of the Length key</description>
-			<test>false</test> <!-- Need to discuss about representation of this property -->
+			<test>isLengthCorrect</test>
 			<error>
 				<message>Length of the stream not match with value of the Length key</message>
 				<argument>length</argument>

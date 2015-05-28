@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Implementations limits profile</name>
-    <description>STR_ID_101</description>
+    <name>Implementation limits profile</name>
+    <description>Absolute real value must be less than or equal to 32767</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="rule5" object="CosReal">
-            <description>Absolute real value must be greater than or equal to 0.0000152587890625</description>
-            <test>realValue &lt;= -0.0000152587890625 || realValue &gt;= 0.0000152587890625 || realValue == 0</test>
+		<rule id="6-1-12-t02" object="CosReal">
+            <description>Absolute real value must be less than or equal to 32767</description>
+            <test>realValue &gt;= -32767 &amp;&amp; realValue &lt;= 32767</test>
             <error>
-                <message>%1 absolute value less than 0.0000152587890625</message>
+                <message>Number value out of range</message>
 				<argument>realValue</argument>
             </error>
             <reference>
