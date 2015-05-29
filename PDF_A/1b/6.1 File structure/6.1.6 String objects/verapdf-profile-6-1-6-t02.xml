@@ -7,10 +7,10 @@
     <hash>sha-1 hash code</hash>
     <rules>
 		<rule id="6-1-6-t02" object="CosString">
-			<description>In hexadecimal strings each symbol in the range 0 to 9, A to F or a to f.</description>
+			<description>All non-white-space characters in hexadecimal strings shall be in the range 0 to 9, A to F or a to f.</description>
 			<test>!isHex || isHexSymbols</test>
 			<error>
-				<message>Hexadecimal string contain not even number of symbols</message>
+				<message>Hexadecimal string contains non-white-space characters outside the range 0 to 9, A to F or a to f.</message>
 				<argument>isHexSymbols</argument>
 			</error>
 			<reference>
