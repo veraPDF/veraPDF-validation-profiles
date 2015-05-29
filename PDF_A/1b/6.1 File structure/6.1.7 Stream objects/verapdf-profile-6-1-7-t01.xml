@@ -10,7 +10,7 @@
 			<description>Length of stream must match with value of the Length key</description>
 			<test>isLengthCorrect</test>
 			<error>
-				<message>Length of the stream not match with value of the Length key</message>
+				<message>Length of the stream does not match the value of the Length key</message>
 				<argument>length</argument>
 			</error>
 			<reference>

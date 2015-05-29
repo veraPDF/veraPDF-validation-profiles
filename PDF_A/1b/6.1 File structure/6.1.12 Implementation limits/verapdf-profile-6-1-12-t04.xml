@@ -10,7 +10,7 @@
             <description>Length of name in bytes must be less than 128</description>
             <test>origLength &lt; 128</test>
             <error>
-                <message>Length of name greater than 127</message>
+                <message>Maximum length of a Name (127) is exceeded</message>
 				<argument>origLength</argument>
             </error>
             <reference>

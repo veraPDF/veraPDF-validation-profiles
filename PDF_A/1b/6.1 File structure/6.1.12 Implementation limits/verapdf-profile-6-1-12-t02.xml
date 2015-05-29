@@ -10,7 +10,7 @@
             <description>Absolute real value must be less than or equal to 32767</description>
             <test>realValue &gt;= -32767 &amp;&amp; realValue &lt;= 32767</test>
             <error>
-                <message>Number value out of range</message>
+                <message>Real value out of range</message>
 				<argument>realValue</argument>
             </error>
             <reference>

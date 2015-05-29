@@ -10,7 +10,7 @@
 			<description>Spacings for 'stream' and 'endstream' keywords must comply PDF/A specification</description>
 			<test>spacingComplyPDFA</test>
 			<error>
-				<message>Spacings for keywords not comply PDF/A</message>
+				<message>Spacings of keywords "stream" and "endstream" do not comply PDF/A specification</message>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>

@@ -10,7 +10,7 @@
             <description>Maximum length of string in bytes 65535</description>
             <test>origValue.length &lt; 65536</test>
             <error>
-                <message>Length of string greater than 65535</message>
+                <message>Maximum length of a String (65535) is exceeded</message>
 				<argument>origValue.length()</argument>
             </error>
             <reference>

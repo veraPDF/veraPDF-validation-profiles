@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
     <name>Indirect objects profile</name>
-    <description>Header of object and 'endobj' tags must comply PDF/A</description>
+    <description>Header of 'object' and 'endobj' tags must comply PDF/A</description>
     <creator>Evgeniy Muravitskiy</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-1-8-all" object="CosIndirect">
+		<rule id="6-1-8-t01" object="CosIndirect">
 			<description>Header of 'object' and 'endobj' tags must comply PDF/A</description>
 			<test>spacingComplyPDFA</test>
 			<error>
-				<message>Spacings of object does not comply PDF/A</message>
+				<message>Spacings of keywords 'obj' and 'endobj' do not comply PDF/A specification</message>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>

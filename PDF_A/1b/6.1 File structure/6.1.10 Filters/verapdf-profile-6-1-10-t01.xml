@@ -10,7 +10,7 @@
 			<description>The LZWDecode filter shall not be permitted.</description>
 			<test>filters.indexOf("LZWDecode") == -1</test>
 			<error>
-				<message>LZWDecode permitted</message>
+				<message>LZW compression is used</message>
 				<argument>filters</argument>
 			</error>
 			<reference>

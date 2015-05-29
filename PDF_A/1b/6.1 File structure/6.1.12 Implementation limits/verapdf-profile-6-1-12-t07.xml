@@ -10,7 +10,7 @@
             <description>Maximum number of indirect objects must be less than 8388608</description>
             <test>nrIndirects &lt; 8388608</test>
             <error>
-                <message>Indirect objects more than 8388607</message>
+                <message>Maximum number of indirect objects (8,388,607) in PDF file is exceeded</message>
 				<argument>nrIndirects</argument>
             </error>
             <reference>
