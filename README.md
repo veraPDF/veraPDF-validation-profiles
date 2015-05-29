@@ -10,5 +10,5 @@
 
 ***
 
-Copyright: [veraPDF Consoritium](http://www.verapdf.org)<br>
+Copyright: [veraPDF Consortium](http://www.verapdf.org)<br>
 Licensed under [Creative Commons Attribution 3.0 Unported (CC-BY 3.0)](http://creativecommons.org/licenses/by/3.0/)
