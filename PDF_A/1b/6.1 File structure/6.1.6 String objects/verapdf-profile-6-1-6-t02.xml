@@ -11,7 +11,7 @@
 			<test>!isHex || isHexSymbols</test>
 			<error>
 				<message>Hexadecimal string contain not even number of symbols</message>
-				<argument>origLength</argument>
+				<argument>isHexSymbols</argument>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
