@@ -7,3 +7,8 @@
 6.1.8. Indirect objects<br>
 6.1.10. Filters<br>
 6.1.12. Implementation limits (except <b>q/Q</b> nesting and <b>DeviceN</b> components)
+
+***
+
+Copyright: [veraPDF Consoritium](http://www.verapdf.org)<br>
+Licensed under [Creative Commons Attribution 3.0 Unported (CC-BY 3.0)](http://creativecommons.org/licenses/by/3.0/)
