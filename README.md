@@ -1,6 +1,6 @@
 # veraPDF validation profiles
 
-# PDF/A-1 validation profiles
+## PDF/A-1 (ISO 19005-1:2005 + Cor 1:2007 + Cor 2:2011)
 6.1.2. File header (partial)<br>
 6.1.6. String objects<br>
 6.1.7. Stream objects (partial)<br>
