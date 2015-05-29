@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>Header profile</name>
+    <description>Binary header must comply PDFA specification</description>
+    <creator>Evgeniy Muravitskiy</creator>
+    <created>2015-05-8T15:46:15Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+		<rule id="6-1-2-t02" object="CosDocument">
+			<description>Second line of the document is a comment with at least 4 symbols in the code range 128-255 as required by PDF/A standard</description>
+			<test>binaryHeaderCompliesPDFA</test>
+			<error>
+				<message>File header not compliant with PDF/A</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.2</clause>
+			</reference>
+		</rule>
+	</rules>
+</profile>

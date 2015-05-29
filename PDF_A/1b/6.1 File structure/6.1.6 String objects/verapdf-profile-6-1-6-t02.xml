@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>Hexadecimal string profile</name>
+    <description>In hexadecimal strings each symbol in the range 0 to 9, A to F or a to f.</description>
+    <creator>Evgeniy Muravitskiy</creator>
+    <created>2015-05-8T15:46:15Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+		<rule id="6-1-6-t02" object="CosString">
+			<description>In hexadecimal strings each symbol in the range 0 to 9, A to F or a to f.</description>
+			<test>!isHex || isHexSymbols</test>
+			<error>
+				<message>Hexadecimal string contain not even number of symbols</message>
+				<argument>origLength</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.6</clause>
+			</reference>
+		</rule>
+	</rules>
+</profile>

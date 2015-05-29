@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>Implementation limits profile</name>
+    <description>Length of name in bytes must be less than 128</description>
+    <creator>Evgeniy Muravitskiy</creator>
+    <created>2015-05-8T15:46:15Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+		<rule id="6-1-12-t04" object="CosName">
+            <description>Length of name in bytes must be less than 128</description>
+            <test>origLength &lt; 128</test>
+            <error>
+                <message>Maximum length of a Name (127) is exceeded</message>
+				<argument>origLength</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+	</rules>
+</profile>
