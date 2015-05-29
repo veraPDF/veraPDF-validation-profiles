@@ -6,9 +6,20 @@
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-1-2-all" object="CosDocument">
-			<description>Header must comply PDFA specification</description>
-			<test>spacingComplyPDFA</test>
+		<rule id="6-1-2-t01" object="CosDocument">
+			<description>PDF header must comply PDF/A specification</description>
+			<test>pdfHeaderCompliesPDFA</test>
+			<error>
+				<message>File header not compliant with PDF/A</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.2</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-2-t02" object="CosDocument">
+			<description>Second line of the document is a comment with at least 4 symbols in the code range 128-255 as required by PDF/A standard</description>
+			<test>binaryHeaderCompliesPDFA</test>
 			<error>
 				<message>File header not compliant with PDF/A</message>
 			</error>
@@ -18,7 +29,7 @@
 			</reference>
 		</rule>
 		<rule id="6-1-6-t01" object="CosString">
-			<description>Hexadecimal strings shall contain an even number of non-white-space characters, each in the range 0 to 9, A to F or a to f.</description>
+			<description>Hexadecimal strings shall contain an even number of non-white-space characters</description>
 			<test>!isHex || origLength % 2 == 0</test>
 			<error>
 				<message>Hexadecimal string contain not even number of symbols</message>
@@ -29,11 +40,23 @@
 				<clause>6.1.6</clause>
 			</reference>
 		</rule>
-		<rule id="6-1-7-t01" object="CosStream"><!-- need support -->
+		<rule id="6-1-6-t02" object="CosString">
+			<description>In hexadecimal strings each symbol in the range 0 to 9, A to F or a to f.</description>
+			<test>!isHex || isHexSymbols</test>
+			<error>
+				<message>Hexadecimal string contain not even number of symbols</message>
+				<argument>isHexSymbols</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.6</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-7-t01" object="CosStream">
 			<description>Length of stream must match with value of the Length key</description>
 			<test>isLengthCorrect</test>
 			<error>
-				<message>Length of the stream not match with value of the Length key</message>
+				<message>Length of the stream does not match the value of the Length key</message>
 				<argument>length</argument>
 			</error>
 			<reference>
@@ -45,18 +68,18 @@
 			<description>Spacings for 'stream' and 'endstream' keywords must comply PDF/A specification</description>
 			<test>spacingComplyPDFA</test>
 			<error>
-				<message>Spacings for keywords not comply PDF/A</message>
+				<message>Spacings of keywords 'stream' and 'endstream' do not comply PDF/A specification</message>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
 				<clause>6.1.7</clause>
 			</reference>
 		</rule>
-		<rule id="6-1-8-all" object="CosIndirect">
+		<rule id="6-1-8-t01" object="CosIndirect">
 			<description>Header of 'object' and 'endobj' tags must comply PDF/A</description>
 			<test>spacingComplyPDFA</test>
 			<error>
-				<message>Spacings of object does not comply PDF/A</message>
+				<message>Spacings of keywords 'obj' and 'endobj' do not comply PDF/A specification</message>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
@@ -67,7 +90,7 @@
 			<description>The LZWDecode filter shall not be permitted.</description>
 			<test>filters.indexOf("LZWDecode") == -1</test>
 			<error>
-				<message>LZWDecode permitted</message>
+				<message>LZW compression is used</message>
 				<argument>filters</argument>
 			</error>
 			<reference>
@@ -111,7 +134,7 @@
             <description>Absolute real value must be less than or equal to 32767</description>
             <test>realValue &gt;= -32767 &amp;&amp; realValue &lt;= 32767</test>
             <error>
-                <message>Number value out of range</message>
+                <message>Real value out of range</message>
 				<argument>realValue</argument>
             </error>
             <reference>
@@ -127,7 +150,7 @@
             <description>Maximum length of string in bytes 65535</description>
             <test>origValue.length &lt; 65536</test>
             <error>
-                <message>Length of string greater than 65535</message>
+                <message>Maximum length of a String (65535) is exceeded</message>
 				<argument>origValue.length()</argument>
             </error>
             <reference>
@@ -143,7 +166,7 @@
             <description>Length of name in bytes must be less than 128</description>
             <test>origLength &lt; 128</test>
             <error>
-                <message>Length of name greater than 127</message>
+                <message>Maximum length of a Name (127) is exceeded</message>
 				<argument>origLength</argument>
             </error>
             <reference>
@@ -191,7 +214,7 @@
             <description>Maximum number of indirect objects must be less than 8388608</description>
             <test>nrIndirects &lt; 8388608</test>
             <error>
-                <message>Indirect objects more than 8388607</message>
+                <message>Maximum number of indirect objects (8,388,607) in PDF file is exceeded</message>
 				<argument>nrIndirects</argument>
             </error>
             <reference>
