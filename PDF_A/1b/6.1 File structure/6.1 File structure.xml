@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>File structure profile</name>
+    <description>Requirements of PDF/A standard for File structure subsection</description>
+    <creator>Evgeniy Muravitskiy</creator>
+    <created>2015-05-8T15:46:15Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+		<rule id="6-1-2-t01" object="CosDocument">
+			<description>PDF header must comply PDF/A specification</description>
+			<test>pdfHeaderCompliesPDFA</test>
+			<error>
+				<message>File header not compliant with PDF/A</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.2</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-2-t02" object="CosDocument">
+			<description>Second line of the document is a comment with at least 4 symbols in the code range 128-255 as required by PDF/A standard</description>
+			<test>binaryHeaderCompliesPDFA</test>
+			<error>
+				<message>File header not compliant with PDF/A</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.2</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-6-t01" object="CosString">
+			<description>Hexadecimal strings shall contain an even number of non-white-space characters</description>
+			<test>!isHex || origLength % 2 == 0</test>
+			<error>
+				<message>Hexadecimal string contains odd number of non-white-space characters</message>
+				<argument>origLength</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.6</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-6-t02" object="CosString">
+			<description>All non-white-space characters in hexadecimal strings shall be in the range 0 to 9, A to F or a to f.</description>
+			<test>!isHex || isHexSymbols</test>
+			<error>
+				<message>Hexadecimal string contains non-white-space characters outside the range 0 to 9, A to F or a to f.</message>
+				<argument>isHexSymbols</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.6</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-7-t01" object="CosStream">
+			<description>Length of stream must match with value of the Length key</description>
+			<test>isLengthCorrect</test>
+			<error>
+				<message>Length of the stream does not match the value of the Length key</message>
+				<argument>length</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.7</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-7-t02" object="CosStream">
+			<description>Spacings for 'stream' and 'endstream' keywords must comply PDF/A specification</description>
+			<test>spacingComplyPDFA</test>
+			<error>
+				<message>Spacings of keywords 'stream' and 'endstream' do not comply PDF/A specification</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.7</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-8-t01" object="CosIndirect">
+			<description>Header of 'object' and 'endobj' tags must comply PDF/A</description>
+			<test>spacingComplyPDFA</test>
+			<error>
+				<message>Spacings of keywords 'obj' and 'endobj' do not comply PDF/A specification</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.8</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-10-t01" object="CosStream">
+			<description>The LZWDecode filter shall not be permitted.</description>
+			<test>filters.indexOf("LZWDecode") == -1</test>
+			<error>
+				<message>LZW compression is used</message>
+				<argument>filters</argument>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.10</clause>
+			</reference>
+		</rule>
+		<rule id="6-1-12-t01-a" object="CosInteger">
+            <description>Max value of integer must be 2147483647</description>
+            <test>intValue &lt; 2147483648</test>
+            <error>
+                <message>Integer value out of range</message>
+				<argument>intValue</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="6-1-12-t01-b" object="CosInteger">
+            <description>Min value of integer must be -2147483648</description>
+            <test>intValue &gt; -2147483649</test>
+            <error>
+                <message>Integer value out of range</message>
+				<argument>intValue</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="6-1-12-t02" object="CosReal">
+            <description>Absolute real value must be less than or equal to 32767</description>
+            <test>realValue &gt;= -32767 &amp;&amp; realValue &lt;= 32767</test>
+            <error>
+                <message>Real value out of range</message>
+				<argument>realValue</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="6-1-12-t03" object="CosString">
+            <description>Maximum length of string in bytes 65535</description>
+            <test>origValue.length &lt; 65536</test>
+            <error>
+                <message>Maximum length of a String (65535) is exceeded</message>
+				<argument>origValue.length()</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="6-1-12-t04" object="CosName">
+            <description>Length of name in bytes must be less than 128</description>
+            <test>origLength &lt; 128</test>
+            <error>
+                <message>Maximum length of a Name (127) is exceeded</message>
+				<argument>origLength</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="6-1-12-t05" object="CosArray">
+            <description>Maximum capacity of array in elements less than 8192</description>
+            <test>size &lt; 8192</test>
+            <error>
+                <message>Array contains more than 8192 elements</message>
+				<argument>size</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="6-1-12-t06" object="CosDict">
+            <description>Maximum capacity of dictionary in entries less than 4095</description>
+            <test>size &lt; 4096</test>
+            <error>
+                <message>Dictionary contains more than 4095 elements</message>
+				<argument>size</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+		<rule id="6-1-12-t07" object="CosDocument">
+            <description>Maximum number of indirect objects must be less than 8388608</description>
+            <test>nrIndirects &lt; 8388608</test>
+            <error>
+                <message>Maximum number of indirect objects (8,388,607) in PDF file is exceeded</message>
+				<argument>nrIndirects</argument>
+            </error>
+            <reference>
+                <specification>ISO19005-1</specification>
+                <clause>6.1.12</clause>
+				<reference>
+					<specification>PDF Reference 1.4</specification>
+					<clause>Table C.1</clause>
+				</reference>
+            </reference>
+        </rule>
+	</rules>
+</profile>
