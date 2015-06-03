@@ -8,7 +8,7 @@
     <rules>
 		<rule id="6-1-8-t01" object="CosIndirect">
 			<description>Header of 'object' and 'endobj' tags must comply PDF/A</description>
-			<test>spacingComplyPDFA</test>
+			<test>spacingCompliesPDFA</test>
 			<error>
 				<message>Spacings of keywords 'obj' and 'endobj' do not comply PDF/A specification</message>
 			</error>
