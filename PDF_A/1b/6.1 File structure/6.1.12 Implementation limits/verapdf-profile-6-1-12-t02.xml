@@ -2,7 +2,7 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
     <name>ISO 19005-1:2005 - 6.1.12 Implementation limits - Real</name>
     <description>Largest and smallest real values are +/-32767.0</description>
-    <creator>Evgeniy Muravitskiy</creator>
+    <creator>veraPDF Consortium</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
