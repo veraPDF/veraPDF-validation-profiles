@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>Hexadecimal string profile</name>
+    <name>ISO 19005-1:2005 - 6.1.2 String objects - Even number of characters</name>
     <description>Hexadecimal strings shall contain an even number of non-white-space characters</description>
-    <creator>Evgeniy Muravitskiy</creator>
+    <creator>veraPDF Consortium</creator>
     <created>2015-05-8T15:46:15Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
@@ -11,8 +11,6 @@
 			<test>!isHex || origValue.length() % 2 == 0</test>
 			<error>
 				<message>Hexadecimal string contains odd number of non-white-space characters</message>
-				<argument>origValue</argument>
-				<argument>origValue.length()</argument>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
