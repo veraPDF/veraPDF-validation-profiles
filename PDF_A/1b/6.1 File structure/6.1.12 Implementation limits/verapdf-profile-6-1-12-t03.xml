@@ -8,7 +8,7 @@
     <rules>
 		<rule id="6-1-12-t03" object="CosString">
             <description>Maximum length of a string (in bytes) is 65535</description>
-            <test>origValue.length() &lt; 65536</test>
+            <test>value.length() &lt; 65536</test>
             <error>
                 <message>Maximum length of a String (65535) exceeded</message>
             </error>
