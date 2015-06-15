@@ -30,7 +30,7 @@
 		</rule>
 		<rule id="6-1-6-t01" object="CosString">
 			<description>Hexadecimal strings shall contain an even number of non-white-space characters</description>
-			<test>!isHex || origLength % 2 == 0</test>
+			<test>(isHex != true) || origLength % 2 == 0</test>
 			<error>
 				<message>Hexadecimal string contains odd number of non-white-space characters</message>
 				<argument>origLength</argument>
@@ -42,7 +42,7 @@
 		</rule>
 		<rule id="6-1-6-t02" object="CosString">
 			<description>All non-white-space characters in hexadecimal strings shall be in the range 0 to 9, A to F or a to f.</description>
-			<test>!isHex || isHexSymbols</test>
+			<test>(isHex != true) || isHexSymbols</test>
 			<error>
 				<message>Hexadecimal string contains non-white-space characters outside the range 0 to 9, A to F or a to f.</message>
 				<argument>isHexSymbols</argument>

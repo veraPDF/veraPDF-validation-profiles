@@ -8,7 +8,7 @@
     <rules>
 		<rule id="6-1-3-t02" object="CosTrailer">
 			<description>The keyword Encrypt shall not be used in the trailer dictionary</description>
-			<test>!isEncrypted</test>
+			<test>isEncrypted != true</test>
 			<error>
 				<message>Encrypt keyword is present in the trailer dictionary</message>
 			</error>
