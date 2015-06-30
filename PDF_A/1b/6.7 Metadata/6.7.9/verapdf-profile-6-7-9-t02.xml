@@ -10,13 +10,16 @@
 			<description>All predefined schemas shall conform to XMP specification.</description>
 			<test>unknownProperties == null</test>
 			<error>
-				<message>The predefined schema with namespace URI: %1 has unknown properties %2.</message>
+				<message>The predefined schema with namespace URI %1 has unknown properties: %2.</message>
 				<argument>uri</argument>
 				<argument>unknownProperties</argument>
 			</error>
 			<reference>
 				<specification>ISO 19005-1:2005</specification>
 				<clause>6.7.9</clause>
+				<reference>
+					<specification>XMP Specification January 2004</specification>
+				</reference>
 			</reference>
 		</rule>
 	</rules>

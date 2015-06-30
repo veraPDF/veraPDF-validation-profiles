@@ -3,16 +3,14 @@
     <name>ISO 19005-1:2005 - 6.7.9 XMP Schemas - Predefined Schemas Conforms to XMP Specification.</name>
     <description>All predefined schemas shall conform to XMP specification.</description>
     <creator>veraPDF Consortium</creator>
-    <created>2015-06-29T09:52:55Z</created>
+    <created>2015-06-30T15:27:00Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-7-9-t03" object="XMPPredefinedSchema">
+		<rule id="6-7-9-t17" object="PDFSchema">
 			<description>All predefined schemas shall conform to XMP specification.</description>
-			<test>wrongValueTypeProperties == null</test>
+			<test>creator == null</test>
 			<error>
-				<message>The predefined schema with namespace URI %1 has properties of wrong type: %2.</message>
-				<argument>uri</argument>
-				<argument>wrongValueTypeProperties</argument>
+				<message>The property "Creator" did not present in Adobe PDF Schema in XMP 2004.</message>
 			</error>
 			<reference>
 				<specification>ISO 19005-1:2005</specification>

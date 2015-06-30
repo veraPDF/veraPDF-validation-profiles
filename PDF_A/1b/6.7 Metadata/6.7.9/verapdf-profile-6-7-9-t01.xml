@@ -15,6 +15,9 @@
 			<reference>
 				<specification>ISO 19005-1:2005</specification>
 				<clause>6.7.9</clause>
+				<reference>
+					<specification>XMP Specification January 2004</specification>
+				</reference>
 			</reference>
 		</rule>
 	</rules>
