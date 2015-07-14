@@ -6,7 +6,7 @@
     <created>2015-06-29T09:27:41Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-7-8-t04" object="XMPCustomSchema">
+		<rule id="6-7-8-t04" object="PDFAExtensionSchema">
 			<description>A PDF/A Field Schema namespace prefix is required to be "pdfaField".</description>
 			<test>isPDFAFieldPrefixCorrect</test>
 			<error>

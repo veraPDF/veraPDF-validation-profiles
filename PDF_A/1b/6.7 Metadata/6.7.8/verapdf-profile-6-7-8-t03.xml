@@ -6,7 +6,7 @@
     <created>2015-06-29T09:25:21Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-7-8-t03" object="XMPCustomSchema">
+		<rule id="6-7-8-t03" object="PDFAExtensionSchema">
 			<description>The required PDF/A Extension Schema namespace prefix is pdfaExtension.</description>
 			<test>prefix == "pdfaExtension"</test>
 			<error>
