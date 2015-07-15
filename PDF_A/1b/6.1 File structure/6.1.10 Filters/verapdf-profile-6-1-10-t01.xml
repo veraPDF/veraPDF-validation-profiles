@@ -8,7 +8,7 @@
     <rules>
 		<rule id="6-1-10-t01" object="CosStream">
 			<description>The LZWDecode filter shall not be permitted</description>
-			<test>filters.indexOf("LZWDecode") == -1</test>
+			<test>filters != "LZWDecode"</test>
 			<error>
 				<message>LZW compression is used</message>
 			</error>
