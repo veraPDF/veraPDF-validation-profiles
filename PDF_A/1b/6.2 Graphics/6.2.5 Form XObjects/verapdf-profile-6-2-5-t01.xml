@@ -10,7 +10,7 @@
 			<description>A form XObject dictionary shall not contain the Subtype2 key with a value of PS or the PS key</description>
 			<test>(Subtype2 == null || Subtype2 != "PS") &amp;&amp; PS_size == 0</test>
 			<error>
-				<message>The from XObject dictionary contains a PS key or Subtype2 key with value PS</message>
+				<message>The form XObject dictionary contains a PS key or Subtype2 key with value PS</message>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
