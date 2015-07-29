@@ -10,7 +10,7 @@
 		<rule id="6-3-3-t02" object="PDCIDFont">
 			<description>For all Type 2 CIDFonts, the CIDFont dictionary shall contain a CIDToGIDMap entry that shall be a stream mapping 
 			from CIDs to glyph indices or the name Identity, as described in PDF Reference Table 5.13</description>
-			<test>Subtype != "CIDFontType2" || CIDToGIDMap != null</test>
+			<test>Subtype != "CIDFontType2" || CIDtoGIDMap != null</test>
 			<error>
 				<message>A Type 2 CIDFont dictionary has missing or invalid CIDToGIDMap entry</message>
 			</error>
