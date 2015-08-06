@@ -6,9 +6,9 @@
     <created>2015-07-04T12:55:42Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-3-5-t01" object="FontProgram">
+		<rule id="6-3-5-t01" object="Glyph">
 			<description>Embedded font programs shall define all font glyphs referenced for rendering with a conforming file</description>
-			<test>areReferencedGlyphsPresent == true</test>
+			<test>isGlyphPresent == true</test>
 			<error>
 				<message>Not all glyphs referenced for rendering are present in the embedded font program</message>
 			</error>
