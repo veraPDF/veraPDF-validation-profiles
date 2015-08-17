@@ -10,7 +10,7 @@
 		<rule id="6-3-2-t01" object="PDFont">
 			<description>All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
 	Type - name - (Required) The type of PDF object that this dictionary describes; must be Font for a font dictionary</description>
-			<test>Type == "Font"</test>
+			<test>fontType == "Font"</test>
 			<error>
 				<message>A Font dictionary has missing or invalid Type entry</message>
 			</error>
