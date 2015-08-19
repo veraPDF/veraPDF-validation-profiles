@@ -6,7 +6,7 @@
     <created>2015-06-24T10:23:11Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-4-t01" object="XObject">
+		<rule id="6-4-t01" object="PDXObject">
 			<description>An XObject dictionary shall not contain the SMask key</description>
 			<test>SMask_size == 0</test>
 			<error>

@@ -21,7 +21,7 @@
 	<variables>
 		<variable name="gOutputCS" object="ICCOutputProfile">
 			<defaultValue>null</defaultValue>
-			<value>colorSpace</value>
+			<value>S == "GTS_PDFA1" ? colorSpace : gOutputCS</value>
 		</variable>
 	</variables>
 </profile>

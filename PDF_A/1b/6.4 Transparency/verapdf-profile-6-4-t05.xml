@@ -10,7 +10,7 @@
 			<description>The following keys, if present in an ExtGState object, shall have the values shown: CA - 1.0</description>
 			<test>CA == null || CA == 1.0</test>
 			<error>
-				<message>An ExtGState dictionary contains contains the CA key (stroke alpha) with a value other than 1.0</message>
+				<message>An ExtGState dictionary contains the CA key (stroke alpha) with a value other than 1.0</message>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>

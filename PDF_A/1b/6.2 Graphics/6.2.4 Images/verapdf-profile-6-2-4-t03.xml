@@ -8,7 +8,7 @@
     <rules>
 		<rule id="6-2-4-t03" object="PDXImage">
 			<description>If an Image dictionary contains the Interpolate key, its value shall be false</description>
-			<test>Interpolate == null || Interpolate == false</test>
+			<test>Interpolate == false</test>
 			<error>
 				<message>The value of the Interpolate key in the Image dictionary is true</message>
 			</error>

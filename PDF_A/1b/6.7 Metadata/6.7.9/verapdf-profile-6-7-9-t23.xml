@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
+    <name>ISO 19005-1:2005 - 6.7.9 XMP Schemas - Predefined Schemas Conforms to XMP Specification.</name>
+    <description>All predefined schemas shall conform to XMP specification.</description>
+    <creator>veraPDF Consortium</creator>
+    <created>2015-06-30T15:58:00Z</created>
+    <hash>sha-1 hash code</hash>
+    <rules>
+		<rule id="6-7-9-t23" object="PhotoshopSchema">
+			<description>All predefined schemas shall conform to XMP specification.</description>
+			<test>copyright == null</test>
+			<error>
+				<message>The property "Copyright" did not present in Photoshop Schema in XMP 2004.</message>
+			</error>
+			<reference>
+				<specification>ISO 19005-1:2005</specification>
+				<clause>6.7.9</clause>
+				<reference>
+					<specification>XMP Specification January 2004</specification>
+				</reference>
+			</reference>
+		</rule>
+	</rules>
+</profile>
