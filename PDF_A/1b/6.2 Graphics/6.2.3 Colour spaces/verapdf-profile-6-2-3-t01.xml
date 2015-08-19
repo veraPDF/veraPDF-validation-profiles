@@ -8,7 +8,7 @@
     <rules>
 		<rule id="6-2-3-t01" object="ICCInputProfile">
 			<description>All ICCBased colour spaces shall be embedded as ICC profile streams as described in PDF Reference 4.5</description>
-			<test>isValid == true &amp;&amp; (deviceClass == "prtr" || deviceClass == "mntr" || deviceClass == "scnr" || deviceClass == "spac") &amp;&amp; 
+			<test>(deviceClass == "prtr" || deviceClass == "mntr" || deviceClass == "scnr" || deviceClass == "spac") &amp;&amp; 
 			(colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY" || colorSpace == "LAB ") &amp;&amp; version &lt;= 2.3</test>
 			<error>
 				<message>The embedded ICC profile is either invalid or does not satisfy PDF 1.4 requirements</message>
