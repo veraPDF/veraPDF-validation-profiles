@@ -10,7 +10,7 @@
 		<rule id="6-5-3-t04" object="PDAnnot">
 			<description>If an annotation dictionary contains the AP key, the appearance dictionary that it defines as its value shall contain only the N key, 
 			whose value shall be a stream defining the appearance of the annotation</description>
-			<test>AP == null || ( AP == "N" &amp;&amp; ( (FT != "Btn" &amp;&amp; N_type == "Stream") || (FT = "Btn" &amp;&amp; N_type = "Dict") ) )</test>
+			<test>AP == null || ( AP == "N" &amp;&amp; ( (FT != "Btn" &amp;&amp; N_type == "Stream") || (FT == "Btn" &amp;&amp; N_type == "Dict") ) )</test>
 			<error>
 				<message>Annotation's appearance dictionary contains entries other than N or the N entry has an invalid type</message>
 			</error>

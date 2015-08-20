@@ -10,7 +10,7 @@
 		<rule id="6-5-3-t03" object="PDAnnot">
 			<description>An annotation dictionary shall not contain the C array or the IC array unless the colour space of the
 			DestOutputProfile in the PDF/A-1 OutputIntent dictionary, defined in 6.2.2, is RGB</description>
-			<test>(C_size == 0 &amp;&amp; IC_size == 0) || gOutputCS = "RGB "</test>
+			<test>(C_size == 0 &amp;&amp; IC_size == 0) || gOutputCS == "RGB "</test>
 			<error>
 				<message>Annotation's color or interior color is used without specifying RGB-based destination output profile</message>
 			</error>
@@ -20,4 +20,10 @@
 			</reference>
 		</rule>
 	</rules>
+	<variables>
+		<variable name="gOutputCS" object="ICCOutputProfile">
+			<defaultValue>null</defaultValue>
+			<value>colorSpace</value>
+		</variable>
+	</variables>
 </profile>
