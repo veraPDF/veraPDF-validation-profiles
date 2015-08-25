@@ -5,14 +5,14 @@
 	or as the value of the BaseEncoding entry in the dictionary that is the value of the Encoding entry in the font dictionary.
 	If the value of the Encoding entry is a dictionary, it shall not contain a Differences entry.</description>
     <creator>veraPDF Consortium</creator>
-    <created>2015-08-19T17:58:12Z</created>
+    <created>2015-08-25T11:25:12Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-3-7-t01" object="PDSimpleFont">
+		<rule id="6-3-7-t01" object="PDTrueTypeFont">
 			<description>All non-symbolic TrueType fonts shall specify MacRomanEncoding or WinAnsiEncoding, either as the value of the Encoding entry in the font dictionary
 			or as the value of the BaseEncoding entry in the dictionary that is the value of the Encoding entry in the font dictionary.
 			If the value of the Encoding entry is a dictionary, it shall not contain a Differences entry.</description>
-			<test>Subtype != "TrueType" || isSymbolic == true || (Encoding == "MacRomanEncoding" || Encoding == "WinAnsiEncoding")</test>
+			<test>isSymbolic == true || (Encoding == "MacRomanEncoding" || Encoding == "WinAnsiEncoding")</test>
 			<error>
 				<message>A non-symbolic TrueType font has an encoding different from MacRomanEncoding or WinAnsiEncoding</message>
 			</error>
