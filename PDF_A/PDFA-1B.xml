@@ -3,7 +3,7 @@
     <name>ISO 19005-1:2005</name>
     <description>Rules for validation PDF files</description>
     <creator>veraPDF Consortium</creator>
-    <created>2015-08-27T11-55-06Z+03</created>
+    <created>2015-09-03T14-19-36Z+03</created>
     <hash>sha-1 hash code</hash>
     <rules>
         <rule id="6-1-10-t01" object="CosStream">
@@ -803,6 +803,22 @@
 			<reference>
 				<specification>ISO19005-1</specification>
 				<clause>6.3.5</clause>
+			</reference>
+		</rule>
+        <rule id="6-3-5-t02" object="PDType1Font">
+			<description>For all Type 1 font subsets referenced within a conforming file, the font descriptor dictionary shall include a CharSet string
+			listing the character names defined in the font subset, as described in PDF Reference Table 5.18</description>
+			<test>BaseFont.search(/[A-Z]{6}\+/) != 0 || CharSet != null</test>
+			<error>
+				<message>A Type1 font subset does not define CharSet entry in its Descriptor dictionary</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.3.5</clause>
+				<reference>
+					<specification>PDF 1.4 Reference</specification>
+					<clause>5.5.3</clause>
+				</reference>
 			</reference>
 		</rule>
         <rule id="6-3-6-t01" object="Glyph">
