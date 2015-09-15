@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-1:2005</name>
-    <description>Rules for validation PDF files</description>
+    <name>PDF/A-1B validation profile</name>
+    <description>Validation rules against ISO 19005-1:2005, Cor.1:2007 and Cor.2:2011</description>
     <creator>veraPDF Consortium</creator>
-    <created>2015-08-27T11-55-06Z+03</created>
+    <created>2015-09-15T14-42-50Z+03</created>
     <hash>sha-1 hash code</hash>
     <rules>
         <rule id="6-1-10-t01" object="CosStream">
@@ -805,6 +805,38 @@
 				<clause>6.3.5</clause>
 			</reference>
 		</rule>
+        <rule id="6-3-5-t02" object="PDType1Font">
+			<description>For all Type 1 font subsets referenced within a conforming file, the font descriptor dictionary shall include a CharSet string
+			listing the character names defined in the font subset, as described in PDF Reference Table 5.18</description>
+			<test>BaseFont.search(/[A-Z]{6}\+/) != 0 || CharSet != null</test>
+			<error>
+				<message>A Type1 font subset does not define CharSet entry in its Descriptor dictionary</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.3.5</clause>
+				<reference>
+					<specification>PDF 1.4 Reference</specification>
+					<clause>5.5.3</clause>
+				</reference>
+			</reference>
+		</rule>
+        <rule id="6-3-5-t03" object="PDCIDFont">
+			<description>For all CIDFont subsets referenced within a conforming file, the font descriptor dictionary shall include a
+			CIDSet stream identifying which CIDs are present in the embedded CIDFont file, as described in PDF Reference Table 5.20</description>
+			<test>BaseFont.search(/[A-Z]{6}\+/) != 0 || CIDSet_size == 1</test>
+			<error>
+				<message>A CID Font subset does not define CIDSet entry in its Descriptor dictionary</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.3.5</clause>
+				<reference>
+					<specification>PDF 1.4 Reference</specification>
+					<clause>5.5.3</clause>
+				</reference>
+			</reference>
+		</rule>
         <rule id="6-3-6-t01" object="Glyph">
 			<description>For every font embedded in a conforming file, the glyph width information stored in the Widths entry of the 
 			font dictionary and in the embedded font program shall be consistent</description>
@@ -863,6 +895,17 @@
 				<clause>6.4</clause>
 			</reference>
 		</rule>
+        <rule id="6-4-t02" object="PDXObject">
+			<description>An XObject dictionary shall not contain the SMask key</description>
+			<test>SMask_size == 0</test>
+			<error>
+				<message>An XObject contains an SMask key</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1:2005/Cor.2:2011</specification>
+				<clause>6.4</clause>
+			</reference>
+		</rule>
         <rule id="6-4-t03" object="PDGroup">
 			<description>A Group object with an S key with a value of Transparency shall not be included in a form XObject. 
 			A Group object with an S key with a value of Transparency shall not be included in a page dictionary</description>
@@ -880,6 +923,17 @@
 			<test>BM == null || BM == "Normal" || BM == "Compatible"</test>
 			<error>
 				<message>An ExtGState dictionary contains the BM key (blend mode) with a value other than Normal or Compatible</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.4</clause>
+			</reference>
+		</rule>
+        <rule id="6-4-t05" object="PDExtGState">
+			<description>The following keys, if present in an ExtGState object, shall have the values shown: CA - 1.0</description>
+			<test>CA == null || CA == 1.0</test>
+			<error>
+				<message>An ExtGState dictionary contains the CA key (stroke alpha) with a value other than 1.0</message>
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
@@ -930,7 +984,7 @@
         <rule id="6-5-3-t02" object="PDAnnot">
 			<description>An annotation dictionary shall contain the F key. The F key’s Print flag bit shall be set to 1 and its Hidden,
 			Invisible and NoView flag bits shall be set to 0</description>
-			<test>F != null &amp;&amp; (F &amp; 4) == 1 &amp;&amp; (F &amp; 1) == 0 &amp;&amp; (F &amp; 2) == 0 &amp;&amp; (F &amp; 32) == 0</test>
+			<test>F != null &amp;&amp; (F &amp; 4) == 4 &amp;&amp; (F &amp; 1) == 0 &amp;&amp; (F &amp; 2) == 0 &amp;&amp; (F &amp; 32) == 0</test>
 			<error>
 				<message>Annotation flags are either missing or have forbidden values</message>
 			</error>
@@ -952,14 +1006,15 @@
 			</reference>
 		</rule>
         <rule id="6-5-3-t04" object="PDAnnot">
-			<description>If an annotation dictionary contains the AP key, the appearance dictionary that it defines as its value shall contain only the N key, 
-			whose value shall be a stream defining the appearance of the annotation</description>
-			<test>AP == null || ( AP == "N" &amp;&amp; ( (FT != "Btn" &amp;&amp; N_type == "Stream") || (FT == "Btn" &amp;&amp; N_type == "Dict") ) )</test>
+			<description>For all annotation dictionaries containing an AP key, the appearance dictionary that it defines as its value shall contain only the N key. 
+			If an annotation dictionary’s Subtype key has a value of Widget and its FT key has a value of Btn, the value of the N key shall be an appearance 
+			subdictionary; otherwise the value of the N key shall be an appearance stream.</description>
+			<test>AP == null || ( AP == "N" &amp;&amp; ( N_type == "Stream" || (FT == "Btn" &amp;&amp; N_type == "Dict") ) )</test>
 			<error>
 				<message>Annotation's appearance dictionary contains entries other than N or the N entry has an invalid type</message>
 			</error>
 			<reference>
-				<specification>ISO19005-1</specification>
+				<specification>ISO19005-1/Cor.2:2011</specification>
 				<clause>6.5.3</clause>
 			</reference>
 		</rule>
