@@ -264,8 +264,9 @@
 			DestOutputProfile in the PDF/A-1 OutputIntent dictionary, defined in 6.2.2, is RGB</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">(C_size == 0 &amp;&amp; IC_size == 0) || gOutputCS == "RGB "</td>
 </tr>
 <tr>
-<td style="width: 50px">71</td><td style="width: 100px">6-5-3-t04</td><td style="width: 400px" align="left">If an annotation dictionary contains the AP key, the appearance dictionary that it defines as its value shall contain only the N key, 
-			whose value shall be a stream defining the appearance of the annotation</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">AP == null || ( AP == "N" &amp;&amp; ( (FT != "Btn" &amp;&amp; N_type == "Stream") || (FT == "Btn" &amp;&amp; N_type == "Dict") ) )</td>
+<td style="width: 50px">71</td><td style="width: 100px">6-5-3-t04</td><td style="width: 400px" align="left">For all annotation dictionaries containing an AP key, the appearance dictionary that it defines as its value shall contain only the N key. 
+			If an annotation dictionary&rsquo;s Subtype key has a value of Widget and its FT key has a value of Btn, the value of the N key shall be an appearance 
+			subdictionary; otherwise the value of the N key shall be an appearance stream.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">AP == null || ( AP == "N" &amp;&amp; ( N_type == "Stream" || (FT == "Btn" &amp;&amp; N_type == "Dict") ) )</td>
 </tr>
 <tr>
 <td style="width: 50px">72</td><td style="width: 100px">6-6-1-t01</td><td style="width: 400px" align="left">The Launch, Sound, Movie, ResetForm, ImportData and JavaScript actions shall not be permitted. 
