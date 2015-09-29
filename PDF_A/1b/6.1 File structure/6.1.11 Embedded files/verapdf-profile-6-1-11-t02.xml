@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-1:2005 - 6.1.11 Embedded files</name>
+    <name>ISO 19005-1:2005 - 6.1.11 Embedded files - EmbeddedFiles tree</name>
     <description>A file's name dictionary, as defined in PDF Reference 3.6.3, shall not contain the EmbeddedFiles key</description>
     <creator>veraPDF Consortium</creator>
     <created>2015-07-14T16:52:37Z</created>
