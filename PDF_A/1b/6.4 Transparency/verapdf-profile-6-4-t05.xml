@@ -6,7 +6,7 @@
     <created>2015-06-24T10:50:27Z</created>
     <hash>sha-1 hash code</hash>
     <rules>
-		<rule id="6-4-t04" object="PDExtGState">
+		<rule id="6-4-t05" object="PDExtGState">
 			<description>The following keys, if present in an ExtGState object, shall have the values shown: CA - 1.0</description>
 			<test>CA == null || CA == 1.0</test>
 			<error>
