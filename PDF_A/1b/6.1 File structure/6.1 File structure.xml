@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>File structure profile</name>
-    <description>Requirements of PDF/A standard for File structure subsection</description>
+    <name>PDF/A-1B validation profile</name>
+    <description>Validation rules against ISO 19005-1:2005, Cor.1:2007 and Cor.2:2011</description>
     <creator>veraPDF Consortium</creator>
-    <created>2015-08-25T15-55-47Z+03</created>
+    <created>2015-09-30T12-14-33Z+03</created>
     <hash>sha-1 hash code</hash>
     <rules>
         <rule id="6-1-10-t01" object="CosStream">
@@ -26,6 +26,21 @@
 			<reference>
 				<specification>ISO19005-1</specification>
 				<clause>6.1.10</clause>
+			</reference>
+		</rule>
+        <rule id="6-1-11-t01" object="CosFileSpecification">
+			<description>A file specification dictionary, as defined in PDF 3.10.2, shall not contain the EF key</description>
+			<test>EF == null</test>
+			<error>
+				<message>A file specification dictionary contains the EF key</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.1.7</clause>
+				<reference>
+					<specification>PDF 1.4 Reference</specification>
+				<clause>3.10.2</clause>
+			</reference>
 			</reference>
 		</rule>
         <rule id="6-1-11-t02" object="CosDocument">
