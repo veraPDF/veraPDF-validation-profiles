@@ -8,7 +8,7 @@
     <rules>
 		<rule id="6-1-11-t01" object="CosFileSpecification">
 			<description>A file specification dictionary, as defined in PDF 3.10.2, shall not contain the EF key</description>
-			<test>EF == null</test>
+			<test>EF_size == 0</test>
 			<error>
 				<message>A file specification dictionary contains the EF key</message>
 			</error>
