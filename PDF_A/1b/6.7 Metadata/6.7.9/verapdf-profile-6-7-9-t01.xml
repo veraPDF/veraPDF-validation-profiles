@@ -7,10 +7,11 @@
     <hash>sha-1 hash code</hash>
     <rules>
 		<rule id="6-7-9-t01" object="XMPPackage">
-			<description>The metadata stream shall conform to XMP Specification.</description>
+			<description>The metadata stream shall conform to XMP 2004 Specification and well formed PDFAExtension Schema for all extensions.</description>
 			<test>isMetadataValid</test>
 			<error>
-				<message>The metadata stream doesn't conform to XMP Specification.</message>
+				<message>%1</message>
+				<argument>errorMessage</argument>
 			</error>
 			<reference>
 				<specification>ISO 19005-1:2005</specification>
