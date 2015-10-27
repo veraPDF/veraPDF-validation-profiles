@@ -35,7 +35,7 @@
 <td style="width: 50px">6</td><td style="width: 100px">6-1-10-t02</td><td style="width: 400px" align="left">The LZWDecode filter shall not be permitted</td><td style="width: 200px">PDInlineImage</td><td style="width: 800px">F == null || F.indexOf("LZW") == -1</td>
 </tr>
 <tr>
-<td style="width: 50px">7</td><td style="width: 100px">6-1-11-t01</td><td style="width: 400px" align="left">A file specification dictionary, as defined in PDF 3.10.2, shall not contain the EF key</td><td style="width: 200px">CosFileSpecification</td><td style="width: 800px">EF == null</td>
+<td style="width: 50px">7</td><td style="width: 100px">6-1-11-t01</td><td style="width: 400px" align="left">A file specification dictionary, as defined in PDF 3.10.2, shall not contain the EF key</td><td style="width: 200px">CosFileSpecification</td><td style="width: 800px">EF_size == 0</td>
 </tr>
 <tr>
 <td style="width: 50px">8</td><td style="width: 100px">6-1-11-t02</td><td style="width: 400px" align="left">A file's name dictionary, as defined in PDF Reference 3.6.3, shall not contain the EmbeddedFiles key</td><td style="width: 200px">CosDocument</td><td style="width: 800px">EmbeddedFiles_size == 0</td>
@@ -133,7 +133,7 @@
 </tr>
 <tr>
 <td style="width: 50px">36</td><td style="width: 100px">6-2-2-t02</td><td style="width: 400px" align="left">If a file's OutputIntents array contains more than one entry, then all entries that contain a DestOutputProfile
-			key shall have as the value of that key the same indirect object, which shall be a valid ICC profile stream</td><td style="width: 200px">PDOutputIntent</td><td style="width: 800px">destOutputProfileRef == null || gOutputProfileRef == null || destOutputProfileRef == gOutputProfileRef</td>
+			key shall have as the value of that key the same indirect object, which shall be a valid ICC profile stream</td><td style="width: 200px">PDOutputIntent</td><td style="width: 800px">destOutputProfileIndirect == null || gOutputProfileIndirect == null || destOutputProfileIndirect == gOutputProfileIndirect</td>
 </tr>
 <tr>
 <td style="width: 50px">37</td><td style="width: 100px">6-2-3-t01</td><td style="width: 400px" align="left">All ICCBased colour spaces shall be embedded as ICC profile streams as described in PDF Reference 4.5</td><td style="width: 200px">ICCInputProfile</td><td style="width: 800px">(deviceClass == "prtr" || deviceClass == "mntr" || deviceClass == "scnr" || deviceClass == "spac") &amp;&amp; 
@@ -179,7 +179,7 @@
 </tr>
 <tr>
 <td style="width: 50px">50</td><td style="width: 100px">6-2-9-t01</td><td style="width: 400px" align="left">Where a rendering intent is specified, its value shall be one of the four values defined in PDF Reference
-			RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation</td><td style="width: 200px">CosRenderingIntent</td><td style="width: 800px">value == "RelativeColorimetric" || value == "AbsoluteColorimetric" || value == "Perceptual" || value == "Saturation"</td>
+			RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation</td><td style="width: 200px">CosRenderingIntent</td><td style="width: 800px">internalRepresentation == "RelativeColorimetric" || internalRepresentation == "AbsoluteColorimetric" || internalRepresentation == "Perceptual" || internalRepresentation == "Saturation"</td>
 </tr>
 <tr>
 <td style="width: 50px">51</td><td style="width: 100px">6-3-2-t01</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
