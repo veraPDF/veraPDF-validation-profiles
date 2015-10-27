@@ -3,7 +3,7 @@
     <name>PDF/A-1B validation profile</name>
     <description>Validation rules against ISO 19005-1:2005, Cor.1:2007 and Cor.2:2011</description>
     <creator>veraPDF Consortium</creator>
-    <created>2015-09-30T12-11-23Z+03</created>
+    <created>2015-10-27T10-19-19Z+02</created>
     <hash>sha-1 hash code</hash>
     <rules>
         <rule id="6-1-10-t01" object="CosStream">
@@ -36,7 +36,7 @@
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
-				<clause>6.1.7</clause>
+				<clause>6.1.11</clause>
 				<reference>
 					<specification>PDF 1.4 Reference</specification>
 				<clause>3.10.2</clause>
@@ -51,7 +51,7 @@
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
-				<clause>6.1.7</clause>
+				<clause>6.1.11</clause>
 				<reference>
 					<specification>PDF 1.4 Reference</specification>
 				<clause>3.6.3</clause>
@@ -105,10 +105,10 @@
         </rule>
         <rule id="6-1-12-t04" object="CosName">
             <description>Maximum length of a name (in bytes) is 127</description>
-            <test>origLength &lt;= 127</test>
+            <test>internalRepresentation.length() &lt;= 127</test>
             <error>
                 <message>Maximum length of a Name (127) exceeded</message>
-				<argument>origLength</argument>
+				<argument>internalRepresentation.length()</argument>
             </error>
             <reference>
                 <specification>ISO19005-1</specification>
@@ -223,7 +223,7 @@
         <rule id="6-1-2-t01" object="CosDocument">
 			<description>The % character of the file header shall occur at byte offset 0 of the file. 
 			The first line of a PDF file is a header identifying the version of the PDF specification to which the file conforms</description>
-			<test>pdfHeaderCompliesPDFA</test>
+			<test>headerOffset == 0 &amp;&amp; /%PDF-\d\.\d/.test(header)</test>
 			<error>
 				<message>File header does not start at byte offset 0 or does not correctly identify the version of the PDF document</message>
 			</error>
@@ -239,7 +239,7 @@
         <rule id="6-1-2-t02" object="CosDocument">
 			<description>The file header line shall be immediately followed by a comment consisting of a % character followed by at 
 			least four characters, each of whose encoded byte values shall have a decimal value greater than 127</description>
-			<test>binaryHeaderComplyPDFA</test>
+			<test>headerByte1 &gt; 127 &amp;&amp; headerByte2 &gt; 127 &amp;&amp; headerByte3 &gt; 127 &amp;&amp; headerByte4 &gt; 127 </test>
 			<error>
 				<message>Binary comment in the file header is missing or does not comply PDF/A requirements</message>
 			</error>
@@ -273,7 +273,7 @@
 		</rule>
         <rule id="6-1-3-t03" object="CosDocument">
 			<description>No data shall follow the last end-of-file marker except a single optional end-of-line marker.</description>
-			<test>eofCompliesPDFA</test>
+			<test>postEOFDataSize == 0</test>
 			<error>
 				<message>Data is present after the last end-of-file marker</message>
 			</error>
@@ -296,7 +296,7 @@
 		</rule>
         <rule id="6-1-4-t01" object="CosXRef">
 			<description>In a cross reference subsection header the starting object number and the range shall be separated by a single SPACE character (20h)</description>
-			<test>xrefHeaderSpacingsComplyPDFA</test>
+			<test>subsectionHeaderSpaceSeparated == true</test>
 			<error>
 				<message>Spacings of subsection headers in the cross reference table do not comply PDF/A specification</message>
 			</error>
@@ -329,7 +329,7 @@
 		</rule>
         <rule id="6-1-6-t02" object="CosString">
 			<description>All non-white-space characters in hexadecimal strings shall be in the range 0 to 9, A to F or a to f</description>
-			<test>(isHex != true) || isHexSymbols</test>
+			<test>(isHex != true) || containsOnlyHex</test>
 			<error>
 				<message>Hexadecimal string contains non-white-space characters outside the range 0 to 9, A to F or a to f</message>
 			</error>
@@ -353,7 +353,7 @@
         <rule id="6-1-7-t02" object="CosStream">
 			<description>The stream keyword shall be followed either by a CARRIAGE RETURN (0Dh) and LINE FEED (0Ah) character sequence
 			or by a single LINE FEED character. The endstream keyword shall be preceded by an EOL marker</description>
-			<test>spacingCompliesPDFA</test>
+			<test>streamKeywordCRLFCompliant &amp;&amp; endstreamKeywordEOLCompliant</test>
 			<error>
 				<message>Spacings of keywords 'stream' and 'endstream' do not comply PDF/A specification</message>
 			</error>
@@ -405,7 +405,7 @@
         <rule id="6-2-2-t01" object="ICCOutputProfile">
 			<description>A PDF/A-1 OutputIntent is an OutputIntent dictionary, as defined by PDF Reference 9.10.4, that is included in the file's OutputIntents 
 	array and has GTS_PDFA1 as the value of its S key and a valid ICC profile stream as the value its DestOutputProfile key</description>
-			<test>(deviceClass == "prtr" || deviceClass == "mntr") &amp;&amp; (colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY") &amp;&amp; version &lt;= 2.3</test>
+			<test>(deviceClass == "prtr" || deviceClass == "mntr") &amp;&amp; (colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY") &amp;&amp; version &lt; 3.0</test>
 			<error>
 				<message>The embedded PDF/A Output Intent colour profile is either invalid or does not provide BToA information</message>
 			</error>
@@ -433,7 +433,7 @@
         <rule id="6-2-3-t01" object="ICCInputProfile">
 			<description>All ICCBased colour spaces shall be embedded as ICC profile streams as described in PDF Reference 4.5</description>
 			<test>(deviceClass == "prtr" || deviceClass == "mntr" || deviceClass == "scnr" || deviceClass == "spac") &amp;&amp; 
-			(colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY" || colorSpace == "LAB ") &amp;&amp; version &lt;= 2.3</test>
+			(colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY" || colorSpace == "LAB ") &amp;&amp; version &lt; 3.0</test>
 			<error>
 				<message>The embedded ICC profile is either invalid or does not satisfy PDF 1.4 requirements</message>
 			</error>
@@ -480,7 +480,8 @@
 			</reference>
 		</rule>
         <rule id="6-2-3-t05" object="ICCProfile">
-			<description>The number of color components in the color space described by the ICC profile data must match the number of components actually in the ICC profile. 
+			<description>All ICCBased colour spaces shall be embedded as ICC profile streams as described in PDF Reference 4.5.
+			The number of color components in the color space described by the ICC profile data must match the number of components actually in the ICC profile. 
 			As of PDF 1.4, N must be 1, 3, or 4</description>
 			<test>N != null &amp;&amp; ((N == 1 &amp;&amp; colorSpace == "GRAY") || (N == 3 &amp;&amp; (colorSpace == "RGB " || colorSpace == "LAB ")) || (N == 4 &amp;&amp; colorSpace == "CMYK"))</test>
 			<error>
@@ -488,7 +489,7 @@
 			</error>
 			<reference>
 				<specification>ISO19005-1</specification>
-				<clause>6.2.2, 6.2.3.2</clause>
+				<clause>6.2.3.2</clause>
 				<reference>
 					<specification>PDF 1.4 Reference</specification>
 					<clause>4.5.4, Table 4.16</clause>
@@ -791,6 +792,17 @@
 					<specification>PDF 1.4 Reference</specification>
 					<clause>5.6.4</clause>
 				</reference>
+			</reference>
+		</rule>
+        <rule id="6-3-3-t04" object="CMapFile">
+			<description>For those CMaps that are embedded, the integer value of the WMode entry in the CMap dictionary shall be identical to the WMode value in the embedded CMap stream</description>
+			<test>WMode == dictWMode</test>
+			<error>
+				<message>WMode entry in the embedded CMap and in the CMap dictionary are not identical</message>
+			</error>
+			<reference>
+				<specification>ISO19005-1</specification>
+				<clause>6.3.3.3</clause>
 			</reference>
 		</rule>
         <rule id="6-3-4-t01" object="PDFont">
