@@ -10,7 +10,8 @@
 			<description>The metadata stream shall conform to XMP 2004 Specification and well formed PDFAExtension Schema for all extensions.</description>
 			<test>isMetadataValid</test>
 			<error>
-				<message>The metadata stream shall conform to XMP 2004 Specification and well formed PDFAExtension Schema for all extensions.</message>
+				<message>The metadata stream shall conform to XMP 2004 Specification and well formed PDFAExtension Schema for all extensions. ErrorMessage: %1</message>
+				<argument>errorMessage</argument>
 			</error>
 			<reference>
 				<specification>ISO 19005-1:2005</specification>
