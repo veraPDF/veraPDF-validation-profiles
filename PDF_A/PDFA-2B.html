@@ -98,308 +98,497 @@
 			keywords shall each be followed by an EOL marker.</td><td style="width: 200px">CosIndirect</td><td style="width: 800px">spacingCompliesPDFA</td>
 </tr>
 <tr>
-<td style="width: 50px">25</td><td style="width: 100px">6-1-10-t02</td><td style="width: 400px" align="left">The LZWDecode filter shall not be permitted</td><td style="width: 200px">PDInlineImage</td><td style="width: 800px">F == null || F.indexOf("LZW") == -1</td>
+<td style="width: 50px">25</td><td style="width: 100px">6-2-10-t01</td><td style="width: 400px" align="left">Only blend modes that are specified in ISO 32000-1:2008 shall be used for the value of the BM key in an extended graphic state dictionary.</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">BM == null || BM == "Normal" || BM = "Compatible" || BM == "Multiply" || BM == "Screen" || BM == "Overlay" || BM == "Darken" ||
+			BM == "Lighten" || BM == "ColorDodge" || BM == "ColorBurn" || BM == "HardLight" || BM == "SoftLight" || BM == "Difference" || BM == "Exclusion" ||
+			BM == "Hue" || BM == "Saturation" || BM == "Color" || BM == "Limunosity"</td>
 </tr>
 <tr>
-<td style="width: 50px">26</td><td style="width: 100px">6-1-11-t01</td><td style="width: 400px" align="left">A file specification dictionary, as defined in PDF 3.10.2, shall not contain the EF key</td><td style="width: 200px">CosFileSpecification</td><td style="width: 800px">EF == null</td>
+<td style="width: 50px">26</td><td style="width: 100px">6-2-11-2-t01</td><td style="width: 400px" align="left">All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to
+			the provisions in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
+			Type - name - (Required) The type of PDF object that this dictionary describes; must be Font for a font dictionary</td><td style="width: 200px">PDFont</td><td style="width: 800px">Type == "Font"</td>
 </tr>
 <tr>
-<td style="width: 50px">27</td><td style="width: 100px">6-1-11-t02</td><td style="width: 400px" align="left">A file's name dictionary, as defined in PDF Reference 3.6.3, shall not contain the EmbeddedFiles key</td><td style="width: 200px">CosDocument</td><td style="width: 800px">EmbeddedFiles_size == 0</td>
-</tr>
-<tr>
-<td style="width: 50px">28</td><td style="width: 100px">6-1-12-t01</td><td style="width: 400px" align="left">Largest Integer value is 2,147,483,647. Smallest integer value is -2,147,483,648</td><td style="width: 200px">CosInteger</td><td style="width: 800px">(intValue &lt;= 2147483647) &amp;&amp; (intValue &gt;= -2147483648)</td>
-</tr>
-<tr>
-<td style="width: 50px">29</td><td style="width: 100px">6-1-12-t02</td><td style="width: 400px" align="left">Absolute real value must be less than or equal to 32767.0</td><td style="width: 200px">CosReal</td><td style="width: 800px">(realValue &gt;= -32767.0) &amp;&amp; (realValue &lt;= 32767.0)</td>
-</tr>
-<tr>
-<td style="width: 50px">30</td><td style="width: 100px">6-1-12-t03</td><td style="width: 400px" align="left">Maximum length of a string (in bytes) is 65535</td><td style="width: 200px">CosString</td><td style="width: 800px">value.length() &lt; 65536</td>
-</tr>
-<tr>
-<td style="width: 50px">31</td><td style="width: 100px">6-1-12-t04</td><td style="width: 400px" align="left">Maximum length of a name (in bytes) is 127</td><td style="width: 200px">CosName</td><td style="width: 800px">internalRepresentation.length() &lt;= 127</td>
-</tr>
-<tr>
-<td style="width: 50px">32</td><td style="width: 100px">6-1-12-t05</td><td style="width: 400px" align="left">Maximum capacity of an array (in elements) is 8191</td><td style="width: 200px">CosArray</td><td style="width: 800px">size &lt;= 8191</td>
-</tr>
-<tr>
-<td style="width: 50px">33</td><td style="width: 100px">6-1-12-t06</td><td style="width: 400px" align="left">Maximum capacity of a dictionary (in entries) is 4095</td><td style="width: 200px">CosDict</td><td style="width: 800px">size &lt;= 4095</td>
-</tr>
-<tr>
-<td style="width: 50px">34</td><td style="width: 100px">6-1-12-t07</td><td style="width: 400px" align="left">Maximum number of indirect objects in a PDF file is 8,388,607</td><td style="width: 200px">CosDocument</td><td style="width: 800px">nrIndirects &lt;= 8388607</td>
-</tr>
-<tr>
-<td style="width: 50px">35</td><td style="width: 100px">6-1-12-t08</td><td style="width: 400px" align="left">Maximum depth of graphics state nesting by q and Q operators is 28</td><td style="width: 200px">Op_q_gsave</td><td style="width: 800px">nestingLevel &lt;= 28</td>
-</tr>
-<tr>
-<td style="width: 50px">36</td><td style="width: 100px">6-1-12-t09</td><td style="width: 400px" align="left">Maximum number of DeviceN components is 8</td><td style="width: 200px">PDDeviceN</td><td style="width: 800px">nrComponents &lt;= 8</td>
-</tr>
-<tr>
-<td style="width: 50px">37</td><td style="width: 100px">6-1-12-t10</td><td style="width: 400px" align="left">Maximum value of a CID (character identifier) is 65,535</td><td style="width: 200px">CIDGlyph</td><td style="width: 800px">CID &lt;= 65535</td>
-</tr>
-<tr>
-<td style="width: 50px">38</td><td style="width: 100px">6-1-3-t04</td><td style="width: 400px" align="left">In a linearized PDF, if the ID keyword is present in both the first page trailer dictionary 
-			and the last trailer dictionary, the value to both instances of the ID keyword shall be identical</td><td style="width: 200px">CosDocument</td><td style="width: 800px">(isLinearized != true)|| lastID == null || (firstPageID == lastID)</td>
-</tr>
-<tr>
-<td style="width: 50px">39</td><td style="width: 100px">6-1-4-t01</td><td style="width: 400px" align="left">In a cross reference subsection header the starting object number and the range shall be separated by a single SPACE character (20h)</td><td style="width: 200px">CosXRef</td><td style="width: 800px">subsectionHeaderSpaceSeparated == true</td>
-</tr>
-<tr>
-<td style="width: 50px">40</td><td style="width: 100px">6-2-10-t01</td><td style="width: 400px" align="left">A content stream shall not contain any operators not defined in PDF Reference
-			even if such operators are bracketed by the BX/EX compatibility operators</td><td style="width: 200px">Op_Undefined</td><td style="width: 800px">false</td>
-</tr>
-<tr>
-<td style="width: 50px">41</td><td style="width: 100px">6-2-2-t01</td><td style="width: 400px" align="left">A PDF/A-1 OutputIntent is an OutputIntent dictionary, as defined by PDF Reference 9.10.4, that is included in the file's OutputIntents 
-	array and has GTS_PDFA1 as the value of its S key and a valid ICC profile stream as the value its DestOutputProfile key</td><td style="width: 200px">ICCOutputProfile</td><td style="width: 800px">(deviceClass == "prtr" || deviceClass == "mntr") &amp;&amp; (colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY") &amp;&amp; version &lt; 3.0</td>
-</tr>
-<tr>
-<td style="width: 50px">42</td><td style="width: 100px">6-2-2-t02</td><td style="width: 400px" align="left">If a file's OutputIntents array contains more than one entry, then all entries that contain a DestOutputProfile
-			key shall have as the value of that key the same indirect object, which shall be a valid ICC profile stream</td><td style="width: 200px">PDOutputIntent</td><td style="width: 800px">destOutputProfileRef == null || gOutputProfileRef == null || destOutputProfileRef == gOutputProfileRef</td>
-</tr>
-<tr>
-<td style="width: 50px">43</td><td style="width: 100px">6-2-3-t01</td><td style="width: 400px" align="left">All ICCBased colour spaces shall be embedded as ICC profile streams as described in PDF Reference 4.5</td><td style="width: 200px">ICCInputProfile</td><td style="width: 800px">(deviceClass == "prtr" || deviceClass == "mntr" || deviceClass == "scnr" || deviceClass == "spac") &amp;&amp; 
-			(colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY" || colorSpace == "LAB ") &amp;&amp; version &lt; 3.0</td>
-</tr>
-<tr>
-<td style="width: 50px">44</td><td style="width: 100px">6-2-3-t02</td><td style="width: 400px" align="left">DeviceRGB may be used only if the file has a PDF/A-1 OutputIntent that uses an RGB colour space</td><td style="width: 200px">PDDeviceRGB</td><td style="width: 800px">gOutputCS != null &amp;&amp; gOutputCS == "RGB "</td>
-</tr>
-<tr>
-<td style="width: 50px">45</td><td style="width: 100px">6-2-3-t03</td><td style="width: 400px" align="left">DeviceCMYK may be used only if the file has a PDF/A-1 OutputIntent that uses a CMYK colour space</td><td style="width: 200px">PDDeviceCMYK</td><td style="width: 800px">gOutputCS != null &amp;&amp; gOutputCS == "CMYK"</td>
-</tr>
-<tr>
-<td style="width: 50px">46</td><td style="width: 100px">6-2-3-t04</td><td style="width: 400px" align="left">If an uncalibrated colour space is used in a file then that file shall contain a PDF/A-1 OutputIntent, as defined in 6.2.2</td><td style="width: 200px">PDDeviceGray</td><td style="width: 800px">gOutputCS != null</td>
-</tr>
-<tr>
-<td style="width: 50px">47</td><td style="width: 100px">6-2-3-t05</td><td style="width: 400px" align="left">All ICCBased colour spaces shall be embedded as ICC profile streams as described in PDF Reference 4.5.
-			The number of color components in the color space described by the ICC profile data must match the number of components actually in the ICC profile. 
-			As of PDF 1.4, N must be 1, 3, or 4</td><td style="width: 200px">ICCProfile</td><td style="width: 800px">N != null &amp;&amp; ((N == 1 &amp;&amp; colorSpace == "GRAY") || (N == 3 &amp;&amp; (colorSpace == "RGB " || colorSpace == "LAB ")) || (N == 4 &amp;&amp; colorSpace == "CMYK"))</td>
-</tr>
-<tr>
-<td style="width: 50px">48</td><td style="width: 100px">6-2-4-t01</td><td style="width: 400px" align="left">An Image dictionary shall not contain the Alternates key</td><td style="width: 200px">PDXImage</td><td style="width: 800px">Alternates_size == 0</td>
-</tr>
-<tr>
-<td style="width: 50px">49</td><td style="width: 100px">6-2-4-t02</td><td style="width: 400px" align="left">An XObject dictionary (Image or Form) shall not contain the OPI key</td><td style="width: 200px">PDXObject</td><td style="width: 800px">OPI_size == 0</td>
-</tr>
-<tr>
-<td style="width: 50px">50</td><td style="width: 100px">6-2-4-t03</td><td style="width: 400px" align="left">If an Image dictionary contains the Interpolate key, its value shall be false</td><td style="width: 200px">PDXImage</td><td style="width: 800px">Interpolate == false</td>
-</tr>
-<tr>
-<td style="width: 50px">51</td><td style="width: 100px">6-2-5-t01</td><td style="width: 400px" align="left">A form XObject dictionary shall not contain the Subtype2 key with a value of PS or the PS key</td><td style="width: 200px">PDXForm</td><td style="width: 800px">(Subtype2 == null || Subtype2 != "PS") &amp;&amp; PS_size == 0</td>
-</tr>
-<tr>
-<td style="width: 50px">52</td><td style="width: 100px">6-2-6-t01</td><td style="width: 400px" align="left">A conforming file shall not contain any reference XObjects</td><td style="width: 200px">PDXForm</td><td style="width: 800px">Ref_size == 0</td>
-</tr>
-<tr>
-<td style="width: 50px">53</td><td style="width: 100px">6-2-7-t01</td><td style="width: 400px" align="left">A conforming file shall not contain any PostScript XObjects</td><td style="width: 200px">PDXObject</td><td style="width: 800px">Subtype != "PS"</td>
-</tr>
-<tr>
-<td style="width: 50px">54</td><td style="width: 100px">6-2-8-t01</td><td style="width: 400px" align="left">An ExtGState dictionary shall not contain the TR key</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">TR == null</td>
-</tr>
-<tr>
-<td style="width: 50px">55</td><td style="width: 100px">6-2-8-t02</td><td style="width: 400px" align="left">An ExtGState dictionary shall not contain the TR2 key with a value other than Default</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">TR2 == null || TR2 == "Default"</td>
-</tr>
-<tr>
-<td style="width: 50px">56</td><td style="width: 100px">6-2-9-t01</td><td style="width: 400px" align="left">Where a rendering intent is specified, its value shall be one of the four values defined in PDF Reference
-			RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation</td><td style="width: 200px">CosRenderingIntent</td><td style="width: 800px">value == "RelativeColorimetric" || value == "AbsoluteColorimetric" || value == "Perceptual" || value == "Saturation"</td>
-</tr>
-<tr>
-<td style="width: 50px">57</td><td style="width: 100px">6-3-2-t01</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
-	Type - name - (Required) The type of PDF object that this dictionary describes; must be Font for a font dictionary</td><td style="width: 200px">PDFont</td><td style="width: 800px">Type == "Font"</td>
-</tr>
-<tr>
-<td style="width: 50px">58</td><td style="width: 100px">6-3-2-t02</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
+<td style="width: 50px">27</td><td style="width: 100px">6-2-11-2-t02</td><td style="width: 400px" align="left">All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
 			Subtype - name - (Required) The type of font; must be "Type1" for Type 1 fonts, "MMType1" for multiple master fonts, "TrueType" for TrueType fonts
 			"Type3" for Type 3 fonts, "Type0" for Type 0 fonts and "CIDFontType0" or "CIDFontType2" for CID fonts</td><td style="width: 200px">PDFont</td><td style="width: 800px">Subtype == "Type1" || Subtype == "MMType1" || Subtype == "TrueType" || Subtype == "Type3" || Subtype == "Type0" 
 			|| Subtype == "CIDFontType0" || Subtype == "CIDFontType2"</td>
 </tr>
 <tr>
-<td style="width: 50px">59</td><td style="width: 100px">6-3-2-t03</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
+<td style="width: 50px">28</td><td style="width: 100px">6-2-11-2-t03</td><td style="width: 400px" align="left">All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions. 
 			BaseFont - name - (Required) The PostScript name of the font</td><td style="width: 200px">PDFont</td><td style="width: 800px">Subtype == "Type3" || BaseFont != null</td>
 </tr>
 <tr>
-<td style="width: 50px">60</td><td style="width: 100px">6-3-2-t04</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
+<td style="width: 50px">29</td><td style="width: 100px">6-2-11-2-t04</td><td style="width: 400px" align="left">All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
 			FirstChar - integer - (Required except for the standard 14 fonts) The first character code defined in the font's Widths array</td><td style="width: 200px">PDSimpleFont</td><td style="width: 800px">isStandard == true || FirstChar != null</td>
 </tr>
 <tr>
-<td style="width: 50px">61</td><td style="width: 100px">6-3-2-t05</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
+<td style="width: 50px">30</td><td style="width: 100px">6-2-11-2-t05</td><td style="width: 400px" align="left">All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
 			FirstChar - integer - (Required except for the standard 14 fonts) The first character code defined in the font's Widths array</td><td style="width: 200px">PDSimpleFont</td><td style="width: 800px">isStandard == true || LastChar != null</td>
 </tr>
 <tr>
-<td style="width: 50px">62</td><td style="width: 100px">6-3-2-t06</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
+<td style="width: 50px">31</td><td style="width: 100px">6-2-11-2-t06</td><td style="width: 400px" align="left">All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
 			Widths - array - (Required except for the standard 14 fonts; indirect reference preferred) An array of (LastChar &minus; FirstChar + 1) widths</td><td style="width: 200px">PDSimpleFont</td><td style="width: 800px">isStandard == true || (Widths_size != null &amp;&amp; Widths_size == LastChar - FirstChar + 1)</td>
 </tr>
 <tr>
-<td style="width: 50px">63</td><td style="width: 100px">6-3-3-t01</td><td style="width: 400px" align="left">For any given composite (Type 0) font referenced within a conforming file, the CIDSystemInfo entries of its 
-			CIDFont and CMap dictionaries shall be compatible</td><td style="width: 200px">PDType0Font</td><td style="width: 800px">areRegistryOrderingCompatible == true</td>
+<td style="width: 50px">32</td><td style="width: 100px">6-2-11-3-t01</td><td style="width: 400px" align="left">For any given composite (Type 0) font within a conforming file, the CIDSystemInfo entry in its CIDFont dictionary and its Encoding dictionary 
+			shall have the following relationship: 
+			- If the Encoding key in the Type 0 font dictionary is Identity-H or Identity-V, any values of Registry, Ordering, 
+			and Supplement may be used in the CIDSystemInfo entry of the CIDFont. 
+			- Otherwise, the corresponding Registry and Ordering strings in both CIDSystemInfo dictionaries shall be identical, and the value of the Supplement key in 
+			the CIDSystemInfo dictionary of the CIDFont shall be greater than or equal to the Supplement key in the CIDSystemInfo dictionary of the CMap.</td><td style="width: 200px">PDType0Font</td><td style="width: 800px">cmapName == "Identity-H" || cmapName == "Identity-V" || (areRegistryOrderingCompatible == true &amp;&amp; isSupplementCompatible == true)</td>
 </tr>
 <tr>
-<td style="width: 50px">64</td><td style="width: 100px">6-3-3-t02</td><td style="width: 400px" align="left">For all Type 2 CIDFonts, the CIDFont dictionary shall contain a CIDToGIDMap entry that shall be a stream mapping 
-			from CIDs to glyph indices or the name Identity, as described in PDF Reference Table 5.13</td><td style="width: 200px">PDCIDFont</td><td style="width: 800px">Subtype != "CIDFontType2" || CIDToGIDMap != null</td>
+<td style="width: 50px">33</td><td style="width: 100px">6-2-11-3-t02</td><td style="width: 400px" align="left">ISO 32000-1:2008, 9.7.4, Table 117 requires that all embedded Type 2 CIDFonts in the CIDFont dictionary shall contain a 
+			CIDToGIDMap entry that shall be a stream mapping from CIDs to glyph indices or the name Identity, as described in ISO 32000-1:2008, 9.7.4, Table 117.</td><td style="width: 200px">PDCIDFont</td><td style="width: 800px">Subtype != "CIDFontType2" || CIDToGIDMap != null</td>
 </tr>
 <tr>
-<td style="width: 50px">65</td><td style="width: 100px">6-3-3-t03</td><td style="width: 400px" align="left">All CMaps used within a conforming file, except Identity-H and Identity-V, shall be embedded in that file as described in PDF Reference 5.6.4</td><td style="width: 200px">PDCMap</td><td style="width: 800px">CMapName == "Identity-H" || CMapName == "Identity-V" || embeddedFile_size == 1</td>
+<td style="width: 50px">34</td><td style="width: 100px">6-2-11-3-t03</td><td style="width: 400px" align="left">All CMaps used within a PDF/A-2 file, except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118, shall be embedded in that file as described 
+			in ISO 32000-1:2008, 9.7.5.</td><td style="width: 200px">PDCMap</td><td style="width: 800px">CMapName == "Identity-H" || CMapName == "Identity-V" || CMapName == "GB-EUC-H" || CMapName == "GB-EUC-V" ||
+			CMapName == "GBpc-EUC-H" || CMapName == "GBpc-EUC-V" || CMapName == "GBK-EUC-H" || CMapName == "GBK-EUC-V" ||
+			CMapName == "GBKp-EUC-H" || CMapName == "GBKp-EUC-V" || CMapName == "GBK2K-EUC-H" || CMapName == "GBK2K-EUC-V" ||
+			CMapName == "UniGB-UCS2-H" || CMapName == "UniGB-UCS2-V" || CMapName == "UniGB-UFT16-H" || CMapName == "UniGB-UFT16-V" ||
+			CMapName == "B5pc-H" || CMapName == "B5pc-V" || CMapName == "HKscs-B5-H" || CMapName == "HKscs-B5-V" ||
+			CMapName == "ETen-B5-H" || CMapName == "ETen-B5-V" || CMapName == "ETenms-B5-H" || CMapName == "ETenms-B5-V" ||
+			CMapName == "CNS-EUC-H" || CMapName == "CNS-EUC-V" || CMapName == "UniCNS-UCS2-H" || CMapName == "UniCNS-UCS2-V" ||
+			CMapName == "UniCNS-UFT16-H" || CMapName == "UniCNS-UTF16-V" || CMapName == "83pv-RKSJ-H" || CMapName == "90ms-RKSJ-H" ||
+			CMapName == "90ms-RKSJ-V" || CMapName == "90msp-RKSJ-H" || CMapName == "90msp-RKSJ-V" || CMapName == "90pv-RKSJ-H" ||
+			CMapName == "Add-RKSJ-H" || CMapName == "Add-RKSJ-V" || CMapName == "EUC-H" || CMapName == "EUC-V" ||
+			CMapName == "Ext-RKSJ-H" || CMapName == "Ext-RKSJ-V" || CMapName == "H" || CMapName == "V" ||
+			CMapName == "UniJIS-UCS2-H" || CMapName == "UniJIS-UCS2-V" || CMapName == "UniJIS-UCS2-HW-H" || CMapName == "UniJIS-UCS2-HW-V" ||
+			CMapName == "UniJIS-UTF16-H" || CMapName == "UniJIS-UTF16-V" || CMapName == "KSC-EUC-H" || CMapName == "KSC-EUC-V" ||
+			CMapName == "KSCms-UHC-H" || CMapName == "KSCms-UHC-V" || CMapName == "KSCms-UHC-HW-H" || CMapName == "KSCms-UHC-HW-V" ||
+			CMapName == "KSCpc-EUC-H" || CMapName == "UniKS-UCS2-H" || CMapName == "UniKS-UCS2-V" || CMapName == "UniKS-UTF16-H" || CMapName == "UniKS-UTF16-V" ||
+			embeddedFile_size == 1</td>
 </tr>
 <tr>
-<td style="width: 50px">66</td><td style="width: 100px">6-3-3-t04</td><td style="width: 400px" align="left">For those CMaps that are embedded, the integer value of the WMode entry in the CMap dictionary shall be identical to the WMode value in the embedded CMap stream</td><td style="width: 200px">CMapFile</td><td style="width: 800px">WMode == dictWMode</td>
+<td style="width: 50px">35</td><td style="width: 100px">6-2-11-3-t04</td><td style="width: 400px" align="left">For those CMaps that are embedded, the integer value of the WMode entry in the CMap dictionary shall be identical to the WMode  value
+			in the embedded CMap stream.</td><td style="width: 200px">CMapFile</td><td style="width: 800px">WMode == dictWMode</td>
 </tr>
 <tr>
-<td style="width: 50px">67</td><td style="width: 100px">6-3-4-t01</td><td style="width: 400px" align="left">The font programs for all fonts used within a conforming file shall be embedded within that file, as defined in PDF Reference 5.8, 
+<td style="width: 50px">36</td><td style="width: 100px">6-2-11-4-t01</td><td style="width: 400px" align="left">The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9.</td><td style="width: 200px">PDFont</td><td style="width: 800px">Subtype == "Type3" || Subtype == "Type0" || fontFile_size == 1</td>
+</tr>
+<tr>
+<td style="width: 50px">37</td><td style="width: 100px">6-2-11-4-t02</td><td style="width: 400px" align="left">Embedded fonts shall define all glyphs referenced for rendering within the conforming file.</td><td style="width: 200px">Glyph</td><td style="width: 800px">isGlyphPresent == true</td>
+</tr>
+<tr>
+<td style="width: 50px">38</td><td style="width: 100px">6-2-11-4-t03</td><td style="width: 400px" align="left">If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs
+			present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not.</td><td style="width: 200px">PDType1Font</td><td style="width: 800px">CharSet == null || charSetListsAllGlyphs == true</td>
+</tr>
+<tr>
+<td style="width: 50px">39</td><td style="width: 100px">6-2-11-4-t04</td><td style="width: 400px" align="left">If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program,
+			regardless of whether a CID in the font is referenced or used by the PDF or not.</td><td style="width: 200px">PDCIDFont</td><td style="width: 800px">CIDSet_size == 0 || cidSetListsAllGlyphs == true</td>
+</tr>
+<tr>
+<td style="width: 50px">40</td><td style="width: 100px">6-2-11-5-t01</td><td style="width: 400px" align="left">For every font embedded in a conforming file and used for rendering, the glyph width information in the font dictionary and in the embedded 
+			font program shall be consistent.</td><td style="width: 200px">Glyph</td><td style="width: 800px">isWidthConsistent == true</td>
+</tr>
+<tr>
+<td style="width: 50px">41</td><td style="width: 100px">6-2-11-6-t01</td><td style="width: 400px" align="left">For all non-symbolic TrueType fonts used for rendering, the embedded TrueType font program shall contain one or several non-symbolic 
+			cmap entries such that all necessary glyph lookups can be carried out.</td><td style="width: 200px">TrueTypeFontProgram</td><td style="width: 800px">isSymbolic == true || nrCmaps &gt;= 1</td>
+</tr>
+<tr>
+<td style="width: 50px">42</td><td style="width: 100px">6-2-11-6-t02</td><td style="width: 400px" align="left">No non-symbolic TrueType font shall define a Differences array unless all of the glyph names in
+			the Differences array are listed in the Adobe Glyph List and the embedded font program contains at least the
+			Microsoft Unicode (3,1 &ndash; Platform ID=3, Encoding ID=1) encoding in the "cmap" table.</td><td style="width: 200px">PDTrueTypeFont</td><td style="width: 800px">isSymbolic == true || (Encoding == "MacRomanEncoding" || Encoding == "WinAnsiEncoding") || (Encoding == "Custom" &amp;&amp; differencesAreUnicodeCompliant == true)</td>
+</tr>
+<tr>
+<td style="width: 50px">43</td><td style="width: 100px">6-2-11-6-t03</td><td style="width: 400px" align="left">Symbolic TrueType fonts shall not contain an Encoding entry in the font dictionary</td><td style="width: 200px">PDTrueTypeFont</td><td style="width: 800px">isSymbolic == false || Encoding == null</td>
+</tr>
+<tr>
+<td style="width: 50px">44</td><td style="width: 100px">6-2-11-6-t04</td><td style="width: 400px" align="left">Symbolic TrueType fonts shall not contain an Encoding entry in the font dictionary, and the "cmap" table in the embedded font program
+			shall either contain exactly one encoding or it shall contain, at least, the Microsoft Symbol (3,0 &ndash; Platform ID=3, Encoding ID=0) encoding.</td><td style="width: 200px">TrueTypeFontProgram</td><td style="width: 800px">isSymbolic == false || nrCmaps == 1 || cmap30Present == true</td>
+</tr>
+<tr>
+<td style="width: 50px">45</td><td style="width: 100px">6-2-11-8-t01</td><td style="width: 400px" align="left">A PDF/A-2 compliant document shall not contain a reference to the .notdef glyph from any of the text showing
+			operators, regardless of text rendering mode, in any content stream.</td><td style="width: 200px">Glyph</td><td style="width: 800px">name != ".notdef"</td>
+</tr>
+<tr>
+<td style="width: 50px">46</td><td style="width: 100px">6-2-2-t01</td><td style="width: 400px" align="left">Content streams shall not contain any operators not defined in ISO 32000-1 even if such operators are bracketed 
+			by the BX/EX compatibility operators.</td><td style="width: 200px">Op_Undefined</td><td style="width: 800px">false</td>
+</tr>
+<tr>
+<td style="width: 50px">47</td><td style="width: 100px">6-2-3-t01</td><td style="width: 400px" align="left">The profile stream that is the value of the DestOutputProfile key shall either be an output profile (Device Class = "prtr") or a monitor profile 
+			(Device Class = "mntr"). The profiles shall have a colour space of either "GRAY", "RGB", or "CMYK".</td><td style="width: 200px">ICCOutputProfile</td><td style="width: 800px">(deviceClass == "prtr" || deviceClass == "mntr") &amp;&amp; (colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY") &amp;&amp; version &lt; 5.0</td>
+</tr>
+<tr>
+<td style="width: 50px">48</td><td style="width: 100px">6-2-3-t02</td><td style="width: 400px" align="left">If a file's OutputIntents array contains more than one entry, as might be the case where a file is compliant
+			with this part of ISO 19005 and at the same time with PDF/X-4 or PDF/E-1, then all entries that contain a
+			DestOutputProfile key shall have as the value of that key the same indirect object, which shall be a valid ICC
+			profile stream.</td><td style="width: 200px">PDOutputIntent</td><td style="width: 800px">destOutputProfileIndirect == null || gOutputProfileIndirect == null || destOutputProfileIndirect == gOutputProfileIndirect</td>
+</tr>
+<tr>
+<td style="width: 50px">49</td><td style="width: 100px">6-2-3-t03</td><td style="width: 400px" align="left">In addition, the DestOutputProfileRef key, as defined in ISO 15930-7:2010, Annex A, shall not be present in any PDF/X OutputIntent.</td><td style="width: 200px">PDOutputIntent</td><td style="width: 800px">DestOutputProfileRef_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">50</td><td style="width: 100px">6-2-4-t01</td><td style="width: 400px" align="left">The profile that forms the stream of an ICCBased colour space shall conform to ICC.1:1998-09, ICC.1:2001-12, ICC.1:2003-09 or ISO 15076-1.</td><td style="width: 200px">ICCInputProfile</td><td style="width: 800px">(deviceClass == "prtr" || deviceClass == "mntr" || deviceClass == "scnr" || deviceClass == "spac") &amp;&amp; 
+			(colorSpace == "RGB " || colorSpace == "CMYK" || colorSpace == "GRAY" || colorSpace == "LAB ") &amp;&amp; version &lt; 5.0</td>
+</tr>
+<tr>
+<td style="width: 50px">51</td><td style="width: 100px">6-2-4-t02</td><td style="width: 400px" align="left">DeviceRGB shall only be used if a device independent DefaultRGB colour space has been set when the DeviceRGB colour space is used,
+			or if the file has a PDF/A OutputIntent that contains an RGB destination profile.</td><td style="width: 200px">PDDeviceRGB</td><td style="width: 800px">gOutputCS != null &amp;&amp; gOutputCS == "RGB "</td>
+</tr>
+<tr>
+<td style="width: 50px">52</td><td style="width: 100px">6-2-4-t03</td><td style="width: 400px" align="left">DeviceCMYK shall only be used if a device independent DefaultCMYK colour space has been set or if a DeviceN-based DefaultCMYK colour space
+			has been set when the DeviceCMYK colour space is used or the file has a PDF/A OutputIntent that contains a CMYK destination profile.</td><td style="width: 200px">PDDeviceCMYK</td><td style="width: 800px">gOutputCS != null &amp;&amp; gOutputCS == "CMYK"</td>
+</tr>
+<tr>
+<td style="width: 50px">53</td><td style="width: 100px">6-2-4-t04</td><td style="width: 400px" align="left">DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used,
+			or if a PDF/A OutputIntent is present.</td><td style="width: 200px">PDDeviceGray</td><td style="width: 800px">gOutputCS != null</td>
+</tr>
+<tr>
+<td style="width: 50px">54</td><td style="width: 100px">6-2-4-t05</td><td style="width: 400px" align="left">For any spot colour used in a DeviceN or NChannel colour space, an entry in the Colorants dictionary shall be present.</td><td style="width: 200px">PDDeviceN</td><td style="width: 800px">areColorantsPresent == true</td>
+</tr>
+<tr>
+<td style="width: 50px">55</td><td style="width: 100px">6-2-4-t06</td><td style="width: 400px" align="left">All Separation arrays within a single PDF/A-2 file (including those in Colorants dictionaries) that have the
+			same name shall have the same tintTransform and alternateSpace. In evaluating equivalence, the PDF
+			objects shall be compared, rather than the computational result of the use of those PDF objects. Compression
+			and whether or not an object is direct or indirect shall be ignored.</td><td style="width: 200px">PDSeparation</td><td style="width: 800px">areTintAndAlternateConsistent == true</td>
+</tr>
+<tr>
+<td style="width: 50px">56</td><td style="width: 100px">6-2-5-t01</td><td style="width: 400px" align="left">An ExtGState dictionary shall not contain the TR key</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">TR == null</td>
+</tr>
+<tr>
+<td style="width: 50px">57</td><td style="width: 100px">6-2-5-t02</td><td style="width: 400px" align="left">An ExtGState dictionary shall not contain the TR2 key with a value other than Default</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">TR2 == null || TR2 == "Default"</td>
+</tr>
+<tr>
+<td style="width: 50px">58</td><td style="width: 100px">6-2-5-t03</td><td style="width: 400px" align="left">An ExtGState dictionary shall not contain the HTP key</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">HTP_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">59</td><td style="width: 100px">6-2-5-t04</td><td style="width: 400px" align="left">All halftones in a conforming PDF/A-2 file shall have the value 1 or 5 for the HalftoneType key.</td><td style="width: 200px">PDHalftone</td><td style="width: 800px">HalftoneType != null &amp;&amp; (HalftoneType == 1 || HalftoneType == 5)</td>
+</tr>
+<tr>
+<td style="width: 50px">60</td><td style="width: 100px">6-2-5-t05</td><td style="width: 400px" align="left">Halftones in a conforming PDF/A-2 file shall not contain a HalftoneName key.</td><td style="width: 200px">PDHalftone</td><td style="width: 800px">HalftoneName == null</td>
+</tr>
+<tr>
+<td style="width: 50px">61</td><td style="width: 100px">6-2-6-t01</td><td style="width: 400px" align="left">Where a rendering intent is specified, its value shall be one of the four values defined in ISO 32000-1:2008,
+			Table 70: RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation.</td><td style="width: 200px">CosRenderingIntent</td><td style="width: 800px">value == "RelativeColorimetric" || value == "AbsoluteColorimetric" || value == "Perceptual" || value == "Saturation"</td>
+</tr>
+<tr>
+<td style="width: 50px">62</td><td style="width: 100px">6-2-8-t01</td><td style="width: 400px" align="left">An Image dictionary shall not contain the Alternates key</td><td style="width: 200px">PDXImage</td><td style="width: 800px">Alternates_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">63</td><td style="width: 100px">6-2-8-t02</td><td style="width: 400px" align="left">An Image dictionary shall not contain the OPI key</td><td style="width: 200px">PDXImage</td><td style="width: 800px">OPI_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">64</td><td style="width: 100px">6-2-8-t03</td><td style="width: 400px" align="left">If an Image dictionary contains the Interpolate key, its value shall be false. 
+			For an inline image, the I key shall have a value of false.</td><td style="width: 200px">PDXImage</td><td style="width: 800px">Interpolate == false</td>
+</tr>
+<tr>
+<td style="width: 50px">65</td><td style="width: 100px">6-2-9-t01</td><td style="width: 400px" align="left">A form XObject dictionary shall not contain any of the following: - the OPI key; - the Subtype2 key with a value of PS; - the PS key.</td><td style="width: 200px">PDXForm</td><td style="width: 800px">(Subtype2 == null || Subtype2 != "PS") &amp;&amp; PS_size == 0 &amp;&amp; OPI_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">66</td><td style="width: 100px">6-2-9-t02</td><td style="width: 400px" align="left">A conforming file shall not contain any reference XObjects</td><td style="width: 200px">PDXForm</td><td style="width: 800px">Ref_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">67</td><td style="width: 100px">6-2-9-t03</td><td style="width: 400px" align="left">A conforming file shall not contain any PostScript XObjects</td><td style="width: 200px">PDXObject</td><td style="width: 800px">Subtype != "PS"</td>
+</tr>
+<tr>
+<td style="width: 50px">68</td><td style="width: 100px">6-3-1-t01</td><td style="width: 400px" align="left">Annotation types not defined in ISO 32000-1 shall not be permitted. Additionally, the 3D, Sound, Screen and Movie types shall not be permitted.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype == "Text" || Subtype == "Link" || Subtype == "FreeText" || Subtype == "Line" || 
+			Subtype == "Square" || Subtype == "Circle" || Subtype == "Polygon" || Subtype == "PolyLine" ||
+			Subtype == "Highlight" || Subtype == "Underline" ||	Subtype == "Squiggly" || Subtype == "StrikeOut" || 
+			Subtype == "Stamp" || Subtype == "Caret" || Subtype == "Ink" || Subtype == "Popup" || 
+			Subtype == "FileAttachment" || Subtype == "Widget" || Subtype == "PrinterMark" || Subtype == "TrapNet" ||
+			Subtype == "Watermark" || Subtype == "Redact"</td>
+</tr>
+<tr>
+<td style="width: 50px">69</td><td style="width: 100px">6-3-2-t01</td><td style="width: 400px" align="left">Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype == "Popup" || F != null</td>
+</tr>
+<tr>
+<td style="width: 50px">70</td><td style="width: 100px">6-3-2-t02</td><td style="width: 400px" align="left">If present, the F key's Print flag bit shall be set to 1 and its Hidden, Invisible, ToggleNoView, and NoView flag bits shall be set to 0.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">F == null || ((F &amp; 1) == 0 &amp;&amp; (F &amp; 2) == 0 &amp;&amp; (F &amp; 4) == 1 &amp;&amp; (F &amp; 32) == 0 &amp;&amp; (F &amp; 256) == 0)</td>
+</tr>
+<tr>
+<td style="width: 50px">71</td><td style="width: 100px">6-3-2-t03</td><td style="width: 400px" align="left">Text annotations should set the NoZoom and NoRotate flag bits of the F key to 1.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype != "Text" || (F != null &amp;&amp; (F &amp; 8) == 1 &amp;&amp; (F &amp; 16) == 1)</td>
+</tr>
+<tr>
+<td style="width: 50px">72</td><td style="width: 100px">6-3-3-t01</td><td style="width: 400px" align="left">Every annotation (including those whose Subtype value is Widget, as used for form fields), except for the two cases listed below,
+			shall have at least one appearance dictionary:
+			- annotations where the value of the Rect key consists of an array where value 1 is equal to value 3 and value 2 is equal to value 4;
+			- annotations whose Subtype value is Popup or Link.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">(width == 0 &amp;&amp; height ==0) || Subtype == "Popup" || Subtype == "Link" || AP != null</td>
+</tr>
+<tr>
+<td style="width: 50px">73</td><td style="width: 100px">6-3-3-t02</td><td style="width: 400px" align="left">For all annotation dictionaries containing an AP key, the appearance dictionary that it defines as its value shall
+			contain only the N key. If an annotation dictionary's Subtype key has a value of Widget and its FT key has a
+			value of Btn, the value of the N key shall be an appearance subdictionary, otherwise the value of the N key shall be an appearance stream.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">AP == null || ( AP == "N" &amp;&amp; ( N_type == "Stream" || (Subtype == "Widget" &amp;&amp; FT == "Btn" &amp;&amp; N_type == "Dict") ) )</td>
+</tr>
+<tr>
+<td style="width: 50px">74</td><td style="width: 100px">6-4-1-t01</td><td style="width: 400px" align="left">A Widget annotation dictionary or Field dictionary shall not contain the A or AA keys.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype != "Widget" || (A_size == 0 &amp;&amp; AA_size == 0)</td>
+</tr>
+<tr>
+<td style="width: 50px">75</td><td style="width: 100px">6-4-1-t02</td><td style="width: 400px" align="left">A Widget annotation dictionary or Field dictionary shall not contain the A or AA keys.</td><td style="width: 200px">PDFormField</td><td style="width: 800px">AA_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">76</td><td style="width: 100px">6-4-1-t03</td><td style="width: 400px" align="left">The NeedAppearances flag of the interactive form dictionary shall either not be present or shall be false.</td><td style="width: 200px">PDAcroForm</td><td style="width: 800px">NeedAppearances == null || NeedAppearances == false</td>
+</tr>
+<tr>
+<td style="width: 50px">77</td><td style="width: 100px">6-4-2-t01</td><td style="width: 400px" align="left">The document's interactive form dictionary that forms the value of the AcroForm key in the document's Catalog of a PDF/A-2 file, 
+			if present, shall not contain the XFA key.</td><td style="width: 200px">PDAcroForm</td><td style="width: 800px">XFA_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">78</td><td style="width: 100px">6-4-2-t02</td><td style="width: 400px" align="left">A document's Catalog shall not contain the NeedsRendering key.</td><td style="width: 200px">CosDocument</td><td style="width: 800px">NeedsRendering == false</td>
+</tr>
+<tr>
+<td style="width: 50px">79</td><td style="width: 100px">6-5-1-t01</td><td style="width: 400px" align="left">The Launch, Sound, Movie, ResetForm, ImportData, Hide, SetOCGState, Rendition, Trans, GoTo3DView and JavaScript actions shall not be permitted. 
+			Additionally, the deprecated set-state and noop actions shall not be permitted.</td><td style="width: 200px">PDAction</td><td style="width: 800px">S == "GoTo" || S == "GoToR" || S == "GotToE" || S == "Thread" || S == "URI" || S == "Named" || S == "SubmitForm"</td>
+</tr>
+<tr>
+<td style="width: 50px">80</td><td style="width: 100px">6-5-1-t02</td><td style="width: 400px" align="left">Named actions other than NextPage, PrevPage, FirstPage, and LastPage shall not be permitted.</td><td style="width: 200px">PDNamedAction</td><td style="width: 800px">N == "NextPage" || N == "PrevPage" || N == "FirstPage" || N == "LastPage"</td>
+</tr>
+<tr>
+<td style="width: 50px">81</td><td style="width: 100px">6-5-2-t01</td><td style="width: 400px" align="left">The document's Catalog shall not include an AA entry for an additional-actions dictionary.</td><td style="width: 200px">PDDocument</td><td style="width: 800px">AA_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">82</td><td style="width: 100px">6-5-2-t02</td><td style="width: 400px" align="left">The Page dictionary shall not include an AA entry for an additional-actions dictionary.</td><td style="width: 200px">PDPage</td><td style="width: 800px">AA_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">83</td><td style="width: 100px">6-6-4-t02</td><td style="width: 400px" align="left">The value of pdfaid:part shall be the part number of ISO 19005 to which the file conforms. Files prepared in
+			compliance with this part of ISO 19005 shall use a value of 2.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">part == 2</td>
+</tr>
+<tr>
+<td style="width: 50px">84</td><td style="width: 100px">6-6-4-t03</td><td style="width: 400px" align="left">Level B conforming file shall specify the value of pdfaid:conformance as B.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">conformance == "B"</td>
+</tr>
+<tr>
+<td style="width: 50px">85</td><td style="width: 100px">6-8-t01</td><td style="width: 400px" align="left">A file specification dictionary, as defined in ISO 32000-1:2008, 7.11.3, may contain the EF key, provided that the embedded file is
+			compliant with either ISO 19005-1 or this part of ISO 19005.</td><td style="width: 200px">EmbeddedFile</td><td style="width: 800px">isValidPDFA12 == true</td>
+</tr>
+<tr>
+<td style="width: 50px">86</td><td style="width: 100px">6-8-t02</td><td style="width: 400px" align="left">The file specification dictionary for an embedded file shall contain the F and UF keys</td><td style="width: 200px">CosFileSpecification</td><td style="width: 800px">EF_size == 0 || (F != null &amp;&amp; UF != null)</td>
+</tr>
+<tr>
+<td style="width: 50px">87</td><td style="width: 100px">6-1-10-t02</td><td style="width: 400px" align="left">The LZWDecode filter shall not be permitted</td><td style="width: 200px">PDInlineImage</td><td style="width: 800px">F == null || F.indexOf("LZW") == -1</td>
+</tr>
+<tr>
+<td style="width: 50px">88</td><td style="width: 100px">6-1-11-t01</td><td style="width: 400px" align="left">A file specification dictionary, as defined in PDF 3.10.2, shall not contain the EF key</td><td style="width: 200px">CosFileSpecification</td><td style="width: 800px">EF_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">89</td><td style="width: 100px">6-1-11-t02</td><td style="width: 400px" align="left">A file's name dictionary, as defined in PDF Reference 3.6.3, shall not contain the EmbeddedFiles key</td><td style="width: 200px">CosDocument</td><td style="width: 800px">EmbeddedFiles_size == 0</td>
+</tr>
+<tr>
+<td style="width: 50px">90</td><td style="width: 100px">6-1-12-t01</td><td style="width: 400px" align="left">Largest Integer value is 2,147,483,647. Smallest integer value is -2,147,483,648</td><td style="width: 200px">CosInteger</td><td style="width: 800px">(intValue &lt;= 2147483647) &amp;&amp; (intValue &gt;= -2147483648)</td>
+</tr>
+<tr>
+<td style="width: 50px">91</td><td style="width: 100px">6-1-12-t02</td><td style="width: 400px" align="left">Absolute real value must be less than or equal to 32767.0</td><td style="width: 200px">CosReal</td><td style="width: 800px">(realValue &gt;= -32767.0) &amp;&amp; (realValue &lt;= 32767.0)</td>
+</tr>
+<tr>
+<td style="width: 50px">92</td><td style="width: 100px">6-1-12-t03</td><td style="width: 400px" align="left">Maximum length of a string (in bytes) is 65535</td><td style="width: 200px">CosString</td><td style="width: 800px">value.length() &lt; 65536</td>
+</tr>
+<tr>
+<td style="width: 50px">93</td><td style="width: 100px">6-1-12-t04</td><td style="width: 400px" align="left">Maximum length of a name (in bytes) is 127</td><td style="width: 200px">CosName</td><td style="width: 800px">internalRepresentation.length() &lt;= 127</td>
+</tr>
+<tr>
+<td style="width: 50px">94</td><td style="width: 100px">6-1-12-t05</td><td style="width: 400px" align="left">Maximum capacity of an array (in elements) is 8191</td><td style="width: 200px">CosArray</td><td style="width: 800px">size &lt;= 8191</td>
+</tr>
+<tr>
+<td style="width: 50px">95</td><td style="width: 100px">6-1-12-t06</td><td style="width: 400px" align="left">Maximum capacity of a dictionary (in entries) is 4095</td><td style="width: 200px">CosDict</td><td style="width: 800px">size &lt;= 4095</td>
+</tr>
+<tr>
+<td style="width: 50px">96</td><td style="width: 100px">6-1-12-t07</td><td style="width: 400px" align="left">Maximum number of indirect objects in a PDF file is 8,388,607</td><td style="width: 200px">CosDocument</td><td style="width: 800px">nrIndirects &lt;= 8388607</td>
+</tr>
+<tr>
+<td style="width: 50px">97</td><td style="width: 100px">6-1-12-t08</td><td style="width: 400px" align="left">Maximum depth of graphics state nesting by q and Q operators is 28</td><td style="width: 200px">Op_q_gsave</td><td style="width: 800px">nestingLevel &lt;= 28</td>
+</tr>
+<tr>
+<td style="width: 50px">98</td><td style="width: 100px">6-1-12-t09</td><td style="width: 400px" align="left">Maximum number of DeviceN components is 8</td><td style="width: 200px">PDDeviceN</td><td style="width: 800px">nrComponents &lt;= 8</td>
+</tr>
+<tr>
+<td style="width: 50px">99</td><td style="width: 100px">6-1-12-t10</td><td style="width: 400px" align="left">Maximum value of a CID (character identifier) is 65,535</td><td style="width: 200px">CIDGlyph</td><td style="width: 800px">CID &lt;= 65535</td>
+</tr>
+<tr>
+<td style="width: 50px">100</td><td style="width: 100px">6-1-3-t04</td><td style="width: 400px" align="left">In a linearized PDF, if the ID keyword is present in both the first page trailer dictionary 
+			and the last trailer dictionary, the value to both instances of the ID keyword shall be identical</td><td style="width: 200px">CosDocument</td><td style="width: 800px">(isLinearized != true)|| lastID == null || (firstPageID == lastID)</td>
+</tr>
+<tr>
+<td style="width: 50px">101</td><td style="width: 100px">6-1-4-t01</td><td style="width: 400px" align="left">In a cross reference subsection header the starting object number and the range shall be separated by a single SPACE character (20h)</td><td style="width: 200px">CosXRef</td><td style="width: 800px">subsectionHeaderSpaceSeparated == true</td>
+</tr>
+<tr>
+<td style="width: 50px">102</td><td style="width: 100px">6-2-2-t02</td><td style="width: 400px" align="left">If a file's OutputIntents array contains more than one entry, then all entries that contain a DestOutputProfile
+			key shall have as the value of that key the same indirect object, which shall be a valid ICC profile stream</td><td style="width: 200px">PDOutputIntent</td><td style="width: 800px">destOutputProfileIndirect == null || gOutputProfileIndirect == null || destOutputProfileIndirect == gOutputProfileIndirect</td>
+</tr>
+<tr>
+<td style="width: 50px">103</td><td style="width: 100px">6-2-3-t04</td><td style="width: 400px" align="left">If an uncalibrated colour space is used in a file then that file shall contain a PDF/A-1 OutputIntent, as defined in 6.2.2</td><td style="width: 200px">PDDeviceGray</td><td style="width: 800px">gOutputCS != null</td>
+</tr>
+<tr>
+<td style="width: 50px">104</td><td style="width: 100px">6-2-3-t05</td><td style="width: 400px" align="left">All ICCBased colour spaces shall be embedded as ICC profile streams as described in PDF Reference 4.5.
+			The number of color components in the color space described by the ICC profile data must match the number of components actually in the ICC profile. 
+			As of PDF 1.4, N must be 1, 3, or 4</td><td style="width: 200px">ICCProfile</td><td style="width: 800px">N != null &amp;&amp; ((N == 1 &amp;&amp; colorSpace == "GRAY") || (N == 3 &amp;&amp; (colorSpace == "RGB " || colorSpace == "LAB ")) || (N == 4 &amp;&amp; colorSpace == "CMYK"))</td>
+</tr>
+<tr>
+<td style="width: 50px">105</td><td style="width: 100px">6-2-7-t01</td><td style="width: 400px" align="left">A conforming file shall not contain any PostScript XObjects</td><td style="width: 200px">PDXObject</td><td style="width: 800px">Subtype != "PS"</td>
+</tr>
+<tr>
+<td style="width: 50px">106</td><td style="width: 100px">6-3-2-t04</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
+			FirstChar - integer - (Required except for the standard 14 fonts) The first character code defined in the font's Widths array</td><td style="width: 200px">PDSimpleFont</td><td style="width: 800px">isStandard == true || FirstChar != null</td>
+</tr>
+<tr>
+<td style="width: 50px">107</td><td style="width: 100px">6-3-2-t05</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
+			FirstChar - integer - (Required except for the standard 14 fonts) The first character code defined in the font's Widths array</td><td style="width: 200px">PDSimpleFont</td><td style="width: 800px">isStandard == true || LastChar != null</td>
+</tr>
+<tr>
+<td style="width: 50px">108</td><td style="width: 100px">6-3-2-t06</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
+			Widths - array - (Required except for the standard 14 fonts; indirect reference preferred) An array of (LastChar &minus; FirstChar + 1) widths</td><td style="width: 200px">PDSimpleFont</td><td style="width: 800px">isStandard == true || (Widths_size != null &amp;&amp; Widths_size == LastChar - FirstChar + 1)</td>
+</tr>
+<tr>
+<td style="width: 50px">109</td><td style="width: 100px">6-3-3-t03</td><td style="width: 400px" align="left">All CMaps used within a conforming file, except Identity-H and Identity-V, shall be embedded in that file as described in PDF Reference 5.6.4</td><td style="width: 200px">PDCMap</td><td style="width: 800px">CMapName == "Identity-H" || CMapName == "Identity-V" || embeddedFile_size == 1</td>
+</tr>
+<tr>
+<td style="width: 50px">110</td><td style="width: 100px">6-3-3-t04</td><td style="width: 400px" align="left">For those CMaps that are embedded, the integer value of the WMode entry in the CMap dictionary shall be identical to the WMode value in the embedded CMap stream</td><td style="width: 200px">CMapFile</td><td style="width: 800px">WMode == dictWMode</td>
+</tr>
+<tr>
+<td style="width: 50px">111</td><td style="width: 100px">6-3-4-t01</td><td style="width: 400px" align="left">The font programs for all fonts used within a conforming file shall be embedded within that file, as defined in PDF Reference 5.8, 
 			except when the fonts are used exclusively with text rendering mode 3</td><td style="width: 200px">PDFont</td><td style="width: 800px">Subtype == "Type3" || Subtype == "Type0" || fontFile_size == 1</td>
 </tr>
 <tr>
-<td style="width: 50px">68</td><td style="width: 100px">6-3-5-t01</td><td style="width: 400px" align="left">Embedded font programs shall define all font glyphs referenced for rendering with a conforming file</td><td style="width: 200px">Glyph</td><td style="width: 800px">isGlyphPresent == true</td>
+<td style="width: 50px">112</td><td style="width: 100px">6-3-5-t01</td><td style="width: 400px" align="left">Embedded font programs shall define all font glyphs referenced for rendering with a conforming file</td><td style="width: 200px">Glyph</td><td style="width: 800px">isGlyphPresent == true</td>
 </tr>
 <tr>
-<td style="width: 50px">69</td><td style="width: 100px">6-3-5-t02</td><td style="width: 400px" align="left">For all Type 1 font subsets referenced within a conforming file, the font descriptor dictionary shall include a CharSet string
+<td style="width: 50px">113</td><td style="width: 100px">6-3-5-t02</td><td style="width: 400px" align="left">For all Type 1 font subsets referenced within a conforming file, the font descriptor dictionary shall include a CharSet string
 			listing the character names defined in the font subset, as described in PDF Reference Table 5.18</td><td style="width: 200px">PDType1Font</td><td style="width: 800px">BaseFont.search(/[A-Z]{6}\+/) != 0 || CharSet != null</td>
 </tr>
 <tr>
-<td style="width: 50px">70</td><td style="width: 100px">6-3-5-t03</td><td style="width: 400px" align="left">For all CIDFont subsets referenced within a conforming file, the font descriptor dictionary shall include a
+<td style="width: 50px">114</td><td style="width: 100px">6-3-5-t03</td><td style="width: 400px" align="left">For all CIDFont subsets referenced within a conforming file, the font descriptor dictionary shall include a
 			CIDSet stream identifying which CIDs are present in the embedded CIDFont file, as described in PDF Reference Table 5.20</td><td style="width: 200px">PDCIDFont</td><td style="width: 800px">BaseFont.search(/[A-Z]{6}\+/) != 0 || CIDSet_size == 1</td>
 </tr>
 <tr>
-<td style="width: 50px">71</td><td style="width: 100px">6-3-6-t01</td><td style="width: 400px" align="left">For every font embedded in a conforming file, the glyph width information stored in the Widths entry of the 
+<td style="width: 50px">115</td><td style="width: 100px">6-3-6-t01</td><td style="width: 400px" align="left">For every font embedded in a conforming file, the glyph width information stored in the Widths entry of the 
 			font dictionary and in the embedded font program shall be consistent</td><td style="width: 200px">Glyph</td><td style="width: 800px">isWidthConsistent == true</td>
 </tr>
 <tr>
-<td style="width: 50px">72</td><td style="width: 100px">6-3-7-t01</td><td style="width: 400px" align="left">All non-symbolic TrueType fonts shall specify MacRomanEncoding or WinAnsiEncoding, either as the value of the Encoding entry in the font dictionary
+<td style="width: 50px">116</td><td style="width: 100px">6-3-7-t01</td><td style="width: 400px" align="left">All non-symbolic TrueType fonts shall specify MacRomanEncoding or WinAnsiEncoding, either as the value of the Encoding entry in the font dictionary
 			or as the value of the BaseEncoding entry in the dictionary that is the value of the Encoding entry in the font dictionary.
 			If the value of the Encoding entry is a dictionary, it shall not contain a Differences entry.</td><td style="width: 200px">PDTrueTypeFont</td><td style="width: 800px">isSymbolic == true || (Encoding == "MacRomanEncoding" || Encoding == "WinAnsiEncoding")</td>
 </tr>
 <tr>
-<td style="width: 50px">73</td><td style="width: 100px">6-3-7-t02</td><td style="width: 400px" align="left"> All symbolic TrueType fonts shall not specify an Encoding entry in the font dictionary</td><td style="width: 200px">PDTrueTypeFont</td><td style="width: 800px">isSymbolic == false || Encoding == null</td>
+<td style="width: 50px">117</td><td style="width: 100px">6-3-7-t02</td><td style="width: 400px" align="left"> All symbolic TrueType fonts shall not specify an Encoding entry in the font dictionary</td><td style="width: 200px">PDTrueTypeFont</td><td style="width: 800px">isSymbolic == false || Encoding == null</td>
 </tr>
 <tr>
-<td style="width: 50px">74</td><td style="width: 100px">6-3-7-t03</td><td style="width: 400px" align="left">Font programs' "cmap" tables for all symbolic TrueType fonts shall contain exactly one encoding</td><td style="width: 200px">TrueTypeFontProgram</td><td style="width: 800px">isSymbolic == false || nrCmaps == 1</td>
+<td style="width: 50px">118</td><td style="width: 100px">6-3-7-t03</td><td style="width: 400px" align="left">Font programs' "cmap" tables for all symbolic TrueType fonts shall contain exactly one encoding</td><td style="width: 200px">TrueTypeFontProgram</td><td style="width: 800px">isSymbolic == false || nrCmaps == 1</td>
 </tr>
 <tr>
-<td style="width: 50px">75</td><td style="width: 100px">6-4-t01</td><td style="width: 400px" align="left">If an SMask key appears in an ExtGState dictionary, its value shall be None</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">SMask == null || SMask == "None"</td>
+<td style="width: 50px">119</td><td style="width: 100px">6-4-t01</td><td style="width: 400px" align="left">If an SMask key appears in an ExtGState dictionary, its value shall be None</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">SMask == null || SMask == "None"</td>
 </tr>
 <tr>
-<td style="width: 50px">76</td><td style="width: 100px">6-4-t02</td><td style="width: 400px" align="left">An XObject dictionary shall not contain the SMask key</td><td style="width: 200px">PDXObject</td><td style="width: 800px">SMask_size == 0</td>
+<td style="width: 50px">120</td><td style="width: 100px">6-4-t02</td><td style="width: 400px" align="left">An XObject dictionary shall not contain the SMask key</td><td style="width: 200px">PDXObject</td><td style="width: 800px">SMask_size == 0</td>
 </tr>
 <tr>
-<td style="width: 50px">77</td><td style="width: 100px">6-4-t03</td><td style="width: 400px" align="left">A Group object with an S key with a value of Transparency shall not be included in a form XObject. 
+<td style="width: 50px">121</td><td style="width: 100px">6-4-t03</td><td style="width: 400px" align="left">A Group object with an S key with a value of Transparency shall not be included in a form XObject. 
 			A Group object with an S key with a value of Transparency shall not be included in a page dictionary</td><td style="width: 200px">PDGroup</td><td style="width: 800px">S != "Transparency"</td>
 </tr>
 <tr>
-<td style="width: 50px">78</td><td style="width: 100px">6-4-t04</td><td style="width: 400px" align="left">The following keys, if present in an ExtGState object, shall have the values shown: BM - Normal or Compatible</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">BM == null || BM == "Normal" || BM == "Compatible"</td>
+<td style="width: 50px">122</td><td style="width: 100px">6-4-t04</td><td style="width: 400px" align="left">The following keys, if present in an ExtGState object, shall have the values shown: BM - Normal or Compatible</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">BM == null || BM == "Normal" || BM == "Compatible"</td>
 </tr>
 <tr>
-<td style="width: 50px">79</td><td style="width: 100px">6-4-t05</td><td style="width: 400px" align="left">The following keys, if present in an ExtGState object, shall have the values shown: CA - 1.0</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">CA == null || CA - 1.0 &lt; 0.000001 &amp;&amp; CA - 1.0 &gt; -0.000001</td>
+<td style="width: 50px">123</td><td style="width: 100px">6-4-t05</td><td style="width: 400px" align="left">The following keys, if present in an ExtGState object, shall have the values shown: CA - 1.0</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">CA == null || CA - 1.0 &lt; 0.000001 &amp;&amp; CA - 1.0 &gt; -0.000001</td>
 </tr>
 <tr>
-<td style="width: 50px">80</td><td style="width: 100px">6-4-t06</td><td style="width: 400px" align="left">The following keys, if present in an ExtGState object, shall have the values shown: CA - 1.0</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">ca == null || ca - 1.0 &lt; 0.000001 &amp;&amp; ca - 1.0 &gt; -0.000001</td>
+<td style="width: 50px">124</td><td style="width: 100px">6-4-t06</td><td style="width: 400px" align="left">The following keys, if present in an ExtGState object, shall have the values shown: CA - 1.0</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">ca == null || ca - 1.0 &lt; 0.000001 &amp;&amp; ca - 1.0 &gt; -0.000001</td>
 </tr>
 <tr>
-<td style="width: 50px">81</td><td style="width: 100px">6-5-2-t01</td><td style="width: 400px" align="left">Annotation types not defined in PDF Reference shall not be permitted. Additionally, the FileAttachment, 
-			Sound and Movie types shall not be permitted</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype == "Text" || Subtype == "Link" || Subtype == "FreeText" || Subtype == "Line" || 
-			Subtype == "Square" || Subtype == "Circle" || Subtype == "Highlight" || Subtype == "Underline" ||
-			Subtype == "Squiggly" || Subtype == "StrikeOut" || Subtype == "Stamp" || Subtype == "Ink" ||
-			Subtype == "Popup" || Subtype == "Widget" || Subtype == "PrinterMark" || Subtype == "TrapNet"</td>
+<td style="width: 50px">125</td><td style="width: 100px">6-5-3-t01</td><td style="width: 400px" align="left">An annotation dictionary shall not contain the CA key with a value other than 1.0</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">CA == null || CA == 1.0</td>
 </tr>
 <tr>
-<td style="width: 50px">82</td><td style="width: 100px">6-5-3-t01</td><td style="width: 400px" align="left">An annotation dictionary shall not contain the CA key with a value other than 1.0</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">CA == null || CA == 1.0</td>
-</tr>
-<tr>
-<td style="width: 50px">83</td><td style="width: 100px">6-5-3-t02</td><td style="width: 400px" align="left">An annotation dictionary shall contain the F key. The F key&rsquo;s Print flag bit shall be set to 1 and its Hidden,
+<td style="width: 50px">126</td><td style="width: 100px">6-5-3-t02</td><td style="width: 400px" align="left">An annotation dictionary shall contain the F key. The F key&rsquo;s Print flag bit shall be set to 1 and its Hidden,
 			Invisible and NoView flag bits shall be set to 0</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">F != null &amp;&amp; (F &amp; 4) == 4 &amp;&amp; (F &amp; 1) == 0 &amp;&amp; (F &amp; 2) == 0 &amp;&amp; (F &amp; 32) == 0</td>
 </tr>
 <tr>
-<td style="width: 50px">84</td><td style="width: 100px">6-5-3-t03</td><td style="width: 400px" align="left">An annotation dictionary shall not contain the C array or the IC array unless the colour space of the
+<td style="width: 50px">127</td><td style="width: 100px">6-5-3-t03</td><td style="width: 400px" align="left">An annotation dictionary shall not contain the C array or the IC array unless the colour space of the
 			DestOutputProfile in the PDF/A-1 OutputIntent dictionary, defined in 6.2.2, is RGB</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">(C_size == 0 &amp;&amp; IC_size == 0) || gOutputCS == "RGB "</td>
 </tr>
 <tr>
-<td style="width: 50px">85</td><td style="width: 100px">6-5-3-t04</td><td style="width: 400px" align="left">For all annotation dictionaries containing an AP key, the appearance dictionary that it defines as its value shall contain only the N key. 
+<td style="width: 50px">128</td><td style="width: 100px">6-5-3-t04</td><td style="width: 400px" align="left">For all annotation dictionaries containing an AP key, the appearance dictionary that it defines as its value shall contain only the N key. 
 			If an annotation dictionary&rsquo;s Subtype key has a value of Widget and its FT key has a value of Btn, the value of the N key shall be an appearance 
 			subdictionary; otherwise the value of the N key shall be an appearance stream.</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">AP == null || ( AP == "N" &amp;&amp; ( N_type == "Stream" || (FT == "Btn" &amp;&amp; N_type == "Dict") ) )</td>
 </tr>
 <tr>
-<td style="width: 50px">86</td><td style="width: 100px">6-6-1-t01</td><td style="width: 400px" align="left">The Launch, Sound, Movie, ResetForm, ImportData and JavaScript actions shall not be permitted. 
+<td style="width: 50px">129</td><td style="width: 100px">6-6-1-t01</td><td style="width: 400px" align="left">The Launch, Sound, Movie, ResetForm, ImportData and JavaScript actions shall not be permitted. 
 			Additionally, the deprecated set-state and no-op actions shall not be permitted. The Hide action shall not be permitted (Corrigendum 2)</td><td style="width: 200px">PDAction</td><td style="width: 800px">S == "GoTo" || S == "GoToR" || S == "Thread" || S == "URI" || S == "Named" || S == "SubmitForm"</td>
 </tr>
 <tr>
-<td style="width: 50px">87</td><td style="width: 100px">6-6-1-t02</td><td style="width: 400px" align="left">Named actions other than NextPage, PrevPage, FirstPage, and LastPage shall not be permitted</td><td style="width: 200px">PDNamedAction</td><td style="width: 800px">N == "NextPage" || N == "PrevPage" || N == "FirstPage" || N == "LastPage"</td>
+<td style="width: 50px">130</td><td style="width: 100px">6-6-1-t02</td><td style="width: 400px" align="left">Named actions other than NextPage, PrevPage, FirstPage, and LastPage shall not be permitted</td><td style="width: 200px">PDNamedAction</td><td style="width: 800px">N == "NextPage" || N == "PrevPage" || N == "FirstPage" || N == "LastPage"</td>
 </tr>
 <tr>
-<td style="width: 50px">88</td><td style="width: 100px">6-6-1-t03</td><td style="width: 400px" align="left">Interactive form fields shall not perform actions of any type</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype != "Widget" || A_size == 0</td>
+<td style="width: 50px">131</td><td style="width: 100px">6-6-1-t03</td><td style="width: 400px" align="left">Interactive form fields shall not perform actions of any type</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype != "Widget" || A_size == 0</td>
 </tr>
 <tr>
-<td style="width: 50px">89</td><td style="width: 100px">6-6-2-t01</td><td style="width: 400px" align="left">A Widget annotation dictionary shall not include an AA entry for an additional-actions dictionary</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype != "Widget" || AA_size == 0</td>
+<td style="width: 50px">132</td><td style="width: 100px">6-6-2-t01</td><td style="width: 400px" align="left">A Widget annotation dictionary shall not include an AA entry for an additional-actions dictionary</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype != "Widget" || AA_size == 0</td>
 </tr>
 <tr>
-<td style="width: 50px">90</td><td style="width: 100px">6-6-2-t02</td><td style="width: 400px" align="left">A Field dictionary shall not include an AA entry for an additional-actions dictionary</td><td style="width: 200px">PDFormField</td><td style="width: 800px">AA_size == 0</td>
+<td style="width: 50px">133</td><td style="width: 100px">6-6-2-t02</td><td style="width: 400px" align="left">A Field dictionary shall not include an AA entry for an additional-actions dictionary</td><td style="width: 200px">PDFormField</td><td style="width: 800px">AA_size == 0</td>
 </tr>
 <tr>
-<td style="width: 50px">91</td><td style="width: 100px">6-6-2-t03</td><td style="width: 400px" align="left">The document catalog dictionary shall not include an AA entry for an additional-actions dictionary</td><td style="width: 200px">PDDocument</td><td style="width: 800px">AA_size == 0</td>
+<td style="width: 50px">134</td><td style="width: 100px">6-6-2-t03</td><td style="width: 400px" align="left">The document catalog dictionary shall not include an AA entry for an additional-actions dictionary</td><td style="width: 200px">PDDocument</td><td style="width: 800px">AA_size == 0</td>
 </tr>
 <tr>
-<td style="width: 50px">92</td><td style="width: 100px">6-7-11-t01</td><td style="width: 400px" align="left">The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">XMPMainPackage</td><td style="width: 800px">ispdfaidNSPresent</td>
+<td style="width: 50px">135</td><td style="width: 100px">6-7-11-t01</td><td style="width: 400px" align="left">The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">XMPMainPackage</td><td style="width: 800px">ispdfaidNSPresent</td>
 </tr>
 <tr>
-<td style="width: 50px">93</td><td style="width: 100px">6-7-11-t02</td><td style="width: 400px" align="left">The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">part == 1</td>
+<td style="width: 50px">136</td><td style="width: 100px">6-7-11-t02</td><td style="width: 400px" align="left">The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">part == 1</td>
 </tr>
 <tr>
-<td style="width: 50px">94</td><td style="width: 100px">6-7-11-t03</td><td style="width: 400px" align="left">The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">conformance == "B"</td>
+<td style="width: 50px">137</td><td style="width: 100px">6-7-11-t03</td><td style="width: 400px" align="left">The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">conformance == "B"</td>
 </tr>
 <tr>
-<td style="width: 50px">95</td><td style="width: 100px">6-7-11-t04</td><td style="width: 400px" align="left">The property "corr" is not specified in PDF/A Identification Schema in PDF/A-1 specification.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">corr == null</td>
+<td style="width: 50px">138</td><td style="width: 100px">6-7-11-t04</td><td style="width: 400px" align="left">The property "corr" is not specified in PDF/A Identification Schema in PDF/A-1 specification.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">corr == null</td>
 </tr>
 <tr>
-<td style="width: 50px">96</td><td style="width: 100px">6-7-11-t05</td><td style="width: 400px" align="left">The PDF/A Identification Schema has required prefix "pdfaid".</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">prefix == "pdfaid"</td>
+<td style="width: 50px">139</td><td style="width: 100px">6-7-11-t05</td><td style="width: 400px" align="left">The PDF/A Identification Schema has required prefix "pdfaid".</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">prefix == "pdfaid"</td>
 </tr>
 <tr>
-<td style="width: 50px">97</td><td style="width: 100px">6-7-2-t01</td><td style="width: 400px" align="left">The document catalog dictionary of a conforming file shall contain the Metadata key.</td><td style="width: 200px">PDDocument</td><td style="width: 800px">metadata_size == 1</td>
+<td style="width: 50px">140</td><td style="width: 100px">6-7-2-t01</td><td style="width: 400px" align="left">The document catalog dictionary of a conforming file shall contain the Metadata key.</td><td style="width: 200px">PDDocument</td><td style="width: 800px">metadata_size == 1</td>
 </tr>
 <tr>
-<td style="width: 50px">98</td><td style="width: 100px">6-7-2-t02</td><td style="width: 400px" align="left">Metadata object stream dictionaries shall not contain the Filter key.</td><td style="width: 200px">PDMetadata</td><td style="width: 800px">Filter == null</td>
+<td style="width: 50px">141</td><td style="width: 100px">6-7-2-t02</td><td style="width: 400px" align="left">Metadata object stream dictionaries shall not contain the Filter key.</td><td style="width: 200px">PDMetadata</td><td style="width: 800px">Filter == null</td>
 </tr>
 <tr>
-<td style="width: 50px">99</td><td style="width: 100px">6-7-3-t01</td><td style="width: 400px" align="left">If a document information dictionary does appear at a document, then all of its entries that have analogous properties in predefined XMP schemas, shall also be embedded in the file in XMP form with equivalent values.</td><td style="width: 200px">CosDocument</td><td style="width: 800px">doesInfoMatchXMP</td>
+<td style="width: 50px">142</td><td style="width: 100px">6-7-3-t01</td><td style="width: 400px" align="left">If a document information dictionary does appear at a document, then all of its entries that have analogous properties in predefined XMP schemas, shall also be embedded in the file in XMP form with equivalent values.</td><td style="width: 200px">CosDocument</td><td style="width: 800px">doesInfoMatchXMP</td>
 </tr>
 <tr>
-<td style="width: 50px">100</td><td style="width: 100px">6-7-5-t01</td><td style="width: 400px" align="left">The bytes attribute shall not be used in the header of an XMP packet.</td><td style="width: 200px">XMPPackage</td><td style="width: 800px">bytes == null</td>
+<td style="width: 50px">143</td><td style="width: 100px">6-7-5-t01</td><td style="width: 400px" align="left">The bytes attribute shall not be used in the header of an XMP packet.</td><td style="width: 200px">XMPPackage</td><td style="width: 800px">bytes == null</td>
 </tr>
 <tr>
-<td style="width: 50px">101</td><td style="width: 100px">6-7-5-t02</td><td style="width: 400px" align="left">The encoding attribute shall not be used in the header of an XMP packet.</td><td style="width: 200px">XMPPackage</td><td style="width: 800px">encoding == null</td>
+<td style="width: 50px">144</td><td style="width: 100px">6-7-5-t02</td><td style="width: 400px" align="left">The encoding attribute shall not be used in the header of an XMP packet.</td><td style="width: 200px">XMPPackage</td><td style="width: 800px">encoding == null</td>
 </tr>
 <tr>
-<td style="width: 50px">102</td><td style="width: 100px">6-7-8-t01</td><td style="width: 400px" align="left">All extension schemas used in a conforming file shall have their descriptions embedded within that file in the metadata stream.</td><td style="width: 200px">XMPCustomSchema</td><td style="width: 800px">isDefinitionCorrect</td>
+<td style="width: 50px">145</td><td style="width: 100px">6-7-8-t01</td><td style="width: 400px" align="left">All extension schemas used in a conforming file shall have their descriptions embedded within that file in the metadata stream.</td><td style="width: 200px">XMPCustomSchema</td><td style="width: 800px">isDefinitionCorrect</td>
 </tr>
 <tr>
-<td style="width: 50px">103</td><td style="width: 100px">6-7-8-t02</td><td style="width: 400px" align="left">All extension schemas used in a conforming file shall have their descriptions embedded within that file in the metadata stream.</td><td style="width: 200px">XMPCustomSchema</td><td style="width: 800px">isDefinedInThisPackage</td>
+<td style="width: 50px">146</td><td style="width: 100px">6-7-8-t02</td><td style="width: 400px" align="left">All extension schemas used in a conforming file shall have their descriptions embedded within that file in the metadata stream.</td><td style="width: 200px">XMPCustomSchema</td><td style="width: 800px">isDefinedInThisPackage</td>
 </tr>
 <tr>
-<td style="width: 50px">104</td><td style="width: 100px">6-7-8-t03</td><td style="width: 400px" align="left">The required PDF/A Extension Schema namespace prefix is pdfaExtension.</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">prefix == "pdfaExtension"</td>
+<td style="width: 50px">147</td><td style="width: 100px">6-7-8-t03</td><td style="width: 400px" align="left">The required PDF/A Extension Schema namespace prefix is pdfaExtension.</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">prefix == "pdfaExtension"</td>
 </tr>
 <tr>
-<td style="width: 50px">105</td><td style="width: 100px">6-7-8-t04</td><td style="width: 400px" align="left">A PDF/A Field Schema namespace prefix is required to be "pdfaField".</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">isPDFAFieldPrefixCorrect</td>
+<td style="width: 50px">148</td><td style="width: 100px">6-7-8-t04</td><td style="width: 400px" align="left">A PDF/A Field Schema namespace prefix is required to be "pdfaField".</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">isPDFAFieldPrefixCorrect</td>
 </tr>
 <tr>
-<td style="width: 50px">106</td><td style="width: 100px">6-7-8-t05</td><td style="width: 400px" align="left">A PDF/A Property Schema namespace prefix is required to be "pdfaProperty".</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">isPDFAPropertyPrefixCorrect</td>
+<td style="width: 50px">149</td><td style="width: 100px">6-7-8-t05</td><td style="width: 400px" align="left">A PDF/A Property Schema namespace prefix is required to be "pdfaProperty".</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">isPDFAPropertyPrefixCorrect</td>
 </tr>
 <tr>
-<td style="width: 50px">107</td><td style="width: 100px">6-7-8-t06</td><td style="width: 400px" align="left">A PDF/A Schema Description Schema namespace prefix is required to be "pdfaSchema".</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">isPDFASchemaPrefixCorrect</td>
+<td style="width: 50px">150</td><td style="width: 100px">6-7-8-t06</td><td style="width: 400px" align="left">A PDF/A Schema Description Schema namespace prefix is required to be "pdfaSchema".</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">isPDFASchemaPrefixCorrect</td>
 </tr>
 <tr>
-<td style="width: 50px">108</td><td style="width: 100px">6-7-8-t07</td><td style="width: 400px" align="left">A PDF/A ValueType Schema namespace prefix is required to be "pdfaType".</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">isPDFATypePrefixCorrect</td>
+<td style="width: 50px">151</td><td style="width: 100px">6-7-8-t07</td><td style="width: 400px" align="left">A PDF/A ValueType Schema namespace prefix is required to be "pdfaType".</td><td style="width: 200px">PDFAExtensionSchema</td><td style="width: 800px">isPDFATypePrefixCorrect</td>
 </tr>
 <tr>
-<td style="width: 50px">109</td><td style="width: 100px">6-7-9-t01</td><td style="width: 400px" align="left">The metadata stream shall conform to XMP Specification.</td><td style="width: 200px">XMPPackage</td><td style="width: 800px">isMetadataValid</td>
+<td style="width: 50px">152</td><td style="width: 100px">6-7-9-t01</td><td style="width: 400px" align="left">The metadata stream shall conform to XMP Specification.</td><td style="width: 200px">XMPPackage</td><td style="width: 800px">isMetadataValid</td>
 </tr>
 <tr>
-<td style="width: 50px">110</td><td style="width: 100px">6-7-9-t02</td><td style="width: 400px" align="left">All predefined schemas shall conform to XMP specification.</td><td style="width: 200px">XMPPredefinedSchema</td><td style="width: 800px">unknownProperties == null</td>
+<td style="width: 50px">153</td><td style="width: 100px">6-7-9-t02</td><td style="width: 400px" align="left">All predefined schemas shall conform to XMP specification.</td><td style="width: 200px">XMPPredefinedSchema</td><td style="width: 800px">unknownProperties == null</td>
 </tr>
 <tr>
-<td style="width: 50px">111</td><td style="width: 100px">6-7-9-t03</td><td style="width: 400px" align="left">All predefined schemas shall conform to XMP specification.</td><td style="width: 200px">XMPPredefinedSchema</td><td style="width: 800px">wrongValueTypeProperties == null</td>
+<td style="width: 50px">154</td><td style="width: 100px">6-7-9-t03</td><td style="width: 400px" align="left">All predefined schemas shall conform to XMP specification.</td><td style="width: 200px">XMPPredefinedSchema</td><td style="width: 800px">wrongValueTypeProperties == null</td>
 </tr>
 <tr>
-<td style="width: 50px">112</td><td style="width: 100px">6-9-t01</td><td style="width: 400px" align="left">The NeedAppearances flag of the interactive form dictionary shall either not be present or shall be false</td><td style="width: 200px">PDAcroForm</td><td style="width: 800px">NeedAppearances == null || NeedAppearances == false</td>
+<td style="width: 50px">155</td><td style="width: 100px">6-9-t01</td><td style="width: 400px" align="left">The NeedAppearances flag of the interactive form dictionary shall either not be present or shall be false</td><td style="width: 200px">PDAcroForm</td><td style="width: 800px">NeedAppearances == null || NeedAppearances == false</td>
 </tr>
 <tr>
-<td style="width: 50px">113</td><td style="width: 100px">6-9-t02</td><td style="width: 400px" align="left">A Widget annotation dictionary or Field dictionary shall not contain the A or AA keys</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype != "Widget" || (A_size == 0 &amp;&amp; AA_size == 0)</td>
+<td style="width: 50px">156</td><td style="width: 100px">6-9-t02</td><td style="width: 400px" align="left">A Widget annotation dictionary or Field dictionary shall not contain the A or AA keys</td><td style="width: 200px">PDAnnot</td><td style="width: 800px">Subtype != "Widget" || (A_size == 0 &amp;&amp; AA_size == 0)</td>
 </tr>
 <tr>
-<td style="width: 50px">114</td><td style="width: 100px">6-9-t03</td><td style="width: 400px" align="left">A Widget annotation dictionary or Field dictionary shall not contain the A or AA keys</td><td style="width: 200px">PDFormField</td><td style="width: 800px">AA_size == 0</td>
+<td style="width: 50px">157</td><td style="width: 100px">6-9-t03</td><td style="width: 400px" align="left">A Widget annotation dictionary or Field dictionary shall not contain the A or AA keys</td><td style="width: 200px">PDFormField</td><td style="width: 800px">AA_size == 0</td>
 </tr>
 </table>
 </body>
