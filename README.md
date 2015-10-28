@@ -2,7 +2,7 @@
 
 ## PDF/A-1 (ISO 19005-1:2005 + Cor 1:2007 + Cor 2:2011)
 
-The folder contains the full set of atomic validation rules covering the PDF/A-1B standard.
+The folder contains the full set of atomic validation rules covering the PDF/A-1B standard and rototypes for PDF/A-1A, PDF/A-2B standards.
 
 ***
 
@@ -10,4 +10,4 @@ The folder contains the full set of atomic validation rules covering the PDF/A-1
 © 2015 [veraPDF Consortium](http://www.verapdf.org)
 
 ![Creative Commons License](https://licensebuttons.net/l/by/3.0/88x31.png)
-This work is licensed under a [Creative Commons Attribution 3.0 Unported License (CC-BY 3.0)](http://creativecommons.org/licenses/by/3.0/)
+This work is licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
