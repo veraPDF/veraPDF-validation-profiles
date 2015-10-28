@@ -3,7 +3,7 @@
     <name>PDF/A-1B validation profile</name>
     <description>Validation rules against ISO 19005-1:2005, Cor.1:2007 and Cor.2:2011</description>
     <creator>veraPDF Consortium</creator>
-    <created>2015-10-27T11-50-55Z+02</created>
+    <created>2015-10-28T09-48-10Z+02</created>
     <hash>sha-1 hash code</hash>
     <rules>
         <rule id="6-1-10-t01" object="PDInlineImage">
@@ -1561,7 +1561,7 @@
         <rule id="6-3-5-t02" object="PDType1Font">
 			<description>For all Type 1 font subsets referenced within a conforming file, the font descriptor dictionary shall include a CharSet string
 			listing the character names defined in the font subset, as described in PDF Reference Table 5.18</description>
-			<test>BaseFont.search(/[A-Z]{6}\+/) != 0 || CharSet != null</test>
+			<test>fontName.search(/[A-Z]{6}\+/) != 0 || CharSet != null</test>
 			<error>
 				<message>A Type1 font subset does not define CharSet entry in its Descriptor dictionary</message>
 			</error>
@@ -1577,7 +1577,7 @@
         <rule id="6-3-5-t03" object="PDCIDFont">
 			<description>For all CIDFont subsets referenced within a conforming file, the font descriptor dictionary shall include a
 			CIDSet stream identifying which CIDs are present in the embedded CIDFont file, as described in PDF Reference Table 5.20</description>
-			<test>BaseFont.search(/[A-Z]{6}\+/) != 0 || CIDSet_size == 1</test>
+			<test>fontName.search(/[A-Z]{6}\+/) != 0 || CIDSet_size == 1</test>
 			<error>
 				<message>A CID Font subset does not define CIDSet entry in its Descriptor dictionary</message>
 			</error>
@@ -1843,7 +1843,7 @@
 			</reference>
 		</rule>
         <rule id="6-7-11-t02" object="PDFAIdSchema">
-			<description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</description>
+			<description>The PDF/A version of a file shall be specified using the PDF/A Identification extension schema.</description>
 			<test>part == 1</test>
 			<error>
 				<message>The "part" property of the PDF/A Identification Schema is %1 instead of 1 for PDF/A-1b conforming file.</message>
@@ -1855,7 +1855,7 @@
 			</reference>
 		</rule>
         <rule id="6-7-11-t03" object="PDFAIdSchema">
-			<description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</description>
+			<description>The PDF/A conformance level of a file shall be specified using the PDF/A Identification extension schema.</description>
 			<test>conformance == "B"</test>
 			<error>
 				<message>The "conformance" property of the PDF/A Identification Schema is %1 instead of "B" for PDF/A-1b conforming file.</message>
@@ -1944,123 +1944,12 @@
 				<clause>6.7.5</clause>
 			</reference>
 		</rule>
-        <rule id="6-7-8-t01" object="XMPCustomSchema">
-			<description>All extension schemas used in a conforming file shall have their descriptions embedded within that file in the metadata stream.</description>
-			<test>isDefinitionCorrect</test>
-			<error>
-				<message>Wrong definition of an extention schema with namespace URI: %1</message>
-				<argument>uri</argument>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005/Cor.1:2007/Cor.2:2011</specification>
-				<clause>6.7.8</clause>
-			</reference>
-		</rule>
-        <rule id="6-7-8-t02" object="XMPCustomSchema">
-			<description>All extension schemas used in a conforming file shall have their descriptions embedded within that file in the metadata stream.</description>
-			<test>isDefinedInThisPackage</test>
-			<error>
-				<message>Missed definition of an extention schema with namespace URI: %1</message>
-				<argument>uri</argument>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005/Cor.1:2007/Cor.2:2011</specification>
-				<clause>6.7.8</clause>
-			</reference>
-		</rule>
-        <rule id="6-7-8-t03" object="PDFAExtensionSchema">
-			<description>The required PDF/A Extension Schema namespace prefix is pdfaExtension.</description>
-			<test>prefix == "pdfaExtension"</test>
-			<error>
-				<message>A PDF/A Extension Schema namespace prefix is %1, but shall be "pdfaExtension".</message>
-				<argument>prefix</argument>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005/Cor.1:2007/Cor.2:2011</specification>
-				<clause>6.7.8</clause>
-			</reference>
-		</rule>
-        <rule id="6-7-8-t04" object="PDFAExtensionSchema">
-			<description>A PDF/A Field Schema namespace prefix is required to be "pdfaField".</description>
-			<test>isPDFAFieldPrefixCorrect</test>
-			<error>
-				<message>A PDF/A Field Schema namespace prefix is not "pdfaField".</message>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005/Cor.1:2007/Cor.2:2011</specification>
-				<clause>6.7.8</clause>
-			</reference>
-		</rule>
-        <rule id="6-7-8-t05" object="PDFAExtensionSchema">
-			<description>A PDF/A Property Schema namespace prefix is required to be "pdfaProperty".</description>
-			<test>isPDFAPropertyPrefixCorrect</test>
-			<error>
-				<message>A PDF/A Property Schema namespace prefix is not "pdfaProperty".</message>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005/Cor.1:2007/Cor.2:2011</specification>
-				<clause>6.7.8</clause>
-			</reference>
-		</rule>
-        <rule id="6-7-8-t06" object="PDFAExtensionSchema">
-			<description>A PDF/A Schema Description Schema namespace prefix is required to be "pdfaSchema".</description>
-			<test>isPDFASchemaPrefixCorrect</test>
-			<error>
-				<message>A PDF/A Schema Description Schema namespace prefix is not "pdfaSchema".</message>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005/Cor.1:2007/Cor.2:2011</specification>
-				<clause>6.7.8</clause>
-			</reference>
-		</rule>
-        <rule id="6-7-8-t07" object="PDFAExtensionSchema">
-			<description>A PDF/A ValueType Schema namespace prefix is required to be "pdfaType".</description>
-			<test>isPDFATypePrefixCorrect</test>
-			<error>
-				<message>A PDF/A ValueType Schema namespace prefix is not "pdfaType".</message>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005/Cor.1:2007/Cor.2:2011</specification>
-				<clause>6.7.8</clause>
-			</reference>
-		</rule>
         <rule id="6-7-9-t01" object="XMPPackage">
-			<description>The metadata stream shall conform to XMP Specification.</description>
+			<description>The metadata stream shall conform to XMP 2004 Specification and well formed PDFAExtension Schema for all extensions.</description>
 			<test>isMetadataValid</test>
 			<error>
-				<message>The metadata stream doesn't conform to XMP Specification.</message>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005</specification>
-				<clause>6.7.9</clause>
-				<reference>
-					<specification>XMP Specification January 2004</specification>
-				</reference>
-			</reference>
-		</rule>
-        <rule id="6-7-9-t02" object="XMPPredefinedSchema">
-			<description>All predefined schemas shall conform to XMP specification.</description>
-			<test>unknownProperties == null</test>
-			<error>
-				<message>The predefined schema with namespace URI %1 has unknown properties: %2.</message>
-				<argument>uri</argument>
-				<argument>unknownProperties</argument>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005</specification>
-				<clause>6.7.9</clause>
-				<reference>
-					<specification>XMP Specification January 2004</specification>
-				</reference>
-			</reference>
-		</rule>
-        <rule id="6-7-9-t03" object="XMPPredefinedSchema">
-			<description>All predefined schemas shall conform to XMP specification.</description>
-			<test>wrongValueTypeProperties == null</test>
-			<error>
-				<message>The predefined schema with namespace URI %1 has properties of wrong type: %2.</message>
-				<argument>uri</argument>
-				<argument>wrongValueTypeProperties</argument>
+				<message>%1</message>
+				<argument>errorMessage</argument>
 			</error>
 			<reference>
 				<specification>ISO 19005-1:2005</specification>
@@ -2112,10 +2001,6 @@
         <variable name="gOutputCS" object="ICCOutputProfile">
 			<defaultValue>null</defaultValue>
 			<value>S == "GTS_PDFA1" ? colorSpace : gOutputCS</value>
-		</variable>
-        <variable name="gOutputProfileRef" object="PDOutputIntent">
-			<defaultValue>null</defaultValue>
-			<value>gOutputProfileIndirect == null ? destOutputProfileIndirect : gOutputProfileIndirect</value>
 		</variable>
     </variables>
 </profile>
