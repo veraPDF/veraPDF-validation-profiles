@@ -101,7 +101,7 @@
 </tr>
 <tr>
 <td style="width: 50px">27</td><td style="width: 100px">6-1-7-t02</td><td style="width: 400px" align="left">The stream keyword shall be followed either by a CARRIAGE RETURN (0Dh) and LINE FEED (0Ah) character sequence
-			or by a single LINE FEED character. The endstream keyword shall be preceded by an EOL marker</td><td style="width: 200px">CosStream</td><td style="width: 800px">streamKeywordCRLFCompliant &amp;&amp; endstreamKeywordEOLCompliant</td>
+			or by a single LINE FEED character. The endstream keyword shall be preceded by an EOL marker</td><td style="width: 200px">CosStream</td><td style="width: 800px">streamKeywordCRLFCompliant == true &amp;&amp; endstreamKeywordEOLCompliant == true</td>
 </tr>
 <tr>
 <td style="width: 50px">28</td><td style="width: 100px">6-1-7-t03</td><td style="width: 400px" align="left">A stream object dictionary shall not contain the F, FFilter, or FDecodeParms keys</td><td style="width: 200px">CosStream</td><td style="width: 800px">F == null &amp;&amp; FFilter == null &amp;&amp; FDecodeParms == null</td>
@@ -181,7 +181,7 @@
 </tr>
 <tr>
 <td style="width: 50px">49</td><td style="width: 100px">6-3-2-t03</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
-			BaseFont - name - (Required) The PostScript name of the font</td><td style="width: 200px">PDFont</td><td style="width: 800px">Subtype == "Type3" || BaseFont_size == 1</td>
+			BaseFont - name - (Required) The PostScript name of the font</td><td style="width: 200px">PDFont</td><td style="width: 800px">Subtype == "Type3" || fontName != null</td>
 </tr>
 <tr>
 <td style="width: 50px">50</td><td style="width: 100px">6-3-2-t04</td><td style="width: 400px" align="left">All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
