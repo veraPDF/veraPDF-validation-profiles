@@ -10,7 +10,7 @@
 		<rule id="6-1-7-t02" object="CosStream">
 			<description>The stream keyword shall be followed either by a CARRIAGE RETURN (0Dh) and LINE FEED (0Ah) character sequence
 			or by a single LINE FEED character. The endstream keyword shall be preceded by an EOL marker</description>
-			<test>streamKeywordCRLFCompliant &amp;&amp; endstreamKeywordEOLCompliant</test>
+			<test>streamKeywordCRLFCompliant == true &amp;&amp; endstreamKeywordEOLCompliant == true</test>
 			<error>
 				<message>Spacings of keywords 'stream' and 'endstream' do not comply PDF/A specification</message>
 			</error>
