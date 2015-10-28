@@ -10,7 +10,7 @@
 		<rule id="6-3-2-t03" object="PDFont">
 			<description>All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
 			BaseFont - name - (Required) The PostScript name of the font</description>
-			<test>Subtype == "Type3" || BaseFont != null</test>
+			<test>Subtype == "Type3" || BaseFont_size == 1</test>
 			<error>
 				<message>A BaseFont entry is missing or has invalid type</message>
 			</error>
