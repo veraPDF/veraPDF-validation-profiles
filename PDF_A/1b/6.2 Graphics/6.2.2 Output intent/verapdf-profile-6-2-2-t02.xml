@@ -21,7 +21,7 @@
 		</rule>
 	</rules>
 	<variables>
-		<variable name="gOutputProfileRef" object="PDOutputIntent">
+		<variable name="gOutputProfileIndirect" object="PDOutputIntent">
 			<defaultValue>null</defaultValue>
 			<value>gOutputProfileIndirect == null ? destOutputProfileIndirect : gOutputProfileIndirect</value>
 		</variable>

@@ -7,7 +7,11 @@
     <hash>sha-1 hash code</hash>
     <rules>
 		<rule id="6-7-11-t02" object="PDFAIdSchema">
+<<<<<<< HEAD
 			<description>The value of pdfaid:part shall be the part number of ISO 19005 to which the file conforms.</description>
+=======
+			<description>The PDF/A version of a file shall be specified using the PDF/A Identification extension schema.</description>
+>>>>>>> refs/remotes/veraPDF/integration
 			<test>part == 1</test>
 			<error>
 				<message>The "part" property of the PDF/A Identification Schema is %1 instead of 1 for PDF/A-1b conforming file.</message>
