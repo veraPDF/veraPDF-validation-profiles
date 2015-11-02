@@ -10,7 +10,7 @@
 		<rule id="6-3-5-t02" object="PDType1Font">
 			<description>For all Type 1 font subsets referenced within a conforming file, the font descriptor dictionary shall include a CharSet string
 			listing the character names defined in the font subset, as described in PDF Reference Table 5.18</description>
-			<test>BaseFont.search(/[A-Z]{6}\+/) != 0 || CharSet != null</test>
+			<test>fontName.search(/[A-Z]{6}\+/) != 0 || CharSet != null</test>
 			<error>
 				<message>A Type1 font subset does not define CharSet entry in its Descriptor dictionary</message>
 			</error>

@@ -10,7 +10,7 @@
 		<rule id="6-1-2-t01" object="CosDocument">
 			<description>The % character of the file header shall occur at byte offset 0 of the file. 
 			The first line of a PDF file is a header identifying the version of the PDF specification to which the file conforms</description>
-			<test>pdfHeaderCompliesPDFA</test>
+			<test>headerOffset == 0 &amp;&amp; /%PDF-\d\.\d/.test(header)</test>
 			<error>
 				<message>File header does not start at byte offset 0 or does not correctly identify the version of the PDF document</message>
 			</error>
