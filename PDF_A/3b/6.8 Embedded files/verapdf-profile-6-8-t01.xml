@@ -2,7 +2,7 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
     <name>ISO 19005-3:2012 - 6.8 Embedded files - Subtype</name>
     <description>The MIME type of an embedded file, or a subset of a file, shall be specified using the Subtype key of the file specification dictionary.
-	If the MIME type is not known, the "application/octet-stream" shall be used.</creator>
+	If the MIME type is not known, the "application/octet-stream" shall be used.</description>
     <created>2015-10-28T17:52:11Z</created>
     <hash>sha-1 hash code</hash>
     <rules>

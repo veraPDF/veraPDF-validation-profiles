@@ -304,10 +304,10 @@
 <td style="width: 50px">82</td><td style="width: 100px">6-7-11-t01</td><td style="width: 400px" align="left">The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">XMPMainPackage</td><td style="width: 800px">ispdfaidNSPresent</td>
 </tr>
 <tr>
-<td style="width: 50px">83</td><td style="width: 100px">6-7-11-t02</td><td style="width: 400px" align="left">The PDF/A version of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">part == 1</td>
+<td style="width: 50px">83</td><td style="width: 100px">6-7-11-t02</td><td style="width: 400px" align="left">The value of pdfaid:part shall be the part number of ISO 19005 to which the file conforms.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">part == 1</td>
 </tr>
 <tr>
-<td style="width: 50px">84</td><td style="width: 100px">6-7-11-t03</td><td style="width: 400px" align="left">The PDF/A conformance level of a file shall be specified using the PDF/A Identification extension schema.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">conformance == "B"</td>
+<td style="width: 50px">84</td><td style="width: 100px">6-7-11-t03</td><td style="width: 400px" align="left">A Level A conforming file shall specify the value of pdfaid:conformance as A. A Level B conforming file shall specify the value of pdfaid:conformance as B.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">conformance == "B" || conformance == "A"</td>
 </tr>
 <tr>
 <td style="width: 50px">85</td><td style="width: 100px">6-7-11-t04</td><td style="width: 400px" align="left">The property "corr" is not specified in PDF/A Identification Schema in PDF/A-1 specification.</td><td style="width: 200px">PDFAIdSchema</td><td style="width: 800px">corr == null</td>
