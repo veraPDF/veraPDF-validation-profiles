@@ -12,7 +12,7 @@
 			<description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
 			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions. 
 			BaseFont - name - (Required) The PostScript name of the font</description>
-			<test>Subtype == "Type3" || BaseFont != null</test>
+			<test>Subtype == "Type3" || fontName != null</test>
 			<error>
 				<message>A BaseFont entry is missing or has invalid type</message>
 			</error>
