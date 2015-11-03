@@ -244,7 +244,7 @@
 		</rule>
         <rule id="6-1-6-t02" object="CosString">
 			<description>A hexadecimal string is written as a sequence of hexadecimal digits (0–9 and either A–F or a–f)</description>
-			<test>(isHex != true) || isHexSymbols</test>
+			<test>(isHex != true) || containsOnlyHex</test>
 			<error>
 				<message>Hexadecimal string contains non-white-space characters outside the range 0 to 9, A to F or a to f</message>
 			</error>
@@ -302,7 +302,7 @@
         <rule id="6-1-8-t01" object="CosUnicodeName">
 			<description>Font names, names of colourants in Separation and DeviceN colour spaces, and structure type names, after expansion of character sequences escaped with 
 			a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences.</description>
-			<test>isCorrectUtf8 == true</test>
+			<test>isValidUtf8 == true</test>
 			<error>
 				<message>The name object does not represent a correct Utf8 byte sequence</message>
 			</error>
@@ -330,7 +330,7 @@
 		</rule>
         <rule id="6-2-10-t01" object="PDExtGState">
 			<description>Only blend modes that are specified in ISO 32000-1:2008 shall be used for the value of the BM key in an extended graphic state dictionary.</description>
-			<test>BM == null || BM == "Normal" || BM = "Compatible" || BM == "Multiply" || BM == "Screen" || BM == "Overlay" || BM == "Darken" ||
+			<test>BM == null || BM == "Normal" || BM == "Compatible" || BM == "Multiply" || BM == "Screen" || BM == "Overlay" || BM == "Darken" ||
 			BM == "Lighten" || BM == "ColorDodge" || BM == "ColorBurn" || BM == "HardLight" || BM == "SoftLight" || BM == "Difference" || BM == "Exclusion" ||
 			BM == "Hue" || BM == "Saturation" || BM == "Color" || BM == "Limunosity"</test>
 			<error>
@@ -417,7 +417,7 @@
 			<description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
 			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions. 
 			BaseFont - name - (Required) The PostScript name of the font</description>
-			<test>Subtype == "Type3" || BaseFont != null</test>
+			<test>Subtype == "Type3" || fontName != null</test>
 			<error>
 				<message>A BaseFont entry is missing or has invalid type</message>
 			</error>
