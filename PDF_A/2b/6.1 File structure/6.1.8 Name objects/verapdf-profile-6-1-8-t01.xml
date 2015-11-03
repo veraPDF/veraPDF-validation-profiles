@@ -10,7 +10,7 @@
 		<rule id="6-1-8-t01" object="CosUnicodeName">
 			<description>Font names, names of colourants in Separation and DeviceN colour spaces, and structure type names, after expansion of character sequences escaped with 
 			a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences.</description>
-			<test>isCorrectUtf8 == true</test>
+			<test>isValidUtf8 == true</test>
 			<error>
 				<message>The name object does not represent a correct Utf8 byte sequence</message>
 			</error>
