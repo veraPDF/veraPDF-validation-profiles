@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>PDF/A-1B validation profile</name>
-    <description>Validation rules against ISO 19005-1:2005, Cor.1:2007 and Cor.2:2011</description>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA3b">
+    <name>PDF/A-3B validation profile</name>
+    <description>Validation rules against ISO 19005-3:2012</description>
     <creator>veraPDF Consortium</creator>
     <created>2015-11-02T09-29-05Z+02</created>
     <hash>sha-1 hash code</hash>
