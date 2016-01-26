@@ -72,7 +72,7 @@
 <td style="width: 50px">17</td><td style="width: 100px">6-1-6-t01</td><td style="width: 400px" align="left">Hexadecimal strings shall contain an even number of non-white-space characters</td><td style="width: 200px">CosString</td><td style="width: 800px">(isHex != true) || hexCount % 2 == 0</td>
 </tr>
 <tr>
-<td style="width: 50px">18</td><td style="width: 100px">6-1-6-t02</td><td style="width: 400px" align="left">A hexadecimal string is written as a sequence of hexadecimal digits (0&ndash;9 and either A&ndash;F or a&ndash;f)</td><td style="width: 200px">CosString</td><td style="width: 800px">(isHex != true) || isHexSymbols</td>
+<td style="width: 50px">18</td><td style="width: 100px">6-1-6-t02</td><td style="width: 400px" align="left">A hexadecimal string is written as a sequence of hexadecimal digits (0&ndash;9 and either A&ndash;F or a&ndash;f)</td><td style="width: 200px">CosString</td><td style="width: 800px">(isHex != true) || containsOnlyHex</td>
 </tr>
 <tr>
 <td style="width: 50px">19</td><td style="width: 100px">6-1-7-t01</td><td style="width: 400px" align="left">The value of the Length key specified in the stream dictionary shall match the number of bytes in the file following the LINE FEED (0Ah) character
@@ -90,7 +90,7 @@
 </tr>
 <tr>
 <td style="width: 50px">23</td><td style="width: 100px">6-1-8-t01</td><td style="width: 400px" align="left">Font names, names of colourants in Separation and DeviceN colour spaces, and structure type names, after expansion of character sequences escaped with 
-			a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences.</td><td style="width: 200px">CosUnicodeName</td><td style="width: 800px">isCorrectUtf8 == true</td>
+			a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences.</td><td style="width: 200px">CosUnicodeName</td><td style="width: 800px">isValidUtf8 == true</td>
 </tr>
 <tr>
 <td style="width: 50px">24</td><td style="width: 100px">6-1-9-t01</td><td style="width: 400px" align="left">The object number and generation number shall be separated by a single white-space character. The generation number and obj keyword shall be 
@@ -98,7 +98,7 @@
 			keywords shall each be followed by an EOL marker.</td><td style="width: 200px">CosIndirect</td><td style="width: 800px">spacingCompliesPDFA</td>
 </tr>
 <tr>
-<td style="width: 50px">25</td><td style="width: 100px">6-2-10-t01</td><td style="width: 400px" align="left">Only blend modes that are specified in ISO 32000-1:2008 shall be used for the value of the BM key in an extended graphic state dictionary.</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">BM == null || BM == "Normal" || BM = "Compatible" || BM == "Multiply" || BM == "Screen" || BM == "Overlay" || BM == "Darken" ||
+<td style="width: 50px">25</td><td style="width: 100px">6-2-10-t01</td><td style="width: 400px" align="left">Only blend modes that are specified in ISO 32000-1:2008 shall be used for the value of the BM key in an extended graphic state dictionary.</td><td style="width: 200px">PDExtGState</td><td style="width: 800px">BM == null || BM == "Normal" || BM == "Compatible" || BM == "Multiply" || BM == "Screen" || BM == "Overlay" || BM == "Darken" ||
 			BM == "Lighten" || BM == "ColorDodge" || BM == "ColorBurn" || BM == "HardLight" || BM == "SoftLight" || BM == "Difference" || BM == "Exclusion" ||
 			BM == "Hue" || BM == "Saturation" || BM == "Color" || BM == "Limunosity"</td>
 </tr>
@@ -117,7 +117,7 @@
 <tr>
 <td style="width: 50px">28</td><td style="width: 100px">6-2-11-2-t03</td><td style="width: 400px" align="left">All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
 			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions. 
-			BaseFont - name - (Required) The PostScript name of the font</td><td style="width: 200px">PDFont</td><td style="width: 800px">Subtype == "Type3" || BaseFont != null</td>
+			BaseFont - name - (Required) The PostScript name of the font</td><td style="width: 200px">PDFont</td><td style="width: 800px">Subtype == "Type3" || fontName != null</td>
 </tr>
 <tr>
 <td style="width: 50px">29</td><td style="width: 100px">6-2-11-2-t04</td><td style="width: 400px" align="left">All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions

@@ -8,7 +8,7 @@
     <rules>
 		<rule id="6-1-13-t04" object="CosName">
             <description>A conforming file shall not contain any name longer than 127 bytes.</description>
-            <test>origLength &lt;= 127</test>
+            <test>internalRepresentation.length() &lt;= 127</test>
             <error>
                 <message>Maximum length of a Name (127) exceeded</message>
             </error>
