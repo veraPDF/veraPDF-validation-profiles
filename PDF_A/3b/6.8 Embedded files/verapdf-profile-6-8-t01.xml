@@ -1,22 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-3:2012 - 6.8 Embedded files - Subtype</name>
-    <description>The MIME type of an embedded file, or a subset of a file, shall be specified using the Subtype key of the file specification dictionary.
-	If the MIME type is not known, the "application/octet-stream" shall be used.</description>
-    <created>2015-10-28T17:52:11Z</created>
-    <hash>sha-1 hash code</hash>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details created="2016-02-15T10:58:08.840+03:00">
+        <name>ISO 19005-3:2012 - 6.8 Embedded files - Subtype</name>
+        <description>The MIME type of an embedded file, or a subset of a file, shall be specified using the Subtype key of the file specification dictionary.
+	If the MIME type is not known, the &quot;application/octet-stream&quot; shall be used.</description>
+    </details>
+    <hash></hash>
     <rules>
-		<rule id="6-8-t01" object="EmbeddedFile">
-			<description>The MIME type of an embedded file, or a subset of a file, shall be specified using the Subtype key of the file specification dictionary.
-			If the MIME type is not known, the "application/octet-stream" shall be used.</description>
-			<test>Subtype != null</test>
-			<error>
-				<message>An embedded file dictionary doe snot contain the MIME type information (Subtype entry)</message>
-			</error>
-			<reference>
-				<specification>ISO19005-3:2012</specification>
-				<clause>E.1</clause>
-			</reference>
-		</rule>
-	</rules>
+        <rule object="EmbeddedFile">
+            <id specification="ISO_19005_1" clause="6.8" testNumber="1"/>
+            <description>The MIME type of an embedded file, or a subset of a file, shall be specified using the Subtype key of the file specification dictionary.
+			If the MIME type is not known, the &quot;application/octet-stream&quot; shall be used.</description>
+            <test>Subtype != null</test>
+            <error>
+                <message>An embedded file dictionary doe snot contain the MIME type information (Subtype entry)</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
 </profile>

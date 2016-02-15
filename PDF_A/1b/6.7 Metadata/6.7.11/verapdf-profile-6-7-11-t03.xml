@@ -1,22 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-1:2005 - 6.7.11 XMP Package - PDF/A Identification Schema.</name>
-    <description>A Level A conforming file shall specify the value of pdfaid:conformance as A. A Level B conforming file shall specify the value of pdfaid:conformance as B.</description>
-    <creator>veraPDF Consortium</creator>
-    <created>2015-06-29T10:19:00Z</created>
-    <hash>sha-1 hash code</hash>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:06.916+03:00">
+        <name>ISO 19005-1:2005 - 6.7.11 XMP Package - PDF/A Identification Schema.</name>
+        <description>A Level A conforming file shall specify the value of pdfaid:conformance as A. A Level B conforming file shall specify the value of pdfaid:conformance as B.</description>
+    </details>
+    <hash></hash>
     <rules>
-		<rule id="6-7-11-t03" object="PDFAIdSchema">
-			<description>A Level A conforming file shall specify the value of pdfaid:conformance as A. A Level B conforming file shall specify the value of pdfaid:conformance as B.</description>
-			<test>conformance == "B" || conformance == "A"</test>
-			<error>
-				<message>The "conformance" property of the PDF/A Identification Schema is %1 instead of "B" for PDF/A-1b conforming file.</message>
-				<argument>conformance</argument>
-			</error>
-			<reference>
-				<specification>ISO 19005-1:2005</specification>
-				<clause>6.7.11</clause>
-			</reference>
-		</rule>
-	</rules>
+        <rule object="PDFAIdSchema">
+            <id specification="ISO_19005_1" clause="6.7.11" testNumber="3"/>
+            <description>A Level A conforming file shall specify the value of pdfaid:conformance as A. A Level B conforming file shall specify the value of pdfaid:conformance as B.</description>
+            <test>conformance == &quot;B&quot; || conformance == &quot;A&quot;</test>
+            <error>
+                <message>The &quot;conformance&quot; property of the PDF/A Identification Schema is %1 instead of &quot;B&quot; for PDF/A-1b conforming file.</message>
+                <arguments>
+                    <argument>conformance</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
 </profile>
