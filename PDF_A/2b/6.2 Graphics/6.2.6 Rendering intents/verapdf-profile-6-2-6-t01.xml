@@ -10,7 +10,7 @@
 		<rule id="6-2-6-t01" object="CosRenderingIntent">
 			<description>Where a rendering intent is specified, its value shall be one of the four values defined in ISO 32000-1:2008,
 			Table 70: RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation.</description>
-			<test>value == "RelativeColorimetric" || value == "AbsoluteColorimetric" || value == "Perceptual" || value == "Saturation"</test>
+			<test>internalRepresentation == "RelativeColorimetric" || internalRepresentation == "AbsoluteColorimetric" || internalRepresentation == "Perceptual" || internalRepresentation == "Saturation"</test>
 			<error>
 				<message>A rendering intent with non-standard value is used</message>
 			</error>
