@@ -1,25 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-1:2005 - 6.1.12 Implementation limits - DeviceN components</name>
-    <description>Maximum number of DeviceN components is 8</description>
-    <creator>veraPDF Consortium</creator>
-    <created>2015-08-20T12:14:23Z</created>
-    <hash>sha-1 hash code</hash>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:04.683+03:00">
+        <name>ISO 19005-1:2005 - 6.1.12 Implementation limits - DeviceN components</name>
+        <description>Maximum number of DeviceN components is 8</description>
+    </details>
+    <hash></hash>
     <rules>
-		<rule id="6-1-12-t09" object="PDDeviceN">
+        <rule object="PDDeviceN">
+            <id specification="ISO_19005_1" clause="6.1.12" testNumber="9"/>
             <description>Maximum number of DeviceN components is 8</description>
             <test>nrComponents &lt;= 8</test>
             <error>
                 <message>Maximum number of DeviceN components is exceeded</message>
+                <arguments/>
             </error>
-            <reference>
-                <specification>ISO19005-1</specification>
-                <clause>6.1.12</clause>
-				<reference>
-					<specification>PDF Reference 1.4</specification>
-					<clause>Table C.1</clause>
-				</reference>
-            </reference>
+            <references>
+                <reference specification="PDF Reference 1.4" clause="Table C.1"/>
+            </references>
         </rule>
-	</rules>
+    </rules>
+    <variables/>
 </profile>

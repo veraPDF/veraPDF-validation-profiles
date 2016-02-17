@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-2:2011 - 6.5.2 Trigger events - Document</name>
-    <description>The document's Catalog shall not include an AA entry for an additional-actions dictionary.</description>
-    <creator>veraPDF Consortium</creator>
-    <created>2015-10-25T17:28:12Z</created>
-    <hash>sha-1 hash code</hash>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.744+03:00">
+        <name>ISO 19005-2:2011 - 6.5.2 Trigger events - Document</name>
+        <description>The document's Catalog shall not include an AA entry for an additional-actions dictionary.</description>
+    </details>
+    <hash></hash>
     <rules>
-		<rule id="6-5-2-t01" object="PDDocument">
-			<description>The document's Catalog shall not include an AA entry for an additional-actions dictionary.</description>
-			<test>AA_size == 0</test>
-			<error>
-				<message>The document catalog dictionary contains an additional-actions dictionary (AA entry)</message>
-			</error>
-			<reference>
-				<specification>ISO19005-2:2011</specification>
-				<clause>6.5.2</clause>
-			</reference>
-		</rule>
-	</rules>
+        <rule object="PDDocument">
+            <id specification="ISO_19005_1" clause="6.5.2" testNumber="1"/>
+            <description>The document's Catalog shall not include an AA entry for an additional-actions dictionary.</description>
+            <test>AA_size == 0</test>
+            <error>
+                <message>The document catalog dictionary contains an additional-actions dictionary (AA entry)</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
 </profile>

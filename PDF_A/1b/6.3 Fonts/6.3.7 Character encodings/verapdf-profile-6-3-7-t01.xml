@@ -1,25 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-1:2005 - 6.3.7 Character encodings - Non-symbolic TrueType fonts</name>
-    <description>All non-symbolic TrueType fonts shall specify MacRomanEncoding or WinAnsiEncoding, either as the value of the Encoding entry in the font dictionary
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:06.174+03:00">
+        <name>ISO 19005-1:2005 - 6.3.7 Character encodings - Non-symbolic TrueType fonts</name>
+        <description>All non-symbolic TrueType fonts shall specify MacRomanEncoding or WinAnsiEncoding, either as the value of the Encoding entry in the font dictionary
 	or as the value of the BaseEncoding entry in the dictionary that is the value of the Encoding entry in the font dictionary.
 	If the value of the Encoding entry is a dictionary, it shall not contain a Differences entry.</description>
-    <creator>veraPDF Consortium</creator>
-    <created>2015-08-25T11:25:12Z</created>
-    <hash>sha-1 hash code</hash>
+    </details>
+    <hash></hash>
     <rules>
-		<rule id="6-3-7-t01" object="PDTrueTypeFont">
-			<description>All non-symbolic TrueType fonts shall specify MacRomanEncoding or WinAnsiEncoding, either as the value of the Encoding entry in the font dictionary
+        <rule object="PDTrueTypeFont">
+            <id specification="ISO_19005_1" clause="6.3.7" testNumber="1"/>
+            <description>All non-symbolic TrueType fonts shall specify MacRomanEncoding or WinAnsiEncoding, either as the value of the Encoding entry in the font dictionary
 			or as the value of the BaseEncoding entry in the dictionary that is the value of the Encoding entry in the font dictionary.
 			If the value of the Encoding entry is a dictionary, it shall not contain a Differences entry.</description>
-			<test>isSymbolic == true || (Encoding == "MacRomanEncoding" || Encoding == "WinAnsiEncoding")</test>
-			<error>
-				<message>A non-symbolic TrueType font has an encoding different from MacRomanEncoding or WinAnsiEncoding</message>
-			</error>
-			<reference>
-				<specification>ISO19005-1:2005/Cor.2:2011</specification>
-				<clause>6.3.7</clause>
-			</reference>
-		</rule>
-	</rules>
+            <test>isSymbolic == true || (Encoding == &quot;MacRomanEncoding&quot; || Encoding == &quot;WinAnsiEncoding&quot;)</test>
+            <error>
+                <message>A non-symbolic TrueType font has an encoding different from MacRomanEncoding or WinAnsiEncoding</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO19005-1:2005/Cor.2:2011" clause="6.3.7"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
 </profile>
