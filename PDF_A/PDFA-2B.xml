@@ -370,7 +370,7 @@
         <rule object="PDAnnot">
             <id specification="ISO_19005_2" clause="6.3.2" testNumber="2"/>
             <description>If present, the F key's Print flag bit shall be set to 1 and its Hidden, Invisible, ToggleNoView, and NoView flag bits shall be set to 0.</description>
-            <test>F == null || ((F &amp; 1) == 0 &amp;&amp; (F &amp; 2) == 0 &amp;&amp; (F &amp; 4) == 1 &amp;&amp; (F &amp; 32) == 0 &amp;&amp; (F &amp; 256) == 0)</test>
+            <test>F == null || ((F &amp; 1) == 0 &amp;&amp; (F &amp; 2) == 0 &amp;&amp; (F &amp; 4) == 4 &amp;&amp; (F &amp; 32) == 0 &amp;&amp; (F &amp; 256) == 0)</test>
             <error>
                 <message>One of the annotation flags Hidden, Invisible, ToggleNoView, or NoView is set to 1, or the Print flag is set to 0</message>
                 <arguments/>
@@ -614,7 +614,7 @@
             <id specification="ISO_19005_2" clause="6.2.6" testNumber="1"/>
             <description>Where a rendering intent is specified, its value shall be one of the four values defined in ISO 32000-1:2008,
 			Table 70: RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation.</description>
-            <test>value == &quot;RelativeColorimetric&quot; || value == &quot;AbsoluteColorimetric&quot; || value == &quot;Perceptual&quot; || value == &quot;Saturation&quot;</test>
+            <test>internalRepresentation == &quot;RelativeColorimetric&quot; || internalRepresentation == &quot;AbsoluteColorimetric&quot; || internalRepresentation == &quot;Perceptual&quot; || internalRepresentation == &quot;Saturation&quot;</test>
             <error>
                 <message>A rendering intent with non-standard value is used</message>
                 <arguments/>
@@ -733,7 +733,7 @@
         <rule object="CosDocument">
             <id specification="ISO_19005_2" clause="6.1.3" testNumber="1"/>
             <description>The file trailer dictionary shall contain the ID keyword whose value shall be File Identifiers as defined in ISO 32000-1:2008, 14.4</description>
-            <test>lastID</test>
+            <test>lastID != null</test>
             <error>
                 <message>Missing ID in the document trailer</message>
                 <arguments/>
