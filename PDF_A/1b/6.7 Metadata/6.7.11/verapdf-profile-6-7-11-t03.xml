@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
-    <details creator="veraPDF Consortium" created="2016-02-15T10:58:06.916+03:00">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.146+03:00">
         <name>ISO 19005-1:2005 - 6.7.11 XMP Package - PDF/A Identification Schema.</name>
         <description>A Level A conforming file shall specify the value of pdfaid:conformance as A. A Level B conforming file shall specify the value of pdfaid:conformance as B.</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDFAIdSchema">
+        <rule object="PDFAIdentification">
             <id specification="ISO_19005_1" clause="6.7.11" testNumber="3"/>
             <description>A Level A conforming file shall specify the value of pdfaid:conformance as A. A Level B conforming file shall specify the value of pdfaid:conformance as B.</description>
             <test>conformance == &quot;B&quot; || conformance == &quot;A&quot;</test>
