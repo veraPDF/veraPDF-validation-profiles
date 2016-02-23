@@ -1,16 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-2:2011 - 6.2.6 Rendering intents</name>
-    <description>Where a rendering intent is specified, its value shall be one of the four values defined in ISO 32000-1:2008,
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.467+03:00">
+        <name>ISO 19005-2:2011 - 6.2.6 Rendering intents</name>
+        <description>Where a rendering intent is specified, its value shall be one of the four values defined in ISO 32000-1:2008,
 	Table 70: RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation.</description>
-    <creator>veraPDF Consortium</creator>
-    <created>2015-10-25T00:06:56Z</created>
-    <hash>sha-1 hash code</hash>
+    </details>
+    <hash></hash>
     <rules>
-		<rule id="6-2-6-t01" object="CosRenderingIntent">
-			<description>Where a rendering intent is specified, its value shall be one of the four values defined in ISO 32000-1:2008,
+        <rule object="CosRenderingIntent">
+            <id specification="ISO_19005_1" clause="6.2.6" testNumber="1"/>
+            <description>Where a rendering intent is specified, its value shall be one of the four values defined in ISO 32000-1:2008,
 			Table 70: RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation.</description>
-			<test>internalRepresentation == "RelativeColorimetric" || internalRepresentation == "AbsoluteColorimetric" || internalRepresentation == "Perceptual" || internalRepresentation == "Saturation"</test>
+			<test>internalRepresentation == &quot;RelativeColorimetric&quot; || internalRepresentation == &quot;AbsoluteColorimetric&quot; || internalRepresentation == &quot;Perceptual&quot; || internalRepresentation == &quot;Saturation&quot;</test>
 			<error>
 				<message>A rendering intent with non-standard value is used</message>
 			</error>

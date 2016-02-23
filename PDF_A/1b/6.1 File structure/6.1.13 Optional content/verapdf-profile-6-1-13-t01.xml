@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-1:2005 - 6.1.13 Optional content</name>
-    <description>The document catalog dictionary shall not contain a key with the name OCProperties</description>
-    <creator>veraPDF Consortium</creator>
-    <created>2015-07-14T17:40:19Z</created>
-    <hash>sha-1 hash code</hash>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:04.740+03:00">
+        <name>ISO 19005-1:2005 - 6.1.13 Optional content</name>
+        <description>The document catalog dictionary shall not contain a key with the name OCProperties</description>
+    </details>
+    <hash></hash>
     <rules>
-		<rule id="6-1-13-t01" object="CosDocument">
-			<description>The document catalog dictionary shall not contain a key with the name OCProperties</description>
-			<test>isOptionalContentPresent == false</test>
-			<error>
-				<message>The document catalog dictionary contains the OCProperties entry</message>
-			</error>
-			<reference>
-				<specification>ISO19005-1</specification>
-				<clause>6.1.13</clause>
-			</reference>
-		</rule>
-	</rules>
+        <rule object="CosDocument">
+            <id specification="ISO_19005_1" clause="6.1.13" testNumber="1"/>
+            <description>The document catalog dictionary shall not contain a key with the name OCProperties</description>
+            <test>isOptionalContentPresent == false</test>
+            <error>
+                <message>The document catalog dictionary contains the OCProperties entry</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
 </profile>
