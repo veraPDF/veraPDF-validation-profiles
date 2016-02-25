@@ -18,7 +18,7 @@
             <test>(isNameValidText == true &amp;&amp; namePrefix == &quot;pdfaProperty&quot; ) &amp;&amp; 
 			(isValueTypeValidText == true &amp;&amp; isValueTypeDefined == true &amp;&amp; valueTypePrefix == &quot;pdfaProperty&quot; ) &amp;&amp;
 			(isCategoryValidText == true &amp;&amp; (category == &quot;external&quot; || category == &quot;internal&quot;) &amp;&amp; categoryPrefix == &quot;pdfaProperty&quot;) &amp;&amp;
-			(isDescriptionValidText == true &amp;&amp; (descriptionPrefix == null || descriptionPrefix == &quot;pdfaProperty&quot;) )</test>
+			(isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaProperty&quot; )</test>
             <error>
                 <message>Invalid extension schema Property type definition</message>
                 <arguments/>
