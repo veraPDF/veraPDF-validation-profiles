@@ -1053,7 +1053,7 @@
             <test>(isNameValidText == true &amp;&amp; namePrefix == &quot;pdfaProperty&quot; ) &amp;&amp; 
 			(isValueTypeValidText == true &amp;&amp; isValueTypeDefined == true &amp;&amp; valueTypePrefix == &quot;pdfaProperty&quot; ) &amp;&amp;
 			(isCategoryValidText == true &amp;&amp; (category == &quot;external&quot; || category == &quot;internal&quot;) &amp;&amp; categoryPrefix == &quot;pdfaProperty&quot;) &amp;&amp;
-			(isDescriptionValidText == true &amp;&amp; (descriptionPrefix == null || descriptionPrefix == &quot;pdfaProperty&quot;) )</test>
+			(isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaProperty&quot; )</test>
             <error>
                 <message>Invalid extension schema Property type definition</message>
                 <arguments/>
@@ -1069,7 +1069,7 @@
             <test>(isTypeValidText == true &amp;&amp; typePrefix == &quot;pdfaType&quot; ) &amp;&amp; 
 			(isNamespaceURIValidURI == true &amp;&amp; namespaceURIPrefix == &quot;pdfaType&quot; ) &amp;&amp;
 			(isPrefixValidText == true &amp;&amp; (prefixPrefix == null || prefixPrefix == &quot;pdfaType&quot;) ) &amp;&amp;
-			(isDescriptionValidText == true &amp;&amp; (descriptionPrefix == null || descriptionPrefix == &quot;pdfaType&quot;) ) &amp;&amp;
+			(isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaType&quot; ) &amp;&amp;
 			(isFieldValidSeq == true &amp;&amp; fieldPrefix == &quot;pdfaType&quot;)</test>
             <error>
                 <message>Invalid extension schema ValueType type definition</message>
@@ -1084,7 +1084,7 @@
 		pdfaField:name (Text), pdfaField:valueType (Open Choice of Text), pdfaField:description (Text).</description>
             <test>(isNameValidText == true &amp;&amp; namePrefix == &quot;pdfaField&quot; ) &amp;&amp; 
 			(isValueTypeValidText == true &amp;&amp; isValueTypeDefined == true &amp;&amp; valueTypePrefix == &quot;pdfaField&quot; ) &amp;&amp;
-			(isDescriptionValidText == true &amp;&amp; (descriptionPrefix == null || descriptionPrefix == &quot;pdfaField&quot;) )</test>
+			(isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaField&quot; )</test>
             <error>
                 <message>Invalid extension schema Field type definition</message>
                 <arguments/>

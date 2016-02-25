@@ -15,7 +15,7 @@
 		pdfaField:name (Text), pdfaField:valueType (Open Choice of Text), pdfaField:description (Text).</description>
             <test>(isNameValidText == true &amp;&amp; namePrefix == &quot;pdfaField&quot; ) &amp;&amp; 
 			(isValueTypeValidText == true &amp;&amp; isValueTypeDefined == true &amp;&amp; valueTypePrefix == &quot;pdfaField&quot; ) &amp;&amp;
-			(isDescriptionValidText == true &amp;&amp; (descriptionPrefix == null || descriptionPrefix == &quot;pdfaField&quot;) )</test>
+			(isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaField&quot; )</test>
             <error>
                 <message>Invalid extension schema Field type definition</message>
                 <arguments/>
