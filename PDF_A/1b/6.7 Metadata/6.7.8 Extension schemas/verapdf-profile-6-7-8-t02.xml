@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
     <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.400+03:00">
-        <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Conatiner schema namespace</name>
+        <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Container schema</name>
         <description>The extension schema container schema uses the namespace URI &quot;http://www.aiim.org/pdfa/ns/extension/&quot;. 
 	The required schema namespace prefix is pdfaExtension. pdfaExtension:schemas - Bag Schema - Description of extension schemas</description>
     </details>

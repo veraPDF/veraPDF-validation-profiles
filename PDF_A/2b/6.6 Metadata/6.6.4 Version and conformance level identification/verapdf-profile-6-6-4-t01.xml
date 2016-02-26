@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:53:06.894+03:00">
-        <name>ISO 19005-1:2005 - 6.7.11 XMP Package - PDF/A Identification Schema.</name>
+        <name>ISO 19005-2:2011 - 6.6.4 Version and conformance level identification - PDF/A Identification Schema.</name>
         <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="MainXMPPackage">
-            <id specification="ISO_19005_1" clause="6.7.11" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.6.4" testNumber="1"/>
             <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.</description>
             <test>Identification_size == 1</test>
             <error>
