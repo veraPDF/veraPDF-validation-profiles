@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.219+03:00">
         <name>ISO 19005-2:2011 - 6.2.11 Fonts - 6.2.11.6 Character encodings - Non-symbolic TrueType fonts</name>
         <description>No non-symbolic TrueType font shall define a Differences array unless all of the glyph names in
 	the Differences array are listed in the Adobe Glyph List and the embedded font program contains at least the
-	Microsoft Unicode (3,1 – Platform ID=3, Encoding ID=1) encoding in the &quot;cmap&quot; table.</description>
+	Microsoft Unicode (3,1 – Platform ID=3, Encoding ID=1) encoding in the 'cmap' table.</description>
     </details>
     <hash></hash>
     <rules>
@@ -12,8 +12,9 @@
             <id specification="ISO_19005_1" clause="6.2.11.6" testNumber="2"/>
             <description>No non-symbolic TrueType font shall define a Differences array unless all of the glyph names in
 			the Differences array are listed in the Adobe Glyph List and the embedded font program contains at least the
-			Microsoft Unicode (3,1 – Platform ID=3, Encoding ID=1) encoding in the &quot;cmap&quot; table.</description>
-            <test>isSymbolic == true || (Encoding == &quot;MacRomanEncoding&quot; || Encoding == &quot;WinAnsiEncoding&quot;) || (Encoding == &quot;Custom&quot; &amp;&amp; differencesAreUnicodeCompliant == true)</test>
+			Microsoft Unicode (3,1 – Platform ID=3, Encoding ID=1) encoding in the 'cmap' table.</description>
+            <test>isSymbolic == true || (Encoding == "MacRomanEncoding" || Encoding == "WinAnsiEncoding") || 
+				(Encoding == "Custom" &amp;&amp; differencesAreUnicodeCompliant == true)</test>
             <error>
                 <message>A non-symbolic TrueType font has encoding different from MacRomanEncoding or WinAnsiEncoding, or 
 				the glyphs in the Differences array can not be mapped to the embedded font glyphs via the Adobe Glyph List</message>

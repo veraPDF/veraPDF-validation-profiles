@@ -9,7 +9,7 @@
 		<rule object="PDPage">
             <id specification="ISO_19005_2" clause="6.10" testNumber="2"/>
             <description>There shall be no PresSteps entry in any Page dictionary</description>
-            <test>PresSteps_size == 0</test>
+            <test>containsPresSteps == false</test>
             <error>
                 <message>A Page dictionary contains the PresSteps entry</message>
                 <arguments/>
