@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosIIFilter">
-            <id specification="ISO_19005_1" clause="6.1.10" testNumber="1"/>
+            <id specification="ISO_19005_1" clause="6.1.10" testNumber="2"/>
             <description>The LZWDecode filter shall not be permitted</description>
             <test>internalRepresentation != &quot;LZWDecode&quot; &amp;&amp; internalRepresentation != &quot;LZW&quot;</test>
             <error>
