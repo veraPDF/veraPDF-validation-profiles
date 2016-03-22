@@ -9,7 +9,7 @@
 		<rule object="PDDocument">
             <id specification="ISO_19005_2" clause="6.10" testNumber="1"/>
             <description>There shall be no AlternatePresentations entry in the document's name dictionary</description>
-            <test>AlternatePresentations_size == 0</test>
+            <test>containsAlternatePresentations == false</test>
             <error>
                 <message>The document's name dictionary contains the AlternatePresentations entry</message>
                 <arguments/>

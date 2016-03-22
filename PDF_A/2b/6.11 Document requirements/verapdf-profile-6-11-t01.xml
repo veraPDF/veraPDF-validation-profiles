@@ -9,7 +9,7 @@
 		<rule object="CosDocument">
             <id specification="ISO_19005_2" clause="6.11" testNumber="1"/>
             <description>The document catalog shall not contain the Requirements key</description>
-            <test>Requirements_size == 0</test>
+            <test>Requirements == null</test>
             <error>
                 <message>The document catalog contains the Requirements key</message>
                 <arguments/>
