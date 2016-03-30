@@ -9,7 +9,7 @@
         <rule object="PDAnnot">
             <id specification="ISO_19005_1" clause="6.9" testNumber="4"/>
             <description>Every form field shall have an appearance dictionary associated with the field's data.</description>
-            <test>Subtype != &quot;Widget&quot; || FT == null || AP != null</test>
+            <test>Subtype != &quot;Widget&quot; || AP != null</test>
             <error>
                 <message>Form field does not have an appearance dictionary associated with the field's data.</message>
                 <arguments/>
