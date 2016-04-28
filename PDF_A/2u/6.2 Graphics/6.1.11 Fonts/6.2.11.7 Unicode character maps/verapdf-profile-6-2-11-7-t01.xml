@@ -9,6 +9,7 @@
         <rule object="Glyph">
             <id specification="ISO_19005_1" clause="6.2.11.7" testNumber="1"/>
             <description>The Unicode values specified in the ToUnicode CMap shall all be greater than zero (0), but not equal to either U+FEFF or U+FFFE.</description>
+            <test>toUnicode != null &amp;&amp; toUnicode.indexOf("\u0000") == -1 &amp;&amp; toUnicode.indexOf("\uFFFE") == -1 &amp;&amp; toUnicode.indexOf("\uFEFF")  == -1</test>
             <error>
                 <message>The font does not define Unicode character map or some glyphs have invalid Unicode value</message>
                 <arguments/>
