@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.359+03:00">
         <name>ISO 19005-2:2011 - 6.2.4 Colour Spaces - 6.2.4.3 Uncalibrated/Device colour spaces - DeviceGray</name>
         <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used, 
@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="PDDeviceGray">
-            <id specification="ISO_19005_1" clause="6.2.4" testNumber="4"/>
+            <id specification="ISO_19005_2" clause="6.2.4.3" testNumber="4"/>
             <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used,
 			or if a PDF/A OutputIntent is present.</description>
             <test>gOutputCS != null</test>

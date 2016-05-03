@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.374+03:00">
         <name>ISO 19005-2:2011 - 6.2.4 Colour Spaces - 6.2.4.4 Separation and DeviceN colour spaces - DeviceN colorants</name>
         <description>For any spot colour used in a DeviceN or NChannel colour space, an entry in the Colorants dictionary shall be present.</description>
@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDDeviceN">
-            <id specification="ISO_19005_1" clause="6.2.4" testNumber="5"/>
+            <id specification="ISO_19005_2" clause="6.2.4.4" testNumber="1"/>
             <description>For any spot colour used in a DeviceN or NChannel colour space, an entry in the Colorants dictionary shall be present.</description>
             <test>areColorantsPresent == true</test>
             <error>
