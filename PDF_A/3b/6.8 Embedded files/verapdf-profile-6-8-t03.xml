@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_3_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.854+03:00">
         <name>ISO 19005-3:2012 - 6.8 Embedded files - AFRelationship</name>
         <description>In order to enable identification of the relationship between the file specification dictionary and the content that is referring to it, 
@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="CosFileSpecification">
-            <id specification="ISO_19005_1" clause="6.8" testNumber="3"/>
+            <id specification="ISO_19005_3" clause="6.8" testNumber="3"/>
             <description>In order to enable identification of the relationship between the file specification dictionary and the content that is referring to it,
 			a new (required) key has been defined and its presence (in the dictionary) is required.</description>
             <test>AFRelationship != null</test>
