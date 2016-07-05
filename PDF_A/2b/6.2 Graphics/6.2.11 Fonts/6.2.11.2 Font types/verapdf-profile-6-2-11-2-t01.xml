@@ -13,7 +13,7 @@
             <description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to
 			the provisions in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
 			Type - name - (Required) The type of PDF object that this dictionary describes; must be Font for a font dictionary</description>
-            <test>Type == &quot;Font&quot;</test>
+            <test>Type == &quot;Font&quot; || renderingMode == 3</test>
             <error>
                 <message>A Font dictionary has missing or invalid Type entry</message>
                 <arguments/>

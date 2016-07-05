@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.2.11.4" testNumber="3"/>
             <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs
 			present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not.</description>
-            <test>CharSet == null || charSetListsAllGlyphs == true</test>
+            <test>CharSet == null || charSetListsAllGlyphs == true || renderingMode == 3</test>
             <error>
                 <message>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</message>
                 <arguments/>

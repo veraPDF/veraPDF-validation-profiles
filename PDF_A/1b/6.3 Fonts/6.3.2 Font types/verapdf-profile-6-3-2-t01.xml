@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.3.2" testNumber="1"/>
             <description>All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
 	Type - name - (Required) The type of PDF object that this dictionary describes; must be Font for a font dictionary</description>
-            <test>Type == &quot;Font&quot;</test>
+            <test>Type == &quot;Font&quot; || renderingMode == 3</test>
             <error>
                 <message>A Font dictionary has missing or invalid Type entry</message>
                 <arguments/>

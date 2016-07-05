@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.3.3" testNumber="1"/>
             <description>For any given composite (Type 0) font referenced within a conforming file, the CIDSystemInfo entries of its 
 			CIDFont and CMap dictionaries shall be compatible</description>
-            <test>areRegistryOrderingCompatible == true</test>
+            <test>areRegistryOrderingCompatible == true || renderingMode == 3</test>
             <error>
                 <message>Registry and Ordering entries in the CIDFont and CMap dictionaries of a Type 0 font are not compatible</message>
                 <arguments/>

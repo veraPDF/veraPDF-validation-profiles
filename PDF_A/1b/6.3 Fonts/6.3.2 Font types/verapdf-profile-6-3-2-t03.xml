@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.3.2" testNumber="3"/>
             <description>All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
 			BaseFont - name - (Required) The PostScript name of the font</description>
-            <test>Subtype == &quot;Type3&quot; || fontName != null</test>
+            <test>Subtype == &quot;Type3&quot; || fontName != null || renderingMode == 3</test>
             <error>
                 <message>A BaseFont entry is missing or has invalid type</message>
                 <arguments/>
