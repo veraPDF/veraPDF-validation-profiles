@@ -19,7 +19,8 @@
 			and Supplement may be used in the CIDSystemInfo entry of the CIDFont. 
 			- Otherwise, the corresponding Registry and Ordering strings in both CIDSystemInfo dictionaries shall be identical, and the value of the Supplement key in 
 			the CIDSystemInfo dictionary of the CIDFont shall be greater than or equal to the Supplement key in the CIDSystemInfo dictionary of the CMap.</description>
-            <test>cmapName == &quot;Identity-H&quot; || cmapName == &quot;Identity-V&quot; || (areRegistryOrderingCompatible == true &amp;&amp; isSupplementCompatible == true)</test>
+            <test>cmapName == &quot;Identity-H&quot; || cmapName == &quot;Identity-V&quot; || (areRegistryOrderingCompatible == true &amp;&amp; isSupplementCompatible == true)
+                || renderingMode == 3</test>
             <error>
                 <message>CiDSystemInfo entries the CIDFont and CMap dictionaries of a Type 0 font are not compatible</message>
                 <arguments/>

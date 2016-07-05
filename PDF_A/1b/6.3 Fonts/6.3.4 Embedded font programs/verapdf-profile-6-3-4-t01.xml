@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.3.4" testNumber="1"/>
             <description>The font programs for all fonts used within a conforming file shall be embedded within that file, as defined in PDF Reference 5.8, 
 			except when the fonts are used exclusively with text rendering mode 3</description>
-            <test>Subtype == &quot;Type3&quot; || Subtype == &quot;Type0&quot; || fontFile_size == 1</test>
+            <test>Subtype == &quot;Type3&quot; || Subtype == &quot;Type0&quot; || fontFile_size == 1 || renderingMode == 3</test>
             <error>
                 <message>The font program is not embedded</message>
                 <arguments/>

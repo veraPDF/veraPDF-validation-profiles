@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.3.2" testNumber="6"/>
             <description>All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
 			Widths - array - (Required except for the standard 14 fonts; indirect reference preferred) An array of (LastChar − FirstChar + 1) widths</description>
-            <test>isStandard == true || (Widths_size != null &amp;&amp; Widths_size == LastChar - FirstChar + 1)</test>
+            <test>isStandard == true || (Widths_size != null &amp;&amp; Widths_size == LastChar - FirstChar + 1) || renderingMode == 3</test>
             <error>
                 <message>Widths array is missing or has invalid size</message>
                 <arguments/>
