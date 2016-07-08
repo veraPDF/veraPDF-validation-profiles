@@ -9,7 +9,7 @@
         <rule object="PDFont">
             <id specification="ISO_19005_1" clause="6.2.11.4" testNumber="1"/>
             <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9.</description>
-            <test>Subtype == &quot;Type3&quot; || Subtype == &quot;Type0&quot; || fontFile_size == 1</test>
+            <test>Subtype == &quot;Type3&quot; || Subtype == &quot;Type0&quot; || renderingMode == 3 || fontFile_size == 1</test>
             <error>
                 <message>The font program is not embedded</message>
                 <arguments/>
