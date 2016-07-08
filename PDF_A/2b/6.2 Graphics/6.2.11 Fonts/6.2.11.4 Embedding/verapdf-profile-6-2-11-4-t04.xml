@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.2.11.4" testNumber="4"/>
             <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program,
 			regardless of whether a CID in the font is referenced or used by the PDF or not.</description>
-            <test>CIDSet_size == 0 || cidSetListsAllGlyphs == true</test>
+            <test>fontFile_size == 0 || CIDSet_size == 0 || cidSetListsAllGlyphs == true</test>
             <error>
                 <message>A CID Font subset does not define CIDSet entry in its Descriptor dictionary</message>
                 <arguments/>
