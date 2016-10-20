@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.3.5" testNumber="1"/>
             <description>The font programs for all fonts used within a conforming file shall be embedded within that file, as defined in PDF Reference 5.8, 
 			except when the fonts are used exclusively with text rendering mode 3.</description>
-            <test>renderingMode == 3 || isGlyphPresent == true</test>
+            <test>renderingMode == 3 || isGlyphPresent == null || isGlyphPresent == true</test>
             <error>
                 <message>Not all glyphs referenced for rendering are present in the embedded font program</message>
                 <arguments/>

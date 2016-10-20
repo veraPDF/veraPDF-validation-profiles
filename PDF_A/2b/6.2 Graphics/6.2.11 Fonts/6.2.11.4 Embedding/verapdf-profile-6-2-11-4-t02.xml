@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.2.11.4" testNumber="2"/>
             <description>Embedded fonts shall define all glyphs referenced for rendering within the conforming file. A font referenced for use solely 
 			in rendering mode 3 is therefore not rendered and is thus exempt from the embedding requirement.</description>
-            <test>renderingMode == 3 || isGlyphPresent == true</test>
+            <test>renderingMode == 3 || isGlyphPresent == null || isGlyphPresent == true</test>
             <error>
                 <message>Not all glyphs referenced for rendering are present in the embedded font program</message>
                 <arguments/>
