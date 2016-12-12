@@ -13,7 +13,7 @@
 			If the MIME type is not known, the &quot;application/octet-stream&quot; shall be used.</description>
             <test>Subtype != null</test>
             <error>
-                <message>An embedded file dictionary doe snot contain the MIME type information (Subtype entry)</message>
+                <message>An embedded file dictionary does not contain the MIME type information (Subtype entry)</message>
                 <arguments/>
             </error>
             <references/>
