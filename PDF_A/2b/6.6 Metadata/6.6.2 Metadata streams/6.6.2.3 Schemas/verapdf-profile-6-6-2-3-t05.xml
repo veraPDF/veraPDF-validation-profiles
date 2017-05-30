@@ -17,7 +17,7 @@
 		pdfaType:prefix (Text), pdfaType:description (Text), pdfaType:field (Seq Field).</description>
             <test>(isTypeValidText == true &amp;&amp; typePrefix == &quot;pdfaType&quot; ) &amp;&amp; 
 			(isNamespaceURIValidURI == true &amp;&amp; namespaceURIPrefix == &quot;pdfaType&quot; ) &amp;&amp;
-			(isPrefixValidText == true &amp;&amp; (prefixPrefix == null || prefixPrefix == &quot;pdfaType&quot;) ) &amp;&amp;
+			(isPrefixValidText == true &amp;&amp; prefixPrefix == &quot;pdfaType&quot;) &amp;&amp;
 			(isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaType&quot; ) &amp;&amp;
 			(isFieldValidSeq == true &amp;&amp; fieldPrefix == &quot;pdfaType&quot;)</test>
             <error>
