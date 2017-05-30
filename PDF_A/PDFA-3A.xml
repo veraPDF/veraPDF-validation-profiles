@@ -1224,7 +1224,7 @@
             <description>The Schema type is an XMP structure containing the definition of an extension schema. The field namespace URI is &quot;http://www.aiim.org/pdfa/ns/schema#&quot;.
 			The required field namespace prefix is pdfaSchema. The Schema type includes the following fields: pdfaSchema:schema (Text), pdfaSchema:namespaceURI (URI), pdfaSchema:prefix (Text),
 			pdfaSchema:property (Seq Property), pdfaSchema:valueType (Seq ValueType).</description>
-            <test>(isSchemaValidText == true &amp;&amp; schemaPrefix == &quot;pdfaSchema&quot;) &amp;&amp; 
+            <test>(isSchemaValidText == true &amp;&amp; schemaPrefix == &quot;pdfaSchema&quot;) &amp;&amp;
 			(isNamespaceURIValidURI == true &amp;&amp; namespaceURIPrefix == &quot;pdfaSchema&quot;) &amp;&amp;
 			(isPrefixValidText == true &amp;&amp; prefixPrefix == &quot;pdfaSchema&quot;) &amp;&amp;
 			(isPropertyValidSeq == true &amp;&amp; propertyPrefix == &quot;pdfaSchema&quot;) &amp;&amp;
@@ -1259,7 +1259,7 @@
 		pdfaType:prefix (Text), pdfaType:description (Text), pdfaType:field (Seq Field).</description>
             <test>(isTypeValidText == true &amp;&amp; typePrefix == &quot;pdfaType&quot; ) &amp;&amp;
 			(isNamespaceURIValidURI == true &amp;&amp; namespaceURIPrefix == &quot;pdfaType&quot; ) &amp;&amp;
-			(isPrefixValidText == true &amp;&amp; (prefixPrefix == null || prefixPrefix == &quot;pdfaType&quot;) ) &amp;&amp;
+			(isPrefixValidText == true &amp;&amp; prefixPrefix == &quot;pdfaType&quot;) &amp;&amp;
 			(isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaType&quot; ) &amp;&amp;
 			(isFieldValidSeq == true &amp;&amp; fieldPrefix == &quot;pdfaType&quot;)</test>
             <error>
