@@ -1406,9 +1406,9 @@
             <id specification="ISO_19005_3" clause="6.8" testNumber="1"/>
             <description>The MIME type of an embedded file, or a subset of a file, shall be specified using the Subtype key of the file specification dictionary.
 			If the MIME type is not known, the &quot;application/octet-stream&quot; shall be used.</description>
-            <test>Subtype != null</test>
+            <test>Subtype != null &amp;&amp; /^[-\w+\.]+\/[-\w+\.]+$/.test(Subtype)</test>
             <error>
-                <message>An embedded file dictionary does not contain the MIME type information (Subtype entry)</message>
+                <message>The MIME type information (Subtype entry) of an embedded file is missing or invalid</message>
                 <arguments/>
             </error>
             <references/>
