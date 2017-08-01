@@ -9,7 +9,7 @@
         <rule object="CosFileSpecification">
             <id specification="ISO_19005_1" clause="6.1.11" testNumber="1"/>
             <description>A file specification dictionary, as defined in PDF 3.10.2, shall not contain the EF key</description>
-            <test>EF_size == 0</test>
+            <test>containsEF == false</test>
             <error>
                 <message>A file specification dictionary contains the EF key</message>
                 <arguments/>

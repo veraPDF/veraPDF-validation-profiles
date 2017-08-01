@@ -9,7 +9,7 @@
         <rule object="CosDocument">
             <id specification="ISO_19005_1" clause="6.1.11" testNumber="2"/>
             <description>A file's name dictionary, as defined in PDF Reference 3.6.3, shall not contain the EmbeddedFiles key</description>
-            <test>EmbeddedFiles_size == 0</test>
+            <test>containsEmbeddedFiles == false</test>
             <error>
                 <message>The document contains embedded files (EmbeddedFiles key is present in the file's name dictionary)</message>
                 <arguments/>

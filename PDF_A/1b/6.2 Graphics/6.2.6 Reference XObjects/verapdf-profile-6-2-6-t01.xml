@@ -9,7 +9,7 @@
         <rule object="PDXForm">
             <id specification="ISO_19005_1" clause="6.2.6" testNumber="1"/>
             <description>A conforming file shall not contain any reference XObjects</description>
-            <test>Ref_size == 0</test>
+            <test>containsRef == false</test>
             <error>
                 <message>The document contains a reference XObject (Ref key in the form XObject dictionary)</message>
                 <arguments/>
