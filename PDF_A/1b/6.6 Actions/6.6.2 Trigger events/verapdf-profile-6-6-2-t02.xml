@@ -9,7 +9,7 @@
         <rule object="PDFormField">
             <id specification="ISO_19005_1" clause="6.6.2" testNumber="2"/>
             <description>A Field dictionary shall not include an AA entry for an additional-actions dictionary</description>
-            <test>AA_size == 0</test>
+            <test>containsAA == false</test>
             <error>
                 <message>A Field dictionary contains an additional-actions dictionary (AA entry)</message>
                 <arguments/>

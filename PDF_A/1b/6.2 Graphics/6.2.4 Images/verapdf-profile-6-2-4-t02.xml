@@ -9,7 +9,7 @@
         <rule object="PDXObject">
             <id specification="ISO_19005_1" clause="6.2.4" testNumber="2"/>
             <description>An XObject dictionary (Image or Form) shall not contain the OPI key</description>
-            <test>OPI_size == 0</test>
+            <test>containsOPI == false</test>
             <error>
                 <message>OPI key is present in the XObject dictionary(</message>
                 <arguments/>
