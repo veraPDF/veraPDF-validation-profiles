@@ -9,7 +9,7 @@
         <rule object="PDFormField">
             <id specification="ISO_19005_1" clause="6.4.1" testNumber="2"/>
             <description>A Widget annotation dictionary or Field dictionary shall not contain the A or AA keys.</description>
-            <test>AA_size == 0</test>
+            <test>containsAA == false</test>
             <error>
                 <message>A Form field dictionary contains the AA entry</message>
                 <arguments/>
