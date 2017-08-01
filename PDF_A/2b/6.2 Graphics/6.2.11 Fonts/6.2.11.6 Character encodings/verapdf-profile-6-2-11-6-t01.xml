@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.2.11.6" testNumber="1"/>
             <description>For all non-symbolic TrueType fonts used for rendering, the embedded TrueType font program shall contain one or several non-symbolic 
 			cmap entries such that all necessary glyph lookups can be carried out.</description>
-            <test>isSymbolic == true || nrCmaps &gt;= 1 || renderingMode == 3</test>
+            <test>isSymbolic == true || renderingMode == 3 || cmap10Present == true || cmap31Present == true </test>
             <error>
                 <message>The embedded font program for a non-symbolic TrueType font does not contain any cmap subtables</message>
                 <arguments/>

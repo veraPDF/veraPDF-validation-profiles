@@ -9,7 +9,7 @@
         <rule object="PDExtGState">
             <id specification="ISO_19005_2" clause="6.2.5" testNumber="3"/>
             <description>An ExtGState dictionary shall not contain the HTP key</description>
-            <test>HTP_size == 0</test>
+            <test>containsHTP == false</test>
             <error>
                 <message>An ExtGState dictionary contains the HTP key</message>
                 <arguments/>

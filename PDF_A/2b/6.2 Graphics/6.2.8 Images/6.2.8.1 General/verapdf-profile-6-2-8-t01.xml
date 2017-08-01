@@ -9,7 +9,7 @@
         <rule object="PDXImage">
             <id specification="ISO_19005_1" clause="6.2.8" testNumber="1"/>
             <description>An Image dictionary shall not contain the Alternates key</description>
-            <test>Alternates_size == 0</test>
+            <test>containsAlternates == false</test>
             <error>
                 <message>Alternates key is present in the Image dictionary(</message>
                 <arguments/>
