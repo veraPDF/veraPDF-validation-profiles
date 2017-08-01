@@ -9,7 +9,7 @@
         <rule object="PDOutputIntent">
             <id specification="ISO_19005_1" clause="6.2.3" testNumber="3"/>
             <description>In addition, the DestOutputProfileRef key, as defined in ISO 15930-7:2010, Annex A, shall not be present in any PDF/X OutputIntent.</description>
-            <test>DestOutputProfileRef_size == 0</test>
+            <test>containsDestOutputProfileRef == false</test>
             <error>
                 <message>The output intent dictionary contains forbidden entry DestOutputProfileRef</message>
                 <arguments/>
