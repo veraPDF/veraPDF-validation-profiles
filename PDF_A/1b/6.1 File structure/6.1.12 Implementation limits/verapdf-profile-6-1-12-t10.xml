@@ -6,10 +6,10 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="CIDGlyph">
+        <rule object="CMapFile">
             <id specification="ISO_19005_1" clause="6.1.12" testNumber="10"/>
             <description>Maximum value of a CID (character identifier) is 65,535</description>
-            <test>CID &lt;= 65535</test>
+            <test>maximalCID &lt;= 65535</test>
             <error>
                 <message>Maximum value of a CID (65,535) is exceeded</message>
                 <arguments/>
@@ -21,3 +21,4 @@
     </rules>
     <variables/>
 </profile>
+
