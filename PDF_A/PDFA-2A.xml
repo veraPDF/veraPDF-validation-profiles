@@ -1274,6 +1274,18 @@
                 <reference specification="RDF/XML Syntax Specification (Revised), 10 February 2004" clause=""/>
             </references>
         </rule>
+		<rule object="XMPPackage">
+            <id specification="ISO_19005_2" clause="6.6.2.1" testNumber="5"/>
+            <description>All metadata streams present in the PDF shall conform to the XMP Specification. The XMP package must be encoded as UTF-8.</description>
+            <test>actualEncoding == "UTF-8"</test>
+            <error>
+                <message>The XMP package uses an encoding different from UTF-8</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="XMP Specification, September 2005" clause="5 - Embedding XMP Metadata in Application Files - PDF"/>
+            </references>
+        </rule>
         <rule object="ExtensionSchemaObject">
             <id specification="ISO_19005_2" clause="6.6.2.3" testNumber="1"/>
             <description>Extension schemas shall be specified using the PDF/A extension schema container schema defined in 6.6.2.3.3. All fields described in each 
