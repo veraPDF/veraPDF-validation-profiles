@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile">
+    <details creator="veraPDF Consortium" created="2020-04-02T10:58:04.098+03:00">
+        <name>ISO/FDIS 14289-1:2013 - 7.1 General - 7.1.10 DisplayDocTitle</name>
+        <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosDocument">
+            <id specification="ISO_FDIS_14289_1" clause="7.1" testNumber="10"/>
+            <description>The document catalog dictionary shall include a MarkInfo dictionary containing a DisplayDocTitle key, whose value shall be true.</description>
+            <test>DisplayDocTitle == true</test>
+            <error>
+                <message>/DisplayDocTitle key of the ViewerPreferences dictionary is not present in the document catalog or is set to true</message>
+                <arguments/>
+            </error>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
