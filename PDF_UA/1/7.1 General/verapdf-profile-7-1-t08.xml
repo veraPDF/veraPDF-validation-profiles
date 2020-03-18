@@ -15,8 +15,8 @@
                 <arguments/>
             </error>
             <references>
-				<reference specification="ISO 32000-1" clause="14.3.2"/>
-			</references>
+                <reference specification="ISO 32000-1" clause="14.3.2"/>
+            </references>
         </rule>
     </rules>
     <variables/>

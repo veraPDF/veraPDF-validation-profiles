@@ -17,8 +17,8 @@
                 <arguments/>
             </error>
             <references>
-				<reference specification="ISO 19005-2:2011" clause="6.2.11.7.2"/>
-			</references>
+                <reference specification="ISO 19005-2:2011" clause="6.2.11.7.2"/>
+            </references>
         </rule>
     </rules>
     <variables/>
