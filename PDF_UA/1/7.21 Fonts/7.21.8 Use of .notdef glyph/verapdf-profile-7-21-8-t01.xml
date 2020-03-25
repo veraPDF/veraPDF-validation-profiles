@@ -9,7 +9,7 @@
     <rules>
         <rule object="Glyph">
             <id specification="ISO_14289_1" clause="7.21.8" testNumber="1"/>
-            <description>A PDF/A-2 compliant document shall not contain a reference to the .notdef glyph from any of the text showing
+            <description>A PDF/UA compliant document shall not contain a reference to the .notdef glyph from any of the text showing
 			operators, regardless of text rendering mode, in any content stream.</description>
             <test>name != &quot;.notdef&quot;</test>
             <error>

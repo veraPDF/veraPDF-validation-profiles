@@ -67,7 +67,7 @@
         </rule>
         <rule object="MainXMPPackage">
             <id specification="ISO_14289_1" clause="7.1" testNumber="9"/>
-            <description>The Metadata stream in the documentтАЩs catalog dictionary shall contain a dc:title entry, where dc is the
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the
                 recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which
                 clearly identifies the document.</description>
             <test>dc_title != null</test>
@@ -254,7 +254,7 @@
         </rule>
         <rule object="PDCMap">
             <id specification="ISO_14289_1" clause="7.21.3.3" testNumber="1"/>
-            <description>All CMaps used within a PDF/A-2 file, except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118, shall be embedded in that file as described 
+            <description>All CMaps used within a PDF/UA file, except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118, shall be embedded in that file as described
 			in ISO 32000-1:2008, 9.7.5.</description>
             <test>CMapName == "Identity-H" || CMapName == "Identity-V" || CMapName == "GB-EUC-H" || CMapName == "GB-EUC-V" ||
 			CMapName == "GBpc-EUC-H" || CMapName == "GBpc-EUC-V" || CMapName == "GBK-EUC-H" || CMapName == "GBK-EUC-V" ||
@@ -445,7 +445,7 @@
         </rule>
         <rule object="Glyph">
             <id specification="ISO_14289_1" clause="7.21.8" testNumber="1"/>
-            <description>A PDF/A-2 compliant document shall not contain a reference to the .notdef glyph from any of the text showing
+            <description>A PDF/UA compliant document shall not contain a reference to the .notdef glyph from any of the text showing
 			operators, regardless of text rendering mode, in any content stream.</description>
             <test>name != ".notdef"</test>
             <error>
