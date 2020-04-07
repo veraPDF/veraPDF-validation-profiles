@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
-    <details creator="veraPDF Consortium" created="2020-03-23T16:05:15.725+03:00">
+    <details creator="veraPDF Consortium" created="2020-04-07T14:37:52.486+03:00">
         <name>PDF/UA-1 valudation profile</name>
         <description>Validation rules against ISO 14289-1:2014</description>
     </details>
@@ -30,10 +30,10 @@
         </rule>
         <rule object="CosDocument">
             <id specification="ISO_14289_1" clause="7.1" testNumber="4"/>
-            <description>The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Suspects, whose value shall be false.</description>
+            <description>Files shall have a Suspects value of false(ISO 32000-1:2008, Table 321)</description>
             <test>Suspects == false</test>
             <error>
-                <message>Suspects entry of the MarkInfo dictionary is not present in the document catalog or is set to true</message>
+                <message>Suspects entry has a value of true</message>
                 <arguments/>
             </error>
             <references>
@@ -42,15 +42,29 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.1" testNumber="5"/>
-            <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type, as
-            defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root.</description>
+            <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type,
+                as defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root.
+                This mapping may be indirect; within the role map a non-standard type can map directly to another
+                non-standard type, but eventually the mapping shall terminate at a standard type.</description>
             <test>standardType != null</test>
             <error>
-                <message>Non-standard structure type is not mapped to a standard type</message>
+                <message>Non-standard structure type is not mapped to a standard type or a circular mapping exists</message>
                 <arguments/>
             </error>
             <references>
                 <reference specification="ISO 32000-1:2008" clause="14.8.4"/>
+            </references>
+        </rule>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.1" testNumber="7"/>
+            <description>Standard tags defined in ISO 32000-1:2008, 14.8.4, shall not be remapped.</description>
+            <test>isRemappedStandardType == false</test>
+            <error>
+                <message>Standard type is remapped</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4"/>
             </references>
         </rule>
         <rule object="PDDocument">
@@ -102,14 +116,13 @@
             <references/>
         </rule>
         <rule object="CosLang">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="11"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="13"/>
             <description>If the Lang entry is present in the documentтАЩs Catalog dictionary or in a structure element dictionary or
 			property list, its value shall be a language identifier as described in ISO 32000-1:2008, 14.9.2.
-			A language identifier shall either be the empty text string, to indicate that the language is unknown, or a Language-Tag 
-			as defined in RFC 3066, Tags for the Identification of Languages.</description>
+			A language identifier shall be a Language-Tag as defined in RFC 3066, Tags for the Identification of Languages.</description>
             <test>/^[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*$/.test(unicodeValue)</test>
             <error>
-                <message>Non-standard structure type is not mapped to a standard type</message>
+                <message>Value of the Lang entry is not Language-Tag</message>
                 <arguments/>
             </error>
             <references>
@@ -128,6 +141,26 @@
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.7.2"/>
+            </references>
+        </rule>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.4.2" testNumber="1"/>
+            <description>For documents that are not strongly structured, as described in ISO 32000-1:2008, 14.8.4.3.5,
+                heading tags shall be used as follows:
+                (*) If any heading tags are used, H1 shall be the first.
+                (*) A document may use more than one instance of any specific tag level. For example, a tag level may
+                be repeated if document content requires it.
+                (*) If document semantics require a descending sequence of headers, such a sequence shall proceed
+                in strict numerical order and shall not skip an intervening heading level.
+                (*) A document may increment its heading sequence without restarting at H1 if document semantics
+                require it.</description>
+            <test>hasCorrectNumberedHeadings == true</test>
+            <error>
+                <message>Does use numbered headings, but the first heading tag is not H1 or numbered heading levels in descending sequence are skipped</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.5"/>
             </references>
         </rule>
         <rule object="PDStructElem">
@@ -173,6 +206,26 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.5"/>
             </references>
         </rule>
+        <rule object="SENote">
+            <id specification="ISO_14289_1" clause="7.9" testNumber="1"/>
+            <description>Each note tag shall have a unique entry in the ID key</description>
+            <test>noteID != null</test>
+            <error>
+                <message>ID key of the Note tag is not present</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SENote">
+            <id specification="ISO_14289_1" clause="7.9" testNumber="2"/>
+            <description>Each note tag shall have a unique entry in the ID key</description>
+            <test>hasDuplicateNoteID == false</test>
+            <error>
+                <message>ID key of the Note tag is non-unique</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
         <rule object="PDOCConfig">
             <id specification="ISO_14289_1" clause="7.10" testNumber="1"/>
             <description>Each optional content configuration dictionary that forms the value of the D key, or that is an element in the array that forms the 
@@ -204,6 +257,41 @@
             </error>
             <references/>
         </rule>
+        <rule object="PDEncryption">
+            <id specification="ISO_14289_1" clause="7.16" testNumber="1"/>
+            <description>An encrypted conforming file shall contain a P key in its encryption dictionary (ISO 32000-1:2008,
+                7.6.3.2, Table 21). The 10th bit position of the P key shall be true.</description>
+            <test>P != null &amp;&amp; (P &amp; (1 &lt;&lt; 10)) == 1</test>
+            <error>
+                <message>The file is encrypted but does not contain a P entry in its encryption dictionary or
+                    the file is encrypted and does contain a P entry but the 10th bit position of the P entry is false
+                </message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="7.6.3.2"/>
+            </references>
+        </rule>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_1" clause="7.18.1" testNumber="1"/>
+            <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall nested within an Annot tag</description>
+            <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || structParentType == 'Annot'</test>
+            <error>
+                <message>An annotation, excluding annotations of subtype Widget, Popup or Link, is not nested within an Annot tag</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_1" clause="7.18.2" testNumber="2"/>
+            <description>Annotations of subtype TrapNet shall not be permitted.</description>
+            <test>Subtype != 'TrapNet'</test>
+            <error>
+                <message>An annotation of subtype TrapNet exists</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
         <rule object="PDPage">
             <id specification="ISO_14289_1" clause="7.18.3" testNumber="1"/>
             <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S.</description>
@@ -213,6 +301,69 @@
                 <arguments/>
             </error>
             <references/>
+        </rule>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_1" clause="7.18.4" testNumber="1"/>
+            <description>A Widget annotation shall be nested within a Form tag per ISO 32000-1:2008, 14.8.4.5, Table 340.</description>
+            <test>Subtype != 'Widget' || structParentType == 'Form'</test>
+            <error>
+                <message>A widget annotation is not nested within a Form tag</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.5"/>
+            </references>
+        </rule>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_1" clause="7.18.5" testNumber="1"/>
+            <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element.</description>
+            <test>Subtype != 'Link' || structParentType == 'Link'</test>
+            <error>
+                <message>A link annotation is not nested within a Link tag</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.4.2"/>
+            </references>
+        </rule>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_1" clause="7.18.5" testNumber="2"/>
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3.</description>
+            <test>Subtype != 'Link' || (Contents != null &amp;&amp; Contents != '')</test>
+            <error>
+                <message>A link annotation does not include an alternate description in the Contents Key</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.9.3"/>
+            </references>
+        </rule>
+        <rule object="PDMediaClip">
+            <id specification="ISO_14289_1" clause="7.18.6.2" testNumber="1"/>
+            <description>In the media clip data dictionary, the optional CT key (ISO 32000-1:2008, 13.2.4.2, Table 274)
+                are required. Value of CT should conform to the content type specification described in Internet RFC 2045</description>
+            <test>CT != null &amp;&amp; /^[-\w+\.]+\/[-\w+\.]+$/.test(CT)</test>
+            <error>
+                <message>CT key is missing from the media clip data dictionary or
+                    value of CT not conform to the content type specification described in Internet RFC 2045</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="13.2.4.2"/>
+            </references>
+        </rule>
+        <rule object="PDMediaClip">
+            <id specification="ISO_14289_1" clause="7.18.6.2" testNumber="2"/>
+            <description>In the media clip data dictionary, the optional Alt key (ISO 32000-1:2008, 13.2.4.2, Table 274)
+                are required.</description>
+            <test>Alt != null &amp;&amp; Alt != ''</test>
+            <error>
+                <message>Alt key is missing from the media clip data dictionary</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="13.2.4.2"/>
+            </references>
         </rule>
         <rule object="PDXForm">
             <id specification="ISO_14289_1" clause="7.20" testNumber="1"/>
