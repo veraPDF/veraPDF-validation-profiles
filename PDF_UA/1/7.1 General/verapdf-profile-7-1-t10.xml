@@ -8,7 +8,7 @@
     <rules>
         <rule object="CosDocument">
             <id specification="ISO_14289_1" clause="7.1" testNumber="10"/>
-            <description>The document catalog dictionary shall include a MarkInfo dictionary containing a DisplayDocTitle key, whose value shall be true.</description>
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true.</description>
             <test>DisplayDocTitle == true</test>
             <error>
                 <message>DisplayDocTitle key of the ViewerPreferences dictionary is not present in the document catalog or is set to true</message>

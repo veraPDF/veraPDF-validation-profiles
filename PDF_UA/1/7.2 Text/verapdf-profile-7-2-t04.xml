@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - List structure</name>
+        <description>A list-related structure element should used in a way that conform to Table 336 in ISO 32000-1.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.2.4" testNumber="1"/>
+            <description>LI elem should contained in L elem</description>
+            <test>(standardType != 'LI') || (parentStandardType == 'L')</test>
+            <error>
+                <message>LI elem not contained in L elem</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+            </references>
+        </rule>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.2.4" testNumber="2"/>
+            <description>LBody elem should contained in LI elem</description>
+            <test>(standardType != 'LBody') || (parentStandardType == 'LI')</test>
+            <error>
+                <message>LBody elem not contained in LI elem</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+            </references>
+        </rule>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.2.4" testNumber="3"/>
+            <description>L elem may contain a Caption elem as it's first kid and L elem should contain one or LI elems</description>
+            <test>(standardType != 'L') || /^(Caption&amp;)?(LI)(&amp;LI)*$/.test(kidsStandardTypes)</test>
+            <error>
+                <message>L elem contains more than one Caption elem or L elem contains a Caption elem not as its first kid or L elem not contain LI elems or L elem contains not a LI or Caption elems</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+            </references>
+        </rule>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.2.4" testNumber="4"/>
+            <description>LI elem may contain only Lbl and LBody elems</description>
+            <test>(standardType != 'LI') || /^(Lbl|LBody)(&amp;(Lbl|LBody))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <error>
+                <message>LI elem contains not a Lbl or LBody elems</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
