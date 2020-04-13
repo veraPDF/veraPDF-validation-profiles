@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - TOC structure</name>
+        <description>A TOC-related structure element should used in a way that conform to Table 333 in ISO 32000-1.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.2.11" testNumber="1"/>
+            <description>TOCI elem should contained in TOC elem</description>
+            <test>(standardType != 'TOCI') || (parentStandardType == 'TOC')</test>
+            <error>
+                <message>TOCI elem not contained in TOC elem</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.2"/>
+            </references>
+        </rule>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.2.11" testNumber="2"/>
+            <description>TOC elem may contain a Caption elem as it's first kid and TOC elem should contain only TOC and TOCI and Caption elems</description>
+            <test>(standardType != 'TOC') || /^(Caption&amp;)?(TOC|TOCI)(&amp;(TOC|TOCI))*$/.test(kidsStandardTypes)</test>
+            <error>
+                <message>TOC elem contains more than one Caption elem or TOC elem contains a Caption elem not as its first kid or TOC elem contains not a TOC or TOCI or Caption elems</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.2"/>
+            </references>
+        </rule>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.2.11" testNumber="3"/>
+            <description>TOCI elem may contain only Reference and P and Lbl and TOC and NonStruct elems</description>
+            <test>(standardType != 'TOCI') || /^(Reference|P|Lbl|TOC|NonStruct)(&amp;(Reference|P|Lbl|TOC|NonStruct))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <error>
+                <message>TOCI elem contains not a Reference or P or Lbl or TOC or NonStruct elems</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
