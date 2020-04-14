@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+    <details creator="veraPDF Consortium" created="2020-04-07T14:37:52.486+03:00">
+        <name>PDF/UA-1 validation profile (Human)</name>
+        <description>Validation rules against ISO 14289-1:2014 (Matterhorn Human-verifiable checks)</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETextItem">
+            <id specification="ISO_14289_1" clause="7.1" testNumber="13"/>
+            <description>The structure type and attributes of a structure element shall be semantically appropriate.</description>
+            <test>(!/^H([1-9][0-9]*)*$/.test(gStructureTag) || suspectRole == 'H') &amp;&amp;  (gStructureTag != 'P' || suspectRole == 'P')</test>
+            <error>
+                <message>The structure type and attributes of a structure element are not semantically appropriate for the structure element.</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables>
+	    <variable name="gStructureTag" object="SEMarkedContent">
+            <defaultValue>null</defaultValue>
+            <value>structureTag</value>
+        </variable>
+    </variables>
+</profile>
