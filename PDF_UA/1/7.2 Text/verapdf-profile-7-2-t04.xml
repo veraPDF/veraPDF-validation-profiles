@@ -32,7 +32,7 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.4" testNumber="3"/>
-            <description>L elem may contain a Caption elem as it's first kid and L elem may contain only LI or Caption elems</description>
+            <description>L elem may contain a Caption elem as its first kid and L elem may contain only LI and Caption elems</description>
             <test>(standardType != 'L') || /^(Caption&amp;)?(LI)(&amp;LI)*$/.test(kidsStandardTypes) || kidsStandardTypes == '' || kidsStandardTypes == 'Caption'</test>
             <error>
                 <message>L elem contains more than one Caption elem or L elem contains a Caption elem not as its first kid or L elem contains not a LI or Caption elems</message>

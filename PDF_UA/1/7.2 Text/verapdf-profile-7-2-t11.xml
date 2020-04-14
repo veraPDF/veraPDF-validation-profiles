@@ -20,10 +20,10 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.11" testNumber="2"/>
-            <description>TOC elem may contain a Caption elem as it's first kid and TOC elem may contain only TOC and TOCI and Caption elems</description>
+            <description>TOC elem may contain a Caption elem as its first kid and TOC elem may contain only TOC, TOCI and Caption elems</description>
             <test>(standardType != 'TOC') || /^(Caption&amp;)?(TOC|TOCI)(&amp;(TOC|TOCI))*$/.test(kidsStandardTypes) || kidsStandardTypes == 'Caption' || kidsStandardTypes == ''</test>
             <error>
-                <message>TOC elem contains more than one Caption elem or TOC elem contains a Caption elem not as its first kid or TOC elem contains not a TOC or TOCI or Caption elems</message>
+                <message>TOC elem contains more than one Caption elem or TOC elem contains a Caption elem not as its first kid or TOC elem contains not a TOC, TOCI or Caption elems</message>
                 <arguments/>
             </error>
             <references>
@@ -32,10 +32,10 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.11" testNumber="3"/>
-            <description>TOCI elem may contain only Reference and P and Lbl and TOC and NonStruct elems</description>
+            <description>TOCI elem may contain only Reference, P, Lbl, TOC and NonStruct elems</description>
             <test>(standardType != 'TOCI') || /^(Reference|P|Lbl|TOC|NonStruct)(&amp;(Reference|P|Lbl|TOC|NonStruct))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
             <error>
-                <message>TOCI elem contains not a Reference or P or Lbl or TOC or NonStruct elems</message>
+                <message>TOCI elem contains not a Reference, P, Lbl, TOC or NonStruct elems</message>
                 <arguments/>
             </error>
             <references>
