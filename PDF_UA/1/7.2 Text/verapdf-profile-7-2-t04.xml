@@ -8,10 +8,10 @@
     <rules>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.4" testNumber="1"/>
-            <description>LI elem should contained in L elem</description>
+            <description>LI element should contained in L element</description>
             <test>(standardType != 'LI') || (parentStandardType == 'L')</test>
             <error>
-                <message>LI elem not contained in L elem</message>
+                <message>LI element not contained in L element</message>
                 <arguments/>
             </error>
             <references>
@@ -20,10 +20,10 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.4" testNumber="2"/>
-            <description>LBody elem should contained in LI elem</description>
+            <description>LBody element should contained in LI element</description>
             <test>(standardType != 'LBody') || (parentStandardType == 'LI')</test>
             <error>
-                <message>LBody elem not contained in LI elem</message>
+                <message>LBody element not contained in LI element</message>
                 <arguments/>
             </error>
             <references>
@@ -32,10 +32,12 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.4" testNumber="3"/>
-            <description>L elem may contain a Caption elem as its first kid and L elem may contain only LI and Caption elems</description>
-            <test>(standardType != 'L') || /^(Caption&amp;)?(LI)(&amp;LI)*$/.test(kidsStandardTypes) || kidsStandardTypes == '' || kidsStandardTypes == 'Caption'</test>
+            <description>L element may contain a Caption element as its first kid and L element may contain only LI and Caption elements</description>
+            <test>(standardType != 'L') || /^(Caption&amp;)?(LI)(&amp;LI)*$/.test(kidsStandardTypes) || kidsStandardTypes == '' ||
+                kidsStandardTypes == 'Caption'</test>
             <error>
-                <message>L elem contains more than one Caption elem or L elem contains a Caption elem not as its first kid or L elem contains not a LI or Caption elems</message>
+                <message>L element contains more than one Caption element or L element contains a Caption element not as its first kid or
+                    L element contains not a LI or Caption elements</message>
                 <arguments/>
             </error>
             <references>
@@ -44,10 +46,10 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.4" testNumber="4"/>
-            <description>LI elem may contain only Lbl and LBody elems</description>
+            <description>LI element may contain only Lbl and LBody elements</description>
             <test>(standardType != 'LI') || /^(Lbl|LBody)(&amp;(Lbl|LBody))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
             <error>
-                <message>LI elem contains not a Lbl or LBody elems</message>
+                <message>LI element contains not a Lbl or LBody elements</message>
                 <arguments/>
             </error>
             <references>
