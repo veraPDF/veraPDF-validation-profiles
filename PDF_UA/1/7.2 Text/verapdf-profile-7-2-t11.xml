@@ -8,10 +8,10 @@
     <rules>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.11" testNumber="1"/>
-            <description>TOCI elem should contained in TOC elem</description>
+            <description>TOCI element should contained in TOC element</description>
             <test>(standardType != 'TOCI') || (parentStandardType == 'TOC')</test>
             <error>
-                <message>TOCI elem not contained in TOC elem</message>
+                <message>TOCI element not contained in TOC element</message>
                 <arguments/>
             </error>
             <references>
@@ -20,10 +20,13 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.11" testNumber="2"/>
-            <description>TOC elem may contain a Caption elem as its first kid and TOC elem may contain only TOC, TOCI and Caption elems</description>
-            <test>(standardType != 'TOC') || /^(Caption&amp;)?(TOC|TOCI)(&amp;(TOC|TOCI))*$/.test(kidsStandardTypes) || kidsStandardTypes == 'Caption' || kidsStandardTypes == ''</test>
+            <description>TOC element may contain a Caption element as its first kid and
+                TOC element may contain only TOC, TOCI and Caption elements</description>
+            <test>(standardType != 'TOC') || /^(Caption&amp;)?(TOC|TOCI)(&amp;(TOC|TOCI))*$/.test(kidsStandardTypes) ||
+                kidsStandardTypes == 'Caption' || kidsStandardTypes == ''</test>
             <error>
-                <message>TOC elem contains more than one Caption elem or TOC elem contains a Caption elem not as its first kid or TOC elem contains not a TOC, TOCI or Caption elems</message>
+                <message>TOC element contains more than one Caption element or TOC element contains a Caption element
+                    not as its first kid or TOC elem contains not a TOC, TOCI or Caption elements</message>
                 <arguments/>
             </error>
             <references>
@@ -32,10 +35,11 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2.11" testNumber="3"/>
-            <description>TOCI elem may contain only Reference, P, Lbl, TOC and NonStruct elems</description>
-            <test>(standardType != 'TOCI') || /^(Reference|P|Lbl|TOC|NonStruct)(&amp;(Reference|P|Lbl|TOC|NonStruct))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <description>TOCI element may contain only Reference, P, Lbl, TOC and NonStruct elements</description>
+            <test>(standardType != 'TOCI') || /^(Reference|P|Lbl|TOC|NonStruct)(&amp;(Reference|P|Lbl|TOC|NonStruct))*$/.test(kidsStandardTypes) ||
+                kidsStandardTypes == ''</test>
             <error>
-                <message>TOCI elem contains not a Reference, P, Lbl, TOC or NonStruct elems</message>
+                <message>TOCI element contains not a Reference, P, Lbl, TOC or NonStruct elements</message>
                 <arguments/>
             </error>
             <references>
