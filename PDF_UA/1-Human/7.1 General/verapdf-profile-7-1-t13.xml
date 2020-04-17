@@ -2,7 +2,7 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
         <name>ISO 14289-1:2014 - 7.1 General - Semantically appropriate structure type and attributes</name>
-        <description></description>
+        <description>The structure type and attributes of a structure element shall be semantically appropriate.</description>
     </details>
     <hash></hash>
     <rules>
