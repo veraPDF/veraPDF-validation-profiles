@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
     <details creator="veraPDF Consortium" created="2020-04-07T14:37:52.486+03:00">
-        <name>PDF/UA-1 valudation profile</name>
+        <name>PDF/UA-1 validation profile</name>
         <description>Validation rules against ISO 14289-1:2014</description>
     </details>
     <hash></hash>
@@ -31,7 +31,7 @@
         <rule object="CosDocument">
             <id specification="ISO_14289_1" clause="7.1" testNumber="4"/>
             <description>Files shall have a Suspects value of false(ISO 32000-1:2008, Table 321)</description>
-            <test>Suspects == false</test>
+            <test>Suspects != true</test>
             <error>
                 <message>Suspects entry has a value of true</message>
                 <arguments/>
@@ -93,7 +93,7 @@
         </rule>
         <rule object="CosDocument">
             <id specification="ISO_14289_1" clause="7.1" testNumber="10"/>
-            <description>The document catalog dictionary shall include a MarkInfo dictionary containing a DisplayDocTitle key, whose value shall be true.</description>
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true.</description>
             <test>DisplayDocTitle == true</test>
             <error>
                 <message>DisplayDocTitle key of the ViewerPreferences dictionary is not present in the document catalog or is set to true</message>
@@ -117,7 +117,7 @@
         </rule>
         <rule object="CosLang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="13"/>
-            <description>If the Lang entry is present in the documentтАЩs Catalog dictionary or in a structure element dictionary or
+            <description>If the Lang entry is present in the document's Catalog dictionary or in a structure element dictionary or
 			property list, its value shall be a language identifier as described in ISO 32000-1:2008, 14.9.2.
 			A language identifier shall be a Language-Tag as defined in RFC 3066, Tags for the Identification of Languages.</description>
             <test>/^[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*$/.test(unicodeValue)</test>
@@ -208,7 +208,7 @@
         </rule>
         <rule object="SENote">
             <id specification="ISO_14289_1" clause="7.9" testNumber="1"/>
-            <description>Each note tag shall have a unique entry in the ID key</description>
+            <description>Each Note tag shall have a unique entry in the ID key</description>
             <test>noteID != null</test>
             <error>
                 <message>ID key of the Note tag is not present</message>
@@ -218,7 +218,7 @@
         </rule>
         <rule object="SENote">
             <id specification="ISO_14289_1" clause="7.9" testNumber="2"/>
-            <description>Each note tag shall have a unique entry in the ID key</description>
+            <description>Each Note tag shall have a unique entry in the ID key</description>
             <test>hasDuplicateNoteID == false</test>
             <error>
                 <message>ID key of the Note tag is non-unique</message>
