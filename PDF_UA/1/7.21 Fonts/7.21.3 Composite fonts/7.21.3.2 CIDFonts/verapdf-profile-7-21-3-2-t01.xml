@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="PDCIDFont">
-            <id specification="ISO_14289_1" clause="7.21.3.2" testNumber="2"/>
+            <id specification="ISO_14289_1" clause="7.21.3.2" testNumber="1"/>
             <description>ISO 32000-1:2008, 9.7.4, Table 117 requires that all embedded Type 2 CIDFonts in the CIDFont dictionary shall contain a 
 			CIDToGIDMap entry that shall be a stream mapping from CIDs to glyph indices or the name Identity, as described in ISO 32000-1:2008, 9.7.4, Table 117.</description>
             <test>Subtype != &quot;CIDFontType2&quot; || CIDToGIDMap != null</test>
