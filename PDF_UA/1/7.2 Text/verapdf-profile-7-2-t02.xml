@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDOutline">
-            <id specification="ISO_14289_1" clause="7.1" testNumber="4"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="2"/>
             <description>Natural language in the Outline entries shall be determined</description>
             <test>gSizeCatalogLang != 0</test>
             <error>
