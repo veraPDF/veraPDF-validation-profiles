@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.11" testNumber="1"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="26"/>
             <description>TOCI element should contained in TOC element</description>
             <test>(standardType != 'TOCI') || (parentStandardType == 'TOC')</test>
             <error>
@@ -19,7 +19,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.11" testNumber="2"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="27"/>
             <description>TOC element may contain a Caption element as its first kid and
                 TOC element may contain only TOC, TOCI and Caption elements</description>
             <test>(standardType != 'TOC') || /^(Caption&amp;)?(TOC|TOCI)(&amp;(TOC|TOCI))*$/.test(kidsStandardTypes) ||
@@ -34,7 +34,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.11" testNumber="3"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="28"/>
             <description>TOCI element may contain only Reference, P, Lbl, TOC and NonStruct elements</description>
             <test>(standardType != 'TOCI') || /^(Reference|P|Lbl|TOC|NonStruct)(&amp;(Reference|P|Lbl|TOC|NonStruct))*$/.test(kidsStandardTypes) ||
                 kidsStandardTypes == ''</test>

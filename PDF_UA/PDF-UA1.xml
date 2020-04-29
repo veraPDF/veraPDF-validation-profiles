@@ -156,7 +156,7 @@
             <references/>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="1"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="3"/>
             <description>Table element may contain a Caption element as its first or last kid and
                 Table element may contain only TR, THead, TBody, TFoot and Caption elems</description>
             <test>(standardType != 'Table') || /^(Caption&amp;)?(TR|THead|TBody|TFoot)(&amp;(TR|THead|TBody|TFoot))*$/.test(kidsStandardTypes)
@@ -172,11 +172,11 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="2"/>
-            <description>TR element should contained in Table element</description>
-            <test>(standardType != 'TR') || (parentStandardType == 'Table')</test>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="4"/>
+            <description>TR element should contained in Table, THead, TBody or TFoot element</description>
+            <test>(standardType != 'TR') || /^(Table|THead|TBody|TFoot)*$/.test(parentStandardType)</test>
             <error>
-                <message>TR element not contained in Table element</message>
+                <message>TR element not contained in Table, THead, TBody and TFoot element</message>
                 <arguments/>
             </error>
             <references>
@@ -184,7 +184,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="3"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="5"/>
             <description>THead element should contained in Table element</description>
             <test>(standardType != 'THead') || (parentStandardType == 'Table')</test>
             <error>
@@ -196,7 +196,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="4"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="6"/>
             <description>TBody element should contained in Table element</description>
             <test>(standardType != 'TBody') || (parentStandardType == 'Table')</test>
             <error>
@@ -208,7 +208,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="5"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="7"/>
             <description>TFoot element should contained in Table element</description>
             <test>(standardType != 'TFoot') || (parentStandardType == 'Table')</test>
             <error>
@@ -220,7 +220,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="6"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="8"/>
             <description>TH element should contained in TR element</description>
             <test>(standardType != 'TH') || (parentStandardType == 'TR')</test>
             <error>
@@ -232,7 +232,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="7"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="9"/>
             <description>TD element should contained in TR element</description>
             <test>(standardType != 'TD') || (parentStandardType == 'TR')</test>
             <error>
@@ -244,7 +244,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="8"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="10"/>
             <description>TR element may contain only TH and TD elements</description>
             <test>(standardType != 'TR') || /^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
             <error>
@@ -256,7 +256,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="9"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="11"/>
             <description>Table element should contain zero or one THead kid</description>
             <test>(standardType != 'Table') || (kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &lt;= 1)</test>
             <error>
@@ -268,7 +268,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="10"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="12"/>
             <description>Table element should contain zero or one TFoot kid</description>
             <test>(standardType != 'Table') || (kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length &lt;= 1)</test>
             <error>
@@ -280,7 +280,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="11"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="13"/>
             <description>If Table element contains TFoot kid, Table element should contain one or more TBody kids</description>
             <test>(standardType != 'Table') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 0 ||
                 kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
@@ -293,7 +293,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="12"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="14"/>
             <description>If Table element contains THead kid, Table element should contain one or more TBody kids</description>
             <test>(standardType != 'Table') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 0 ||
                 kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
@@ -306,12 +306,12 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="13"/>
-            <description>If Table element contains one or more TBody kids, Table element should contain one TFoot kid</description>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="15"/>
+            <description>If Table element contains one or more TBody kids, Table element should contain TFoot kid</description>
             <test>(standardType != 'Table') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length == 0 ||
-                kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 1</test>
+                kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length &gt; 0</test>
             <error>
-                <message>Table element contains one or more TBody kids, but not contains one TFoot kid</message>
+                <message>Table element contains one or more TBody kids, but not contains TFoot kid</message>
                 <arguments/>
             </error>
             <references>
@@ -319,12 +319,12 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.3" testNumber="14"/>
-            <description>If Table element contains one or more TBody kids, Table element should contain one THead kid</description>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="16"/>
+            <description>If Table element contains one or more TBody kids, Table element should contain THead kid</description>
             <test>(standardType != 'Table') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length == 0 ||
-                kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 1</test>
+                kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &gt; 0</test>
             <error>
-                <message>Table element contains one or more TBody kids, but not contains one THead kid</message>
+                <message>Table element contains one or more TBody kids, but not contains THead kid</message>
                 <arguments/>
             </error>
             <references>
@@ -332,7 +332,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.4" testNumber="1"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="17"/>
             <description>LI element should contained in L element</description>
             <test>(standardType != 'LI') || (parentStandardType == 'L')</test>
             <error>
@@ -344,7 +344,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.4" testNumber="2"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="18"/>
             <description>LBody element should contained in LI element</description>
             <test>(standardType != 'LBody') || (parentStandardType == 'LI')</test>
             <error>
@@ -356,7 +356,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.4" testNumber="3"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="19"/>
             <description>L element may contain a Caption element as its first kid and L element may contain only LI and Caption elements</description>
             <test>(standardType != 'L') || /^(Caption&amp;)?(LI)(&amp;LI)*$/.test(kidsStandardTypes) || kidsStandardTypes == '' ||
                 kidsStandardTypes == 'Caption'</test>
@@ -370,7 +370,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.4" testNumber="4"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="20"/>
             <description>LI element may contain only Lbl and LBody elements</description>
             <test>(standardType != 'LI') || /^(Lbl|LBody)(&amp;(Lbl|LBody))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
             <error>
@@ -382,7 +382,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="6"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="21"/>
             <description>Natural language for text in ActualText attribute shall be determined</description>
             <test>ActualText == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
             <error>
@@ -392,7 +392,7 @@
             <references/>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="7"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="22"/>
             <description>Natural language for text in Alt attribute shall be determined</description>
             <test>Alt == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
             <error>
@@ -402,7 +402,7 @@
             <references/>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="8"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="23"/>
             <description>Natural language for text in E attribute shall be determined</description>
             <test>E == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
             <error>
@@ -412,7 +412,7 @@
             <references/>
         </rule>
         <rule object="PDAnnot">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="9"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="24"/>
             <description>Natural language in the Contents entry for annotations shall be
                 determined</description>
             <test>Contents == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
@@ -424,7 +424,7 @@
             <references/>
         </rule>
         <rule object="PDFormField">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="10"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="25"/>
             <description>Natural language in the TU key for form fields shall be determined</description>
             <test>TU == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
             <error>
@@ -434,7 +434,7 @@
             <references/>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.11" testNumber="1"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="26"/>
             <description>TOCI element should contained in TOC element</description>
             <test>(standardType != 'TOCI') || (parentStandardType == 'TOC')</test>
             <error>
@@ -446,7 +446,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.11" testNumber="2"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="27"/>
             <description>TOC element may contain a Caption element as its first kid and
                 TOC element may contain only TOC, TOCI and Caption elements</description>
             <test>(standardType != 'TOC') || /^(Caption&amp;)?(TOC|TOCI)(&amp;(TOC|TOCI))*$/.test(kidsStandardTypes) ||
@@ -461,7 +461,7 @@
             </references>
         </rule>
         <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2.11" testNumber="3"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="28"/>
             <description>TOCI element may contain only Reference, P, Lbl, TOC and NonStruct elements</description>
             <test>(standardType != 'TOCI') || /^(Reference|P|Lbl|TOC|NonStruct)(&amp;(Reference|P|Lbl|TOC|NonStruct))*$/.test(kidsStandardTypes) ||
                 kidsStandardTypes == ''</test>
@@ -474,7 +474,7 @@
             </references>
         </rule>
         <rule object="CosLang">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="13"/>
+            <id specification="ISO_14289_1" clause="7.2" testNumber="29"/>
             <description>If the Lang entry is present in the document's Catalog dictionary or in a structure element dictionary or
 			property list, its value shall be a language identifier as described in ISO 32000-1:2008, 14.9.2.
 			A language identifier shall be a Language-Tag as defined in RFC 3066, Tags for the Identification of Languages.</description>
@@ -487,6 +487,36 @@
                 <reference specification="ISO 32000-1:2008" clause="14.9.2"/>
                 <reference specification="RFC 3066" clause="2.1"/>
             </references>
+        </rule>
+        <rule object="SEMarkedContent">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="30"/>
+            <description>Natural language for text in ActualText attribute shall be determined</description>
+            <test>tag != 'Span' || ActualText == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
+            <error>
+                <message>Natural language for text in ActualText attribute cannot be determined</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SEMarkedContent">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="31"/>
+            <description>Natural language for text in Alt attribute shall be determined</description>
+            <test>tag != 'Span' || Alt == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
+            <error>
+                <message>Natural language for text in Alt attribute cannot be determined</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SEMarkedContent">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="32"/>
+            <description>Natural language for text in E attribute shall be determined</description>
+            <test>tag != 'Span' || E == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
+            <error>
+                <message>Natural language for text in E attribute cannot be determined</message>
+                <arguments/>
+            </error>
+            <references/>
         </rule>
         <rule object="SEFigure">
             <id specification="ISO_14289_1" clause="7.3" testNumber="1"/>
@@ -619,7 +649,7 @@
             <id specification="ISO_14289_1" clause="7.16" testNumber="1"/>
             <description>An encrypted conforming file shall contain a P key in its encryption dictionary (ISO 32000-1:2008,
                 7.6.3.2, Table 21). The 10th bit position of the P key shall be true.</description>
-            <test>P != null &amp;&amp; (P &amp; (1 &lt;&lt; 10)) == 1</test>
+            <test>P != null &amp;&amp; (P &amp; (1 &lt;&lt; 9)) == 1</test>
             <error>
                 <message>The file is encrypted but does not contain a P entry in its encryption dictionary or
                     the file is encrypted and does contain a P entry but the 10th bit position of the P entry is false
