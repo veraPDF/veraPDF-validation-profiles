@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.137+03:00">
-        <name>ISO 14289-1:2014 - 7.4 Headings - 7.4.4 Unnumbered headings - number of H </name>
+        <name>ISO 14289-1:2014 - 7.4 Headings - 7.4.4 Unnumbered headings - Number of H </name>
         <description>Each node in the tag tree shall contain at most one child H tag.</description>
     </details>
     <hash></hash>
