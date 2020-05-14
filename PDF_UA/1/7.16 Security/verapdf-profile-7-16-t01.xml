@@ -11,7 +11,7 @@
             <id specification="ISO_14289_1" clause="7.16" testNumber="1"/>
             <description>An encrypted conforming file shall contain a P key in its encryption dictionary (ISO 32000-1:2008,
                 7.6.3.2, Table 21). The 10th bit position of the P key shall be true.</description>
-            <test>P != null &amp;&amp; (P &amp; (1 &lt;&lt; 9)) == 1</test>
+            <test>P != null &amp;&amp; (P &amp; 512) == 512</test>
             <error>
                 <message>The file is encrypted but does not contain a P entry in its encryption dictionary or
                     the file is encrypted and does contain a P entry but the 10th bit position of the P entry is false

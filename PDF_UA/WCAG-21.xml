@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDPage">
-            <id specification="ISO_14289_1" clause="1.3.4" testNumber="1"/>
+            <id specification="WCAG2.1" clause="1.3.4" testNumber="1"/>
             <description>Pages shall have the same orientation</description>
             <test>gPageOrientation == 'Square' || orientation == 'Square' || gPageOrientation == orientation</test>
             <error>

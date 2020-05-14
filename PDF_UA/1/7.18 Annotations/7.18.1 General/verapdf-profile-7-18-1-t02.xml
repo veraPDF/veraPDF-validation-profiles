@@ -14,7 +14,7 @@
                 and whose rectangle is not outside the crop-box and does not have a Contents key shall have
                 an alternative description (in the form of an Alt entry in the enclosing structure element)</description>
             <test>structParentType != 'Annot' || Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link'
-                || isOutsideCropBox == true || (F &amp; 2) == 1 || Contents != null || Alt != null</test>
+                || isOutsideCropBox == true || (F &amp; 2) == 2 || Contents != null || Alt != null</test>
             <error>
                 <message>An annotation other than annotations of type Link, Widget or Popup whose hidden flag is not set
                     and whose rectangle is not outside the crop-box and does not have a Contents key does not have
