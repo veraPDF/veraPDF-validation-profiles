@@ -158,11 +158,10 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2" testNumber="15"/>
-            <description>If Table element contains one or more TBody kids, Table element should contain THead kid</description>
-            <test>(standardType != 'Table') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length == 0 ||
-                kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &gt; 0</test>
+            <description>THead, TBody and TFoot element may contain only TR elements</description>
+            <test>(standardType != 'THead') || (standardType != 'TBody') || (standardType != 'TFoot') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0</test>
             <error>
-                <message>Table element contains one or more TBody kids, but not contains THead kid</message>
+                <message>THead, TBody or TFoot element contains not a TR elements</message>
                 <arguments/>
             </error>
             <references>
