@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDPage">
-            <id specification="ISO_14289_1" clause="1.3.4" testNumber="1"/>
+            <id specification="WCAG2.1" clause="1.3.4" testNumber="1"/>
             <description>Pages shall have the same orientation</description>
             <test>gPageOrientation == 'Square' || orientation == 'Square' || gPageOrientation == orientation</test>
             <error>
@@ -327,11 +327,10 @@
         </rule>
         <rule object="PDStructElem">
             <id specification="ISO_14289_1" clause="7.2" testNumber="15"/>
-            <description>If Table element contains one or more TBody kids, Table element should contain THead kid</description>
-            <test>(standardType != 'Table') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length == 0 ||
-                kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &gt; 0</test>
+            <description>THead, TBody and TFoot element may contain only TR elements</description>
+            <test>(standardType != 'THead') || (standardType != 'TBody') || (standardType != 'TFoot') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0</test>
             <error>
-                <message>Table element contains one or more TBody kids, but not contains THead kid</message>
+                <message>THead, TBody or TFoot element contains not a TR elements</message>
                 <arguments/>
             </error>
             <references>
@@ -656,7 +655,7 @@
             <id specification="ISO_14289_1" clause="7.16" testNumber="1"/>
             <description>An encrypted conforming file shall contain a P key in its encryption dictionary (ISO 32000-1:2008,
                 7.6.3.2, Table 21). The 10th bit position of the P key shall be true.</description>
-            <test>P != null &amp;&amp; (P &amp; (1 &lt;&lt; 9)) == 1</test>
+            <test>P != null &amp;&amp; (P &amp; 512) == 512</test>
             <error>
                 <message>The file is encrypted but does not contain a P entry in its encryption dictionary or
                     the file is encrypted and does contain a P entry but the 10th bit position of the P entry is false
@@ -683,7 +682,7 @@
                 and whose rectangle is not outside the crop-box and does not have a Contents key shall have
                 an alternative description (in the form of an Alt entry in the enclosing structure element)</description>
             <test>structParentType != 'Annot' || Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link'
-                || isOutsideCropBox == true || (F &amp; 2) == 1 || Contents != null || Alt != null</test>
+                || isOutsideCropBox == true || (F &amp; 2) == 2 || Contents != null || Alt != null</test>
             <error>
                 <message>An annotation other than annotations of type Link, Widget or Popup whose hidden flag is not set
                     and whose rectangle is not outside the crop-box and does not have a Contents key does not have
