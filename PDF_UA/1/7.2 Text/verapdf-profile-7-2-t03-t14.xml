@@ -6,11 +6,11 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem">
+        <rule object="SETable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="3"/>
             <description>Table element may contain a Caption element as its first or last kid and
                 Table element may contain only TR, THead, TBody, TFoot and Caption elems</description>
-            <test>(standardType != 'Table') || /^(Caption&amp;)?(TR|THead|TBody|TFoot)(&amp;(TR|THead|TBody|TFoot))*$/.test(kidsStandardTypes)
+            <test>/^(Caption&amp;)?(TR|THead|TBody|TFoot)(&amp;(TR|THead|TBody|TFoot))*$/.test(kidsStandardTypes)
                 || /^(TR|THead|TBody|TFoot)(&amp;(TR|THead|TBody|TFoot))*(&amp;Caption)?$/.test(kidsStandardTypes)
                 || kidsStandardTypes == 'Caption' || kidsStandardTypes == ''</test>
             <error>
@@ -22,10 +22,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETR">
             <id specification="ISO_14289_1" clause="7.2" testNumber="4"/>
             <description>TR element should contained in Table, THead, TBody or TFoot element</description>
-            <test>(standardType != 'TR') || /^(Table|THead|TBody|TFoot)*$/.test(parentStandardType)</test>
+            <test>/^(Table|THead|TBody|TFoot)*$/.test(parentStandardType)</test>
             <error>
                 <message>TR element not contained in Table, THead, TBody and TFoot element</message>
                 <arguments/>
@@ -34,10 +34,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETHead">
             <id specification="ISO_14289_1" clause="7.2" testNumber="5"/>
             <description>THead element should contained in Table element</description>
-            <test>(standardType != 'THead') || (parentStandardType == 'Table')</test>
+            <test>parentStandardType == 'Table'</test>
             <error>
                 <message>THead element not contained in Table element</message>
                 <arguments/>
@@ -46,10 +46,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETBody">
             <id specification="ISO_14289_1" clause="7.2" testNumber="6"/>
             <description>TBody element should contained in Table element</description>
-            <test>(standardType != 'TBody') || (parentStandardType == 'Table')</test>
+            <test>parentStandardType == 'Table'</test>
             <error>
                 <message>TBody element not contained in Table element</message>
                 <arguments/>
@@ -58,10 +58,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETFoot">
             <id specification="ISO_14289_1" clause="7.2" testNumber="7"/>
             <description>TFoot element should contained in Table element</description>
-            <test>(standardType != 'TFoot') || (parentStandardType == 'Table')</test>
+            <test>parentStandardType == 'Table'</test>
             <error>
                 <message>TFoot element not contained in Table element</message>
                 <arguments/>
@@ -70,10 +70,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETH">
             <id specification="ISO_14289_1" clause="7.2" testNumber="8"/>
             <description>TH element should contained in TR element</description>
-            <test>(standardType != 'TH') || (parentStandardType == 'TR')</test>
+            <test>parentStandardType == 'TR'</test>
             <error>
                 <message>TH element not contained in TR element</message>
                 <arguments/>
@@ -82,10 +82,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETD">
             <id specification="ISO_14289_1" clause="7.2" testNumber="9"/>
             <description>TD element should contained in TR element</description>
-            <test>(standardType != 'TD') || (parentStandardType == 'TR')</test>
+            <test>parentStandardType == 'TR'</test>
             <error>
                 <message>TD element not contained in TR element</message>
                 <arguments/>
@@ -94,10 +94,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETR">
             <id specification="ISO_14289_1" clause="7.2" testNumber="10"/>
             <description>TR element may contain only TH and TD elements</description>
-            <test>(standardType != 'TR') || /^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
             <error>
                 <message>TR element contains not a TH or TD elements</message>
                 <arguments/>
@@ -106,10 +106,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="11"/>
             <description>Table element should contain zero or one THead kid</description>
-            <test>(standardType != 'Table') || (kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &lt;= 1)</test>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &lt;= 1</test>
             <error>
                 <message>Table element contains more than one THead kid</message>
                 <arguments/>
@@ -118,10 +118,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="12"/>
             <description>Table element should contain zero or one TFoot kid</description>
-            <test>(standardType != 'Table') || (kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length &lt;= 1)</test>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length &lt;= 1</test>
             <error>
                 <message>Table element contains more than one TFoot kid</message>
                 <arguments/>
@@ -130,10 +130,10 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="13"/>
             <description>If Table element contains TFoot kid, Table element should contain one or more TBody kids</description>
-            <test>(standardType != 'Table') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 0 ||
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 0 ||
                 kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
             <error>
                 <message>Table element contains TFoot kid, but not contains TBody kids</message>
@@ -143,25 +143,13 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SETable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="14"/>
             <description>If Table element contains THead kid, Table element should contain one or more TBody kids</description>
-            <test>(standardType != 'Table') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 0 ||
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 0 ||
                 kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
             <error>
                 <message>Table element contains THead kid, but not contains TBody kids</message>
-                <arguments/>
-            </error>
-            <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
-            </references>
-        </rule>
-        <rule object="PDStructElem">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="15"/>
-            <description>THead, TBody and TFoot element may contain only TR elements</description>
-            <test>(standardType != 'THead') || (standardType != 'TBody') || (standardType != 'TFoot') || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0</test>
-            <error>
-                <message>THead, TBody or TFoot element contains not a TR elements</message>
                 <arguments/>
             </error>
             <references>
