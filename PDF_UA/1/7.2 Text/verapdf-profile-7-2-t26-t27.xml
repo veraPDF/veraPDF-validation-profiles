@@ -33,18 +33,6 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>
             </references>
         </rule>
-        <rule object="SETOCI">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="28"/>
-            <description>TOCI element may contain only Reference, P, Lbl, TOC and NonStruct elements</description>
-            <test>/^(Reference|P|Lbl|TOC|NonStruct)(&amp;(Reference|P|Lbl|TOC|NonStruct))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
-            <error>
-                <message>TOCI element contains not a Reference, P, Lbl, TOC or NonStruct elements</message>
-                <arguments/>
-            </error>
-            <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.2"/>
-            </references>
-        </rule>
     </rules>
     <variables/>
 </profile>

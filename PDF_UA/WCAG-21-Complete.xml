@@ -194,7 +194,7 @@
         <rule object="SETR">
             <id specification="ISO_14289_1" clause="7.2" testNumber="4"/>
             <description>TR element should contained in Table, THead, TBody or TFoot element</description>
-            <test>/^(Table|THead|TBody|TFoot)*$/.test(parentStandardType)</test>
+            <test>/^(Table|THead|TBody|TFoot)$/.test(parentStandardType)</test>
             <error>
                 <message>TR element not contained in Table, THead, TBody and TFoot element</message>
                 <arguments/>
@@ -351,11 +351,11 @@
         </rule>
         <rule object="SEL">
             <id specification="ISO_14289_1" clause="7.2" testNumber="19"/>
-            <description>L element may contain a Caption element as its first kid and L element may contain only LI and Caption elements</description>
-            <test>/^(Caption&amp;)?(LI)(&amp;LI)*$/.test(kidsStandardTypes) || kidsStandardTypes == '' || kidsStandardTypes == 'Caption'</test>
+            <description>L element may contain a Caption element as its first kid and L element may contain only L, LI and Caption elements</description>
+            <test>/^(Caption&amp;)?(L|LI)(&amp;(L|LI))*$/.test(kidsStandardTypes) || kidsStandardTypes == '' || kidsStandardTypes == 'Caption'</test>
             <error>
                 <message>L element contains more than one Caption element or L element contains a Caption element not as its first kid or
-                    L element contains not a LI or Caption elements</message>
+                    L element contains not a L, LI or Caption elements</message>
                 <arguments/>
             </error>
             <references>
@@ -447,18 +447,6 @@
             <error>
                 <message>TOC element contains more than one Caption element or TOC element contains a Caption element
                     not as its first kid or TOC elem contains not a TOC, TOCI or Caption elements</message>
-                <arguments/>
-            </error>
-            <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.2"/>
-            </references>
-        </rule>
-        <rule object="SETOCI">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="28"/>
-            <description>TOCI element may contain only Reference, P, Lbl, TOC and NonStruct elements</description>
-            <test>/^(Reference|P|Lbl|TOC|NonStruct)(&amp;(Reference|P|Lbl|TOC|NonStruct))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
-            <error>
-                <message>TOCI element contains not a Reference, P, Lbl, TOC or NonStruct elements</message>
                 <arguments/>
             </error>
             <references>
@@ -675,10 +663,10 @@
         </rule>
         <rule object="CosFileSpecification">
             <id specification="ISO_14289_1" clause="7.11" testNumber="1"/>
-            <description>The file specification dictionary for an embedded file shall contain the F and UF keys</description>
-            <test>containsEF == false || (F != null &amp;&amp; UF != null)</test>
+            <description>The file specification dictionary for an embedded file shall contain the non-empty F and UF keys</description>
+            <test>containsEF == false || (F != null &amp;&amp; F != '' &amp;&amp; UF != null &amp;&amp; UF != '')</test>
             <error>
-                <message>The file specification dictionary for an embedded file does not contain either F or EF key</message>
+                <message>The file specification dictionary for an embedded file does not contain either F or EF key or at least one of the keys is empty</message>
                 <arguments/>
             </error>
             <references/>
@@ -810,7 +798,7 @@
             <id specification="ISO_14289_1" clause="7.18.8" testNumber="1"/>
             <description>PrinterMark annotations, if present, shall be considered Incidental Artifacts, as if they are hidden page
                 elements as defined in ISO 32000-1:2008, 14.8.2.2.3.</description>
-            <test>Subtype != 'PrinterMark' || structParentType == null </test>
+            <test>Subtype != 'PrinterMark' || structParentType == null</test>
             <error>
                 <message>A PrinterMark annotation is included in logical structure</message>
                 <arguments/>
