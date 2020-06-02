@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDMetadata">
+        <rule object="MainXMPPackage">
             <id specification="ISO_14289_1" clause="7.2" testNumber="33"/>
             <description>Natural language for document metadata shall be determined</description>
             <test>gSizeCatalogLang != 0</test>

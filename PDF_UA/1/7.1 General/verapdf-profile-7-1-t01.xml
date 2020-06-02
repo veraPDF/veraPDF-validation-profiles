@@ -9,7 +9,7 @@
         <rule object="SEMarkedContent">
             <id specification="ISO_14289_1" clause="7.1" testNumber="1"/>
             <description>Content marked as Artifact should not present inside tagged content</description>
-            <test>tag != 'Artifact' || parentTag == null</test>
+            <test>tag != 'Artifact' || parentStructureTag == null</test>
             <error>
                 <message>Content marked as Artifact is present inside tagged content</message>
                 <arguments/>
