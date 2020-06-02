@@ -9,7 +9,7 @@
         <rule object="SEMarkedContent">
             <id specification="ISO_14289_1" clause="7.1" testNumber="2"/>
             <description>Tagged content should not present inside content marked as Artifact</description>
-            <test>tag == null || parentTag != 'Artifact'</test>
+            <test>structureTag == null || parentTag != 'Artifact'</test>
             <error>
                 <message>Tagged content is present inside content marked as Artifact</message>
                 <arguments/>
