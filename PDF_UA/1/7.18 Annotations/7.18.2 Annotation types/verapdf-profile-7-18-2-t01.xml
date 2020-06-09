@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
         <name>ISO 14289-1:2014 - 7.18 Annotations - 7.18.2 Annotation types - TrapNext</name>
         <description>Annotations of subtype TrapNet shall not be permitted.</description>
@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
-            <id specification="ISO_14289_1" clause="7.18.2" testNumber="2"/>
+            <id specification="ISO_14289_1" clause="7.18.2" testNumber="1"/>
             <description>Annotations of subtype TrapNet shall not be permitted.</description>
             <test>Subtype != 'TrapNet'</test>
             <error>
