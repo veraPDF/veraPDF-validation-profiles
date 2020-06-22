@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
-        <name>ISO 14289-1:2014 - 7.2 Text - Lang for Alt</name>
-        <description>Natural language for text in Alt attribute shall be determined</description>
+        <name>ISO 14289-1:2014 - 7.2 Text - Lang for text</name>
+        <description>Natural language for text in page content shall be determined</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEMarkedContent">
-            <id specification="ISO_14289_1" clause="7.2" testNumber="31"/>
-            <description>Natural language for text in Alt attribute shall be determined</description>
-            <test>tag != 'Span' || Alt == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
+        <rule object="SETextItem">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="34"/>
+            <description>Natural language for text in page content shall be determined</description>
+            <test>gSizeCatalogLang != 0 || Lang != null</test>
             <error>
-                <message>Natural language for text in Alt attribute cannot be determined</message>
+                <message>Natural language for text in page content cannot be determined</message>
                 <arguments/>
             </error>
             <references/>

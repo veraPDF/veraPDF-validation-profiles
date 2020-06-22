@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.812+03:00">
         <name>ISO 14289-1:2014 - 7.16 Security - P key</name>
         <description>An encrypted conforming file shall contain a P key in its encryption dictionary (ISO 32000-1:2008,

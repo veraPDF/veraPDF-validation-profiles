@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T11:53:56.571+03:00">
         <name>ISO 14289-1:2014 - 7.10 Optional content - Order key</name>
         <description>The AS key shall not appear in any optional content configuration dictionary.</description>

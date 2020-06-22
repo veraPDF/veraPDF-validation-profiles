@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.5 Tables - Headers, IDs and Scope</name>
+        <description>If the table's structure is not determinable via Headers and IDs,
+            then structure elements of type TH shall have a Scope attribute</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETable">
+            <id specification="ISO_14289_1" clause="7.5" testNumber="1"/>
+            <description>If the table's structure is not determinable via Headers and IDs,
+                then structure elements of type TH shall have a Scope attribute</description>
+            <test>useHeadersAndIdOrScope == true</test>
+            <error>
+                <message>In a table not organized with Headers attributes and IDs, a TH cell does not contain a Scope attribute</message>
+                <arguments/>
+            </error>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
