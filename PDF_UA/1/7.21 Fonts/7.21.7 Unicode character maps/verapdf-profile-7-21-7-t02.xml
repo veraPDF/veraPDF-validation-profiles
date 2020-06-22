@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.188+03:00">
         <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.7 Unicode character maps - Valid Unicode values</name>
         <description>The Unicode values specified in the ToUnicode CMap shall all be greater than zero (0), but not equal to either U+FEFF or U+FFFE.</description>

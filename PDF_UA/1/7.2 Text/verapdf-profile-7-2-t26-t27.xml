@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
         <name>ISO 14289-1:2014 - 7.2 Text - TOC structure</name>
         <description>A TOC-related structure element should used in a way that conform to Table 333 in ISO 32000-1.</description>
@@ -26,7 +26,7 @@
                 kidsStandardTypes == ''</test>
             <error>
                 <message>TOC element contains more than one Caption element or TOC element contains a Caption element
-                    not as its first kid or TOC elem contains not a TOC, TOCI or Caption elements</message>
+                    not as its first kid or TOC element contains not a TOC, TOCI or Caption elements</message>
                 <arguments/>
             </error>
             <references>

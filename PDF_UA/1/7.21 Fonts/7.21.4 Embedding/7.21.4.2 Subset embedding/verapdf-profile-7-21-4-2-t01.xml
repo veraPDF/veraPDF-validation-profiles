@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.155+03:00">
         <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.4 Embedding - CharSet entry in Type1 fonts</name>
         <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs
