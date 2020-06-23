@@ -9,7 +9,7 @@
         <rule object="SETable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="3"/>
             <description>Table element may contain a Caption element as its first or last kid and
-                Table element may contain only TR, THead, TBody, TFoot and Caption elems</description>
+                Table element may contain only TR, THead, TBody, TFoot and Caption elements</description>
             <test>/^(Caption&amp;)?(TR|THead|TBody|TFoot)(&amp;(TR|THead|TBody|TFoot))*$/.test(kidsStandardTypes)
                 || /^(TR|THead|TBody|TFoot)(&amp;(TR|THead|TBody|TFoot))*(&amp;Caption)?$/.test(kidsStandardTypes)
                 || kidsStandardTypes == 'Caption' || kidsStandardTypes == ''</test>
@@ -25,7 +25,7 @@
         <rule object="SETR">
             <id specification="ISO_14289_1" clause="7.2" testNumber="4"/>
             <description>TR element should contained in Table, THead, TBody or TFoot element</description>
-            <test>/^(Table|THead|TBody|TFoot)*$/.test(parentStandardType)</test>
+            <test>/^(Table|THead|TBody|TFoot)$/.test(parentStandardType)</test>
             <error>
                 <message>TR element not contained in Table, THead, TBody and TFoot element</message>
                 <arguments/>
