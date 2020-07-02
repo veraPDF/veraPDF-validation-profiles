@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.812+03:00">
+        <name>ISO 14289-1:2014 - 7.15 XFA - DynamicRender</name>
+        <description>Dynamic XFA forms shall not be used</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAcroForm">
+            <id specification="ISO_14289_1" clause="7.15" testNumber="1"/>
+            <description>Dynamic XFA forms shall not be used</description>
+            <test>dynamicRender != 'required'</test>
+            <error>
+                <message>Dynamic XFA forms is present</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

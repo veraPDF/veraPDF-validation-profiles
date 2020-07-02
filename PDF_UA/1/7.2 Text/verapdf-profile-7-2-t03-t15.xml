@@ -156,6 +156,19 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
+        <rule object="SETable">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="15"/>
+            <description>Tables shall be regular, that is have the same number of cells in each row after accounting
+                for rowspan and colspan attributes.</description>
+            <test>isRegular == true</test>
+            <error>
+                <message>Irregular table found</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+            </references>
+        </rule>
     </rules>
     <variables/>
 </profile>
