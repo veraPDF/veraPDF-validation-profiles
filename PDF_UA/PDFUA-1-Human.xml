@@ -9,7 +9,7 @@
         <rule object="SETextItem">
             <id specification="ISO_14289_1" clause="7.1" testNumber="13"/>
             <description>The structure type and attributes of a structure element shall be semantically appropriate.</description>
-            <test>(!/^H([1-9][0-9]*)*$/.test(gStructureTag) || suspectRole == 'H') &amp;&amp;  (gStructureTag != 'P' || suspectRole == 'P')</test>
+            <test>(!/^H([1-9][0-9]*)*$/.test(standardTag) || suspectRole == 'H') &amp;&amp;  (standardTag != 'P' || suspectRole == 'P')</test>
             <error>
                 <message>The structure type and attributes of a structure element are not semantically appropriate for the structure element.</message>
                 <arguments/>
@@ -17,10 +17,5 @@
             <references/>
         </rule>
     </rules>
-    <variables>
-	    <variable name="gStructureTag" object="SEMarkedContent">
-            <defaultValue>null</defaultValue>
-            <value>structureTag</value>
-        </variable>
-    </variables>
+    <variables/>
 </profile>
