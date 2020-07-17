@@ -717,16 +717,16 @@
         </rule>
         <rule object="PDAnnot">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="2"/>
-            <description>An annotation other than annotations of type Link, Widget or Popup whose hidden flag is not set
-                and whose rectangle is not outside the crop-box and does not have a Contents key shall have
-                an alternative description (in the form of an Alt entry in the enclosing structure element)</description>
+            <description>An annotation (except annotations of type Link, Widget or Popup, or hidden annotations,
+                or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry
+                in the enclosing structure element</description>
             <test>structParentType != 'Annot' || Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link'
                 || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') ||
                 (Alt != null &amp;&amp; Alt != '')</test>
             <error>
-                <message>An annotation other than annotations of type Link, Widget or Popup whose hidden flag is not set
-                    and whose rectangle is not outside the crop-box and does not have a Contents key does not have
-                    an alternative description (in the form of an Alt entry in the enclosing structure element)</message>
+                <message>An annotation (except annotations of type Link, Widget or Popup, or hidden annotations,
+                    or those having rectangle outside the crop-box) has neither Contents key nor an Alt entry
+                    in the enclosing structure element</message>
                 <arguments/>
             </error>
             <references/>
