@@ -10,7 +10,7 @@
     <rules>
         <rule object="PDICCBasedCMYK">
             <id specification="ISO_19005_2" clause="6.2.4.2" testNumber="2"/>
-            <description>OOverprint mode (as set by the OPM value in an ExtGState dictionary) shall not be one (1) when an ICCBased CMYK colour space is 
+            <description>Overprint mode (as set by the OPM value in an ExtGState dictionary) shall not be one (1) when an ICCBased CMYK colour space is
 			used for stroke and overprinting for stroke is set to true, or when ICCBased CMYK colour space is used for fill and overprinting for 
 			fill is set to true, or both.</description>
             <test>overprintFlag == false || OPM == 0</test>
