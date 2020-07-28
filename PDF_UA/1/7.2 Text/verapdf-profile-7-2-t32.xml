@@ -9,7 +9,7 @@
         <rule object="SEMarkedContent">
             <id specification="ISO_14289_1" clause="7.2" testNumber="32"/>
             <description>Natural language for text in E attribute shall be determined</description>
-            <test>tag != 'Span' || E == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
+            <test>tag != 'Span' || E == null || Lang_size != 0 || inheritedLang != null || gSizeCatalogLang != 0</test>
             <error>
                 <message>Natural language for text in E attribute cannot be determined</message>
                 <arguments/>
