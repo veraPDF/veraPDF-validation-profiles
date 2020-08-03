@@ -10,14 +10,14 @@
         <rule object="Glyph">
             <id specification="ISO_14289_1" clause="7.21.7" testNumber="1"/>
             <description>The Font dictionary of all fonts shall define the map of all used character codes to Unicode values, either via a ToUnicode entry,
-			or other mechanisms as defined in ISO 19005-2, 6.2.11.7.2.</description>
+                or other mechanisms as defined in ISO 14289-1, 7.21.7.</description>
             <test>toUnicode != null</test>
             <error>
                 <message>The glyph can not be mapped to Unicode</message>
                 <arguments/>
             </error>
             <references>
-                <reference specification="ISO 19005-2:2011" clause="6.2.11.7.2"/>
+                <reference specification="ISO 14289-1:2014" clause="7.21.7"/>
             </references>
         </rule>
     </rules>
