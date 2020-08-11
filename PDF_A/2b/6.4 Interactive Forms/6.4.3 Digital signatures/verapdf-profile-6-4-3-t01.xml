@@ -17,9 +17,9 @@
                 <arguments/>
             </error>
             <references>
-				<reference specification="ISO 19005-2:2011" clause="Annex B"/>
-				<reference specification="ISO 32000-1:2008" clause="12.8.1"/>
-			</references>
+                <reference specification="ISO 19005-2:2011" clause="Annex B"/>
+                <reference specification="ISO 32000-1:2008" clause="12.8.1"/>
+            </references>
         </rule>
     </rules>
     <variables/>

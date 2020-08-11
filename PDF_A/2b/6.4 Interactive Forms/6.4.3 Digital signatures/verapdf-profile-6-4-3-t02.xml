@@ -21,9 +21,9 @@
                 <arguments/>
             </error>
             <references>
-				<reference specification="ISO 19005-2:2011" clause="Annex B"/>
-				<reference specification="RFC 2315" clause=""/>
-			</references>
+                <reference specification="ISO 19005-2:2011" clause="Annex B"/>
+                <reference specification="RFC 2315" clause=""/>
+            </references>
         </rule>
     </rules>
     <variables/>
