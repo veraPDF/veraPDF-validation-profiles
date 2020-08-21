@@ -3,7 +3,7 @@
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.188+03:00">
         <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.7 Unicode character maps - Unicode mapping</name>
         <description>The Font dictionary of all fonts shall define the map of all used character codes to Unicode values, either via a ToUnicode entry,
-		or other mechanisms as defined in ISO 19005-2:2011, 6.2.11.7.2.</description>
+		or other mechanisms as defined in ISO 14289-1, 7.21.7.</description>
     </details>
     <hash></hash>
     <rules>
