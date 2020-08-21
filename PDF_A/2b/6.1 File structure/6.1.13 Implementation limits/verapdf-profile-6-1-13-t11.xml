@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:07.413+03:00">
         <name>ISO 19005-2:2011 - 6.1.12 Implementation limits - page boundaries</name>
         <description>The size of any of the page boundaries described in ISO 32000-1:2008, 14.11.2 shall not be less than 3 units in either direction, 

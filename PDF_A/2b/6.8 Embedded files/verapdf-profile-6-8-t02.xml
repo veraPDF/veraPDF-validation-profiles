@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.812+03:00">
         <name>ISO 19005-2:2011 - 6.8 Embedded files - F and UF keys</name>
         <description>The file specification dictionary for an embedded file shall contain the F and UF keys</description>
