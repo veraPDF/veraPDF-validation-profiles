@@ -1490,23 +1490,23 @@
                 <reference specification="RFC 3066" clause="2.1"/>
             </references>
         </rule>
-        <rule object="EmbeddedFile">
-            <id specification="ISO_19005_2" clause="6.8" testNumber="1"/>
-            <description>A file specification dictionary, as defined in ISO 32000-1:2008, 7.11.3, may contain the EF key, provided that the embedded file is
-			compliant with either ISO 19005-1 or this part of ISO 19005.</description>
-            <test>isValidPDFA12 == true</test>
-            <error>
-                <message>An embedded file does not comply to either ISO 19005-1 or ISO 19005-2</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
         <rule object="CosFileSpecification">
             <id specification="ISO_19005_2" clause="6.8" testNumber="2"/>
             <description>The file specification dictionary for an embedded file shall contain the F and UF keys</description>
             <test>containsEF == false || (F != null &amp;&amp; UF != null)</test>
             <error>
                 <message>The file specification dictionary for an embedded file does not contain either F or EF key</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="EmbeddedFile">
+            <id specification="ISO_19005_2" clause="6.8" testNumber="5"/>
+            <description>A file specification dictionary, as defined in ISO 32000-1:2008, 7.11.3, may contain the EF key, provided that the embedded file is
+                compliant with either ISO 19005-1 or this part of ISO 19005.</description>
+            <test>isValidPDFA12 == true</test>
+            <error>
+                <message>An embedded file does not comply to either ISO 19005-1 or ISO 19005-2</message>
                 <arguments/>
             </error>
             <references/>

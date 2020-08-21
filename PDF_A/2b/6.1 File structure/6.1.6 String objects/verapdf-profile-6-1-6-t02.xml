@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:07.715+03:00">
         <name>ISO 19005-2:2011 - 6.1.6 String objects - Characters range</name>
         <description>A hexadecimal string is written as a sequence of hexadecimal digits (0–9 and either A–F or a–f)</description>

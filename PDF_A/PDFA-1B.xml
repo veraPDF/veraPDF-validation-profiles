@@ -1207,18 +1207,8 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDFormField">
-            <id specification="ISO_19005_1" clause="6.9" testNumber="3"/>
-            <description>A Widget annotation dictionary or Field dictionary shall not contain the A or AA keys</description>
-            <test>containsAA == false</test>
-            <error>
-                <message>A Form field dictionary contains the AA entry</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
         <rule object="PDAnnot">
-            <id specification="ISO_19005_1" clause="6.9" testNumber="4"/>
+            <id specification="ISO_19005_1" clause="6.9" testNumber="3"/>
             <description>Every form field shall have an appearance dictionary associated with the field's data.</description>
             <test>Subtype != &quot;Widget&quot; || AP != null</test>
             <error>

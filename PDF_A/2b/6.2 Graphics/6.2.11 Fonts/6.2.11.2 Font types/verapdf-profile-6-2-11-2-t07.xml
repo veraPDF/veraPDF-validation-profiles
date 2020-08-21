@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2017-05-31T18:55:05.668+03:00">
         <name>ISO 19005-2:2011 - 6.2.11 Fonts - 6.2.11.2 Font types - embedded fond Subtype</name>
         <description>All fonts used in a conforming file shall conform to the font specifications defined in PDF Reference 5.5. 
