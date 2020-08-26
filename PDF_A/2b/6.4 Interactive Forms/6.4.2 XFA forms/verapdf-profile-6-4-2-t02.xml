@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosDocument">
-            <id specification="ISO_19005_1" clause="6.4.2" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.4.2" testNumber="2"/>
             <description>A document's Catalog shall not contain the NeedsRendering key.</description>
             <test>NeedsRendering == false</test>
             <error>

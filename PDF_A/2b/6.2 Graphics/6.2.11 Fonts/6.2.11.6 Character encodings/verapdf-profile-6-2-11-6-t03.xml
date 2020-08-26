@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDTrueTypeFont">
-            <id specification="ISO_19005_1" clause="6.2.11.6" testNumber="3"/>
+            <id specification="ISO_19005_2" clause="6.2.11.6" testNumber="3"/>
             <description>Symbolic TrueType fonts shall not contain an Encoding entry in the font dictionary</description>
             <test>isSymbolic == false || Encoding == null</test>
             <error>

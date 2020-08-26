@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosDocument">
-            <id specification="ISO_19005_1" clause="6.1.13" testNumber="7"/>
+            <id specification="ISO_19005_2" clause="6.1.13" testNumber="7"/>
             <description>A conforming file shall not contain more than 8388607 indirect objects</description>
             <test>nrIndirects &lt;= 8388607</test>
             <error>

@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="ICCOutputProfile">
-            <id specification="ISO_19005_1" clause="6.2.3" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.2.3" testNumber="1"/>
             <description>The profile stream that is the value of the DestOutputProfile key shall either be an output profile (Device Class = &quot;prtr&quot;) or a monitor profile 
 			(Device Class = &quot;mntr&quot;). The profiles shall have a colour space of either &quot;GRAY&quot;, &quot;RGB&quot;, or &quot;CMYK&quot;.</description>
             <test>(deviceClass == &quot;prtr&quot; || deviceClass == &quot;mntr&quot;) &amp;&amp; (colorSpace == &quot;RGB &quot; || colorSpace == &quot;CMYK&quot; || colorSpace == &quot;GRAY&quot;) &amp;&amp; version &lt; 5.0</test>

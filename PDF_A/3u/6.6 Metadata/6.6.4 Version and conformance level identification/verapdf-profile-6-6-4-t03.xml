@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="PDFAIdentification">
-            <id specification="ISO_19005_2" clause="6.6.4" testNumber="3"/>
+            <id specification="ISO_19005_3" clause="6.6.4" testNumber="3"/>
             <description>A Level A conforming file shall specify the value of pdfaid:conformance as A. A Level B conforming file shall specify the value of 
 			pdfaid:conformance as B. A Level U conforming file shall specify the value of pdfaid:conformance as U.</description>
             <test>conformance == &quot;U&quot; || conformance == &quot;A&quot;</test>

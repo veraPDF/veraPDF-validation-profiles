@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDXForm">
-            <id specification="ISO_19005_1" clause="6.2.9" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.2.9" testNumber="2"/>
             <description>A conforming file shall not contain any reference XObjects</description>
             <test>containsRef == false</test>
             <error>

@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="Op_q_gsave">
-            <id specification="ISO_19005_1" clause="6.1.13" testNumber="8"/>
+            <id specification="ISO_19005_2" clause="6.1.13" testNumber="8"/>
             <description>A conforming file shall not nest q/Q pairs by more than 28 nesting levels</description>
             <test>nestingLevel &lt;= 28</test>
             <error>

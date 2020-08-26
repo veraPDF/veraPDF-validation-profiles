@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosInteger">
-            <id specification="ISO_19005_1" clause="6.1.13" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.1.13" testNumber="1"/>
             <description>A conforming file shall not contain any integer greater than 2147483647. A conforming file shall not contain any integer less than -2147483648.</description>
             <test>(intValue &lt;= 2147483647) &amp;&amp; (intValue &gt;= -2147483648)</test>
             <error>

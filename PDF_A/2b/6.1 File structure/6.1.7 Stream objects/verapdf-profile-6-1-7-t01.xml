@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="CosStream">
-            <id specification="ISO_19005_1" clause="6.1.7" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.1.7" testNumber="1"/>
             <description>The value of the Length key specified in the stream dictionary shall match the number of bytes in the file following the LINE FEED (0Ah) character
 			after the stream keyword and preceding the EOL marker before the endstream keyword.</description>
             <test>isLengthCorrect</test>

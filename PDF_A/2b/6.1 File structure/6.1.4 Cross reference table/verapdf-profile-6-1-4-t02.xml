@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosXRef">
-            <id specification="ISO_19005_1" clause="6.1.4" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.1.4" testNumber="2"/>
             <description>The xref keyword and the cross-reference subsection header shall be separated by a single EOL marker</description>
             <test>xrefEOLMarkersComplyPDFA</test>
             <error>

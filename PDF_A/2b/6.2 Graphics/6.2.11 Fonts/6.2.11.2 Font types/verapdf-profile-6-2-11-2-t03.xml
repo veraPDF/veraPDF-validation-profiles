@@ -9,7 +9,7 @@
     <hash></hash>
     <rules>
         <rule object="PDFont">
-            <id specification="ISO_19005_1" clause="6.2.11.2" testNumber="3"/>
+            <id specification="ISO_19005_2" clause="6.2.11.2" testNumber="3"/>
             <description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
 			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions. 
 			BaseFont - name - (Required) The PostScript name of the font</description>

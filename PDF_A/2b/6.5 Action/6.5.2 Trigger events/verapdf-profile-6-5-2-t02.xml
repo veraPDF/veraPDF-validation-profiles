@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDPage">
-            <id specification="ISO_19005_1" clause="6.5.2" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.5.2" testNumber="2"/>
             <description>The Page dictionary shall not include an AA entry for an additional-actions dictionary.</description>
             <test>containsAA == false</test>
             <error>

@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CMapFile">
-            <id specification="ISO_19005_1" clause="6.1.13" testNumber="10"/>
+            <id specification="ISO_19005_2" clause="6.1.13" testNumber="10"/>
             <description>A conforming file shall not contain a CID value greater than 65535.</description>
             <test>maximalCID &lt;= 65535</test>
             <error>

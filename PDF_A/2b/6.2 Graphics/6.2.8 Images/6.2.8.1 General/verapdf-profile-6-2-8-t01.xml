@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDXImage">
-            <id specification="ISO_19005_1" clause="6.2.8" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.2.8" testNumber="1"/>
             <description>An Image dictionary shall not contain the Alternates key</description>
             <test>containsAlternates == false</test>
             <error>

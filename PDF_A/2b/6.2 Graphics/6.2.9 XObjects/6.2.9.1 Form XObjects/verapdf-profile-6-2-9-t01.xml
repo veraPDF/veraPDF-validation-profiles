@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDXForm">
-            <id specification="ISO_19005_1" clause="6.2.9" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.2.9" testNumber="1"/>
             <description>A form XObject dictionary shall not contain any of the following: - the OPI key; - the Subtype2 key with a value of PS; - the PS key.</description>
             <test>(Subtype2 == null || Subtype2 != &quot;PS&quot;) &amp;&amp; containsPS == false &amp;&amp; containsOPI == false</test>
             <error>

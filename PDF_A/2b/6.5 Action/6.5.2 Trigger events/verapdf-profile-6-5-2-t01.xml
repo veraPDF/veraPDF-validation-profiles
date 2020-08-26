@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDDocument">
-            <id specification="ISO_19005_1" clause="6.5.2" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.5.2" testNumber="1"/>
             <description>The document's Catalog shall not include an AA entry for an additional-actions dictionary.</description>
             <test>containsAA == false</test>
             <error>

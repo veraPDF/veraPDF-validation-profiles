@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosStream">
-            <id specification="ISO_19005_1" clause="6.1.7" testNumber="3"/>
+            <id specification="ISO_19005_2" clause="6.1.7" testNumber="3"/>
             <description>A stream dictionary shall not contain the F, FFilter, or FDecodeParams keys</description>
             <test>F == null &amp;&amp; FFilter == null &amp;&amp; FDecodeParms == null</test>
             <error>
