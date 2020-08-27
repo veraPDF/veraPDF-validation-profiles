@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosString">
-            <id specification="ISO_19005_1" clause="6.1.13" testNumber="3"/>
+            <id specification="ISO_19005_2" clause="6.1.13" testNumber="3"/>
             <description>A conforming file shall not contain any string longer than 32767 bytes.</description>
             <test>value.length() &lt; 32768</test>
             <error>

@@ -10,7 +10,7 @@
     <hash></hash>
     <rules>
         <rule object="PDFont">
-            <id specification="ISO_19005_1" clause="6.2.11.2" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.2.11.2" testNumber="2"/>
             <description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
 			in ISO 32000-1:2008, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
 			Subtype - name - (Required) The type of font; must be &quot;Type1&quot; for Type 1 fonts, &quot;MMType1&quot; for multiple master fonts, &quot;TrueType&quot; for TrueType fonts

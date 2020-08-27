@@ -9,7 +9,7 @@
     <hash></hash>
     <rules>
         <rule object="PDPage">
-            <id specification="ISO_19005_1" clause="6.2.10" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.2.10" testNumber="2"/>
             <description>If the document does not contain a PDF/A OutputIntent, then all Page objects
 			that contain transparency shall include the Group key, and the attribute dictionary that forms the value of that
 			Group key shall include a CS entry whose value shall be used as the default blending colour space.</description>

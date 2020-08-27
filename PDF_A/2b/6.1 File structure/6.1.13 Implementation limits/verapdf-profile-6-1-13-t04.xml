@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosName">
-            <id specification="ISO_19005_1" clause="6.1.13" testNumber="4"/>
+            <id specification="ISO_19005_2" clause="6.1.13" testNumber="4"/>
             <description>A conforming file shall not contain any name longer than 127 bytes.</description>
             <test>internalRepresentation.length() &lt;= 127</test>
             <error>

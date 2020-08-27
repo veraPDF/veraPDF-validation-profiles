@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="CosUnicodeName">
-            <id specification="ISO_19005_1" clause="6.1.8" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.1.8" testNumber="1"/>
             <description>Font names, names of colourants in Separation and DeviceN colour spaces, and structure type names, after expansion of character sequences escaped with 
 			a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences.</description>
             <test>isValidUtf8 == true</test>

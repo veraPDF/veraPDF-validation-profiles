@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
-            <id specification="ISO_19005_1" clause="6.3.2" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.3.2" testNumber="1"/>
             <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key.</description>
             <test>Subtype == &quot;Popup&quot; || F != null</test>
             <error>

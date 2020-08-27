@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDNamedAction">
-            <id specification="ISO_19005_1" clause="6.5.1" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.5.1" testNumber="2"/>
             <description>Named actions other than NextPage, PrevPage, FirstPage, and LastPage shall not be permitted.</description>
             <test>N == &quot;NextPage&quot; || N == &quot;PrevPage&quot; || N == &quot;FirstPage&quot; || N == &quot;LastPage&quot;</test>
             <error>

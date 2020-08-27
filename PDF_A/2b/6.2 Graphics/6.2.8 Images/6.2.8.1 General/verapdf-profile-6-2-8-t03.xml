@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="PDXImage">
-            <id specification="ISO_19005_1" clause="6.2.8" testNumber="3"/>
+            <id specification="ISO_19005_2" clause="6.2.8" testNumber="3"/>
             <description>If an Image dictionary contains the Interpolate key, its value shall be false. 
 			For an inline image, the I key shall have a value of false.</description>
             <test>Interpolate == false</test>

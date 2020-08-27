@@ -10,7 +10,7 @@
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
-            <id specification="ISO_19005_1" clause="6.3.3" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.3.3" testNumber="1"/>
             <description>Every annotation (including those whose Subtype value is Widget, as used for form fields), except for the two cases listed below,
 			shall have at least one appearance dictionary:
 			- annotations where the value of the Rect key consists of an array where value 1 is equal to value 3 and value 2 is equal to value 4;

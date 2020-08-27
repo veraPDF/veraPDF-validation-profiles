@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDAcroForm">
-            <id specification="ISO_19005_1" clause="6.4.1" testNumber="3"/>
+            <id specification="ISO_19005_2" clause="6.4.1" testNumber="3"/>
             <description>The NeedAppearances flag of the interactive form dictionary shall either not be present or shall be false.</description>
             <test>NeedAppearances == null || NeedAppearances == false</test>
             <error>

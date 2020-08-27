@@ -2,16 +2,16 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:07.697+03:00">
         <name>ISO 19005-2:2011 - 6.1.6 String objects - Even number of characters</name>
-        <description>The number of hexadecimal digits in a hexadecimal string shall always be even</description>
+        <description>Hexadecimal strings shall contain an even number of non-white-space characters</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="CosString">
-            <id specification="ISO_19005_1" clause="6.1.6" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.1.6" testNumber="1"/>
             <description>Hexadecimal strings shall contain an even number of non-white-space characters</description>
             <test>(isHex != true) || hexCount % 2 == 0</test>
             <error>
-                <message>The number of hexadecimal digits in a hexadecimal string shall always be even</message>
+                <message>A hexadecimal string contains odd number of non-white-space characters.</message>
                 <arguments/>
             </error>
             <references/>

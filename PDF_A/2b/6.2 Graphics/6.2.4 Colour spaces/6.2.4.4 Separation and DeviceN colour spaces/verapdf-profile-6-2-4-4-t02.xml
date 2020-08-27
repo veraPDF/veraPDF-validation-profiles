@@ -9,7 +9,7 @@
     <hash></hash>
     <rules>
         <rule object="PDSeparation">
-            <id specification="ISO_19005_1" clause="6.2.4.4" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.2.4.4" testNumber="2"/>
             <description>All Separation arrays within a single PDF/A-2 file (including those in Colorants dictionaries) that have the
 			same name shall have the same tintTransform and alternateSpace. In evaluating equivalence, the PDF
 			objects shall be compared, rather than the computational result of the use of those PDF objects. Compression

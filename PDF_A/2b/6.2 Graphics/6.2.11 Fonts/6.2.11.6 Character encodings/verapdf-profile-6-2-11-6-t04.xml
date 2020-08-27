@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="TrueTypeFontProgram">
-            <id specification="ISO_19005_1" clause="6.2.11.6" testNumber="4"/>
+            <id specification="ISO_19005_2" clause="6.2.11.6" testNumber="4"/>
             <description>Symbolic TrueType fonts shall not contain an Encoding entry in the font dictionary, and the 'cmap' table in the embedded font program
 			shall either contain exactly one encoding or it shall contain, at least, the Microsoft Symbol (3,0 – Platform ID=3, Encoding ID=0) encoding.</description>
             <test>isSymbolic == false || nrCmaps == 1 || cmap30Present == true</test>

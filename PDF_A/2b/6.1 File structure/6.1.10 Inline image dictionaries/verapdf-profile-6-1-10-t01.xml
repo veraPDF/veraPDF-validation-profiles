@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="CosIIFilter">
-            <id specification="ISO_19005_1" clause="6.1.10" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.1.10" testNumber="1"/>
             <description>The value of the F key in the Inline Image dictionary shall not be LZW, LZWDecode, Crypt, a value not listed in ISO 32000-1:2008, Table 6, 
 			or an array containing any such value.</description>
             <test>

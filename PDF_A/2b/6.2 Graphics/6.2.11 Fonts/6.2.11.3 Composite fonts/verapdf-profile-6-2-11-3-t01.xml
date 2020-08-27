@@ -12,7 +12,7 @@
     <hash></hash>
     <rules>
         <rule object="PDType0Font">
-            <id specification="ISO_19005_1" clause="6.2.11.3" testNumber="1"/>
+            <id specification="ISO_19005_2" clause="6.2.11.3" testNumber="1"/>
             <description>For any given composite (Type 0) font within a conforming file, the CIDSystemInfo entry in its CIDFont dictionary and its Encoding dictionary 
 			shall have the following relationship: 
 			- If the Encoding key in the Type 0 font dictionary is Identity-H or Identity-V, any values of Registry, Ordering, 
