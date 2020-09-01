@@ -2,7 +2,7 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:05.420+03:00">
         <name>ISO 19005-1:2005 - 6.2.4 Images - Interpolate</name>
-        <description></description>
+        <description>If an Image dictionary contains the Interpolate key, its value shall be false</description>
     </details>
     <hash></hash>
     <rules>

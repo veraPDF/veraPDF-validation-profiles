@@ -17,8 +17,8 @@
                 <arguments/>
             </error>
             <references>
-				<reference specification="ISO 32000-1:2008" clause="Table 130"/>
-			</references>
+                <reference specification="ISO 32000-1:2008" clause="Table 130"/>
+            </references>
         </rule>
     </rules>
     <variables/>
