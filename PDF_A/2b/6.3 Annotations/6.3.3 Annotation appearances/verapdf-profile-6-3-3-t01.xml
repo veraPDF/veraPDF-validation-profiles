@@ -15,7 +15,7 @@
 			shall have at least one appearance dictionary:
 			- annotations where the value of the Rect key consists of an array where value 1 is equal to value 3 and value 2 is equal to value 4;
 			- annotations whose Subtype value is Popup or Link.</description>
-            <test>(width == 0 &amp;&amp; height ==0) || Subtype == &quot;Popup&quot; || Subtype == &quot;Link&quot; || AP != null</test>
+            <test>(width == 0 &amp;&amp; height == 0) || Subtype == &quot;Popup&quot; || Subtype == &quot;Link&quot; || AP != null</test>
             <error>
                 <message>An annotation does not contain an appearance dictionary</message>
                 <arguments/>
