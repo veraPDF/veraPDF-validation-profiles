@@ -2,7 +2,7 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.258+03:00">
         <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.8 Use of .notdef glyph - Use of .notdef glyph</name>
-        <description>A PDF/A-2 compliant document shall not contain a reference to the .notdef glyph from any of the text showing operators, 
+        <description>A PDF/UA compliant document shall not contain a reference to the .notdef glyph from any of the text showing operators,
 	regardless of text rendering mode, in any content stream.</description>
     </details>
     <hash></hash>

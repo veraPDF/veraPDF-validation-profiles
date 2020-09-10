@@ -727,7 +727,7 @@
         </rule>
         <rule object="PDAnnot">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="1"/>
-            <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall nested within an Annot tag</description>
+            <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
             <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || structParentType == 'Annot'</test>
             <error>
                 <message>An annotation, excluding annotations of subtype Widget, Popup or Link, is not nested within an Annot tag</message>
@@ -857,7 +857,9 @@
                 <message>A PrinterMark annotation is included in logical structure</message>
                 <arguments/>
             </error>
-            <references/>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.2.2.3"/>
+            </references>
         </rule>
         <rule object="PDXForm">
             <id specification="ISO_14289_1" clause="7.20" testNumber="1"/>

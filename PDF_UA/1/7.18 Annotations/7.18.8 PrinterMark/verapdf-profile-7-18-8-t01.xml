@@ -16,7 +16,9 @@
                 <message>A PrinterMark annotation is included in logical structure</message>
                 <arguments/>
             </error>
-            <references/>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.2.2.3"/>
+            </references>
         </rule>
     </rules>
     <variables/>
