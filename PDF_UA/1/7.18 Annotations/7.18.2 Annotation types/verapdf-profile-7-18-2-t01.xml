@@ -6,10 +6,10 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAnnot">
+        <rule object="PDTrapNetAnnot">
             <id specification="ISO_14289_1" clause="7.18.2" testNumber="1"/>
             <description>Annotations of subtype TrapNet shall not be permitted.</description>
-            <test>Subtype != 'TrapNet'</test>
+            <test>false</test>
             <error>
                 <message>An annotation of subtype TrapNet exists</message>
                 <arguments/>
