@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.18 Annotation - 7.18.1 General - Alt in form field</name>
+        <description>A form field whose hidden flag is not set and whose rectangle is not outside the crop-box
+            shall have a TU key present or all its Widget annotations shall have alternative descriptions
+            (in the form of an Alt entry in the enclosing structure elements)</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDWidgetAnnot">
+            <id specification="ISO_14289_1" clause="7.18.1" testNumber="3"/>
+            <description>A form field whose hidden flag is not set and whose rectangle is not outside the crop-box
+                shall have a TU key present or all its Widget annotations shall have alternative descriptions
+                (in the form of an Alt entry in the enclosing structure elements)</description>
+            <test>isOutsideCropBox == true || (F &amp; 2) == 2 || (TU != null &amp;&amp; TU != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <error>
+                <message>A form field whose hidden flag is not set and whose rectangle is not outside the crop-box
+                    and does not have a TU key and its Widget annotations do not have alternative descriptions
+                    (in the form of an Alt entry in the enclosing structure element)</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

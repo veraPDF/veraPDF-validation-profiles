@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.137+03:00">
+        <name>ISO 14289-1:2014 - 7.4 Headings - 7.4.4 Unnumbered headings - H and Hn</name>
+        <description>All documents shall be either strongly or weakly structured, but not both.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEHn">
+            <id specification="ISO_14289_1" clause="7.4.4" testNumber="3"/>
+            <description>All documents shall be either strongly or weakly structured, but not both.</description>
+            <test>usesH == false</test>
+            <error>
+                <message>Document uses both H and H# tags</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables>
+        <variable name="usesH" object="SEH">
+            <defaultValue>false</defaultValue>
+            <value>true</value>
+        </variable>
+    </variables>
+</profile>

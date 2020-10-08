@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.9 Notes and references - ID</name>
+        <description>Note tag shall have ID entry</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SENote">
+            <id specification="ISO_14289_1" clause="7.9" testNumber="1"/>
+            <description>Note tag shall have ID entry</description>
+            <test>noteID != null &amp;&amp; noteID != ''</test>
+            <error>
+                <message>ID key of the Note tag is not present</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

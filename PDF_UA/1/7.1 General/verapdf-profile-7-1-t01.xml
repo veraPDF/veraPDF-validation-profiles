@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.1 General - Artifact inside tagged content</name>
+        <description>Content marked as Artifact should not present inside tagged content</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEMarkedContent">
+            <id specification="ISO_14289_1" clause="7.1" testNumber="1"/>
+            <description>Content marked as Artifact should not present inside tagged content</description>
+            <test>tag != 'Artifact' || parentStructureTag == null</test>
+            <error>
+                <message>Content marked as Artifact is present inside tagged content</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

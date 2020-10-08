@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.206+03:00">
+        <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.6 Character encodings - cmaps for non-symbolic TrueType fonts</name>
+        <description>For all non-symbolic TrueType fonts used for rendering, the embedded TrueType font program shall contain one or several non-symbolic 
+	cmap entries such that all necessary glyph lookups can be carried out.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="TrueTypeFontProgram">
+            <id specification="ISO_14289_1" clause="7.21.6" testNumber="1"/>
+            <description>For all non-symbolic TrueType fonts used for rendering, the embedded TrueType font program shall contain one or several non-symbolic 
+			        cmap entries such that all necessary glyph lookups can be carried out.</description>
+            <test>isSymbolic == true || nrCmaps &gt; 1 || (nrCmaps &gt; 0 &amp;&amp; cmap30Present == false)</test>
+            <error>
+                <message>The embedded font program for a non-symbolic TrueType font does not contain any cmap subtables</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
