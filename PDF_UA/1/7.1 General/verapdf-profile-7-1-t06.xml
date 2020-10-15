@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.137+03:00">
+        <name>ISO 14289-1:2014 - 7.1 General - Circular mapping</name>
+        <description>A circular mapping shall not exist</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructElem">
+            <id specification="ISO_14289_1" clause="7.1" testNumber="6"/>
+            <description>A circular mapping shall not exist</description>
+            <test>circularMappingExist != true</test>
+            <error>
+                <message>A circular mapping exists</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.7 Mathematical expressions - Alt and ActualText in Formula</name>
+        <description>All mathematical expressions shall be enclosed within a Formula tag as detailed in ISO 32000-1:2008,
+            14.8.4.5 and shall have Alt or ActualText attributes</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEFormula">
+            <id specification="ISO_14289_1" clause="7.7" testNumber="1"/>
+            <description>All mathematical expressions shall be enclosed within a Formula tag as detailed in ISO 32000-1:2008,
+                14.8.4.5 and shall have Alt or ActualText attributes</description>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <error>
+                <message>Formula tag is missing Alt or ActualText attributes</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.5"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

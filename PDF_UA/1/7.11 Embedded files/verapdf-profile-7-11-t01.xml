@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.812+03:00">
+        <name>ISO 14289-1:2014 - 7.11 Embedded files - F and UF keys</name>
+        <description>The file specification dictionary for an embedded file shall contain the non-empty F and UF keys</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosFileSpecification">
+            <id specification="ISO_14289_1" clause="7.11" testNumber="1"/>
+            <description>The file specification dictionary for an embedded file shall contain the non-empty F and UF keys</description>
+            <test>containsEF == false || (F != null &amp;&amp; F != '' &amp;&amp; UF != null &amp;&amp; UF != '')</test>
+            <error>
+                <message>The file specification dictionary for an embedded file does not contain either F or EF key or at least one of the keys is empty</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

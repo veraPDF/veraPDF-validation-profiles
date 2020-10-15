@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 5 Version identification - PDF/UA Identification Schema</name>
+        <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="MainXMPPackage">
+            <id specification="ISO_14289_1" clause="5" testNumber="1"/>
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema.</description>
+            <test>UAIdentification_size == 1</test>
+            <error>
+                <message>The document metadata stream doesn't contains PDF/UA Identification Schema.</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

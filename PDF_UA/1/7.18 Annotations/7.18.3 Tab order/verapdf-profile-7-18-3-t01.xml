@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.18 Annotations - 7.18.3 Tab order - Tabs in page with annotations</name>
+        <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDPage">
+            <id specification="ISO_14289_1" clause="7.18.3" testNumber="1"/>
+            <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S.</description>
+            <test>annots_size == 0 || Tabs == 'S'</test>
+            <error>
+                <message>A page containing an annotation does not contain a Tabs key or has a Tabs key with a value other than S.</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

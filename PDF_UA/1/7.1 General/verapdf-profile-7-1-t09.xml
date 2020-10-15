@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.1 General - Dc title</name>
+        <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the
+            recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which
+            clearly identifies the document.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="MainXMPPackage">
+            <id specification="ISO_14289_1" clause="7.1" testNumber="9"/>
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the
+                recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which
+                clearly identifies the document.</description>
+            <test>dc_title != null</test>
+            <error>
+                <message>Metadata stream does not contain dc:title</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

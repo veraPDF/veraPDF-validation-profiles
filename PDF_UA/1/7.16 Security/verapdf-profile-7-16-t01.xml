@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.812+03:00">
+        <name>ISO 14289-1:2014 - 7.16 Security - P key</name>
+        <description>An encrypted conforming file shall contain a P key in its encryption dictionary (ISO 32000-1:2008,
+            7.6.3.2, Table 21). The 10th bit position of the P key shall be true.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDEncryption">
+            <id specification="ISO_14289_1" clause="7.16" testNumber="1"/>
+            <description>An encrypted conforming file shall contain a P key in its encryption dictionary (ISO 32000-1:2008,
+                7.6.3.2, Table 21). The 10th bit position of the P key shall be true.</description>
+            <test>P != null &amp;&amp; (P &amp; 512) == 512</test>
+            <error>
+                <message>The file is encrypted but does not contain a P entry in its encryption dictionary or
+                    the file is encrypted and does contain a P entry but the 10th bit position of the P entry is false
+                </message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="7.6.3.2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

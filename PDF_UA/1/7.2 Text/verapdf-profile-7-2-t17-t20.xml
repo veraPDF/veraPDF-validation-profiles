@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - List structure</name>
+        <description>A list-related structure element should used in a way that conform to Table 336 in ISO 32000-1.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SELI">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="17"/>
+            <description>LI element should contained in L element</description>
+            <test>parentStandardType == 'L'</test>
+            <error>
+                <message>LI element not contained in L element</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+            </references>
+        </rule>
+        <rule object="SELBody">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="18"/>
+            <description>LBody element should contained in LI element</description>
+            <test>parentStandardType == 'LI'</test>
+            <error>
+                <message>LBody element not contained in LI element</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+            </references>
+        </rule>
+        <rule object="SEL">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="19"/>
+            <description>L element may contain a Caption element as its first kid and L element may contain only L, LI and Caption elements</description>
+            <test>/^(Caption&amp;)?(L|LI)(&amp;(L|LI))*$/.test(kidsStandardTypes) || kidsStandardTypes == '' || kidsStandardTypes == 'Caption'</test>
+            <error>
+                <message>L element contains more than one Caption element or L element contains a Caption element not as its first kid or
+                    L element contains not a L, LI or Caption elements</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+            </references>
+        </rule>
+        <rule object="SELI">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="20"/>
+            <description>LI element may contain only Lbl and LBody elements</description>
+            <test>/^(Lbl|LBody)(&amp;(Lbl|LBody))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <error>
+                <message>LI element contains not a Lbl or LBody elements</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - Lang for Alt in Span</name>
+        <description>Natural language for text in Alt attribute shall be determined</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEMarkedContent">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="31"/>
+            <description>Natural language for text in Alt attribute in Span Marked Content shall be determined</description>
+            <test>tag != 'Span' || Alt == null || Lang_size != 0 || inheritedLang != null || gSizeCatalogLang != 0</test>
+            <error>
+                <message>Natural language for text in Alt attribute in Span Marked Content cannot be determined</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables>
+        <variable name="gSizeCatalogLang" object="PDDocument">
+            <defaultValue>0</defaultValue>
+            <value>Lang_size</value>
+        </variable>
+    </variables>
+</profile>

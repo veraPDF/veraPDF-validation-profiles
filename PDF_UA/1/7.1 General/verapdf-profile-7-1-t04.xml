@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.1 General - Suspects</name>
+        <description>Files shall have a Suspects value of false(ISO 32000-1:2008, Table 321)</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosDocument">
+            <id specification="ISO_14289_1" clause="7.1" testNumber="4"/>
+            <description>Files shall have a Suspects value of false(ISO 32000-1:2008, Table 321)</description>
+            <test>Suspects != true</test>
+            <error>
+                <message>Suspects entry has a value of true</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.7.1"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
