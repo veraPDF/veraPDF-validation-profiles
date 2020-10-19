@@ -11,7 +11,7 @@
             <id specification="ISO_19005_1" clause="6.1.3" testNumber="4"/>
             <description>In a linearized PDF, if the ID keyword is present in both the first page trailer dictionary 
 			and the last trailer dictionary, the value to both instances of the ID keyword shall be identical</description>
-            <test>(isLinearized != true)|| lastID == null || (firstPageID == lastID)</test>
+            <test>(isLinearized != true) || lastID == null || (firstPageID == lastID)</test>
             <error>
                 <message>Last ID is present in the Linearized PDF and does not match the first page ID</message>
                 <arguments/>

@@ -9,7 +9,7 @@
         <rule object="PDTrapNetAnnot">
             <id specification="ISO_14289_1" clause="7.18.2" testNumber="1"/>
             <description>Annotations of subtype TrapNet shall not be permitted.</description>
-            <test>false</test>
+            <test>isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
                 <message>An annotation of subtype TrapNet exists</message>
                 <arguments/>

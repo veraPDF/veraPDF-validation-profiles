@@ -9,7 +9,7 @@
         <rule object="PDLinkAnnot">
             <id specification="ISO_14289_1" clause="7.18.5" testNumber="1"/>
             <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element.</description>
-            <test>structParentType == 'Link'</test>
+            <test>structParentType == 'Link' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
                 <message>A link annotation is not nested within a Link tag</message>
                 <arguments/>

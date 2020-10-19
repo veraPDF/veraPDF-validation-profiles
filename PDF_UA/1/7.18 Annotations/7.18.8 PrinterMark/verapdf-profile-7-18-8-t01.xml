@@ -11,7 +11,7 @@
             <id specification="ISO_14289_1" clause="7.18.8" testNumber="1"/>
             <description>PrinterMark annotations, if present, shall be considered Incidental Artifacts, as if they are hidden page
                 elements as defined in ISO 32000-1:2008, 14.8.2.2.3.</description>
-            <test>structParentType == null</test>
+            <test>structParentType == null || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
                 <message>A PrinterMark annotation is included in logical structure</message>
                 <arguments/>
