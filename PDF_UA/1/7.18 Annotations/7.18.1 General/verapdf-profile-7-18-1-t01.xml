@@ -9,7 +9,8 @@
         <rule object="PDAnnot">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="1"/>
             <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
-            <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || structParentType == 'Annot'</test>
+            <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || isOutsideCropBox == true ||
+                (F &amp; 2) == 2 || structParentType == 'Annot'</test>
             <error>
                 <message>An annotation, excluding annotations of subtype Widget, Popup or Link, is not nested within an Annot tag</message>
                 <arguments/>

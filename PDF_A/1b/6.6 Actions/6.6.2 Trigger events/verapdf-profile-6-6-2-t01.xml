@@ -6,10 +6,10 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAnnot">
+        <rule object="PDWidgetAnnot">
             <id specification="ISO_19005_1" clause="6.6.2" testNumber="1"/>
             <description>A Widget annotation dictionary shall not include an AA entry for an additional-actions dictionary</description>
-            <test>Subtype != &quot;Widget&quot; || containsAA == false</test>
+            <test>containsAA == false</test>
             <error>
                 <message>A Widget annotation contains an additional-actions dictionary (AA entry)</message>
                 <arguments/>
