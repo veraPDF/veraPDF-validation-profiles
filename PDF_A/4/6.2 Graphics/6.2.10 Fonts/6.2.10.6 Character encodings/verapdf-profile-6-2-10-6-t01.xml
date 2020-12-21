@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.206+03:00">
+        <name>ISO 19005-4:2020 - 6.2.10 Fonts - 6.2.10.6 Character encodings - cmaps for non-symbolic TrueType fonts</name>
+        <description>For all non-symbolic TrueType fonts used for rendering, the embedded TrueType font program shall
+            contain at least Microsoft Unicode (3,1 – Platform ID=3, Encoding ID=1), or Macintosh Roman (1,0 – Platform ID=1, Encoding ID=0)
+            'cmap' subtable that all necessary glyph lookups are able to be carried out.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="TrueTypeFontProgram">
+            <id specification="ISO_19005_4" clause="6.2.10.6" testNumber="1"/>
+            <description>For all non-symbolic TrueType fonts used for rendering, the embedded TrueType font program shall
+                contain at least Microsoft Unicode (3,1 – Platform ID=3, Encoding ID=1), or Macintosh Roman (1,0 – Platform ID=1, Encoding ID=0)
+                'cmap' subtable that all necessary glyph lookups are able to be carried out.</description>
+            <test>isSymbolic == true || cmap31Present == true || cmap10Present == true</test>
+            <error>
+                <message>The embedded font program for a non-symbolic TrueType font does not contain contain Microsoft
+                    Symbol (3,0 – Platform ID=3, Encoding ID=0) or the Mac Roman (1,0 – Platform ID=1, Encoding ID=0) encoding.</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

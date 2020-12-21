@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.258+03:00">
+        <name>ISO 19005-4:2020 - 6.2.10 Fonts - 6.2.10.9 Use of .notdef glyph</name>
+        <description>A PDF/A-4 compliant document shall not contain a reference to the .notdef glyph from any of the text showing operators,
+	regardless of text rendering mode, in any content stream.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="Glyph">
+            <id specification="ISO_19005_4" clause="6.2.10.9" testNumber="1"/>
+            <description>A PDF/A-4 compliant document shall not contain a reference to the .notdef glyph from any of the text showing
+			operators, regardless of text rendering mode, in any content stream.</description>
+            <test>name != &quot;.notdef&quot;</test>
+            <error>
+                <message>The document contains a reference to the .notdef glyph</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

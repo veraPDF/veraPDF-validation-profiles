@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:07.997+03:00">
+        <name>ISO 19005-4:2020 - 6.2.10 Fonts - 6.2.10.2 Font types - Widths entry</name>
+        <description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+	    in ISO 32000-2:2020, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
+	    Widths - array - (Required except for the standard 14 fonts; indirect reference preferred) An array of (LastChar − FirstChar + 1) widths</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDSimpleFont">
+            <id specification="ISO_19005_4" clause="6.2.10.2" testNumber="6"/>
+            <description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+			in ISO 32000-2:2020, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
+			Widths - array - (Required except for the standard 14 fonts; indirect reference preferred) An array of (LastChar − FirstChar + 1) widths</description>
+            <test>isStandard == true || (Widths_size != null &amp;&amp; Widths_size == LastChar - FirstChar + 1)</test>
+            <error>
+                <message>Widths array is missing or has invalid size</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="9.6.2.1, Table 109"/>
+                <reference specification="ISO 32000-2:2020" clause="9.6.4, Table 110"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

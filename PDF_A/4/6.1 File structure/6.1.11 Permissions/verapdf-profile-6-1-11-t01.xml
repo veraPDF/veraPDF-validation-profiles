@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T16:50:07.208+03:00">
+        <name>ISO 19005-4:2020 - 6.1.11 Permissions - UR3 and DocMDP</name>
+        <description>No keys other than UR3 and DocMDP shall be present in a permissions dictionary (ISO 32000-2:2020, 12.8.6, Table 263).</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDPerms">
+            <id specification="ISO_19005_4" clause="6.1.11" testNumber="1"/>
+            <description>No keys other than UR3 and DocMDP shall be present in a permissions dictionary (ISO 32000-2:2020, 12.8.6, Table 263).</description>
+            <test>containsOtherEntries == false</test>
+            <error>
+                <message>The document permissions dictionary contains keys other than UR3 and DocMDP</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="12.8.6"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.516+03:00">
+        <name>ISO 19005-4:2020 - 6.2.8 Form XObjects - 6.2.8.1 Form XObjects</name>
+        <description>A form XObject dictionary shall not contain an OPI key.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDXForm">
+            <id specification="ISO_19005_4" clause="6.2.8.1" testNumber="1"/>
+            <description>A form XObject dictionary shall not contain an OPI key.</description>
+            <test>containsOPI == false</test>
+            <error>
+                <message>The form XObject dictionary contains an OPI key</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
