@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.530+03:00">
+        <name>ISO 14289-1:2014 - 7.20 XObjects - Reference XObjects</name>
+        <description>A conforming file shall not contain any reference XObjects</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDXForm">
+            <id specification="ISO_14289_1" clause="7.20" testNumber="1"/>
+            <description>A conforming file shall not contain any reference XObjects</description>
+            <test>containsRef == false</test>
+            <error>
+                <message>The document contains a reference XObject (Ref key in the form XObject dictionary)</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

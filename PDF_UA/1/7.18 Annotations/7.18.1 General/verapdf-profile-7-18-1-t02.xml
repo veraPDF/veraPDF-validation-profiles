@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.18 Annotation - 7.18.1 General - Alt in annotation</name>
+        <description>An annotation (except annotations of type Link, Widget or Popup, or hidden annotations,
+            or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry
+            in the enclosing structure element</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_1" clause="7.18.1" testNumber="2"/>
+            <description>An annotation (except annotations of type Link, Widget or Popup, or hidden annotations,
+                or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry
+                in the enclosing structure element</description>
+            <test>structParentType != 'Annot' || Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link'
+                || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') ||
+                (Alt != null &amp;&amp; Alt != '')</test>
+            <error>
+                <message>An annotation (except annotations of type Link, Widget or Popup, or hidden annotations,
+                    or those having rectangle outside the crop-box) has neither Contents key nor an Alt entry
+                    in the enclosing structure element</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

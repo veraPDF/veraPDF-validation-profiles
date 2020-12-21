@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.155+03:00">
+        <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.4 Embedding - CharSet entry in Type1 fonts</name>
+        <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs
+	present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDType1Font">
+            <id specification="ISO_14289_1" clause="7.21.4.2" testNumber="1"/>
+            <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs
+			present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not.</description>
+            <test>fontFile_size == 0 || fontName.search(/[A-Z]{6}\+/) != 0 || CharSet == null || charSetListsAllGlyphs == true</test>
+            <error>
+                <message>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

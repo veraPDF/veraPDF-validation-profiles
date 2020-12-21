@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.137+03:00">
+        <name>ISO 14289-1:2014 - 7.4 Headings - 7.4.2 Numbered headings - Numbered heading tags</name>
+        <description>For documents that are not strongly structured, as described in ISO 32000-1:2008, 14.8.4.3.5,
+            heading tags shall be used as follows:
+            (*) If any heading tags are used, H1 shall be the first.
+            (*) A document may use more than one instance of any specific tag level. For example, a tag level may
+            be repeated if document content requires it.
+            (*) If document semantics require a descending sequence of headers, such a sequence shall proceed
+            in strict numerical order and shall not skip an intervening heading level.
+            (*) A document may increment its heading sequence without restarting at H1 if document semantics
+            require it.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEHn">
+            <id specification="ISO_14289_1" clause="7.4.2" testNumber="1"/>
+            <description>For documents that are not strongly structured, as described in ISO 32000-1:2008, 14.8.4.3.5,
+                heading tags shall be used as follows:
+                (*) If any heading tags are used, H1 shall be the first.
+                (*) A document may use more than one instance of any specific tag level. For example, a tag level may
+                be repeated if document content requires it.
+                (*) If document semantics require a descending sequence of headers, such a sequence shall proceed
+                in strict numerical order and shall not skip an intervening heading level.
+                (*) A document may increment its heading sequence without restarting at H1 if document semantics
+                require it.</description>
+            <test>hasCorrectNestingLevel == true</test>
+            <error>
+                <message>Does use numbered headings, but the first heading tag is not H1 or numbered heading levels in descending sequence are skipped</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.3.5"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

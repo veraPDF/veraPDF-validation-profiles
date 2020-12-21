@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.18 Annotations - 7.18.5 Links - Contents key</name>
+        <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDLinkAnnot">
+            <id specification="ISO_14289_1" clause="7.18.5" testNumber="2"/>
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3.</description>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <error>
+                <message>A link annotation does not include an alternate description in the Contents Key</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.9.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

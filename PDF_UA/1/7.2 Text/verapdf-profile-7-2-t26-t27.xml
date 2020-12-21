@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - TOC structure</name>
+        <description>A TOC-related structure element should used in a way that conform to Table 333 in ISO 32000-1.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETOCI">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="26"/>
+            <description>TOCI element should contained in TOC element</description>
+            <test>parentStandardType == 'TOC'</test>
+            <error>
+                <message>TOCI element not contained in TOC element</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.2"/>
+            </references>
+        </rule>
+        <rule object="SETOC">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="27"/>
+            <description>TOC element may contain a Caption element as its first kid and
+                TOC element may contain only TOC, TOCI and Caption elements</description>
+            <test>/^(Caption&amp;)?(TOC|TOCI)(&amp;(TOC|TOCI))*$/.test(kidsStandardTypes) || kidsStandardTypes == 'Caption' ||
+                kidsStandardTypes == ''</test>
+            <error>
+                <message>TOC element contains more than one Caption element or TOC element contains a Caption element
+                    not as its first kid or TOC element contains not a TOC, TOCI or Caption elements</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

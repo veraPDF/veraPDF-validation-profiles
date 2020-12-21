@@ -6,7 +6,7 @@
 		as described in PDF Reference 5.9, unless the font meets any of the following three conditions: 
 		(*) fonts that use the predefined encodings MacRomanEncoding, MacExpertEncoding or WinAnsiEncoding, or that use the predefined Identity-H or Identity-V CMaps;
 		(*) Type 1 fonts whose character names are taken from the Adobe standard Latin character set or the set of named characters in the Symbol font, as defined in PDF Reference Appendix D;
-		(*) Type 0 fonts whose descendant CIDFont uses the Adobe-GB1, Adobe-CNS1, Adobe-Japan1 orAdobe-Korea1 character collections.</description>
+		(*) Type 0 fonts whose descendant CIDFont uses the Adobe-GB1, Adobe-CNS1, Adobe-Japan1 or Adobe-Korea1 character collections.</description>
     </details>
     <hash></hash>
     <rules>
@@ -16,7 +16,7 @@
 			as described in PDF Reference 5.9, unless the font meets any of the following three conditions:
 			(*) fonts that use the predefined encodings MacRomanEncoding, MacExpertEncoding or WinAnsiEncoding, or that use the predefined Identity-H or Identity-V CMaps;
 			(*) Type 1 fonts whose character names are taken from the Adobe standard Latin character set or the set of named characters in the Symbol font, as defined in PDF Reference Appendix D;
-			(*) Type 0 fonts whose descendant CIDFont uses the Adobe-GB1, Adobe-CNS1, Adobe-Japan1 orAdobe-Korea1 character collections.</description>
+			(*) Type 0 fonts whose descendant CIDFont uses the Adobe-GB1, Adobe-CNS1, Adobe-Japan1 or Adobe-Korea1 character collections.</description>
             <test>toUnicode != null</test>
             <error>
                 <message>The font does not define Unicode character map</message>

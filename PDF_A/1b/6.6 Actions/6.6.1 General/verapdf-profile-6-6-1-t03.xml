@@ -6,10 +6,10 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAnnot">
+        <rule object="PDWidgetAnnot">
             <id specification="ISO_19005_1" clause="6.6.1" testNumber="3"/>
             <description>Interactive form fields shall not perform actions of any type</description>
-            <test>Subtype != &quot;Widget&quot; || containsA == false</test>
+            <test>containsA == false</test>
             <error>
                 <message>Interactive form field contains an action object ('A' key)</message>
                 <arguments/>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T11:35:34.541+03:00">
+        <name>ISO 14289-1:2014 - 7.10 Optional content - Name key present</name>
+        <description>Each optional content configuration dictionary that forms the value of the D key, or that is an element in the array that forms the 
+		value of the Configs key in the OCProperties dictionary, shall contain the Name key.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDOCConfig">
+            <id specification="ISO_14289_1" clause="7.10" testNumber="1"/>
+            <description>Each optional content configuration dictionary that forms the value of the D key, or that is an element in the array that forms the 
+		value of the Configs key in the OCProperties dictionary, shall contain the Name key.</description>
+            <test>Name != null &amp;&amp; Name.length() > 0</test>
+            <error>
+                <message>Missing or empty Name entry of the optional content configuration dictionary</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

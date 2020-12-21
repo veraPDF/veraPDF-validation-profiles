@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.18 Annotations - 7.18.1 General - Annot tag</name>
+        <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_1" clause="7.18.1" testNumber="1"/>
+            <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
+            <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || isOutsideCropBox == true ||
+                (F &amp; 2) == 2 || structParentType == 'Annot'</test>
+            <error>
+                <message>An annotation, excluding annotations of subtype Widget, Popup or Link, is not nested within an Annot tag</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
