@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.051+03:00">
+        <name>ISO 19005-4:2020 - 6.2.10 Fonts - 6.2.10.3 Composite fonts - CIDToGIDMap</name>
+        <description>ISO 32000-2:2020, 9.7.4 Table 115 requires that all embedded Type 2 CIDFonts, the CIDFont
+            dictionary shall contain a CIDToGIDMap entry that shall be a stream mapping from CIDs to glyph indices or
+            the name Identity, as described in ISO 32000-2:2020, 9.7.4 Table 115.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDCIDFont">
+            <id specification="ISO_19005_4" clause="6.2.10.3.2" testNumber="1"/>
+            <description>ISO 32000-2:2020, 9.7.4 Table 115 requires that all embedded Type 2 CIDFonts, the CIDFont
+                dictionary shall contain a CIDToGIDMap entry that shall be a stream mapping from CIDs to glyph indices
+                or the name Identity, as described in ISO 32000-2:2020, 9.7.4 Table 115.</description>
+            <test>Subtype != &quot;CIDFontType2&quot; || CIDToGIDMap != null</test>
+            <error>
+                <message>A Type 2 CIDFont dictionary has missing or invalid CIDToGIDMap entry</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="9.7.4, Table 115"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

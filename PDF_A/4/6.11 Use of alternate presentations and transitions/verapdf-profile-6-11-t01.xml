@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T13:01:08.799+03:00">
+        <name>ISO 19005-4:2020 - 6.11 Use of alternate presentations and transitions - AlternatePresentations</name>
+        <description>There shall be no AlternatePresentations entry in the document's name dictionary</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDDocument">
+            <id specification="ISO_19005_4" clause="6.11" testNumber="1"/>
+            <description>There shall be no AlternatePresentations entry in the document's name dictionary</description>
+            <test>containsAlternatePresentations == false</test>
+            <error>
+                <message>The document's name dictionary contains the AlternatePresentations entry</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

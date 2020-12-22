@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:07.432+03:00">
+        <name>ISO 19005-4:2020 - 6.1.2 File header - PDF header</name>
+        <description>The file header shall begin at byte zero and shall consist of “%PDF-2.n” followed by a single EOL marker,
+	    where 'n' is a single digit number between 0 (30h) and 9 (39h)</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosDocument">
+            <id specification="ISO_19005_4" clause="6.1.2" testNumber="1"/>
+            <description>The file header shall begin at byte zero and shall consist of &quot;%PDF-2.n&quot; followed by a single EOL marker,
+			where 'n' is a single digit number between 0 (30h) and 9 (39h)</description>
+            <test>headerOffset == 0 &amp;&amp; /^%PDF-2\.[0-9]$/.test(header)</test>
+            <error>
+                <message>File header does not start at byte offset 0 or does not comply with the requirements of PDF/A-4 specification</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

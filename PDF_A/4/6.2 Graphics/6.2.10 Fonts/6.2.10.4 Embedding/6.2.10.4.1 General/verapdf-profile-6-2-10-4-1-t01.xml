@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.119+03:00">
+        <name>ISO 19005-4:2020 - 6.2.10 Fonts - 6.2.10.4 Embedding - General</name>
+        <description>The font programs for all fonts used for rendering within a conforming file shall be embedded
+            within that file, as defined in ISO 32000-2:2020, 9.9.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDFont">
+            <id specification="ISO_19005_4" clause="6.2.10.4.1" testNumber="1"/>
+            <description>The font programs for all fonts used for rendering within a conforming file shall be embedded
+                within that file, as defined in ISO 32000-2:2020, 9.9.</description>
+            <test>Subtype == &quot;Type3&quot; || Subtype == &quot;Type0&quot; || renderingMode == 3 || fontFile_size == 1</test>
+            <error>
+                <message>The font program is not embedded</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="9.9"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

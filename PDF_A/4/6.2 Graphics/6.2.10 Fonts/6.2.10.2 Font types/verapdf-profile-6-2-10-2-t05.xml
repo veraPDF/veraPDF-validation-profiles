@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:07.982+03:00">
+        <name>ISO 19005-4:2020 - 6.2.10 Fonts - 6.2.10.2 Font types - LastChat entry</name>
+        <description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+	    in ISO 32000-2:2020, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
+	    LastChar - integer - (Required except for the standard 14 fonts) The last character code defined in the font's Widths array</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDSimpleFont">
+            <id specification="ISO_19005_4" clause="6.2.10.2" testNumber="5"/>
+            <description>All fonts and font programs used in a conforming file, regardless of rendering mode usage, shall conform to the provisions
+			in ISO 32000-2:2020, 9.6 and 9.7, as well as to the font specifications referenced by these provisions.
+			LastChar - integer - (Required except for the standard 14 fonts) The last character code defined in the font's Widths array</description>
+            <test>isStandard == true || LastChar != null</test>
+            <error>
+                <message>A non-standard simple font dictionary has missing or invalid LastChar entry</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="9.6.2.1, Table 109"/>
+                <reference specification="ISO 32000-2:2020" clause="9.6.4, Table 110"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

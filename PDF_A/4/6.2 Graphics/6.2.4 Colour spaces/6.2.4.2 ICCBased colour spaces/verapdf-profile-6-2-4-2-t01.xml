@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.314+03:00">
+        <name>ISO 19005-4:2020 - 6.2.4 Colour Spaces - 6.2.4.2 ICCBased colour spaces</name>
+        <description>The profile that forms the stream of an ICCBased colour space shall conform to ISO 32000-2:2020, 8.6.5.5.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="ICCInputProfile">
+            <id specification="ISO_19005_4" clause="6.2.4.2" testNumber="1"/>
+            <description>The profile that forms the stream of an ICCBased colour space shall conform to ISO 32000-2:2020, 8.6.5.5.</description>
+            <test>(deviceClass == &quot;prtr&quot; || deviceClass == &quot;mntr&quot; || deviceClass == &quot;scnr&quot; || deviceClass == &quot;spac&quot;) &amp;&amp; 
+			(colorSpace == &quot;RGB &quot; || colorSpace == &quot;CMYK&quot; || colorSpace == &quot;GRAY&quot; || colorSpace == &quot;Lab &quot;) &amp;&amp; version &lt; 5.0</test>
+            <error>
+                <message>The embedded ICC profile is either invalid or does not satisfy PDF 2.0 requirements</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="8.6.5.5"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
