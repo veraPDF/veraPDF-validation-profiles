@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:07.512+03:00">
+        <name>ISO 19005-4:2020 - 6.1.3 File trailer - ModDate</name>
+        <description>If a document information dictionary is present, it shall only contain a ModDate entry.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosInfo">
+            <id specification="ISO_19005_4" clause="6.1.3" testNumber="5"/>
+            <description>If a document information dictionary is present, it shall only contain a ModDate entry.</description>
+            <test>size == 1 &amp;&amp; ModDate != null</test>
+            <error>
+                <message>Document information dictionary is present and does not contain only a ModDate entry</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
