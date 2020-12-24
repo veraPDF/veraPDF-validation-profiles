@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:07.862+03:00">
+        <name>ISO 19005-4:2020 - 6.2.9 Transparency - Page transparency</name>
+        <description>If the document does not contain a PDF/A output intent, then all pages that contain transparency
+            shall either have a page-level PDF/A output intent or the page dictionary shall include the Group key, and
+            the attribute dictionary that forms the value of that Group key shall include a CS entry whose value shall
+            be used as the default blending colour space.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDPage">
+            <id specification="ISO_19005_4" clause="6.2.9" testNumber="2"/>
+            <description>If the document does not contain a PDF/A output intent, then all pages that contain transparency
+                shall either have a page-level PDF/A output intent or the page dictionary shall include the Group key, and
+                the attribute dictionary that forms the value of that Group key shall include a CS entry whose value shall
+                be used as the default blending colour space.</description>
+            <test>gDocumentOutputCS != null || outputColorSpace != null || containsGroupCS == true || containsTransparency == false</test>
+            <error>
+                <message>The page contains transparent objects with no blending colour space defined.</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="11.3.4"/>
+            </references>
+        </rule>
+    </rules>
+    <variables>
+        <variable name="gDocumentOutputCS" object="PDDocument">
+            <defaultValue>null</defaultValue>
+            <value>outputColorSpace</value>
+        </variable>
+    </variables>
+</profile>

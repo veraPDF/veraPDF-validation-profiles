@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:53:06.894+03:00">
+        <name>ISO 19005-4:2020 - 6.6.3 Trigger events</name>
+        <description>If a document catalog dictionary or page dictionary or an annotation dictionary (other than a
+            Widget annotation dictionary) include an AA entry, its value (which is an additional-actions dictionary)
+            shall only contain keys from the following list: E, X, D, U, Fo, and Bl.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAdditionalActions">
+            <id specification="ISO_19005_4" clause="6.6.3" testNumber="1"/>
+            <description>If a document catalog dictionary or page dictionary or an annotation dictionary (other than a
+                Widget annotation dictionary) include an AA entry, its value (which is an additional-actions dictionary)
+                shall only contain keys from the following list: E, X, D, U, Fo, and Bl.</description>
+            <test>containsOtherActions == false</test>
+            <error>
+                <message>A document catalog dictionary include an AA entry and its value (which is an additional-actions
+                    dictionary) contains key not from the following list: E, X, D, U, Fo, and Bl</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
