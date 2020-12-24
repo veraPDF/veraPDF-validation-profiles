@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.188+03:00">
+        <name>ISO 19005-4:2020 - 6.2.10 Fonts - 6.2.10.8 Use of ActualText</name>
+        <description>The ActualText entry shall not contain any PUA values.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructElem">
+            <id specification="ISO_19005_4" clause="6.2.10.8" testNumber="1"/>
+            <description>The ActualText entry shall not contain any PUA values.</description>
+            <test>actualTextContainsPUA == false</test>
+            <error>
+                <message>The ActualText entry contains any PUA values.</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

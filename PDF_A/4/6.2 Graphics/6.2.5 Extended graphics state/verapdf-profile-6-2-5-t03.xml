@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.435+03:00">
+        <name>ISO 19005-4:2020 - 6.2.5 Extended graphics state - HTO key</name>
+        <description>An graphics state parameter dictionary shall not contain the HTO key</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDExtGState">
+            <id specification="ISO_19005_4" clause="6.2.5" testNumber="3"/>
+            <description>An graphics state parameter dictionary shall not contain the HTO key</description>
+            <test>containsHTO == false</test>
+            <error>
+                <message>An graphics state parameter dictionary contains the HTP key</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
