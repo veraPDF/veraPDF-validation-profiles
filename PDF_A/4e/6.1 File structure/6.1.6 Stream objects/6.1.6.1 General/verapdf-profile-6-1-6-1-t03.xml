@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="PD3DStream">
-            <id specification="ISO_19005_4" clause="6.1.6.1" testNumber="4"/>
+            <id specification="ISO_19005_4" clause="6.1.6.1" testNumber="3"/>
             <description>The Subtype entry in a 3D stream dictionary (ISO 32000-2:2020, 13.6.3) shall have a value which
                 is either U3D or PRC as described in Annex B.</description>
             <test>Subtype == 'U3D' || Subtype == 'PRC'</test>

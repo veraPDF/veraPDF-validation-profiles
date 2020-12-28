@@ -17,7 +17,7 @@
                 <arguments/>
             </error>
             <references>
-                <reference specification="ISO32000-2:2020" clause="14.13.2"/>
+                <reference specification="ISO 32000-2:2020" clause="14.13.2"/>
             </references>
         </rule>
     </rules>
