@@ -13,10 +13,8 @@
 			ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2.</description>
             <test>(isPredefinedInXMP2005 == true || isDefinedInMainPackage == true || isDefinedInCurrentPackage == true) &amp;&amp; isValueTypeCorrect == true</test>
             <error>
-                <message>%1</message>
-                <arguments>
-                    <argument>errorMessage</argument>
-                </arguments>
+                <message>An XMP property is either not not pre-defined, is not defined in any extension schema, or has invalid type.</message>
+                <arguments/>
             </error>
             <references/>
         </rule>
