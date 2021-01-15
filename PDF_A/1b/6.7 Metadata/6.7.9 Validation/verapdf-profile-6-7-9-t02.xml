@@ -13,10 +13,8 @@
 			or extension schemas that comply with XMP Specification</description>
             <test>(isPredefinedInXMP2004 == true || isDefinedInCurrentPackage == true) &amp;&amp; isValueTypeCorrect == true</test>
             <error>
-                <message>%1</message>
-                <arguments>
-                    <argument>errorMessage</argument>
-                </arguments>
+                <message>A property is either not defined in XMP Specification, or is not defined in any of the extension schemas, or has an invalid value type.</message>
+                <arguments/>
             </error>
             <references/>
         </rule>
