@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2021-01-31T10:58:08.359+03:00">
+        <name>ISO 19005-4:2020 - 6.2.4 Colour Spaces - 6.2.4.3 Uncalibrated/Device colour spaces - DeviceGray</name>
+        <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when
+            the DeviceGray colour space is used, or if a PDF/A OutputIntent is in effect.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDDeviceGray">
+            <id specification="ISO_19005_4" clause="6.2.4.3" testNumber="4"/>
+            <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when
+                the DeviceGray colour space is used, or if a PDF/A OutputIntent is in effect.</description>
+            <test>gPageOutputCS != null || gDocumentOutputCS != null</test>
+            <error>
+                <message>DeviceGray colour space is used without output intent profile</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables>
+        <variable name="gDocumentOutputCS" object="PDDocument">
+            <defaultValue>null</defaultValue>
+            <value>outputColorSpace</value>
+        </variable>
+        <variable name="gPageOutputCS" object="PDPage">
+            <defaultValue>null</defaultValue>
+            <value>outputColorSpace</value>
+        </variable>
+    </variables>
+</profile>

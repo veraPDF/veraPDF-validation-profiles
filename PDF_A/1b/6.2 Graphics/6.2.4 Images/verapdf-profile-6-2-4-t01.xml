@@ -11,7 +11,7 @@
             <description>An Image dictionary shall not contain the Alternates key</description>
             <test>containsAlternates == false</test>
             <error>
-                <message>Alternates key is present in the Image dictionary(</message>
+                <message>Alternates key is present in the Image dictionary</message>
                 <arguments/>
             </error>
             <references/>

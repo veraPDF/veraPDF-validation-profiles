@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2021-01-28T21:57:56.056+03:00">
+        <name>ISO 19005-4:2020 - 6.2.2 Content streams - Resources dictionary</name>
+        <description>A content stream's named resources shall be defined by a resource dictionary, which shall
+            enumerate the named resources needed by the operators in the content stream and the names by which
+            they can be referred to.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDContentStream" deferred="true">
+            <id specification="ISO_19005_4" clause="6.2.2" testNumber="3"/>
+            <description>A content stream's named resources shall be defined by a resource dictionary, which shall
+                enumerate the named resources needed by the operators in the content stream and the names by which
+                they can be referred to.</description>
+            <test>containsUndefinedResource == false</test>
+            <error>
+                <message>A content stream's named resources not define by a resource dictionary, which shall enumerate
+                    the named resources needed by the operators in the content stream and the names by which they can
+                    be referred to.</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="7.8.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
