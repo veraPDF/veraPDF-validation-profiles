@@ -11,7 +11,7 @@
             <description>An XObject dictionary (Image or Form) shall not contain the OPI key</description>
             <test>containsOPI == false</test>
             <error>
-                <message>OPI key is present in the XObject dictionary(</message>
+                <message>OPI key is present in the XObject dictionary</message>
                 <arguments/>
             </error>
             <references/>
