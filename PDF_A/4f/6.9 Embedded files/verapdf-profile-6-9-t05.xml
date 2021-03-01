@@ -8,7 +8,7 @@
     <hash></hash>
     <rules>
         <rule object="CosDocument">
-            <id specification="ISO_19005_4" clause="6.9" testNumber="4"/>
+            <id specification="ISO_19005_4" clause="6.9" testNumber="5"/>
             <description>A PDF/A-4f conforming file shall contain an EmbeddedFiles key in the name dictionary of the
                 document catalog dictionary.</description>
             <test>containsEmbeddedFiles == true</test>
