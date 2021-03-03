@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2021-02-26T10:53:07.180+03:00">
+        <name>ISO 19005-4:2020 - 6.7.3 Version identification - rev property</name>
+        <description>The value of pdfaid:rev shall be the four digit year.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDFAIdentification">
+            <id specification="ISO_19005_4" clause="6.7.3" testNumber="5"/>
+            <description>The value of pdfaid:rev shall be the four digit year.</description>
+            <test>/^\d{4}$/.test(rev)</test>
+            <error>
+                <message>The value of pdfaid:rev not the four digit year.</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

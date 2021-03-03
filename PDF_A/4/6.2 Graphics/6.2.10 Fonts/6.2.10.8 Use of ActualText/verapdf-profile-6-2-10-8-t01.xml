@@ -6,10 +6,10 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem">
+        <rule object="CosActualText">
             <id specification="ISO_19005_4" clause="6.2.10.8" testNumber="1"/>
             <description>The ActualText entry shall not contain any PUA values.</description>
-            <test>actualTextContainsPUA == false</test>
+            <test>containsPUA == false</test>
             <error>
                 <message>The ActualText entry contains any PUA values.</message>
                 <arguments/>

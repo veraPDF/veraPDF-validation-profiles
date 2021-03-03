@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2021-02-27T10:58:08.854+03:00">
+        <name>ISO 19005-4:2020 - 6.9 Embedded files - AFRelationship</name>
+        <description>Each embedded file’s file specification dictionary shall contain an AFRelationship key
+            (ISO 32000-2, 7.11.3) that describes how this embedded file relates to the content of the PDF.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosFileSpecification">
+            <id specification="ISO_19005_4" clause="6.9" testNumber="4"/>
+            <description>Each embedded file’s file specification dictionary shall contain an AFRelationship key
+                (ISO 32000-2, 7.11.3) that describes how this embedded file relates to the content of the PDF.</description>
+            <test>AFRelationship != null</test>
+            <error>
+                <message>The file specification dictionary for an embedded file does not contain the AFRelationship key</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="7.11.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
