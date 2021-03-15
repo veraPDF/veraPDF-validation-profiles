@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2021-03-15T10:58:08.328+03:00">
+        <name>ISO 19005-4:2020 - 6.2.4 Colour Spaces - 6.2.4.3 Uncalibrated/Device colour spaces - DeviceRGB</name>
+        <description>DeviceRGB shall only be used if a device independent DefaultRGB colour space has been set when the
+            DeviceRGB colour space is used or if the current transparency blending space, when the DeviceRGB colour
+            space is used, is a device independent RGB-based colour space or the current PDF/A OutputIntent, when the
+            DeviceRGB colour space is used, contains an 'RGB ' destination profile.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDDeviceRGB">
+            <id specification="ISO_19005_4" clause="6.2.4.3" testNumber="2"/>
+            <description>DeviceRGB shall only be used if a device independent DefaultRGB colour space has been set when
+                the DeviceRGB colour space is used or if the current transparency blending space, when the DeviceRGB
+                colour space is used, is a device independent RGB-based colour space or the current PDF/A OutputIntent,
+                when the DeviceRGB colour space is used, contains an 'RGB ' destination profile.</description>
+            <test>(gPageOutputCS == null ? gDocumentOutputCS == 'RGB ' : gPageOutputCS == 'RGB ') ||
+                gTransparencyCS == 'RGB ' || gTransparencyCS == 'CalRGB'</test>
+            <error>
+                <message>DeviceRGB colour space is used without RGB output intent profile and
+                    without current transparency RGB blending space</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables>
+        <variable name="gDocumentOutputCS" object="PDDocument">
+            <defaultValue>null</defaultValue>
+            <value>outputColorSpace</value>
+        </variable>
+        <variable name="gPageOutputCS" object="PDPage">
+            <defaultValue>null</defaultValue>
+            <value>outputColorSpace</value>
+        </variable>
+        <variable name="gTransparencyCS" object="TransparencyColorSpace">
+            <defaultValue>null</defaultValue>
+            <value>colorSpaceType</value>
+        </variable>
+    </variables>
+</profile>

@@ -11,7 +11,7 @@
             <description>A graphics state parameter dictionary shall not contain the TR2 key with a value other than Default</description>
             <test>TR2 == null || TR2 == &quot;Default&quot;</test>
             <error>
-                <message>An graphics state parameter dictionary contains the TR2 key with a value other than Default</message>
+                <message>A graphics state parameter dictionary contains the TR2 key with a value other than Default</message>
                 <arguments/>
             </error>
             <references/>

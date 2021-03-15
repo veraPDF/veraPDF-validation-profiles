@@ -6,7 +6,7 @@
         for the two cases listed below, shall have at least one appearance dictionary:
 	    Annotations where the value of the Rect key consists of an array where the value at index 1 is equal to the
         value at index 3 and the value at index 2 is equal to the value at index 4;
-	    - annotations whose Subtype value is Popup or Link.</description>
+	    - annotations whose Subtype value is Popup, Link or Projection.</description>
     </details>
     <hash></hash>
     <rules>
@@ -16,7 +16,7 @@
                 except for the two cases listed below, shall have at least one appearance dictionary:
                 Annotations where the value of the Rect key consists of an array where the value at index 1 is equal to
                 the value at index 3 and the value at index 2 is equal to the value at index 4;
-                - annotations whose Subtype value is Popup or Link.</description>
+                - annotations whose Subtype value is Popup, Link or Projection.</description>
             <test>(width == 0 &amp;&amp; height == 0) || Subtype == &quot;Popup&quot; || Subtype == &quot;Link&quot; || Subtype == &quot;Projection&quot; || AP != null</test>
             <error>
                 <message>An annotation does not contain an appearance dictionary</message>
