@@ -11,7 +11,7 @@
             <description>A graphics state parameter dictionary (ISO 32000-2:2020, 8.4.5) shall not contain the TR key</description>
             <test>TR == null</test>
             <error>
-                <message>An graphics state parameter dictionary contains the TR key</message>
+                <message>A graphics state parameter dictionary contains the TR key</message>
                 <arguments/>
             </error>
             <references>
