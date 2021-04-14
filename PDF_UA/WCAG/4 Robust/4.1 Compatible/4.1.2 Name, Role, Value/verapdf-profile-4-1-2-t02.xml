@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
-        <name>ISO 14289-1:2014 - 4.1 Compatible - 4.1.2 Contrast (Minimum) - Name, Role, Value - Paragraph</name>
-        <description>The structure type and attributes of a paragraph shall be semantically appropriate.</description>
+        <name>ISO 14289-1:2014 - 4.1 Compatible - 4.1.2 Contrast (Minimum) - Name, Role, Value - Span</name>
+        <description>The structure type and attributes of a span shall be semantically appropriate.</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="SAP">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="1"/>
-            <description>The structure type and attributes of a paragraph shall be semantically appropriate.</description>
-            <test>correctType == null || (correctType == 'P' &amp;&amp; correctSemanticScore > 0.8)</test>
+        <rule object="SASpan">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="2"/>
+            <description>The structure type and attributes of a span shall be semantically appropriate.</description>
+            <test>correctType == null || (correctType == 'Span' &amp;&amp; correctSemanticScore > 0.8)</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
