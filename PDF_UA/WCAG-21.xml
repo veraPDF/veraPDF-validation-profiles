@@ -29,10 +29,23 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAP">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="1"/>
-            <description>The structure type and attributes of a structure element shall be semantically appropriate.</description>
-            <test>hasCorrectType == null || (hasCorrectType == true &amp;&amp; correctSemanticScore > 0.8)</test>
+            <description>The structure type and attributes of a paragraph shall be semantically appropriate.</description>
+            <test>correctType == null || (correctType == 'P' &amp;&amp; correctSemanticScore > 0.8)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SASpan">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="2"/>
+            <description>The structure type and attributes of a span shall be semantically appropriate.</description>
+            <test>correctType == null || (correctType == 'Span' &amp;&amp; correctSemanticScore > 0.8)</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
