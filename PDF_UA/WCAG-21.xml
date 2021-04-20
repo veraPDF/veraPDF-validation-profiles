@@ -55,6 +55,46 @@
             </error>
             <references/>
         </rule>
+        <rule object="SATable">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="3"/>
+            <description>The structure type and attributes of a table shall be semantically appropriate.</description>
+            <test>correctType == null || (correctType == 'Table' &amp;&amp; correctSemanticScore > 0.8)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="4"/>
+            <description>The structure type and attributes of table elements shall be semantically appropriate.</description>
+            <test>((((correctType == 'TD' || correctType == 'TR' || correctType == 'TH') &amp;&amp; correctSemanticScore > 0.8) == false) || isTableChild) &amp;&amp;
+                (((correctType == 'TD' || correctType == 'TR' || correctType == 'TH') &amp;&amp; correctSemanticScore > 0.8) || (isTableElem == false))</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="5"/>
+            <description>The structure type and attributes of a table shall be semantically appropriate.</description>
+            <test>((correctType == 'Table' &amp;&amp; correctSemanticScore > 0.8) == false) || standardType == 'Table'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
     </rules>
     <variables>
         <variable name="gPageOrientation" object="PDPage">
