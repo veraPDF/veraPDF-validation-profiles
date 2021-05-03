@@ -9,7 +9,7 @@
         <rule object="SASpan">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="2"/>
             <description>The structure type and attributes of a span shall be semantically appropriate.</description>
-            <test>correctType == null || (correctType == 'Span' &amp;&amp; correctSemanticScore > 0.8)</test>
+            <test>correctType == 'Span' &amp;&amp; correctSemanticScore > 0.75</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
