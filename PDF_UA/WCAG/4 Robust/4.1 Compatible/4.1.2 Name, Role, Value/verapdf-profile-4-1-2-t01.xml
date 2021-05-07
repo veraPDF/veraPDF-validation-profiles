@@ -9,7 +9,7 @@
         <rule object="SAP">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="1"/>
             <description>The structure type and attributes of a paragraph shall be semantically appropriate.</description>
-            <test>correctType == null || (correctType == 'P' &amp;&amp; correctSemanticScore > 0.8)</test>
+            <test>correctType == 'P' &amp;&amp; correctSemanticScore > 0.75</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
