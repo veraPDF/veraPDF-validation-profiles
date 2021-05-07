@@ -216,16 +216,6 @@
             </error>
             <references/>
         </rule>
-        <rule object="SETextItem">
-            <id specification="ISO_14289_1" clause="7.1" testNumber="13"/>
-            <description>The structure type and attributes of a structure element shall be semantically appropriate.</description>
-            <test>(!/^H([1-9][0-9]*)*$/.test(gStructureTag) || suspectRole == 'H') &amp;&amp;  (gStructureTag != 'P' || suspectRole == 'P')</test>
-            <error>
-                <message>The structure type and attributes of a structure element are not semantically appropriate for the structure element.</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
         <rule object="PDOutline">
             <id specification="ISO_14289_1" clause="7.2" testNumber="2"/>
             <description>Natural language in the Outline entries shall be determined</description>
