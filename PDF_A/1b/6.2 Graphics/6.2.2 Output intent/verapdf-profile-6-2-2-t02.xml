@@ -7,11 +7,11 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDOutputIntent">
+        <rule object="OutputIntents">
             <id specification="ISO_19005_1" clause="6.2.2" testNumber="2"/>
             <description>If a file's OutputIntents array contains more than one entry, then all entries that contain a DestOutputProfile
 			key shall have as the value of that key the same indirect object, which shall be a valid ICC profile stream</description>
-            <test>destOutputProfileIndirect == null || gOutputProfileIndirect == null || destOutputProfileIndirect == gOutputProfileIndirect</test>
+            <test>sameOutputProfileIndirect == true</test>
             <error>
                 <message>File's OutputIntents array contains output intent dictionaries with non-matching destination output profiles</message>
                 <arguments/>
@@ -19,10 +19,5 @@
             <references/>
         </rule>
     </rules>
-    <variables>
-        <variable name="gOutputProfileIndirect" object="PDOutputIntent">
-            <defaultValue>null</defaultValue>
-            <value>gOutputProfileIndirect == null ? destOutputProfileIndirect : gOutputProfileIndirect</value>
-        </variable>
-    </variables>
+    <variables/>
 </profile>
