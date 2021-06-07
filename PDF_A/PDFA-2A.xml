@@ -349,7 +349,7 @@
                 <reference specification="ISO32000-1:2008" clause="14.11.5"/>
             </references>
         </rule>
-        <rule object="PDOutputIntent">
+        <rule object="OutputIntents">
             <id specification="ISO_19005_2" clause="6.2.3" testNumber="2"/>
             <description>If a file's OutputIntents array contains more than one entry, as might be the case where a file is compliant
 			with this part of ISO 19005 and at the same time with PDF/X-4 or PDF/E-1, then all entries that contain a
