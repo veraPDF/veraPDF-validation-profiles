@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 4.1 Compatible - 4.1.2 Name, Role, Value - Table row</name>
+        <description>The structure type and attributes of a table row shall be semantically appropriate.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SATR">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="8"/>
+            <description>The structure type and attributes of a table row shall be semantically appropriate.</description>
+            <test>correctType == 'TR' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

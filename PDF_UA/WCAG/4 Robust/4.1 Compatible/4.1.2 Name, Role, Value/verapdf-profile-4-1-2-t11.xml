@@ -7,15 +7,17 @@
     <hash></hash>
     <rules>
         <rule object="SAStructElem">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="4"/>
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="11"/>
             <description>The structure type and attributes of table elements shall be semantically appropriate.</description>
-            <test>((((correctType == 'TD' || correctType == 'TR' || correctType == 'TH') &amp;&amp; correctSemanticScore >= 0.75) == false) || isTableChild) &amp;&amp;
-                (((correctType == 'TD' || correctType == 'TR' || correctType == 'TH') &amp;&amp; correctSemanticScore >= 0.75) || (isTableElem == false))</test>
+            <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
+                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
+                correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table')</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>

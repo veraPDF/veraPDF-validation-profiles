@@ -68,19 +68,6 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="5"/>
-            <description>The structure type and attributes of a table shall be semantically appropriate.</description>
-            <test>((correctType == 'Table' &amp;&amp; correctSemanticScore >= 0.75) == false) || standardType == 'Table'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
         <rule object="SAH">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="6"/>
             <description>The structure type and attributes of a heading shall be semantically appropriate.</description>
@@ -103,6 +90,61 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATR">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="8"/>
+            <description>The structure type and attributes of a table row shall be semantically appropriate.</description>
+            <test>correctType == 'TR' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATH">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
+            <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
+            <test>correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATD">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="10"/>
+            <description>The structure type and attributes of a table cell shall be semantically appropriate.</description>
+            <test>correctType == 'TD' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="11"/>
+            <description>The structure type and attributes of table elements shall be semantically appropriate.</description>
+            <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
+                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
+                correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table')</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
