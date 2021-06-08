@@ -349,7 +349,7 @@
                 <reference specification="PDF 1.4 Reference" clause="9.10.4"/>
             </references>
         </rule>
-        <rule object="PDOutputIntent">
+        <rule object="OutputIntents">
             <id specification="ISO_19005_1" clause="6.2.2" testNumber="2"/>
             <description>If a file's OutputIntents array contains more than one entry, then all entries that contain a DestOutputProfile
 			key shall have as the value of that key the same indirect object, which shall be a valid ICC profile stream</description>
