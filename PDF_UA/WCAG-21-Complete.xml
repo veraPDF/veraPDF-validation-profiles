@@ -31,8 +31,8 @@
         </rule>
         <rule object="SAP">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="1"/>
-            <description>The structure type and attributes of a paragraph shall be semantically appropriate.</description>
-            <test>(correctType == 'TD' || correctType == 'TR' || correctType == 'TH') || (correctType == 'P' &amp;&amp; correctSemanticScore >= 0.75)</test>
+            <description>Incorrect use of a paragraph</description>
+            <test>correctType != 'P' || correctSemanticScore >= 0.75</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -44,8 +44,8 @@
         </rule>
         <rule object="SASpan">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="2"/>
-            <description>The structure type and attributes of a span shall be semantically appropriate.</description>
-            <test>(correctType == 'TD' || correctType == 'TR' || correctType == 'TH') || (correctType == 'Span' &amp;&amp; correctSemanticScore >= 0.75)</test>
+            <description>Incorrect use of a span</description>
+            <test>correctType != 'Span' || correctSemanticScore >= 0.75</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -58,7 +58,9 @@
         <rule object="SATable">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="3"/>
             <description>The structure type and attributes of a table shall be semantically appropriate.</description>
-            <test>correctType == 'Table' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <test>(correctType == 'Table' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'TR'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -69,9 +71,9 @@
             <references/>
         </rule>
         <rule object="SAH">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="6"/>
-            <description>The structure type and attributes of a heading shall be semantically appropriate.</description>
-            <test>correctType == 'H' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="4"/>
+            <description>Incorrect use of a heading</description>
+            <test>correctType != 'H' || correctSemanticScore >= 0.75</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -82,9 +84,9 @@
             <references/>
         </rule>
         <rule object="SAHn">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="7"/>
-            <description>The structure type and attributes of a number heading shall be semantically appropriate.</description>
-            <test>correctType == 'Hn' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="5"/>
+            <description>Incorrect use of a numbered heading</description>
+            <test>correctType != 'Hn' || correctSemanticScore >= 0.75</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -95,9 +97,11 @@
             <references/>
         </rule>
         <rule object="SATR">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="8"/>
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="6"/>
             <description>The structure type and attributes of a table row shall be semantically appropriate.</description>
-            <test>correctType == 'TR' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <test>(correctType == 'TR' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -108,9 +112,11 @@
             <references/>
         </rule>
         <rule object="SATH">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="7"/>
             <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
-            <test>correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <test>(correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
+                correctType == 'TR' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -121,9 +127,11 @@
             <references/>
         </rule>
         <rule object="SATD">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="10"/>
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="8"/>
             <description>The structure type and attributes of a table cell shall be semantically appropriate.</description>
-            <test>correctType == 'TD' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <test>(correctType == 'TD' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TR' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -134,8 +142,8 @@
             <references/>
         </rule>
         <rule object="SAStructElem">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="11"/>
-            <description>The structure type and attributes of table elements shall be semantically appropriate.</description>
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
+            <description>Missing table element</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
                 correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table')</test>
@@ -145,6 +153,136 @@
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
                     <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAP">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="10"/>
+            <description>This structure element should be a heading instead of a paragraph</description>
+            <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAP">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="11"/>
+            <description>This structure element should be a span instead of a paragraph</description>
+            <test>correctType != 'Span'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SASpan">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="12"/>
+            <description>This structure element should be a paragraph instead of a span</description>
+            <test>correctType != 'P'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SASpan">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="13"/>
+            <description>This structure element should be a heading instead of a span</description>
+            <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAH">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="14"/>
+            <description>This structure element should be a paragraph instead of a heading</description>
+            <test>correctType != 'P'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAHn">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="15"/>
+            <description>This structure element should be a paragraph instead of a numbered heading</description>
+            <test>correctType != 'P'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAP">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="16"/>
+            <description>Redundant paragraph</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SASpan">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="17"/>
+            <description>Redundant span</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAH">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="18"/>
+            <description>Redundant heading</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAHn">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="19"/>
+            <description>Redundant numbered heading</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
                 </arguments>
             </error>
             <references/>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>WCAG 2.1 validation profile</name>
+        <description>Extra rules for WCAG 2.1 validation in addition to PDF/UA-1</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDPage">
+            <id specification="WCAG_2_1" clause="1.3.4" testNumber="1"/>
+            <description>Pages shall have the same orientation</description>
+            <test>gPageOrientation == 'Square' || orientation == 'Square' || gPageOrientation == orientation</test>
+            <error>
+                <message>Pages are not have the same orientation</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATextChunk">
+            <id specification="WCAG_2_1" clause="1.4.3" testNumber="1"/>
+            <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1.
+                Large-scale text and images of large-scale text have a contrast ratio of at least 3:1.</description>
+            <test>(textSize >= 18.0 || (textSize >= 14.0 &amp;&amp; textWeight >= 700.0)) ? (contrastRatio >= 3) : (contrastRatio >= 4.5)</test>
+            <error>
+                <message>contrastRatio = %1</message>
+                <arguments>
+                    <argument>contrastRatio</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAP">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="1"/>
+            <description>The structure type and attributes of a paragraph shall be semantically appropriate.</description>
+            <test>correctType == 'P' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SASpan">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="2"/>
+            <description>The structure type and attributes of a span shall be semantically appropriate.</description>
+            <test>correctType == 'Span' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATable">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="3"/>
+            <description>The structure type and attributes of a table shall be semantically appropriate.</description>
+            <test>correctType == 'Table' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAH">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="4"/>
+            <description>The structure type and attributes of a heading shall be semantically appropriate.</description>
+            <test>correctType == 'H' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAHn">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="5"/>
+            <description>The structure type and attributes of a numbered heading shall be semantically appropriate.</description>
+            <test>correctType == 'Hn' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATR">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="6"/>
+            <description>The structure type and attributes of a table row shall be semantically appropriate.</description>
+            <test>correctType == 'TR' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATH">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="7"/>
+            <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
+            <test>correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATD">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="8"/>
+            <description>The structure type and attributes of a table cell shall be semantically appropriate.</description>
+            <test>correctType == 'TD' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="9"/>
+            <description>The structure type and attributes of table elements shall be semantically appropriate.</description>
+            <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
+                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
+                correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table')</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables>
+        <variable name="gPageOrientation" object="PDPage">
+            <defaultValue>'Square'</defaultValue>
+            <value>orientation == 'Square' ? gPageOrientation : orientation</value>
+        </variable>
+    </variables>
+</profile>
