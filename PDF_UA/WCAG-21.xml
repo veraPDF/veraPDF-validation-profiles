@@ -146,7 +146,7 @@
             <description>Missing table element</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
-                correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table')</test>
+                correctType != 'THead' &amp;&amp; correctType != 'TFoot')</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
