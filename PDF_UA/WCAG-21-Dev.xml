@@ -149,6 +149,19 @@
             </error>
             <references/>
         </rule>
+        <rule object="SANonStandard">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="10"/>
+            <description>Non-standard structure type shall not be used</description>
+            <test>false</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
     </rules>
     <variables>
         <variable name="gPageOrientation" object="PDPage">
