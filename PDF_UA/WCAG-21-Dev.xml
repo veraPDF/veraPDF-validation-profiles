@@ -188,6 +188,21 @@
             </error>
             <references/>
         </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="13"/>
+            <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
+            <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'L' &amp;&amp;
+                correctType != 'LI' &amp;&amp; correctType != 'Lbl' &amp;&amp; correctType != 'LBody')</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
     </rules>
     <variables>
         <variable name="gPageOrientation" object="PDPage">

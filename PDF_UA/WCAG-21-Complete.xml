@@ -116,7 +116,7 @@
             <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
             <test>(correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
                 correctType == 'TR' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table'</test>
+                correctType == 'TFoot' || correctType == 'Table' || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -131,7 +131,7 @@
             <description>The structure type and attributes of a table cell shall be semantically appropriate.</description>
             <test>(correctType == 'TD' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TR' ||
                 correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table'</test>
+                correctType == 'TFoot' || correctType == 'Table' || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -278,6 +278,19 @@
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="19"/>
             <description>Redundant numbered heading</description>
             <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAP">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="20"/>
+            <description>This structure element should be a caption instead of a paragraph</description>
+            <test>correctType != 'Caption'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
