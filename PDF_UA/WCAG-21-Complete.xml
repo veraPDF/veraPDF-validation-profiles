@@ -101,7 +101,8 @@
             <description>The structure type and attributes of a table row shall be semantically appropriate.</description>
             <test>(correctType == 'TR' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
                 correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table'</test>
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -116,7 +117,8 @@
             <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
             <test>(correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
                 correctType == 'TR' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == null</test>
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody' || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -131,7 +133,8 @@
             <description>The structure type and attributes of a table cell shall be semantically appropriate.</description>
             <test>(correctType == 'TD' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TR' ||
                 correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == null</test>
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody' || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -146,7 +149,8 @@
             <description>Missing table element</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
-                correctType != 'THead' &amp;&amp; correctType != 'TFoot')</test>
+                correctType != 'THead' &amp;&amp; correctType != 'TFoot') || (standardType == 'L' ||
+                standardType == 'LI' || standardType == 'Lbl' || standardType == 'LBody')</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
@@ -291,6 +295,101 @@
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="20"/>
             <description>This structure element should be a caption instead of a paragraph</description>
             <test>correctType != 'Caption'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="21"/>
+            <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
+            <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
+                correctType != 'Lbl' &amp;&amp; correctType != 'LBody')</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAL">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="22"/>
+            <description>The structure type and attributes of a list shall be semantically appropriate.</description>
+            <test>(correctType == 'L' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'LI' ||
+                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="23"/>
+            <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
+            <test>(correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
+                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALbl">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="24"/>
+            <description>The structure type and attributes of a list label shall be semantically appropriate.</description>
+            <test>(correctType == 'Lbl' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALBody">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="25"/>
+            <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
+            <test>(correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'TR' || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="26"/>
+            <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering </description>
+            <test>(correctType != 'TD' &amp;&amp; correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp;
+                correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp;
+                correctType != 'Table') || (standardType != 'L' &amp;&amp; standardType != 'LI' &amp;&amp;
+                standardType != 'Lbl' &amp;&amp; standardType != 'LBody')</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>

@@ -60,7 +60,8 @@
             <description>The structure type and attributes of a table shall be semantically appropriate.</description>
             <test>(correctType == 'Table' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
                 correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'TR'</test>
+                correctType == 'TFoot' || correctType == 'TR' || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -101,7 +102,8 @@
             <description>The structure type and attributes of a table row shall be semantically appropriate.</description>
             <test>(correctType == 'TR' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
                 correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table'</test>
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -116,7 +118,9 @@
             <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
             <test>(correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
                 correctType == 'TR' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == null</test>
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'LI' ||
+                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody' || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -131,7 +135,8 @@
             <description>The structure type and attributes of a table cell shall be semantically appropriate.</description>
             <test>(correctType == 'TD' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TR' ||
                 correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == null</test>
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'L' ||
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody' || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -216,7 +221,9 @@
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="14"/>
             <description>The structure type and attributes of a list shall be semantically appropriate.</description>
             <test>(correctType == 'L' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'LI' ||
-                correctType == 'Lbl' || correctType == 'LBody'</test>
+                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -230,7 +237,9 @@
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="15"/>
             <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
             <test>(correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'Lbl' || correctType == 'LBody'</test>
+                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -244,7 +253,9 @@
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="16"/>
             <description>The structure type and attributes of a list label shall be semantically appropriate.</description>
             <test>(correctType == 'Lbl' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'LBody'</test>
+                correctType == 'LI' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -258,7 +269,9 @@
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="17"/>
             <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
             <test>(correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'Lbl'</test>
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'TR' || correctType == 'TD' ||
+                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
