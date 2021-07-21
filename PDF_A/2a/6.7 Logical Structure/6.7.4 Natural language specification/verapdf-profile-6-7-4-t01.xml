@@ -10,7 +10,7 @@
     <hash></hash>
     <rules>
         <rule object="CosLang">
-            <id specification="ISO_19005_2" clause="6.7.4" testNumber="1"/>
+            <id specification="ISO_19005_1" clause="6.7.4" testNumber="1"/>
             <description>If the Lang entry is present in the document's Catalog dictionary or in a structure element dictionary or
 			property list, its value shall be a language identifier as described in ISO 32000-1:2008, 14.9.2.
 			A language identifier shall either be the empty text string, to indicate that the language is unknown, or a Language-Tag 
