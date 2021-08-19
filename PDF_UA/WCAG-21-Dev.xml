@@ -6,6 +6,36 @@
     </details>
     <hash></hash>
     <rules>
+        <rule object="PDFont">
+            <id specification="WCAG_2_1" clause="1" testNumber="1"/>
+            <description>Document should not contain illegible font</description>
+            <test>fontName.indexOf('Adobe Devanagari') == -1 &amp;&amp; fontName.indexOf('Agency FB') == -1 &amp;&amp;
+                fontName.indexOf('Blackadder ITC') == -1 &amp;&amp; fontName.indexOf('Bodoni MT Poster Compressed') == -1 &amp;&amp;
+                fontName.indexOf('Bradley Hand ITC') == -1 &amp;&amp; fontName.indexOf('Brush Script MT') == -1 &amp;&amp;
+                fontName.indexOf('Chiller') == -1 &amp;&amp; fontName.indexOf('Colonna MT') == -1 &amp;&amp;
+                fontName.indexOf('Curlz MT') == -1 &amp;&amp; fontName.indexOf('Edwardian Script ITC') == -1 &amp;&amp;
+                fontName.indexOf('ESRI ArcGIS TDN') == -1 &amp;&amp; fontName.indexOf('Freestyle Script') == -1 &amp;&amp;
+                fontName.indexOf('French Script MT') == -1 &amp;&amp; fontName.indexOf('Gabriola') == -1 &amp;&amp;
+                fontName.indexOf('Gigi') == -1 &amp;&amp; fontName.indexOf('Gill Sans MT Ext Condensed Bold') == -1 &amp;&amp;
+                fontName.indexOf('Harlow Solid Italic') == -1 &amp;&amp; fontName.indexOf('Harrington') == -1 &amp;&amp;
+                fontName.indexOf('Informal Roman') == -1 &amp;&amp; fontName.indexOf('Jokerman') == -1 &amp;&amp;
+                fontName.indexOf('French Script MT') == -1 &amp;&amp; fontName.indexOf('Gabriola') == -1 &amp;&amp;
+                fontName.indexOf('Juice ITC') == -1 &amp;&amp; fontName.indexOf('Kunstler Script') == -1 &amp;&amp;
+                fontName.indexOf('Magneto') == -1 &amp;&amp; fontName.indexOf('Matura MT Script Capitals') == -1 &amp;&amp;
+                fontName.indexOf('Microsoft Uighur') == -1 &amp;&amp; fontName.indexOf('Mistral') == -1 &amp;&amp;
+                fontName.indexOf('Old English Text MT') == -1 &amp;&amp; fontName.indexOf('Onyx') == -1 &amp;&amp;
+                fontName.indexOf('Palace Script MT') == -1 &amp;&amp; fontName.indexOf('Parchment') == -1 &amp;&amp;
+                fontName.indexOf('Playbill') == -1 &amp;&amp; fontName.indexOf('Pristina') == -1 &amp;&amp;
+                fontName.indexOf('Rage Italic') == -1 &amp;&amp; fontName.indexOf('Ravie') == -1 &amp;&amp;
+                fontName.indexOf('Segoe Script') == -1 &amp;&amp; fontName.indexOf('Showcard Gothic') == -1 &amp;&amp;
+                fontName.indexOf('Snap ITC') == -1 &amp;&amp; fontName.indexOf('Vivaldi') == -1 &amp;&amp;
+                fontName.indexOf('Vladimir Script') == -1</test>
+            <error>
+                <message>Document contains illegible font</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
         <rule object="PDPage">
             <id specification="WCAG_2_1" clause="1.3.4" testNumber="1"/>
             <description>Pages shall have the same orientation</description>
@@ -150,9 +180,9 @@
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="9"/>
             <description>The structure type and attributes of table elements shall be semantically appropriate.</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
-                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
-                correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table') ||
-                (standardType == 'L' || standardType == 'LI' || standardType == 'Lbl' || standardType == 'LBody')</test>
+                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
+                correctType != 'TFoot') || (standardType == 'L' || standardType == 'LI' || standardType == 'Lbl' ||
+                standardType == 'LBody') || (isTableChild &amp;&amp; isTableElem == false)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
@@ -206,7 +236,8 @@
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="13"/>
             <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'L' &amp;&amp;
-                correctType != 'LI' &amp;&amp; correctType != 'Lbl' &amp;&amp; correctType != 'LBody') || (standardType == 'LBody' &amp;&amp; correctType == 'LI')</test>
+                correctType != 'LI' &amp;&amp; correctType != 'Lbl' &amp;&amp; correctType != 'LBody') ||
+                (standardType == 'LBody' &amp;&amp; correctType == 'LI')</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>

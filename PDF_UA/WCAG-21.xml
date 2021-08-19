@@ -149,9 +149,9 @@
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
             <description>Missing table element</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
-                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
-                correctType != 'THead' &amp;&amp; correctType != 'TFoot') || (standardType == 'L' ||
-                standardType == 'LI' || standardType == 'Lbl' || standardType == 'LBody')</test>
+                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
+                correctType != 'TFoot') || (standardType == 'L' || standardType == 'LI' || standardType == 'Lbl' ||
+                standardType == 'LBody') || (isTableChild &amp;&amp; isTableElem == false)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
