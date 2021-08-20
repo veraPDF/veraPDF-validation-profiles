@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2021-08-20T10:58:04.137+03:00">
+        <name>ISO 19005-1:2005 - 6.8.4 Natural language specification</name>
+        <description>If the Lang entry is present in the document catalog dictionary or in a structure element
+            dictionary or property list, its value shall be a language identifier as defined by RFC 1766, Tags for the
+            Identification of Languages, as described in PDF Reference 9.8.1.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosLang">
+            <id specification="ISO_19005_2" clause="6.8.4" testNumber="1"/>
+            <description>If the Lang entry is present in the document catalog dictionary or in a structure element
+                dictionary or property list, its value shall be a language identifier as defined by RFC 1766, Tags for
+                the Identification of Languages, as described in PDF Reference 9.8.1.</description>
+            <test>unicodeValue == '' || /^[a-zA-Z]{1,8}(-[a-zA-Z]{1,8})*$/.test(unicodeValue)</test>
+            <error>
+                <message>The Lang value is invalid</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="PDF Reference 1.4" clause="9.8.1"/>
+                <reference specification="RFC 1766" clause="2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
