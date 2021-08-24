@@ -437,7 +437,7 @@
             <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the
                 recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which
                 clearly identifies the document.</description>
-            <test>dc_title != null</test>
+            <test>dc_title != null &amp;&amp; dc_title != ''</test>
             <error>
                 <message>Metadata stream does not contain dc:title</message>
                 <arguments/>
