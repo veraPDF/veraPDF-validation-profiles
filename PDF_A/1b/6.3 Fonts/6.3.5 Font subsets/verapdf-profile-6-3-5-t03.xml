@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDCIDFont">
+        <rule object="PDCIDFont" deferred="true">
             <id specification="ISO_19005_1" clause="6.3.5" testNumber="3"/>
             <description>For all CIDFont subsets referenced within a conforming file, the font descriptor dictionary shall include a
 			CIDSet stream identifying which CIDs are present in the embedded CIDFont file, as described in PDF Reference Table 5.20</description>
