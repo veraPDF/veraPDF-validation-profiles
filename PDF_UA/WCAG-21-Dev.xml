@@ -6,6 +6,16 @@
     </details>
     <hash></hash>
     <rules>
+        <rule object="SATextChunk">
+            <id specification="WCAG_2_1" clause="1" testNumber="1"/>
+            <description>If text has a different style, it shall tagged as Span</description>
+            <test>hasSpecialStyle == false</test>
+            <error>
+                <message>Text has a different style and not tagged as Span</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
         <rule object="SAStructElem">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="1"/>
             <description>Text should not contain repeated characters</description>
