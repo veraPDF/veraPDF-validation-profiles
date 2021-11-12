@@ -11,7 +11,7 @@
             <id specification="ISO_19005_2" clause="6.2.8.3" testNumber="3"/>
             <description>The value of the METH entry in its 'colr' box shall be 0x01, 0x02 or 0x03. A conforming reader shall use only
 			that colour space and shall ignore all other colour space specifications.</description>
-            <test>colrMethod == 1 || colrMethod == 2 || colrMethod == 3</test>
+            <test>hasColorSpace == true || colrMethod == 1 || colrMethod == 2 || colrMethod == 3</test>
             <error>
                 <message>Colour specification of the JPEG2000 image has specification method.</message>
                 <arguments/>

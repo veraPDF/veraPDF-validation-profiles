@@ -11,7 +11,7 @@
             <id specification="ISO_19005_2" clause="6.2.8.3" testNumber="2"/>
             <description>If the number of colour space specifications in the JPEG2000 data is greater than 1, there shall be exactly one colour space 
 			specification that has the value 0x01 in the APPROX field.</description>
-            <test>nrColorSpaceSpecs == 1 || nrColorSpacesWithApproxField == 1</test>
+            <test>hasColorSpace == true || nrColorSpaceSpecs == 1 || nrColorSpacesWithApproxField == 1</test>
             <error>
                 <message>The JPEG2000 image contains more than one colour specification with the best colour fidelity (value 0x01 in the APPROX field).</message>
                 <arguments/>

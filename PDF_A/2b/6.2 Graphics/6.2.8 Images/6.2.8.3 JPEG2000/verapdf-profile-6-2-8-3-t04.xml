@@ -9,7 +9,7 @@
         <rule object="JPEG2000">
             <id specification="ISO_19005_2" clause="6.2.8.3" testNumber="4"/>
             <description>JPEG2000 enumerated colour space 19 (CIEJab) shall not be used.</description>
-            <test>colrEnumCS == null || colrEnumCS != 19</test>
+            <test>hasColorSpace == true || colrEnumCS == null || colrEnumCS != 19</test>
             <error>
                 <message>JPEG2000 image uses enumerated colour space 19 (CIEJab), which is not allowed in PDF/A</message>
                 <arguments/>
