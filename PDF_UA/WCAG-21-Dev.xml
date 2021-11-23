@@ -8,10 +8,20 @@
     <rules>
         <rule object="SATextChunk">
             <id specification="WCAG_2_1" clause="1" testNumber="1"/>
-            <description>If text has a different style, it shall tagged as Span</description>
+            <description>If text has a different style, it shall be tagged as Span</description>
             <test>hasSpecialStyle == false</test>
             <error>
                 <message>Text has a different style and not tagged as Span</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATextChunk">
+            <id specification="WCAG_2_1" clause="1" testNumber="2"/>
+            <description>Underlined text</description>
+            <test>isUnderlined == false</test>
+            <error>
+                <message>Underlined text is detected</message>
                 <arguments/>
             </error>
             <references/>
