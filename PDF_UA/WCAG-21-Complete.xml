@@ -9,10 +9,22 @@
         <rule object="SAStructElem">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="1"/>
             <description>Text should not contain repeated characters</description>
-            <test>isLeafElem == false || numberOfSameCharacters &lt; 5</test>
+            <test>numberOfSameCharacters &lt; 5</test>
             <error>
                 <message>Text contains repeated characters</message>
                 <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="1.3.1" testNumber="2"/>
+            <description>Text should not contain repeated spaces</description>
+            <test>numberOfRepeatedSpaces &lt; 5</test>
+            <error>
+                <message>positionOfRepeatedSpaces = %1</message>
+                <arguments>
+                    <argument>positionOfRepeatedSpaces</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
