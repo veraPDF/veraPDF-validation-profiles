@@ -19,7 +19,7 @@
         <rule object="SATextChunk">
             <id specification="WCAG_2_1" clause="1" testNumber="2"/>
             <description>Underlined text</description>
-            <test>isUnderlined == false</test>
+            <test>parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Link').length &gt; 0 || isUnderlined == false</test>
             <error>
                 <message>Underlined text is detected</message>
                 <arguments/>

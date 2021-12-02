@@ -225,8 +225,8 @@
             <description>Missing table element</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
-                correctType != 'TFoot') || (standardType == 'L' || standardType == 'LI' || standardType == 'Lbl' ||
-                standardType == 'LBody') || (isTableChild == true &amp;&amp; isTableElem == false)</test>
+                correctType != 'TFoot') || (isListElem == true) || (standardType == 'TOC' || standardType == 'TOCI') ||
+                (isTableChild == true &amp;&amp; isTableElem == false)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
@@ -376,21 +376,6 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SAStructElem">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="21"/>
-            <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
-            <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
-                correctType != 'Lbl' &amp;&amp; correctType != 'LBody')</test>
-            <error>
-                <message>score = %1, correct type = %2, structure id = %3</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
