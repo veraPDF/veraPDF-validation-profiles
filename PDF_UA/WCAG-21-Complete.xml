@@ -19,7 +19,7 @@
         <rule object="SAStructElem">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="2"/>
             <description>Text should not contain repeated spaces</description>
-            <test>numberOfRepeatedSpaces &lt; 2</test>
+            <test>numberOfRepeatedSpaces &lt; 3</test>
             <error>
                 <message>positionOfRepeatedSpaces = %1</message>
                 <arguments>
@@ -406,7 +406,8 @@
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="21"/>
             <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
-                correctType != 'Lbl' &amp;&amp; correctType != 'LBody')</test>
+                correctType != 'Lbl' &amp;&amp; correctType != 'LBody') || (isTableElem == true) || (standardType == 'TOC' ||
+                standardType == 'TOCI') || (isListChild == true &amp;&amp; isListElem == false)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
@@ -424,54 +425,6 @@
                 correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
                 correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' || correctType == 'TFoot' ||
                 correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SALI">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="23"/>
-            <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
-            <test>(correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SALbl">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="24"/>
-            <description>The structure type and attributes of a list label shall be semantically appropriate.</description>
-            <test>(correctType == 'Lbl' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SALBody">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="25"/>
-            <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
-            <test>(correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'Lbl' || correctType == 'TR' || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
