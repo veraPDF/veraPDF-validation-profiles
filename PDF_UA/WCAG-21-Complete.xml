@@ -64,7 +64,7 @@
         <rule object="PDFont">
             <id specification="WCAG_2_1" clause="1.4.8" testNumber="1"/>
             <description>Document should not contain illegible font</description>
-            <test>fontName.indexOf('AdobeDevanagari') == -1 &amp;&amp; fontName.indexOf('AgencyFB') == -1 &amp;&amp;
+            <test>fontName != null &amp;&amp; fontName.indexOf('AdobeDevanagari') == -1 &amp;&amp; fontName.indexOf('AgencyFB') == -1 &amp;&amp;
                 fontName.indexOf('BlackadderITC') == -1 &amp;&amp; fontName.indexOf('BodoniMTPosterCompressed') == -1 &amp;&amp;
                 fontName.indexOf('BradleyHandITC') == -1 &amp;&amp; fontName.indexOf('BrushScriptMT') == -1 &amp;&amp;
                 fontName.indexOf('Chiller') == -1 &amp;&amp; fontName.indexOf('ColonnaMT') == -1 &amp;&amp;
