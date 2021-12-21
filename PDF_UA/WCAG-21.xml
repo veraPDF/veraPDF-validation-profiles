@@ -9,7 +9,7 @@
         <rule object="SAStructElem">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="1"/>
             <description>Text should not contain repeated characters</description>
-            <test>numberOfSameCharacters &lt; 5</test>
+            <test>isLeafElem == false || numberOfSameCharacters &lt; 5</test>
             <error>
                 <message>Text contains repeated characters</message>
                 <arguments/>
@@ -19,7 +19,7 @@
         <rule object="SAStructElem">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="2"/>
             <description>Text should not contain repeated spaces</description>
-            <test>numberOfRepeatedSpaces &lt; 3</test>
+            <test>isLeafElem == false || numberOfRepeatedSpaces &lt; 3</test>
             <error>
                 <message>positionOfRepeatedSpaces = %1</message>
                 <arguments>
@@ -247,7 +247,9 @@
             <description>Missing table element</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
-                correctType != 'TFoot') || (isListElem == true) || (standardType == 'TOC' || standardType == 'TOCI') ||
+                correctType != 'TFoot') || (standardType == 'L' ||
+                parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'L').length &gt; 0) || (standardType == 'TOC' ||
+                parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TOC').length &gt; 0) ||
                 (isTableChild == true &amp;&amp; isTableElem == false)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
@@ -407,7 +409,7 @@
             <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
             <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
                 correctType != 'Lbl' &amp;&amp; correctType != 'LBody') || (isTableElem == true) || (standardType == 'TOC' ||
-                standardType == 'TOCI') || (isListChild == true &amp;&amp; isListElem == false)</test>
+                parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TOC').length &gt; 0) || (isListChild == true &amp;&amp; isListElem == false)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
