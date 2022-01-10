@@ -38,6 +38,26 @@
             </error>
             <references/>
         </rule>
+        <rule object="SARepeatedCharacters">
+            <id specification="WCAG_2_1" clause="1.3.1" testNumber="4"/>
+            <description>Text should not contain repeated non space characters</description>
+            <test>isNonSpace == false || numberOfRepeatedCharacters &lt; 5</test>
+            <error>
+                <message>Text contains repeated non space characters</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SARepeatedCharacters">
+            <id specification="WCAG_2_1" clause="1.3.1" testNumber="5"/>
+            <description>Text should not contain repeated space characters</description>
+            <test>isNonSpace == true || numberOfRepeatedCharacters &lt; 3</test>
+            <error>
+                <message>Text contains repeated space characters</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
         <rule object="PDPage">
             <id specification="WCAG_2_1" clause="1.3.4" testNumber="1"/>
             <description>Pages shall have the same orientation</description>
