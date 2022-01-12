@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
-        <name>WCAG 2.1 validation profile</name>
+        <name>WCAG 2.1 development validation profile</name>
         <description>Extra rules for WCAG 2.1 validation in addition to PDF/UA-1</description>
     </details>
     <hash></hash>
@@ -136,7 +136,19 @@
             </error>
             <references/>
         </rule>
-v
+        <rule object="SANonStandard">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="10"/>
+            <description>Non-standard structure type shall not be used</description>
+            <test>false</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
         <rule object="SACaption">
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="11"/>
             <description>The structure type and attributes of a caption shall be semantically appropriate.</description>
@@ -267,6 +279,55 @@ v
             <test>StructTreeRoot_size == 1</test>
             <error>
                 <message>StructTreeRoot entry is not present in the document catalog</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATHead">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="21"/>
+            <description>The structure type and attributes of table headers shall be semantically appropriate.</description>
+            <test>(correctType == 'THead' &amp;&amp; correctSemanticScore >= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATBody">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="22"/>
+            <description>The structure type and attributes of a table body shall be semantically appropriate.</description>
+            <test>(correctType == 'TBody' &amp;&amp; correctSemanticScore >= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATFoot">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="23"/>
+            <description>The structure type and attributes of a table footer shall be semantically appropriate.</description>
+            <test>(correctType == 'TFoot' &amp;&amp; correctSemanticScore >= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALineArtChunk">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="24"/>
+            <description>line art</description>
+            <test>false</test>
+            <error>
+                <message>line art</message>
                 <arguments/>
             </error>
             <references/>
