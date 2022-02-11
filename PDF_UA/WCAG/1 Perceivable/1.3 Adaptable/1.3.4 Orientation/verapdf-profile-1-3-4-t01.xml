@@ -11,8 +11,10 @@
             <description>Pages shall have the same orientation</description>
             <test>gPageOrientation == 'Square' || orientation == 'Square' || gPageOrientation == orientation</test>
             <error>
-                <message>Pages are not have the same orientation</message>
-                <arguments/>
+                <message>Page number %1 has different orientation</message>
+                <arguments>
+                    <argument>pageNumber + 1</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
