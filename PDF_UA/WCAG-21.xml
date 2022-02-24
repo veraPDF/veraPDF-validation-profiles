@@ -6,25 +6,23 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SAStructElem">
+        <rule object="SARepeatedCharacters">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="1"/>
-            <description>Text should not contain repeated characters</description>
-            <test>isLeafElem == false || numberOfSameCharacters &lt; 5</test>
+            <description>Text should not contain repeated non space characters</description>
+            <test>isNonSpace == false || numberOfRepeatedCharacters &lt; 5</test>
             <error>
-                <message>Text contains repeated characters</message>
+                <message>Text contains repeated non space characters</message>
                 <arguments/>
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SARepeatedCharacters">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="2"/>
-            <description>Text should not contain repeated spaces</description>
-            <test>isLeafElem == false || numberOfRepeatedSpaces &lt; 3</test>
+            <description>Text should not contain repeated space characters</description>
+            <test>isNonSpace == true || numberOfRepeatedCharacters &lt; 3</test>
             <error>
-                <message>positionOfRepeatedSpaces = %1</message>
-                <arguments>
-                    <argument>positionOfRepeatedSpaces</argument>
-                </arguments>
+                <message>Text contains repeated space characters</message>
+                <arguments/>
             </error>
             <references/>
         </rule>
@@ -38,22 +36,12 @@
             </error>
             <references/>
         </rule>
-        <rule object="SARepeatedCharacters">
+        <rule object="SATextChunk">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="4"/>
-            <description>Text should not contain repeated non space characters</description>
-            <test>isNonSpace == false || numberOfRepeatedCharacters &lt; 5</test>
+            <description>If text has a different style, it shall be tagged as Span</description>
+            <test>hasSpecialStyle == false</test>
             <error>
-                <message>Text contains repeated non space characters</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SARepeatedCharacters">
-            <id specification="WCAG_2_1" clause="1.3.1" testNumber="5"/>
-            <description>Text should not contain repeated space characters</description>
-            <test>isNonSpace == true || numberOfRepeatedCharacters &lt; 3</test>
-            <error>
-                <message>Text contains repeated space characters</message>
+                <message>Text has a different style and not tagged as Span</message>
                 <arguments/>
             </error>
             <references/>
@@ -144,6 +132,27 @@
             <test>ColSpan == 1 &amp;&amp; RowSpan == 1</test>
             <error>
                 <message>Table has merged cells</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATableBorderCell">
+            <id specification="WCAG_2_1" clause="4.1.1" testNumber="3"/>
+            <description>Table shouldn't have merged cells</description>
+            <test>colSpan == 1 &amp;&amp; rowSpan == 1</test>
+            <error>
+                <message>Table has merged cells</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAPDFDocument">
+            <id specification="WCAG_2_1" clause="4.1.1" testNumber="4"/>
+            <description>The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry
+                of the document's Catalog dictionary</description>
+            <test>StructTreeRoot_size == 1</test>
+            <error>
+                <message>StructTreeRoot entry is not present in the document catalog</message>
                 <arguments/>
             </error>
             <references/>
