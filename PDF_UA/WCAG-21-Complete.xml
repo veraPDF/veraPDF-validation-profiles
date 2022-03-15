@@ -594,7 +594,7 @@
                 <reference specification="ISO 32000-1" clause="14.7.1"/>
             </references>
         </rule>
-        <rule object="SENonStandard">
+        <rule object="SANonStandard">
             <id specification="ISO_14289_1" clause="7.1" testNumber="5"/>
             <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type,
                 as defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root.
@@ -675,7 +675,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SETable">
+        <rule object="SATable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="3"/>
             <description>Table element may contain a Caption element as its first or last kid and
                 Table element may contain only TR, THead, TBody, TFoot and Caption elements</description>
@@ -691,7 +691,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETR">
+        <rule object="SATR">
             <id specification="ISO_14289_1" clause="7.2" testNumber="4"/>
             <description>TR element should contained in Table, THead, TBody or TFoot element</description>
             <test>/^(Table|THead|TBody|TFoot)$/.test(parentStandardType)</test>
@@ -703,7 +703,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETHead">
+        <rule object="SATHead">
             <id specification="ISO_14289_1" clause="7.2" testNumber="5"/>
             <description>THead element should contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
@@ -715,7 +715,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETBody">
+        <rule object="SATBody">
             <id specification="ISO_14289_1" clause="7.2" testNumber="6"/>
             <description>TBody element should contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
@@ -727,7 +727,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETFoot">
+        <rule object="SATFoot">
             <id specification="ISO_14289_1" clause="7.2" testNumber="7"/>
             <description>TFoot element should contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
@@ -739,7 +739,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETH">
+        <rule object="SATH">
             <id specification="ISO_14289_1" clause="7.2" testNumber="8"/>
             <description>TH element should contained in TR element</description>
             <test>parentStandardType == 'TR'</test>
@@ -751,7 +751,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETD">
+        <rule object="SATD">
             <id specification="ISO_14289_1" clause="7.2" testNumber="9"/>
             <description>TD element should contained in TR element</description>
             <test>parentStandardType == 'TR'</test>
@@ -763,7 +763,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETR">
+        <rule object="SATR">
             <id specification="ISO_14289_1" clause="7.2" testNumber="10"/>
             <description>TR element may contain only TH and TD elements</description>
             <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
@@ -775,7 +775,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETable">
+        <rule object="SATable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="11"/>
             <description>Table element should contain zero or one THead kid</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &lt;= 1</test>
@@ -787,7 +787,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETable">
+        <rule object="SATable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="12"/>
             <description>Table element should contain zero or one TFoot kid</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length &lt;= 1</test>
@@ -799,7 +799,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETable">
+        <rule object="SATable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="13"/>
             <description>If Table element contains TFoot kid, Table element should contain one or more TBody kids</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 0 ||
@@ -812,7 +812,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETable">
+        <rule object="SATable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="14"/>
             <description>If Table element contains THead kid, Table element should contain one or more TBody kids</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 0 ||
@@ -838,7 +838,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SELI">
+        <rule object="SALI">
             <id specification="ISO_14289_1" clause="7.2" testNumber="17"/>
             <description>LI element should contained in L element</description>
             <test>parentStandardType == 'L'</test>
@@ -850,7 +850,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
             </references>
         </rule>
-        <rule object="SELBody">
+        <rule object="SALBody">
             <id specification="ISO_14289_1" clause="7.2" testNumber="18"/>
             <description>LBody element should contained in LI element</description>
             <test>parentStandardType == 'LI'</test>
@@ -862,7 +862,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
             </references>
         </rule>
-        <rule object="SEL">
+        <rule object="SAL">
             <id specification="ISO_14289_1" clause="7.2" testNumber="19"/>
             <description>L element may contain a Caption element as its first kid and L element may contain only L, LI and Caption elements</description>
             <test>/^(Caption&amp;)?(L|LI)(&amp;(L|LI))*$/.test(kidsStandardTypes) || kidsStandardTypes == '' || kidsStandardTypes == 'Caption'</test>
@@ -875,7 +875,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
             </references>
         </rule>
-        <rule object="SELI">
+        <rule object="SALI">
             <id specification="ISO_14289_1" clause="7.2" testNumber="20"/>
             <description>LI element may contain only Lbl and LBody elements</description>
             <test>/^(Lbl|LBody)(&amp;(Lbl|LBody))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
@@ -939,7 +939,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SETOCI">
+        <rule object="SATOCI">
             <id specification="ISO_14289_1" clause="7.2" testNumber="26"/>
             <description>TOCI element should contained in TOC element</description>
             <test>parentStandardType == 'TOC'</test>
@@ -951,7 +951,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>
             </references>
         </rule>
-        <rule object="SETOC">
+        <rule object="SATOC">
             <id specification="ISO_14289_1" clause="7.2" testNumber="27"/>
             <description>TOC element may contain a Caption element as its first kid and
                 TOC element may contain only TOC, TOCI and Caption elements</description>
@@ -1031,7 +1031,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SETHead">
+        <rule object="SATHead">
             <id specification="ISO_14289_1" clause="7.2" testNumber="36"/>
             <description>THead element may contain only TR elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0 || kidsStandardTypes == ''</test>
@@ -1043,7 +1043,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETBody">
+        <rule object="SATBody">
             <id specification="ISO_14289_1" clause="7.2" testNumber="37"/>
             <description>TBody element may contain only TR elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0</test>
@@ -1055,7 +1055,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETFoot">
+        <rule object="SATFoot">
             <id specification="ISO_14289_1" clause="7.2" testNumber="38"/>
             <description>TFoot element may contain only TR elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0 || kidsStandardTypes == ''</test>
@@ -1100,7 +1100,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.5"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SAStructElem">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="1"/>
             <description>Each node in the tag tree shall contain at most one child H tag.</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'H').length &lt;= 1</test>
@@ -1110,7 +1110,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SEH">
+        <rule object="SAH">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="2"/>
             <description>All documents shall be either strongly or weakly structured, but not both.</description>
             <test>usesHn == false</test>
@@ -1120,7 +1120,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SEHn">
+        <rule object="SAHn">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="3"/>
             <description>All documents shall be either strongly or weakly structured, but not both.</description>
             <test>usesH == false</test>
@@ -1608,11 +1608,11 @@
         </rule>
     </rules>
     <variables>
-        <variable name="usesHn" object="SEHn">
+        <variable name="usesHn" object="SAHn">
             <defaultValue>false</defaultValue>
             <value>true</value>
         </variable>
-        <variable name="usesH" object="SEH">
+        <variable name="usesH" object="SAH">
             <defaultValue>false</defaultValue>
             <value>true</value>
         </variable>
