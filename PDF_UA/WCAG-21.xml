@@ -530,6 +530,18 @@
             </error>
             <references/>
         </rule>
+        <rule object="SAFigure">
+            <id specification="WCAG_2_1" clause="1.4.10" testNumber="1"/>
+            <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
+            <test>page != lastPage || hasBBox == true</test>
+            <error>
+                <message>"Figure" structure element on a single page with no bounding box</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.5.4.3"/>
+            </references>
+        </rule>
     </rules>
     <variables>
         <variable name="gMostCommonPageOrientation" object="PDDocument">
