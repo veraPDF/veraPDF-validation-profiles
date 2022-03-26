@@ -115,6 +115,18 @@
             </error>
             <references/>
         </rule>
+        <rule object="SAFigure">
+            <id specification="WCAG_2_1" clause="1.4.10" testNumber="1"/>
+            <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
+            <test>page != lastPage || hasBBox == true</test>
+            <error>
+                <message>"Figure" structure element on a single page with no bounding box</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.5.4.3"/>
+            </references>
+        </rule>
         <rule object="SALinkAnnotation">
             <id specification="WCAG_2_1" clause="2.4.9" testNumber="1"/>
             <description>Links shall contain an alternate description via their Contents or Alt keys or in the text value</description>
@@ -484,22 +496,6 @@
             <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
                 correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' || correctType == 'TFoot' ||
-                correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SALbl">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="24"/>
-            <description>The structure type and attributes of a list label shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'Lbl' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
                 correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' || correctType == 'TFoot' ||
                 correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
             <error>
@@ -932,8 +928,7 @@
         </rule>
         <rule object="PDAnnot">
             <id specification="ISO_14289_1" clause="7.2" testNumber="24"/>
-            <description>Natural language in the Contents entry for annotations shall be
-                determined</description>
+            <description>Natural language in the Contents entry for annotations shall be determined</description>
             <test>Contents == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
             <error>
                 <message>Natural language in the Contents entry for annotations cannot be
@@ -1091,18 +1086,6 @@
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.7.2"/>
-            </references>
-        </rule>
-        <rule object="SAFigure">
-            <id specification="WCAG_2_1" clause="1.4.10" testNumber="1"/>
-            <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
-            <test>page != lastPage || hasBBox == true</test>
-            <error>
-                <message>"Figure" structure element on a single page with no bounding box</message>
-                <arguments/>
-            </error>
-            <references>
-                <reference specification="ISO 32000-1" clause="14.8.5.4.3"/>
             </references>
         </rule>
         <rule object="SEHn">

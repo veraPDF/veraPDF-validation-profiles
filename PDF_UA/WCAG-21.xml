@@ -115,6 +115,18 @@
             </error>
             <references/>
         </rule>
+        <rule object="SAFigure">
+            <id specification="WCAG_2_1" clause="1.4.10" testNumber="1"/>
+            <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
+            <test>page != lastPage || hasBBox == true</test>
+            <error>
+                <message>"Figure" structure element on a single page with no bounding box</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.5.4.3"/>
+            </references>
+        </rule>
         <rule object="SALinkAnnotation">
             <id specification="WCAG_2_1" clause="2.4.9" testNumber="1"/>
             <description>Links shall contain an alternate description via their Contents or Alt keys or in the text value</description>
@@ -495,22 +507,6 @@
             </error>
             <references/>
         </rule>
-        <rule object="SALbl">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="24"/>
-            <description>The structure type and attributes of a list label shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'Lbl' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' || correctType == 'TFoot' ||
-                correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
         <rule object="SALBody">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="25"/>
             <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
@@ -542,18 +538,6 @@
                 </arguments>
             </error>
             <references/>
-        </rule>
-        <rule object="SAFigure">
-            <id specification="WCAG_2_1" clause="1.4.10" testNumber="1"/>
-            <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
-            <test>page != lastPage || hasBBox == true</test>
-            <error>
-                <message>"Figure" structure element on a single page with no bounding box</message>
-                <arguments/>
-            </error>
-            <references>
-                <reference specification="ISO 32000-1" clause="14.8.5.4.3"/>
-            </references>
         </rule>
     </rules>
     <variables>
