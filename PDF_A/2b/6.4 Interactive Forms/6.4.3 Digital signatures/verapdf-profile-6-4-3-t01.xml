@@ -13,7 +13,7 @@
 			dictionary but excluding the PDF Signature itself.</description>
             <test>doesByteRangeCoverEntireDocument == true</test>
             <error>
-                <message>ByteRanbe array of the digital signature does not cover the entire file (excluding the PDF Signature itself)</message>
+                <message>ByteRange array of the digital signature does not cover the entire file (excluding the PDF Signature itself)</message>
                 <arguments/>
             </error>
             <references>

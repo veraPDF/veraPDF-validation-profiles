@@ -13,7 +13,7 @@
 			as defined by Extensible Markup Language (XML) 1.0 (Third Edition), 2.1, and the RDF/XML Syntax Specification (Revised).</description>
             <test>isSerializationValid</test>
             <error>
-                <message>A metadata stream is serialized icorrectly and can not be parsed.</message>
+                <message>A metadata stream is serialized incorrectly and can not be parsed.</message>
                 <arguments/>
             </error>
             <references>
