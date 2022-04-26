@@ -13,7 +13,7 @@
 			in either direction, nor shall it be greater than 14 400 units in either direction.</description>
             <test>Math.abs(top - bottom) &gt;= 3 &amp;&amp; Math.abs(top - bottom) &lt;= 14400 &amp;&amp; Math.abs(right - left) &gt;= 3 &amp;&amp; Math.abs(right - left) &lt;= 14400</test>
             <error>
-                <message>One of the bage boundaries is out of range (3-14400) in one of the directions</message>
+                <message>One of the page boundaries is out of range (3-14400) in one of the directions</message>
                 <arguments/>
             </error>
             <references/>

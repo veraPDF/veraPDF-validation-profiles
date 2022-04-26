@@ -11,7 +11,7 @@
             <description>The xref keyword and the cross reference subsection header shall be separated by a single EOL marker</description>
             <test>xrefEOLMarkersComplyPDFA</test>
             <error>
-                <message>Spacings after the 'xref' keyword iin the cross reference table do not comply PDF/A specification</message>
+                <message>Spacings after the 'xref' keyword in the cross reference table do not comply PDF/A specification</message>
                 <arguments/>
             </error>
             <references/>

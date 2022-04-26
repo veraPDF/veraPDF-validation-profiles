@@ -13,7 +13,7 @@
                 well-formed as defined by XMP (ISO 16684-1).</description>
             <test>isSerializationValid</test>
             <error>
-                <message>A metadata stream is serialized icorrectly and can not be parsed.</message>
+                <message>A metadata stream is serialized incorrectly and can not be parsed.</message>
                 <arguments/>
             </error>
             <references>
