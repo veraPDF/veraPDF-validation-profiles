@@ -14,7 +14,7 @@
             <test>P != null &amp;&amp; (P &amp; 512) == 512</test>
             <error>
                 <message>The file is encrypted but does not contain a P entry in its encryption dictionary or
-                    the file is encrypted and does contain a P entry but the 10th bit position of the P entry is false
+                    the file is encrypted and does contain a P entry, but the 10th bit position of the P entry is false
                 </message>
                 <arguments/>
             </error>

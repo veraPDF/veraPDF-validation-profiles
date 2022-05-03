@@ -136,7 +136,7 @@
             <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true.</description>
             <test>DisplayDocTitle == true</test>
             <error>
-                <message>DisplayDocTitle key of the ViewerPreferences dictionary is not present in the document catalog or is set to true</message>
+                <message>DisplayDocTitle key of the ViewerPreferences dictionary is not present in the document catalog or is set to false</message>
                 <arguments/>
             </error>
             <references/>
@@ -697,7 +697,7 @@
             <test>P != null &amp;&amp; (P &amp; 512) == 512</test>
             <error>
                 <message>The file is encrypted but does not contain a P entry in its encryption dictionary or
-                    the file is encrypted and does contain a P entry but the 10th bit position of the P entry is false
+                    the file is encrypted and does contain a P entry, but the 10th bit position of the P entry is false
                 </message>
                 <arguments/>
             </error>

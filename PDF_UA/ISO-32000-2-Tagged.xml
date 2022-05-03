@@ -6,10 +6,10 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem" deferred="false">
+        <rule object="SENonStandard" deferred="false">
             <id specification="ISO_19005_4" clause="Annex_L" testNumber="1"/>
             <description>Every structure element shall be mapped to standard type</description>
-            <test>standardType != null</test>
+            <test>false</test>
             <error>
                 <message>Structure element does not map to standard structure type</message>
                 <arguments/>
