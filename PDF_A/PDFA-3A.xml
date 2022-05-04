@@ -12,7 +12,7 @@
 			where 'n' is a single digit number between 0 (30h) and 7 (37h)</description>
             <test>headerOffset == 0 &amp;&amp; /^%PDF-1\.[0-7]$/.test(header)</test>
             <error>
-                <message>File header does not start at byte offset 0 or does not comply with the requirements of PDF/A-2 specification</message>
+                <message>File header does not start at byte offset 0 or does not comply with the requirements of PDF/A-3 specification</message>
                 <arguments/>
             </error>
             <references/>
@@ -448,7 +448,7 @@
         </rule>
         <rule object="PDSeparation">
             <id specification="ISO_19005_3" clause="6.2.4.4" testNumber="2"/>
-            <description>All Separation arrays within a single PDF/A-2 file (including those in Colorants dictionaries) that have the
+            <description>All Separation arrays within a single PDF/A-3 file (including those in Colorants dictionaries) that have the
 			same name shall have the same tintTransform and alternateSpace. In evaluating equivalence, the PDF
 			objects shall be compared, rather than the computational result of the use of those PDF objects. Compression
 			and whether or not an object is direct or indirect shall be ignored.</description>
@@ -491,7 +491,7 @@
         </rule>
         <rule object="PDHalftone">
             <id specification="ISO_19005_3" clause="6.2.5" testNumber="4"/>
-            <description>All halftones in a conforming PDF/A-2 file shall have the value 1 or 5 for the HalftoneType key.</description>
+            <description>All halftones in a conforming PDF/A-3 file shall have the value 1 or 5 for the HalftoneType key.</description>
             <test>HalftoneType != null &amp;&amp; (HalftoneType == 1 || HalftoneType == 5)</test>
             <error>
                 <message>A Halftone has type other than 1 or 5</message>
@@ -501,7 +501,7 @@
         </rule>
         <rule object="PDHalftone">
             <id specification="ISO_19005_3" clause="6.2.5" testNumber="5"/>
-            <description>Halftones in a conforming PDF/A-2 file shall not contain a HalftoneName key.</description>
+            <description>Halftones in a conforming PDF/A-3 file shall not contain a HalftoneName key.</description>
             <test>HalftoneName == null</test>
             <error>
                 <message>A Halftone dictionary contains the HalftoneName key</message>
@@ -827,7 +827,7 @@
         </rule>
         <rule object="PDCMap">
             <id specification="ISO_19005_3" clause="6.2.11.3" testNumber="3"/>
-            <description>All CMaps used within a PDF/A-2 file, except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118, shall be embedded in that file as described 
+            <description>All CMaps used within a PDF/A-3 file, except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118, shall be embedded in that file as described
 			in ISO 32000-1:2008, 9.7.5.</description>
             <test>CMapName == &quot;Identity-H&quot; || CMapName == &quot;Identity-V&quot; || CMapName == &quot;GB-EUC-H&quot; || CMapName == &quot;GB-EUC-V&quot; ||
 			CMapName == &quot;GBpc-EUC-H&quot; || CMapName == &quot;GBpc-EUC-V&quot; || CMapName == &quot;GBK-EUC-H&quot; || CMapName == &quot;GBK-EUC-V&quot; ||
@@ -1041,7 +1041,7 @@
         </rule>
         <rule object="Glyph">
             <id specification="ISO_19005_3" clause="6.2.11.8" testNumber="1"/>
-            <description>A PDF/A-2 compliant document shall not contain a reference to the .notdef glyph from any of the text showing
+            <description>A PDF/A-3 compliant document shall not contain a reference to the .notdef glyph from any of the text showing
 			operators, regardless of text rendering mode, in any content stream.</description>
             <test>name != &quot;.notdef&quot;</test>
             <error>
@@ -1145,7 +1145,7 @@
         </rule>
         <rule object="PDAcroForm">
             <id specification="ISO_19005_3" clause="6.4.2" testNumber="1"/>
-            <description>The document's interactive form dictionary that forms the value of the AcroForm key in the document's Catalog of a PDF/A-2 file, 
+            <description>The document's interactive form dictionary that forms the value of the AcroForm key in the document's Catalog of a PDF/A-3 file,
 			if present, shall not contain the XFA key.</description>
             <test>containsXFA == false</test>
             <error>
@@ -1186,7 +1186,7 @@
 			a single &quot;SignerInfo&quot; structure) in the PDF Signature.</description>
             <test>signingCertificatePresent == true &amp;&amp; SignerInfoCount == 1</test>
             <error>
-                <message>The DER-encoded PKCS#7 binary data object representing a PDF Signature does not conform to PDF/A-2 requirements</message>
+                <message>The DER-encoded PKCS#7 binary data object representing a PDF Signature does not conform to PDF/A-3 requirements</message>
                 <arguments/>
             </error>
             <references>
@@ -1468,11 +1468,11 @@
                 <reference specification="ISO 32000-1:2008" clause="14.7"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="SENonStandard">
             <id specification="ISO_19005_3" clause="6.7.3" testNumber="2"/>
             <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type, as
             defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root.</description>
-            <test>standardType != null</test>
+            <test>false</test>
             <error>
                 <message>Non-standard structure type is not mapped to a standard type</message>
                 <arguments/>
@@ -1554,7 +1554,7 @@
         <rule object="PDOCConfig">
             <id specification="ISO_19005_3" clause="6.9" testNumber="2"/>
             <description>Each optional content configuration dictionary shall contain the Name key, whose value shall be unique amongst all optional content configuration 
-			dictionaries within the PDF/A-2 file.</description>
+			dictionaries within the PDF/A-3 file.</description>
             <test>hasDuplicateName == false</test>
             <error>
                 <message>Optional content configuration dictionary has duplicated name</message>

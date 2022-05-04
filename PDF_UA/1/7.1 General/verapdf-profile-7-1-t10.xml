@@ -11,7 +11,7 @@
             <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true.</description>
             <test>DisplayDocTitle == true</test>
             <error>
-                <message>DisplayDocTitle key of the ViewerPreferences dictionary is not present in the document catalog or is set to true</message>
+                <message>DisplayDocTitle key of the ViewerPreferences dictionary is not present in the document catalog or is set to false</message>
                 <arguments/>
             </error>
         </rule>
