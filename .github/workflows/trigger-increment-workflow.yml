@@ -9,6 +9,7 @@ on:
 
 jobs:
   trigger_build:
+    if: github.repository == 'veraPDF/veraPDF-validation-profiles'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
