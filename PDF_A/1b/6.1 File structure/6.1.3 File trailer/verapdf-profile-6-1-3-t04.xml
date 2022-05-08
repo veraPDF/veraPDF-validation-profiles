@@ -13,8 +13,11 @@
 			and the last trailer dictionary, the value to both instances of the ID keyword shall be identical</description>
             <test>(isLinearized != true) || lastID == null || (firstPageID == lastID)</test>
             <error>
-                <message>Last ID is present in the Linearized PDF and does not match the first page ID</message>
-                <arguments/>
+                <message>Last ID (%1) is present in the Linearized PDF and does not match the first page ID (%2)</message>
+                <arguments>
+                    <argument>lastID</argument>
+                    <argument>firstPageID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 19005-1:2005/Cor.2:2011" clause="6.1.3"/>

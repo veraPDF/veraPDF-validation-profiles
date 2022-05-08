@@ -20,8 +20,10 @@
                 internalRepresentation == &quot;CCF&quot; || internalRepresentation == &quot;DCT&quot;
             </test>
             <error>
-                <message>Inline image uses LZW, Crypt or one of the unknown filters</message>
-                <arguments/>
+                <message>Inline image uses not permitted or unknown filter %1</message>
+                <arguments>
+                    <argument>internalRepresentation</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2020" clause="8.9.7"/>

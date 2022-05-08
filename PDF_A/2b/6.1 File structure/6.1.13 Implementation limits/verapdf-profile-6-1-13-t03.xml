@@ -11,8 +11,10 @@
             <description>A conforming file shall not contain any string longer than 32767 bytes.</description>
             <test>value.length() &lt; 32768</test>
             <error>
-                <message>Maximum length of a String (32767) exceeded</message>
-                <arguments/>
+                <message>String length (%1) exceeded 32767</message>
+                <arguments>
+                    <argument>value.length()</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

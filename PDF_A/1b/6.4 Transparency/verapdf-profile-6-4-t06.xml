@@ -11,8 +11,10 @@
             <description>The following keys, if present in an ExtGState object, shall have the values shown: ca - 1.0</description>
             <test>ca == null || ca - 1.0 &lt; 0.000001 &amp;&amp; ca - 1.0 &gt; -0.000001</test>
             <error>
-                <message>An ExtGState dictionary contains the ca key (fill alpha) with a value other than 1.0</message>
-                <arguments/>
+                <message>An ExtGState dictionary contains the ca key (fill alpha) with value %1 other than 1.0</message>
+                <arguments>
+                    <argument>ca</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

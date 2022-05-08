@@ -11,8 +11,10 @@
             <description>A conforming file shall not contain any integer greater than 2147483647. A conforming file shall not contain any integer less than -2147483648.</description>
             <test>(intValue &lt;= 2147483647) &amp;&amp; (intValue &gt;= -2147483648)</test>
             <error>
-                <message>Integer value out of range</message>
-                <arguments/>
+                <message>Integer value %1 out of range</message>
+                <arguments>
+                    <argument>intValue</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

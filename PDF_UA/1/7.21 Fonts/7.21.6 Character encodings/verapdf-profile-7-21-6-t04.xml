@@ -13,8 +13,11 @@
 			shall either contain exactly one encoding or it shall contain, at least, the Microsoft Symbol (3,0 - Platform ID=3, Encoding ID=0) encoding.</description>
             <test>isSymbolic == false || nrCmaps == 1 || cmap30Present == true</test>
             <error>
-                <message>The embedded font program for a symbolic TrueType font contains more than one cmap subtable</message>
-                <arguments/>
+                <message>The embedded font program for a symbolic TrueType font contains %1 cmap subtables and
+                    does not contain Microsoft Symbol (3,0 – Platform ID=3, Encoding ID=0)</message>
+                <arguments>
+                    <argument>nrCmaps</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

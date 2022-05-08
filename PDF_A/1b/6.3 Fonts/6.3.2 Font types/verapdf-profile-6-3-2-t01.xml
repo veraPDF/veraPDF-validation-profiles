@@ -13,8 +13,10 @@
 	Type - name - (Required) The type of PDF object that this dictionary describes; must be Font for a font dictionary</description>
             <test>Type == &quot;Font&quot;</test>
             <error>
-                <message>A Font dictionary has missing or invalid Type entry</message>
-                <arguments/>
+                <message>A Font dictionary has value %1 of Type entry instead of Font</message>
+                <arguments>
+                    <argument>Type</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF 1.4 Reference" clause="5.5.1 - Table 5.8"/>

@@ -11,8 +11,10 @@
             <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element.</description>
             <test>structParentType == 'Link' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
-                <message>A link annotation is not nested within a Link tag</message>
-                <arguments/>
+                <message>A Link annotation is nested within %1 tag instead of Link</message>
+                <arguments>
+                    <argument>structParentType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.4.2"/>

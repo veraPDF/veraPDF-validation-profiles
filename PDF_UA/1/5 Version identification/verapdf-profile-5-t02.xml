@@ -12,7 +12,7 @@
             <description>The value of pdfuaid:part shall be the part number of the International Standard to which the file conforms.</description>
             <test>part == 1</test>
             <error>
-                <message>The &quot;part&quot; property of the PDF/UA Identification Schema is %1 instead of 1 for PDF/UA conforming file.</message>
+                <message>The &quot;part&quot; property of the PDF/UA Identification Schema is %1 instead of 1 for PDF/UA-1 conforming file.</message>
                 <arguments>
                     <argument>part</argument>
                 </arguments>

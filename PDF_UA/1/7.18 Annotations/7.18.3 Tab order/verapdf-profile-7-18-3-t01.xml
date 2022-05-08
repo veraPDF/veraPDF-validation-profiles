@@ -11,8 +11,10 @@
             <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S.</description>
             <test>annots_size == 0 || Tabs == 'S'</test>
             <error>
-                <message>A page containing an annotation does not contain a Tabs key or has a Tabs key with a value other than S.</message>
-                <arguments/>
+                <message>A page containing an annotation contains a Tabs key with value %1 instead of S.</message>
+                <arguments>
+                    <argument>Tabs</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

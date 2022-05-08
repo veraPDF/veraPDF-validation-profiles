@@ -11,8 +11,10 @@
             <description>Maximum capacity of an array (in elements) is 8191</description>
             <test>size &lt;= 8191</test>
             <error>
-                <message>Maximum capacity of an array (8191) exceeded</message>
-                <arguments/>
+                <message>Array capacity (%1) exceeded 8191</message>
+                <arguments>
+                    <argument>size</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF Reference 1.4" clause="Table C.1"/>

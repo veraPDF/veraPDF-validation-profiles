@@ -11,8 +11,10 @@
             <description>Named actions other than NextPage, PrevPage, FirstPage, and LastPage shall not be permitted</description>
             <test>N == &quot;NextPage&quot; || N == &quot;PrevPage&quot; || N == &quot;FirstPage&quot; || N == &quot;LastPage&quot;</test>
             <error>
-                <message>Unknown or not permitted action type</message>
-                <arguments/>
+                <message>Unknown or not permitted named action %1</message>
+                <arguments>
+                    <argument>N</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF 1.4 Reference" clause="8.5.3 - Named Actions - Table 8.45"/>

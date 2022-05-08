@@ -15,8 +15,10 @@
             <test>S == &quot;GoTo&quot; || S == &quot;GoToR&quot; || S == &quot;GoToE&quot; || S == &quot;Thread&quot; || S == &quot;URI&quot; || S == &quot;Named&quot; ||
                 S == &quot;SubmitForm&quot; || S == &quot;JavaScript&quot; || S == &quot;RichMediaExecute&quot; || S == &quot;GoToDp&quot;</test>
             <error>
-                <message>Unknown or not permitted action type</message>
-                <arguments/>
+                <message>Unknown or not permitted Action type %1</message>
+                <arguments>
+                    <argument>S</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2010" clause="12.6.4.1, Table 201"/>

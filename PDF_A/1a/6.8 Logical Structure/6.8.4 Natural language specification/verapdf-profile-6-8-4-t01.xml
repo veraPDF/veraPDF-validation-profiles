@@ -15,8 +15,10 @@
                 the Identification of Languages, as described in PDF Reference 9.8.1.</description>
             <test>unicodeValue == '' || /^[a-zA-Z]{1,8}(-[a-zA-Z]{1,8})*$/.test(unicodeValue)</test>
             <error>
-                <message>The Lang value is invalid</message>
-                <arguments/>
+                <message>Value %1 of the Lang entry is not Language-Tag</message>
+                <arguments>
+                    <argument>unicodeValue</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF Reference 1.4" clause="9.8.1"/>

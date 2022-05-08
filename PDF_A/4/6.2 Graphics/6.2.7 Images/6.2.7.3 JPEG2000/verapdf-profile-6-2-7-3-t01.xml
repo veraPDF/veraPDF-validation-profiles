@@ -11,8 +11,10 @@
             <description>The number of colour channels in the JPEG2000 data shall be 1, 3 or 4.</description>
             <test>nrColorChannels == 1 || nrColorChannels == 3 || nrColorChannels == 4</test>
             <error>
-                <message>JPEG2000 image has number of colour channels different from 1, 3 or 4.</message>
-                <arguments/>
+                <message>JPEG2000 image has %1 colour channels that is neither 1, 3 or 4</message>
+                <arguments>
+                    <argument>nrColorChannels</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

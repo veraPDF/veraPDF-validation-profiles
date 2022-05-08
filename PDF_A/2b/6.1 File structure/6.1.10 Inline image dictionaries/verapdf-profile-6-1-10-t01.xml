@@ -20,8 +20,10 @@
                 internalRepresentation == &quot;CCF&quot; || internalRepresentation == &quot;DCT&quot;
             </test>
             <error>
-                <message>Inline image uses LZW, Crypt or one of the unknown filters</message>
-                <arguments/>
+                <message>Inline image uses %1 filter</message>
+                <arguments>
+                    <argument>internalRepresentation</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

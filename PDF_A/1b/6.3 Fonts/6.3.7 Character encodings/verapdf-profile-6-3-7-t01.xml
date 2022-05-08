@@ -15,8 +15,10 @@
 			If the value of the Encoding entry is a dictionary, it shall not contain a Differences entry.</description>
             <test>isSymbolic == true || (Encoding == &quot;MacRomanEncoding&quot; || Encoding == &quot;WinAnsiEncoding&quot;)</test>
             <error>
-                <message>A non-symbolic TrueType font has an encoding different from MacRomanEncoding or WinAnsiEncoding</message>
-                <arguments/>
+                <message>A non-symbolic TrueType font has an encoding %1 different from MacRomanEncoding or WinAnsiEncoding</message>
+                <arguments>
+                    <argument>Encoding</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO19005-1:2005/Cor.2:2011" clause="6.3.7"/>

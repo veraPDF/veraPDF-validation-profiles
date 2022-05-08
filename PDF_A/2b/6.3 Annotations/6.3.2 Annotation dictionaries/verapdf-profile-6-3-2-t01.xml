@@ -11,8 +11,10 @@
             <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key.</description>
             <test>Subtype == &quot;Popup&quot; || F != null</test>
             <error>
-                <message>A dictionary of a non-Popup annotation does not contain F key</message>
-                <arguments/>
+                <message>A dictionary of %1 annotation does not contain F key</message>
+                <arguments>
+                    <argument>Subtype</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

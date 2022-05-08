@@ -11,8 +11,10 @@
             <description>A conforming file shall not contain more than 8388607 indirect objects</description>
             <test>nrIndirects &lt;= 8388607</test>
             <error>
-                <message>Maximum number of indirect objects (8,388,607) in a PDF file exceeded</message>
-                <arguments/>
+                <message>Number of indirect objects in a PDF file (%1) exceeded 8,388,607</message>
+                <arguments>
+                    <argument>nrIndirects</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

@@ -11,8 +11,10 @@
             <description>All metadata streams present in the PDF shall conform to the XMP Specification. The XMP package must be encoded as UTF-8.</description>
             <test>actualEncoding == "UTF-8"</test>
             <error>
-                <message>The XMP package uses an encoding different from UTF-8</message>
-                <arguments/>
+                <message>The XMP package uses encoding %1 different from UTF-8</message>
+                <arguments>
+                    <argument>actualEncoding</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="XMP Specification, September 2005" clause="5 - Embedding XMP Metadata in Application Files - PDF"/>

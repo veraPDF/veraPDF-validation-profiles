@@ -12,8 +12,11 @@
             <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || isOutsideCropBox == true ||
                 (F &amp; 2) == 2 || structParentType == 'Annot'</test>
             <error>
-                <message>An annotation, excluding annotations of subtype Widget, Popup or Link, is not nested within an Annot tag</message>
-                <arguments/>
+                <message>%1 annotation is nested within %2 tag instead of Annot</message>
+                <arguments>
+                    <argument>Subtype</argument>
+                    <argument>structParentType</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

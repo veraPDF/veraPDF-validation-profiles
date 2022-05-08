@@ -11,7 +11,7 @@
             <description>A graphics state parameter dictionary shall not contain the HTO key</description>
             <test>containsHTO == false</test>
             <error>
-                <message>A graphics state parameter dictionary contains the HTP key</message>
+                <message>A graphics state parameter dictionary contains the HTO key</message>
                 <arguments/>
             </error>
             <references/>

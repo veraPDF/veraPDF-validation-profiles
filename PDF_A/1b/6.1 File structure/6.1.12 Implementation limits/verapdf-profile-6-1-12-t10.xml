@@ -11,8 +11,10 @@
             <description>Maximum value of a CID (character identifier) is 65,535</description>
             <test>maximalCID &lt;= 65535</test>
             <error>
-                <message>Maximum value of a CID (65,535) is exceeded</message>
-                <arguments/>
+                <message>Value of a CID (%1) exceeded 65,535</message>
+                <arguments>
+                    <argument>maximalCID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF Reference 1.4" clause="Table C.1"/>

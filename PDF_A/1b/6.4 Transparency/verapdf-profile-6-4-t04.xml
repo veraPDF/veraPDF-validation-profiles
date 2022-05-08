@@ -11,8 +11,10 @@
             <description>The following keys, if present in an ExtGState object, shall have the values shown: BM - Normal or Compatible</description>
             <test>BM == null || BM == &quot;Normal&quot; || BM == &quot;Compatible&quot;</test>
             <error>
-                <message>An ExtGState dictionary contains the BM key (blend mode) with a value other than Normal or Compatible</message>
-                <arguments/>
+                <message>An ExtGState dictionary contains the BM key (blend mode) with value %1 that is neither Normal or Compatible</message>
+                <arguments>
+                    <argument>BM</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

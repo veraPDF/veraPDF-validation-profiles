@@ -19,8 +19,10 @@
                 internalRepresentation == &quot;Saturation&quot; || internalRepresentation == &quot;Color&quot; ||
                 internalRepresentation == &quot;Luminosity&quot;</test>
             <error>
-                <message>The document uses the blend mode not defined in ISO 32000-1:2008</message>
-                <arguments/>
+                <message>The document uses the blend mode %1 not defined in ISO 32000-1:2008</message>
+                <arguments>
+                    <argument>internalRepresentation</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO32000-1:2008" clause="11.3.5, Tables 136-137"/>

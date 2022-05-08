@@ -11,8 +11,10 @@
             <description>Maximum length of a string (in bytes) is 65535</description>
             <test>value.length() &lt; 65536</test>
             <error>
-                <message>Maximum length of a String (65535) exceeded</message>
-                <arguments/>
+                <message>String length (%1) exceeded 65535</message>
+                <arguments>
+                    <argument>value.length()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF Reference 1.4" clause="Table C.1"/>

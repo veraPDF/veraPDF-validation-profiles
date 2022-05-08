@@ -28,8 +28,10 @@
 			CMapName == &quot;KSCpc-EUC-H&quot; || CMapName == &quot;UniKS-UCS2-H&quot; || CMapName == &quot;UniKS-UCS2-V&quot; || CMapName == &quot;UniKS-UTF16-H&quot; || CMapName == &quot;UniKS-UTF16-V&quot; ||
 			embeddedFile_size == 1</test>
             <error>
-                <message>A non-standard CMap is not embedded</message>
-                <arguments/>
+                <message>A non-standard CMap %1 is not embedded</message>
+                <arguments>
+                    <argument>CMapName</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO32000-1:2008" clause="9.7.5.2, Table 118"/>

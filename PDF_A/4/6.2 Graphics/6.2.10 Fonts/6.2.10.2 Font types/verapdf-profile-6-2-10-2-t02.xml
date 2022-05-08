@@ -18,8 +18,10 @@
             <test>Subtype == &quot;Type1&quot; || Subtype == &quot;MMType1&quot; || Subtype == &quot;TrueType&quot; || Subtype == &quot;Type3&quot; || Subtype == &quot;Type0&quot; 
 			|| Subtype == &quot;CIDFontType0&quot; || Subtype == &quot;CIDFontType2&quot;</test>
             <error>
-                <message>A Font dictionary has missing or invalid Subtype entry</message>
-                <arguments/>
+                <message>Invalid Subtype entry in font dictionary with value %1</message>
+                <arguments>
+                    <argument>Subtype</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2020" clause="9.6.2.1, Table 109"/>
