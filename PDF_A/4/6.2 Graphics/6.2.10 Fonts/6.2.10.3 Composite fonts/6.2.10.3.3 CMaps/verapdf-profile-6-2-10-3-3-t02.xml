@@ -13,8 +13,11 @@
                 shall be identical to the WMode value in the embedded CMap stream.</description>
             <test>WMode == dictWMode</test>
             <error>
-                <message>WMode entry in the embedded CMap and in the CMap dictionary are not identical</message>
-                <arguments/>
+                <message>WMode entry (value %1) in the embedded CMap and in the CMap dictionary (value %2) are not identical</message>
+                <arguments>
+                    <argument>WMode</argument>
+                    <argument>dictWMode</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

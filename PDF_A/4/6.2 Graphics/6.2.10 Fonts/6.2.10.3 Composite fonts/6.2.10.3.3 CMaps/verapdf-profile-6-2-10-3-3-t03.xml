@@ -26,8 +26,10 @@
 			CMapName == &quot;KSCpc-EUC-H&quot; || CMapName == &quot;UniKS-UCS2-H&quot; || CMapName == &quot;UniKS-UCS2-V&quot; || CMapName == &quot;UniKS-UTF16-H&quot; || 
 			CMapName == &quot;UniKS-UTF16-V&quot;</test>
             <error>
-                <message>A CMap references another non-standard CMap</message>
-                <arguments/>
+                <message>A CMap references another non-standard CMap %1</message>
+                <arguments>
+                    <argument>CMapName</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2020" clause="9.7.5.2, Table 116"/>

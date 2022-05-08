@@ -13,7 +13,7 @@
 			a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences.</description>
             <test>isValidUtf8 == true</test>
             <error>
-                <message>The name object does not represent a correct Utf8 byte sequence</message>
+                <message>The name object does not represent a correct UTF-8 character sequence</message>
                 <arguments/>
             </error>
             <references>

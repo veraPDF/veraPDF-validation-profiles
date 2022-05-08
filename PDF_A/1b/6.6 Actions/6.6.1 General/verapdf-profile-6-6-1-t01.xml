@@ -13,8 +13,10 @@
 			Additionally, the deprecated set-state and no-op actions shall not be permitted. The Hide action shall not be permitted (Corrigendum 2)</description>
             <test>S == &quot;GoTo&quot; || S == &quot;GoToR&quot; || S == &quot;Thread&quot; || S == &quot;URI&quot; || S == &quot;Named&quot; || S == &quot;SubmitForm&quot;</test>
             <error>
-                <message>Unknown or not permitted action type</message>
-                <arguments/>
+                <message>Unknown or not permitted Action type %1</message>
+                <arguments>
+                    <argument>S</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO19005-1:2005/Cor.2:2011" clause="6.6.1"/>

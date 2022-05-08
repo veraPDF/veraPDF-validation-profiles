@@ -13,8 +13,10 @@
                 If the MIME type is not known, the value "application/octet-stream" shall be used.</description>
             <test>Subtype != null &amp;&amp; /^[-\w+\.]+\/[-\w+\.]+$/.test(Subtype)</test>
             <error>
-                <message>The MIME type information (Subtype entry) of an embedded file is missing or invalid</message>
-                <arguments/>
+                <message>MIME type %1 of an embedded file is missing or invalid</message>
+                <arguments>
+                    <argument>Subtype</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2020" clause="14.13.2"/>

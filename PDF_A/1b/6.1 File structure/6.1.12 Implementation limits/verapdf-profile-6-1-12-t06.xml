@@ -11,8 +11,10 @@
             <description>Maximum capacity of a dictionary (in entries) is 4095</description>
             <test>size &lt;= 4095</test>
             <error>
-                <message>Maximum capacity of a dictionary (4095) exceeded</message>
-                <arguments/>
+                <message>Dictionary capacity (%1) exceeded 4095</message>
+                <arguments>
+                    <argument>size</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF Reference 1.4" clause="Table C.1"/>

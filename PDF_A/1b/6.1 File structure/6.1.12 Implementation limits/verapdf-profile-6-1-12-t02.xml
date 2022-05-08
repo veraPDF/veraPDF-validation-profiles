@@ -11,8 +11,10 @@
             <description>Absolute real value must be less than or equal to 32767.0</description>
             <test>(realValue &gt;= -32767.0) &amp;&amp; (realValue &lt;= 32767.0)</test>
             <error>
-                <message>Real value out of range</message>
-                <arguments/>
+                <message>Real value %1 out of range</message>
+                <arguments>
+                    <argument>realValue</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF Reference 1.4" clause="Table C.1"/>

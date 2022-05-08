@@ -11,8 +11,10 @@
             <description>A conforming file shall not contain any real number outside the range of +/-3.403 x 10^38</description>
             <test>(realValue &gt;= -3.403e+38) &amp;&amp; (realValue &lt;= 3.403e+38)</test>
             <error>
-                <message>Real value out of range</message>
-                <arguments/>
+                <message>Real value %1 out of range</message>
+                <arguments>
+                    <argument>realValue</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

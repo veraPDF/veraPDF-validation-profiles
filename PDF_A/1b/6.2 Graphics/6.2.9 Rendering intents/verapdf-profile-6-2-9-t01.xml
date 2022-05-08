@@ -13,8 +13,10 @@
 			RelativeColorimetric, AbsoluteColorimetric, Perceptual or Saturation</description>
             <test>internalRepresentation == &quot;RelativeColorimetric&quot; || internalRepresentation == &quot;AbsoluteColorimetric&quot; || internalRepresentation == &quot;Perceptual&quot; || internalRepresentation == &quot;Saturation&quot;</test>
             <error>
-                <message>A rendering intent with non-standard value is used</message>
-                <arguments/>
+                <message>A rendering intent with non-standard value %1 is used</message>
+                <arguments>
+                    <argument>internalRepresentation</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

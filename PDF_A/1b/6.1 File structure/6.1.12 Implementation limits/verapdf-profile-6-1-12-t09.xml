@@ -11,8 +11,10 @@
             <description>Maximum number of DeviceN components is 8</description>
             <test>nrComponents &lt;= 8</test>
             <error>
-                <message>Maximum number of DeviceN components is exceeded</message>
-                <arguments/>
+                <message>Number of DeviceN components (%1) exceeded 8</message>
+                <arguments>
+                    <argument>nrComponents</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF Reference 1.4" clause="Table C.1"/>

@@ -16,8 +16,10 @@
 			Subtype == &quot;FileAttachment&quot; || Subtype == &quot;Widget&quot; || Subtype == &quot;PrinterMark&quot; || Subtype == &quot;TrapNet&quot; ||
 			Subtype == &quot;Watermark&quot; || Subtype == &quot;Redact&quot;</test>
             <error>
-                <message>Unknown or not permitted annotation type</message>
-                <arguments/>
+                <message>Unknown or not permitted Annotation type %1</message>
+                <arguments>
+                    <argument>Subtype</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF 1.4 Reference" clause="12.5.6.1, Table 169"/>

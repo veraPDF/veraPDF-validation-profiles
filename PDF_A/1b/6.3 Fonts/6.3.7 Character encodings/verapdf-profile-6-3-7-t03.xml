@@ -11,8 +11,10 @@
             <description>Font programs' &quot;cmap&quot; tables for all symbolic TrueType fonts shall contain exactly one encoding</description>
             <test>isSymbolic == false || nrCmaps == 1</test>
             <error>
-                <message>The embedded font program for a symbolic TrueType font contains more than one cmap subtable</message>
-                <arguments/>
+                <message>The embedded font program for a symbolic TrueType font contains %1 cmap subtables</message>
+                <arguments>
+                    <argument>nrCmaps</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO19005-1:2005/Cor.2:2011" clause="6.3.7"/>

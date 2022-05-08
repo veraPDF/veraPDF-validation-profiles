@@ -11,8 +11,10 @@
             <description>Hexadecimal strings shall contain an even number of non-white-space characters</description>
             <test>(isHex != true) || hexCount % 2 == 0</test>
             <error>
-                <message>Hexadecimal string contains odd number of non-white-space characters</message>
-                <arguments/>
+                <message>A hexadecimal string contains odd number (%1) of non-white-space characters</message>
+                <arguments>
+                    <argument>hexCount</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

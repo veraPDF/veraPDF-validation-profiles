@@ -11,8 +11,10 @@
             <description>If an SMask key appears in an ExtGState dictionary, its value shall be None</description>
             <test>SMask == null || SMask == &quot;None&quot;</test>
             <error>
-                <message>An ExtGState contains SMask key with a value other than None</message>
-                <arguments/>
+                <message>An ExtGState contains SMask key with value %1 instead of None</message>
+                <arguments>
+                    <argument>SMask</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

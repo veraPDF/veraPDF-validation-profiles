@@ -11,8 +11,10 @@
             <description>An annotation dictionary shall not contain the CA key with a value other than 1.0</description>
             <test>CA == null || CA == 1.0</test>
             <error>
-                <message>An annotation dictionary contains the CA key with value other than 1.0</message>
-                <arguments/>
+                <message>An annotation dictionary contains the CA key with value %1 instead of 1.0</message>
+                <arguments>
+                    <argument>CA</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

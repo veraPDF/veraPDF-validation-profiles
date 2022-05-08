@@ -11,8 +11,10 @@
             <description>All halftones in a conforming PDF/A-4 file shall have the value 1 or 5 for the HalftoneType key.</description>
             <test>HalftoneType != null &amp;&amp; (HalftoneType == 1 || HalftoneType == 5)</test>
             <error>
-                <message>A Halftone has type other than 1 or 5</message>
-                <arguments/>
+                <message>A Halftone has type %1 instead of 1 or 5</message>
+                <arguments>
+                    <argument>HalftoneType</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

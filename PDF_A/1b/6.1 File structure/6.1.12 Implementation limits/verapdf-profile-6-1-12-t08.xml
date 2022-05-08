@@ -11,8 +11,10 @@
             <description>Maximum depth of graphics state nesting by q and Q operators is 28</description>
             <test>nestingLevel &lt;= 28</test>
             <error>
-                <message>Maximum depth of graphics state nesting (q and Q operators) is exceeded</message>
-                <arguments/>
+                <message>Depth of graphics state nesting of q/Q operators (%1) exceeded 28</message>
+                <arguments>
+                    <argument>nestingLevel</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF Reference 1.4" clause="Table C.1"/>

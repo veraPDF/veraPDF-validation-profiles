@@ -11,7 +11,7 @@
             <description>In addition, the DestOutputProfileRef key, as defined in ISO 15930-7:2010, Annex A, shall not be present in any PDF/X OutputIntent.</description>
             <test>S != 'GTS_PDFX' || containsDestOutputProfileRef == false</test>
             <error>
-                <message>The output intent dictionary contains forbidden entry DestOutputProfileRef</message>
+                <message>The PDF/X output intent dictionary contains forbidden entry DestOutputProfileRef</message>
                 <arguments/>
             </error>
             <references>

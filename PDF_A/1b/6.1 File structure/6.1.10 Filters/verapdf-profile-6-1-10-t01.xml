@@ -11,8 +11,10 @@
             <description>The LZWDecode filter shall not be permitted</description>
             <test>internalRepresentation != &quot;LZWDecode&quot;</test>
             <error>
-                <message>LZW compression is used</message>
-                <arguments/>
+                <message>Unknown or not permitted Stream filter %1 is used</message>
+                <arguments>
+                    <argument>internalRepresentation</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

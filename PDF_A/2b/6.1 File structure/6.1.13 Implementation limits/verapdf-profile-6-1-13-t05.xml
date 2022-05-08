@@ -11,8 +11,10 @@
             <description>A conforming file shall not contain any real number closer to zero than +/-1.175 x 10^(-38).</description>
             <test>realValue == 0.0 || (realValue &lt;= -1.175e-38) || (realValue &gt;= 1.175e-38)</test>
             <error>
-                <message>Non-zero real value is too close to 0.0</message>
-                <arguments/>
+                <message>Non-zero real value %1 is too close to 0.0</message>
+                <arguments>
+                    <argument>realValue</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

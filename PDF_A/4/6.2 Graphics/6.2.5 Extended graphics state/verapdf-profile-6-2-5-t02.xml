@@ -11,8 +11,10 @@
             <description>A graphics state parameter dictionary shall not contain the TR2 key with a value other than Default</description>
             <test>TR2 == null || TR2 == &quot;Default&quot;</test>
             <error>
-                <message>A graphics state parameter dictionary contains the TR2 key with a value other than Default</message>
-                <arguments/>
+                <message>A graphics state parameter dictionary contains the TR2 key with value %1 other than Default</message>
+                <arguments>
+                    <argument>TR2</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

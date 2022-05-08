@@ -11,8 +11,10 @@
             <description>A conforming file shall not contain a DeviceN colour space with more than 32 colourants.</description>
             <test>nrComponents &lt;= 32</test>
             <error>
-                <message>Maximum number of DeviceN components (32) is exceeded</message>
-                <arguments/>
+                <message>Number of DeviceN components (%1) exceeded 32</message>
+                <arguments>
+                    <argument>nrComponents</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
