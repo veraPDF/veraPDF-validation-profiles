@@ -360,7 +360,7 @@
                 ICCProfileIndirect != currentTransparencyProfileIndirect)) &amp;&amp; (ICCProfileMD5 == null ||
                 (ICCProfileMD5 != gOutputICCProfileMD5 &amp;&amp; ICCProfileMD5 != currentTransparencyICCProfileMD5))</test>
             <error>
-                <message>An ICCBased colour space shall not be used where the profile is a CMYK destination profile and
+                <message>An ICCBased colour space is used where the profile is a CMYK destination profile and
                     is identical to that in the current PDF/A OutputIntent or the current transparency blending colorspace.</message>
                 <arguments/>
             </error>
@@ -739,8 +739,11 @@
                 Widths - array - (Required except for the standard 14 fonts; indirect reference preferred) An array of (LastChar − FirstChar + 1) widths</description>
             <test>isStandard == true || (Widths_size != null &amp;&amp; Widths_size == LastChar - FirstChar + 1)</test>
             <error>
-                <message>Widths array is missing or has invalid size</message>
-                <arguments/>
+                <message>Widths array is missing or has invalid size %1 instead of %2</message>
+                <arguments>
+                    <argument>Widths_size</argument>
+                    <argument>LastChar - FirstChar + 1</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2020" clause="9.6.2.1, Table 109"/>

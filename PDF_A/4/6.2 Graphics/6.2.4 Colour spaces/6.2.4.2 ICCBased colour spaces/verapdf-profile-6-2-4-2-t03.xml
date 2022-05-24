@@ -15,7 +15,7 @@
                 ICCProfileIndirect != currentTransparencyProfileIndirect)) &amp;&amp; (ICCProfileMD5 == null ||
                 (ICCProfileMD5 != gOutputICCProfileMD5 &amp;&amp; ICCProfileMD5 != currentTransparencyICCProfileMD5))</test>
             <error>
-                <message>An ICCBased colour space shall not be used where the profile is a CMYK destination profile and
+                <message>An ICCBased colour space is used where the profile is a CMYK destination profile and
                     is identical to that in the current PDF/A OutputIntent or the current transparency blending colorspace.</message>
                 <arguments/>
             </error>
