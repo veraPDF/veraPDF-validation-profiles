@@ -62,7 +62,9 @@
             <id specification="WCAG_2_1" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1.
                 Large-scale text and images of large-scale text have a contrast ratio of at least 3:1.</description>
-            <test>textSize &lt; 4.5 || ((textSize >= 18.0 || (textSize >= 14.0 &amp;&amp; textWeight >= 700.0)) ? (contrastRatio >= 3) : (contrastRatio >= 4.5))</test>
+            <test>parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0 ||
+                textSize &lt; 4.5 || ((textSize >= 18.0 ||
+                (textSize >= 14.0 &amp;&amp; textWeight >= 700.0)) ? (contrastRatio >= 3) : (contrastRatio >= 4.5))</test>
             <error>
                 <message>contrastRatio = %1</message>
                 <arguments>
