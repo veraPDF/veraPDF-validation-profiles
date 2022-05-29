@@ -11,8 +11,10 @@
             <description>LI element should contained in L element</description>
             <test>parentStandardType == 'L'</test>
             <error>
-                <message>LI element not contained in L element</message>
-                <arguments/>
+                <message>LI element contained in %1 instead of L element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
@@ -23,8 +25,10 @@
             <description>LBody element should contained in LI element</description>
             <test>parentStandardType == 'LI'</test>
             <error>
-                <message>LBody element not contained in LI element</message>
-                <arguments/>
+                <message>LBody element contained in %1 instead of LI element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
@@ -48,8 +52,10 @@
             <description>LI element may contain only Lbl and LBody elements</description>
             <test>/^(Lbl|LBody)(&amp;(Lbl|LBody))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
             <error>
-                <message>LI element contains not a Lbl or LBody elements</message>
-                <arguments/>
+                <message>LI element contains %1 element(s) instead of Lbl or LBody</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'LBody' &amp;&amp; elem != 'Lbl').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>

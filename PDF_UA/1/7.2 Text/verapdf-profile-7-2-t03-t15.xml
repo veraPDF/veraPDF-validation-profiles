@@ -27,8 +27,10 @@
             <description>TR element should contained in Table, THead, TBody or TFoot element</description>
             <test>/^(Table|THead|TBody|TFoot)$/.test(parentStandardType)</test>
             <error>
-                <message>TR element not contained in Table, THead, TBody and TFoot element</message>
-                <arguments/>
+                <message>TR element contained in %1 instead of Table, THead, TBody or TFoot element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -39,8 +41,10 @@
             <description>THead element should contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
             <error>
-                <message>THead element not contained in Table element</message>
-                <arguments/>
+                <message>THead element contained in %1 instead of Table element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -51,8 +55,10 @@
             <description>TBody element should contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
             <error>
-                <message>TBody element not contained in Table element</message>
-                <arguments/>
+                <message>TBody element contained in %1 instead of Table element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -63,8 +69,10 @@
             <description>TFoot element should contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
             <error>
-                <message>TFoot element not contained in Table element</message>
-                <arguments/>
+                <message>TFoot element contained in %1 instead of Table element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -75,8 +83,10 @@
             <description>TH element should contained in TR element</description>
             <test>parentStandardType == 'TR'</test>
             <error>
-                <message>TH element not contained in TR element</message>
-                <arguments/>
+                <message>TH element contained in %1 instead of TR element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -87,8 +97,10 @@
             <description>TD element should contained in TR element</description>
             <test>parentStandardType == 'TR'</test>
             <error>
-                <message>TD element not contained in TR element</message>
-                <arguments/>
+                <message>TD element contained in %1 instead of TR element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -100,7 +112,10 @@
             <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
             <error>
                 <message>TR element contains not a TH or TD elements</message>
-                <arguments/>
+                <message>TR element contains %1 element(s) instead of TH or TD</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TD' &amp;&amp; elem != 'TH').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
