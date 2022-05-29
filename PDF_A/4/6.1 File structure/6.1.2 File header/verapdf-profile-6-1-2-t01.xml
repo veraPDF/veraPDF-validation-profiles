@@ -13,8 +13,11 @@
 			where 'n' is a single digit number between 0 (30h) and 9 (39h)</description>
             <test>headerOffset == 0 &amp;&amp; /^%PDF-2\.[0-9]$/.test(header)</test>
             <error>
-                <message>File header does not start at byte offset 0 or does not comply with the requirements of PDF/A-4 specification</message>
-                <arguments/>
+                <message>File header %1 starts at byte offset %2 instead of 0 or does not comply with the requirements of PDF/A-4 specification</message>
+                <arguments>
+                    <argument>header</argument>
+                    <argument>headerOffset</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

@@ -11,7 +11,7 @@
             <description>File identifiers shall be defined by the ID entry in a PDF file’s trailer dictionary</description>
             <test>lastID != null &amp;&amp; lastID.length() &gt; 0</test>
             <error>
-                <message>Missing ID in the document trailer</message>
+                <message>Missing or empty ID in the document trailer</message>
                 <arguments/>
             </error>
             <references>

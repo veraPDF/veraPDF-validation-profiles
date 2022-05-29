@@ -13,8 +13,11 @@
 			The first line of a PDF file is a header identifying the version of the PDF specification to which the file conforms</description>
             <test>headerOffset == 0 &amp;&amp; /%PDF-\d\.\d/.test(header)</test>
             <error>
-                <message>File header does not start at byte offset 0 or does not correctly identify the version of the PDF document</message>
-                <arguments/>
+                <message>File header %1 starts at byte offset %2 instead of 0 or does not correctly identify the version of the PDF document</message>
+                <arguments>
+                    <argument>header</argument>
+                    <argument>headerOffset</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF 1.4 Reference" clause="3.4.1"/>
