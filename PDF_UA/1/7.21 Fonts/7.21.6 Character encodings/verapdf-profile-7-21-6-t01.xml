@@ -13,8 +13,10 @@
 			        cmap entries such that all necessary glyph lookups can be carried out.</description>
             <test>isSymbolic == true || nrCmaps &gt; 1 || (nrCmaps &gt; 0 &amp;&amp; cmap30Present == false)</test>
             <error>
-                <message>The embedded font program for a non-symbolic TrueType font does not contain any cmap subtables</message>
-                <arguments/>
+                <message>The embedded font program for a non-symbolic TrueType font contains %1 cmap subtable(s)</message>
+                <arguments>
+                    <argument>nrCmaps</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

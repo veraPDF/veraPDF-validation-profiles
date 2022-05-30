@@ -13,8 +13,10 @@
 			specification that has the value 0x01 in the APPROX field.</description>
             <test>hasColorSpace == true || nrColorSpaceSpecs == 1 || nrColorSpacesWithApproxField == 1</test>
             <error>
-                <message>The JPEG2000 image contains more than one colour specification with the best colour fidelity (value 0x01 in the APPROX field).</message>
-                <arguments/>
+                <message>The JPEG2000 image contains %1 colour specifications with the best colour fidelity (value 0x01 in the APPROX field).</message>
+                <arguments>
+                    <argument>nrColorSpacesWithApproxField</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

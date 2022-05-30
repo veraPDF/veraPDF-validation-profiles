@@ -11,7 +11,7 @@
             <description>For any spot colour used in a DeviceN or NChannel colour space, an entry in the Colorants dictionary shall be present.</description>
             <test>areColorantsPresent == true</test>
             <error>
-                <message>A colorant of the DeviceN color space is not defined in the Colorants dictionary</message>
+                <message>A colorant of the DeviceN or NChannel color space is not defined in the Colorants dictionary</message>
                 <arguments/>
             </error>
             <references>

@@ -11,8 +11,10 @@
             <description>TOCI element should contained in TOC element</description>
             <test>parentStandardType == 'TOC'</test>
             <error>
-                <message>TOCI element not contained in TOC element</message>
-                <arguments/>
+                <message>TOCI element contained in %1 instead of TOC element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>

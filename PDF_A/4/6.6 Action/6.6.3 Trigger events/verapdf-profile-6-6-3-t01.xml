@@ -16,7 +16,7 @@
             <test>containsOtherActions == false</test>
             <error>
                 <message>A document catalog dictionary include an AA entry and its value (which is an additional-actions
-                    dictionary) contains key not from the following list: E, X, D, U, Fo, and Bl</message>
+                    dictionary) contains key(s) not from the following list: E, X, D, U, Fo, and Bl</message>
                 <arguments/>
             </error>
             <references/>

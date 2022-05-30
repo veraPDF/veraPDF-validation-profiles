@@ -11,8 +11,10 @@
             <description>No data shall follow the last end-of-file marker as described in ISO 32000-2:2020, 7.5.5.</description>
             <test>postEOFDataSize == 0</test>
             <error>
-                <message>Data is present after the last end-of-file marker</message>
-                <arguments/>
+                <message>%1 byte(s) of data is present after the last end-of-file marker</message>
+                <arguments>
+                    <argument>postEOFDataSize</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2020" clause="7.5.5"/>

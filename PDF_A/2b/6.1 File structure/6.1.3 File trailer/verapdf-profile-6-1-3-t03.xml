@@ -11,8 +11,10 @@
             <description>No data can follow the last end-of-file marker except a single optional end-of-line marker as described in ISO 32000-1:2008, 7.5.5.</description>
             <test>postEOFDataSize == 0</test>
             <error>
-                <message>Data is present after the last end-of-file marker</message>
-                <arguments/>
+                <message>%1 byte(s) of data is present after the last end-of-file marker</message>
+                <arguments>
+                    <argument>postEOFDataSize</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO32000-1:2008" clause="7.5.5"/>

@@ -9,10 +9,12 @@
         <rule object="SETHead">
             <id specification="ISO_14289_1" clause="7.2" testNumber="36"/>
             <description>THead element may contain only TR elements</description>
-            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0 || kidsStandardTypes == ''</test>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0</test>
             <error>
-                <message>THead element contains not a TR elements</message>
-                <arguments/>
+                <message>THead element contains %1 element(s) instead of TR</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -23,8 +25,10 @@
             <description>TBody element may contain only TR elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0</test>
             <error>
-                <message>TBody element contains not a TR elements</message>
-                <arguments/>
+                <message>TBody element contains %1 element(s) instead of TR</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -33,10 +37,12 @@
         <rule object="SETFoot">
             <id specification="ISO_14289_1" clause="7.2" testNumber="38"/>
             <description>TFoot element may contain only TR elements</description>
-            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0 || kidsStandardTypes == ''</test>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0</test>
             <error>
-                <message>TFoot element contains not a TR elements</message>
-                <arguments/>
+                <message>TFoot element contains %1 element(s) instead of TR</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
