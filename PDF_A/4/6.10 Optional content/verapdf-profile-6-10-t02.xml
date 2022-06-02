@@ -13,8 +13,10 @@
 			dictionaries within the PDF/A-4 file.</description>
             <test>hasDuplicateName == false</test>
             <error>
-                <message>Optional content configuration dictionary has duplicated name</message>
-                <arguments/>
+                <message>Optional content configuration dictionary has duplicated name %1</message>
+                <arguments>
+                    <argument>Name</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
