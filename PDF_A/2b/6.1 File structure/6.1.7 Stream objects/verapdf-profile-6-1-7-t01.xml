@@ -11,10 +11,13 @@
             <id specification="ISO_19005_2" clause="6.1.7" testNumber="1"/>
             <description>The value of the Length key specified in the stream dictionary shall match the number of bytes in the file following the LINE FEED (0Ah) character
 			after the stream keyword and preceding the EOL marker before the endstream keyword.</description>
-            <test>isLengthCorrect</test>
+            <test>Length == realLength</test>
             <error>
-                <message>Actual length of the stream does not match the value of the Length key in the Stream dictionary</message>
-                <arguments/>
+                <message>Actual length of the stream (%1 byte(s)) does not match the value of the Length key in the Stream dictionary (%2 byte(s))</message>
+                <arguments>
+                    <argument>realLength</argument>
+                    <argument>Length</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

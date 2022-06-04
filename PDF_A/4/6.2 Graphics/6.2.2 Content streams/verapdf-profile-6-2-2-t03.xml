@@ -13,12 +13,12 @@
             <description>A content stream's named resources shall be defined by a resource dictionary, which shall
                 enumerate the named resources needed by the operators in the content stream and the names by which
                 they can be referred to.</description>
-            <test>containsUndefinedResource == false</test>
+            <test>undefinedResourceNames == ''</test>
             <error>
-                <message>A content stream's named resources not define by a resource dictionary, which shall enumerate
-                    the named resources needed by the operators in the content stream and the names by which they can
-                    be referred to.</message>
-                <arguments/>
+                <message>A content stream references named resource(s) %1 not defined by a resource dictionary.</message>
+                <arguments>
+                    <argument>undefinedResourceNames</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2020" clause="7.8.3"/>

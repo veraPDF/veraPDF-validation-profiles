@@ -13,8 +13,11 @@
             defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root.</description>
             <test>false</test>
             <error>
-                <message>Non-standard structure type is not mapped to a standard type</message>
-                <arguments/>
+                <message>Non-standard structure type %1 is not mapped to a standard type, or a circular mapping for this
+                    structure type is detected</message>
+                <arguments>
+                    <argument>valueS</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1:2008" clause="14.8.4"/>
