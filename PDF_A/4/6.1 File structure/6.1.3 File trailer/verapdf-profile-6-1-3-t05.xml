@@ -11,8 +11,10 @@
             <description>If a document information dictionary is present, it shall only contain a ModDate entry.</description>
             <test>size == 1 &amp;&amp; ModDate != null</test>
             <error>
-                <message>Document information dictionary is present and does not contain only a ModDate entry</message>
-                <arguments/>
+                <message>Document information dictionary is present and contains %1 key(s), but allowed only ModDate</message>
+                <arguments>
+                    <argument>keysString.split('&amp;').filter(elem =&gt; elem != 'ModDate').toString()</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

@@ -11,8 +11,10 @@
             <description>A stream object dictionary shall not contain the F, FFilter, or FDecodeParms keys</description>
             <test>F == null &amp;&amp; FFilter == null &amp;&amp; FDecodeParms == null</test>
             <error>
-                <message>A stream object dictionary contains one of the F, FFilter, or FDecodeParms keys</message>
-                <arguments/>
+                <message>A stream object dictionary contains %1 key(s)</message>
+                <arguments>
+                    <argument>keysString.split('&amp;').filter(elem =&gt; elem == 'F' || elem == 'FFilter' || elem == 'FDecodeParms').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="19005-1:2005/Cor.2:2011" clause="6.1.7"/>

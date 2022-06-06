@@ -12,8 +12,10 @@
 			by the BX/EX compatibility operators.</description>
             <test>false</test>
             <error>
-                <message>A content stream contains an operator not defined in ISO 32000-2:2020</message>
-                <arguments/>
+                <message>A content stream contains operator %1 not defined in ISO 32000-2:2020</message>
+                <arguments>
+                    <argument>name</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

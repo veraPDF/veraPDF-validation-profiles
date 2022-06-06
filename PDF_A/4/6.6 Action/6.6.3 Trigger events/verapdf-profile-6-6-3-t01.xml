@@ -15,9 +15,12 @@
                 shall only contain keys from the following list: E, X, D, U, Fo, and Bl.</description>
             <test>containsOtherActions == false</test>
             <error>
-                <message>A document catalog dictionary include an AA entry and its value (which is an additional-actions
-                    dictionary) contains key(s) not from the following list: E, X, D, U, Fo, and Bl</message>
-                <arguments/>
+                <message>Additional-actions dictionary contains key(s) %1 not from the following permitted list: E, X, D,
+                    U, Fo, and Bl</message>
+                <arguments>
+                    <argument>actions.split('&amp;').filter(elem =&gt; elem != 'E' &amp;&amp; elem != 'X'&amp;&amp; elem != 'D' &amp;&amp;
+                        elem != 'U' &amp;&amp; elem != 'Fo' &amp;&amp; elem != 'Bl').toString()</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

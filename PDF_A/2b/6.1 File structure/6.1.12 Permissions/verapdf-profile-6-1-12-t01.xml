@@ -9,10 +9,12 @@
         <rule object="PDPerms">
             <id specification="ISO_19005_2" clause="6.1.12" testNumber="1"/>
             <description>No keys other than UR3 and DocMDP shall be present in a permissions dictionary (ISO 32000-1:2008, 12.8.4, Table 258).</description>
-            <test>containsOtherEntries == false</test>
+            <test>entries.split('&amp;').filter(elem =&gt; elem != 'UR3' &amp;&amp; elem != 'DocMDP').length == 0</test>
             <error>
-                <message>The document permissions dictionary contains keys other than UR3 and DocMDP</message>
-                <arguments/>
+                <message>The document permissions dictionary contains key(s) %1 other than UR3 and DocMDP</message>
+                <arguments>
+                    <argument>entries.split('&amp;').filter(elem =&gt; elem != 'UR3' &amp;&amp; elem != 'DocMDP').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1:2008" clause="12.8.4"/>

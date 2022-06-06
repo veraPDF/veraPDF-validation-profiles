@@ -11,8 +11,10 @@
             <description>A circular mapping shall not exist</description>
             <test>circularMappingExist != true</test>
             <error>
-                <message>A circular mapping exists</message>
-                <arguments/>
+                <message>A circular mapping exists for %1 structure type</message>
+                <arguments>
+                    <argument>valueS</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

@@ -11,8 +11,10 @@
             <description>Standard tags defined in ISO 32000-1:2008, 14.8.4, shall not be remapped.</description>
             <test>isRemappedStandardType == false</test>
             <error>
-                <message>Standard type is remapped</message>
-                <arguments/>
+                <message>Standard type %1 is remapped</message>
+                <arguments>
+                    <argument>valueS</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4"/>

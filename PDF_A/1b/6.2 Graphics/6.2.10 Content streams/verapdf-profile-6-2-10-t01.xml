@@ -13,8 +13,10 @@
 			even if such operators are bracketed by the BX/EX compatibility operators</description>
             <test>false</test>
             <error>
-                <message>A content stream contains an operator not defined in PDF Reference</message>
-                <arguments/>
+                <message>A content stream contains operator %1 not defined in PDF Reference</message>
+                <arguments>
+                    <argument>name</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

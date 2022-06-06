@@ -13,8 +13,11 @@
 			defined in PDF Reference 9.7.4, in the role map dictionary of the structure tree root.</description>
             <test>false</test>
             <error>
-                <message>Non-standard structure type is not mapped to a standard type</message>
-                <arguments/>
+                <message>Non-standard structure type %1 is not mapped to a standard type, or a circular mapping for this
+                    structure type is detected</message>
+                <arguments>
+                    <argument>valueS</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="PDF 1.4 Reference" clause="9.7.4"/>
