@@ -11,8 +11,10 @@
             <description>Content marked as Artifact should not present inside tagged content</description>
             <test>tag != 'Artifact' || parentStructureTag == null</test>
             <error>
-                <message>Content marked as Artifact is present inside tagged content</message>
-                <arguments/>
+                <message>Content marked as Artifact is present inside tagged content (tag %1)</message>
+                <arguments>
+                    <argument>parentStructureTag</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
