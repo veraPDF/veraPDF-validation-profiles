@@ -11,8 +11,10 @@
             <description>Tagged content should not present inside content marked as Artifact</description>
             <test>structureTag == null || parentsTags.split('&amp;').filter(elem =&gt; elem == 'Artifact').length == 0</test>
             <error>
-                <message>Tagged content is present inside content marked as Artifact</message>
-                <arguments/>
+                <message>Tagged content (tag %1) is present inside content marked as Artifact</message>
+                <arguments>
+                    <argument>structureTag</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

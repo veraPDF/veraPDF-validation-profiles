@@ -13,8 +13,10 @@
 			of the tables in 6.6.2.3.3 shall be present in any extension schema container schema.</description>
             <test>containsUndefinedFields == false</test>
             <error>
-                <message>An extension schema object contains fields not defined by the specification</message>
-                <arguments/>
+                <message>An extension schema object contains field(s) %1 not defined by the specification</message>
+                <arguments>
+                    <argument>undefinedFields</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

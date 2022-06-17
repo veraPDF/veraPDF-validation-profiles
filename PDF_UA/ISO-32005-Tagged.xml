@@ -22,10 +22,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="2"/>
-            <description>&lt;StructTreeRoot&gt; shall contain exactly one &lt;Document&gt;</description>
+            <description>StructTreeRoot shall contain exactly one &lt;Document&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Document').length == 1</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; either either doesn't contain or contains more than one &lt;Document&gt;</message>
+                <message>StructTreeRoot either either doesn't contain or contains more than one &lt;Document&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -34,10 +34,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="3"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;DocumentFragment&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;DocumentFragment&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'DocumentFragment').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;DocumentFragment&gt;</message>
+                <message>StructTreeRoot contains &lt;DocumentFragment&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -46,10 +46,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="4"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Part&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Part&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Part').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Part&gt;</message>
+                <message>StructTreeRoot contains &lt;Part&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -58,10 +58,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="5"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Art&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Art&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Art').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Art&gt;</message>
+                <message>StructTreeRoot contains &lt;Art&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -70,10 +70,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="6"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Div&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Div&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Div').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Div&gt;</message>
+                <message>StructTreeRoot contains &lt;Div&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -82,10 +82,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="7"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Sect&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Sect&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Sect').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Sect&gt;</message>
+                <message>StructTreeRoot contains &lt;Sect&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -94,10 +94,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="8"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;TOC&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;TOC&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TOC').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;TOC&gt;</message>
+                <message>StructTreeRoot contains &lt;TOC&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -106,10 +106,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="9"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;TOCI&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;TOCI&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TOCI').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;TOCI&gt;</message>
+                <message>StructTreeRoot contains &lt;TOCI&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -118,10 +118,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="10"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Aside&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Aside&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Aside').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Aside&gt;</message>
+                <message>StructTreeRoot contains &lt;Aside&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -130,10 +130,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="11"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;BlockQuote&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;BlockQuote&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'BlockQuote').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;BlockQuote&gt;</message>
+                <message>StructTreeRoot contains &lt;BlockQuote&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -142,10 +142,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="12"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;NonStruct&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;NonStruct&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'NonStruct').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;NonStruct&gt;</message>
+                <message>StructTreeRoot contains &lt;NonStruct&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -154,10 +154,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="13"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Private&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Private&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Private').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Private&gt;</message>
+                <message>StructTreeRoot contains &lt;Private&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -166,10 +166,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="14"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;P&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;P&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'P').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;P&gt;</message>
+                <message>StructTreeRoot contains &lt;P&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -178,10 +178,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="15"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Note&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Note&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Note').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Note&gt;</message>
+                <message>StructTreeRoot contains &lt;Note&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -190,10 +190,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="16"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Code&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Code&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Code').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Code&gt;</message>
+                <message>StructTreeRoot contains &lt;Code&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -202,10 +202,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="17"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Hn&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Hn&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; /^H[1-9][0-9]*$/.test(elem)).length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Hn&gt;</message>
+                <message>StructTreeRoot contains &lt;Hn&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -214,10 +214,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="18"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;H&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;H&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'H').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;H&gt;</message>
+                <message>StructTreeRoot contains &lt;H&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -226,10 +226,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="19"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Title&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Title&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Title').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Title&gt;</message>
+                <message>StructTreeRoot contains &lt;Title&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -238,10 +238,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="20"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Sub&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Sub&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Sub').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Sub&gt;</message>
+                <message>StructTreeRoot contains &lt;Sub&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -250,10 +250,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="21"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Lbl&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Lbl&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Lbl').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Lbl&gt;</message>
+                <message>StructTreeRoot contains &lt;Lbl&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -262,10 +262,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="22"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Em&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Em&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Em').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Em&gt;</message>
+                <message>StructTreeRoot contains &lt;Em&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -274,10 +274,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="23"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Strong&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Strong&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Strong').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Strong&gt;</message>
+                <message>StructTreeRoot contains &lt;Strong&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -286,10 +286,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="24"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Span&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Span&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Span').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Span&gt;</message>
+                <message>StructTreeRoot contains &lt;Span&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -298,10 +298,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="25"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Quote&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Quote&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Quote').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Quote&gt;</message>
+                <message>StructTreeRoot contains &lt;Quote&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -310,10 +310,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="26"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Link&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Link&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Link').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Link&gt;</message>
+                <message>StructTreeRoot contains &lt;Link&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -322,10 +322,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="27"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Reference&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Reference&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Reference').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Reference&gt;</message>
+                <message>StructTreeRoot contains &lt;Reference&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -334,10 +334,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="28"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Annot&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Annot&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Annot').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Annot&gt;</message>
+                <message>StructTreeRoot contains &lt;Annot&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -346,10 +346,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="29"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Form&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Form&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Form').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Form&gt;</message>
+                <message>StructTreeRoot contains &lt;Form&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -358,10 +358,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="30"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Ruby&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Ruby&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Ruby').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Ruby&gt;</message>
+                <message>StructTreeRoot contains &lt;Ruby&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -370,10 +370,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="31"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;RB&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;RB&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'RB').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;RB&gt;</message>
+                <message>StructTreeRoot contains &lt;RB&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -382,10 +382,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="32"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;RT&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;RT&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'RT').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;RT&gt;</message>
+                <message>StructTreeRoot contains &lt;RT&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -394,10 +394,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="33"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;RP&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;RP&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'RP').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;RP&gt;</message>
+                <message>StructTreeRoot contains &lt;RP&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -406,10 +406,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="34"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Warichu&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Warichu&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Warichu').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Warichu&gt;</message>
+                <message>StructTreeRoot contains &lt;Warichu&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -418,10 +418,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="35"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;WT&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;WT&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'WT').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;WT&gt;</message>
+                <message>StructTreeRoot contains &lt;WT&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -430,10 +430,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="36"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;WP&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;WP&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'WP').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;WP&gt;</message>
+                <message>StructTreeRoot contains &lt;WP&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -442,10 +442,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="37"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;FENote&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;FENote&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'FENote').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;FENote&gt;</message>
+                <message>StructTreeRoot contains &lt;FENote&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -454,10 +454,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="38"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Index&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Index&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Index').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Index&gt;</message>
+                <message>StructTreeRoot contains &lt;Index&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -466,10 +466,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="39"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;L&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;L&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'L').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;L&gt;</message>
+                <message>StructTreeRoot contains &lt;L&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -478,10 +478,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="40"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;LI&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;LI&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'LI').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;LI&gt;</message>
+                <message>StructTreeRoot contains &lt;LI&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -490,10 +490,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="41"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;LBody&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;LBody&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'LBody').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;LBody&gt;</message>
+                <message>StructTreeRoot contains &lt;LBody&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -502,10 +502,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="42"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;BibEntry&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;BibEntry&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'BibEntry').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;BibEntry&gt;</message>
+                <message>StructTreeRoot contains &lt;BibEntry&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -514,10 +514,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="43"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Table&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Table&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Table').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Table&gt;</message>
+                <message>StructTreeRoot contains &lt;Table&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -526,10 +526,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="44"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;TR&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;TR&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TR').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;TR&gt;</message>
+                <message>StructTreeRoot contains &lt;TR&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -538,10 +538,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="45"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;TH&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;TH&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TH').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;TH&gt;</message>
+                <message>StructTreeRoot contains &lt;TH&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -550,10 +550,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="46"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;TD&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;TD&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TD').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;TD&gt;</message>
+                <message>StructTreeRoot contains &lt;TD&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -562,10 +562,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="47"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;THead&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;THead&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;THead&gt;</message>
+                <message>StructTreeRoot contains &lt;THead&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -574,10 +574,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="48"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;TBody&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;TBody&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;TBody&gt;</message>
+                <message>StructTreeRoot contains &lt;TBody&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -586,10 +586,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="49"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;TFoot&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;TFoot&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;TFoot&gt;</message>
+                <message>StructTreeRoot contains &lt;TFoot&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -598,10 +598,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="50"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Caption&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Caption&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Caption').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Caption&gt;</message>
+                <message>StructTreeRoot contains &lt;Caption&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -610,10 +610,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="51"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Figure&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Figure&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Figure&gt;</message>
+                <message>StructTreeRoot contains &lt;Figure&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -622,10 +622,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="52"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Formula&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Formula&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Formula').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Formula&gt;</message>
+                <message>StructTreeRoot contains &lt;Formula&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -634,10 +634,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="53"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain &lt;Artifact&gt;</description>
+            <description>StructTreeRoot shall not contain &lt;Artifact&gt;</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Artifact').length == 0</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains &lt;Artifact&gt;</message>
+                <message>StructTreeRoot contains &lt;Artifact&gt;</message>
                 <arguments/>
             </error>
             <references>
@@ -646,10 +646,10 @@
         </rule>
         <rule object="PDStructTreeRoot">
             <id specification="ISO_32005" clause="6.2" testNumber="54"/>
-            <description>&lt;StructTreeRoot&gt; shall not contain content item</description>
+            <description>StructTreeRoot shall not contain content item</description>
             <test>hasContentItems == false</test>
             <error>
-                <message>&lt;StructTreeRoot&gt; contains content item(s)</message>
+                <message>StructTreeRoot contains content item(s)</message>
                 <arguments/>
             </error>
             <references>

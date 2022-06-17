@@ -13,8 +13,10 @@
                 is required.</description>
             <test>hasCorrectAlt == true</test>
             <error>
-                <message>Alt key is missing from the media clip data dictionary or has not correct value</message>
-                <arguments/>
+                <message>Alt key (value %1) is missing from the media clip data dictionary or has incorrect value</message>
+                <arguments>
+                    <argument>Alt</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="13.2.4.2"/>
