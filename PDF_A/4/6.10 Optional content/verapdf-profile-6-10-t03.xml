@@ -13,7 +13,7 @@
 			to all OCGs in the conforming file.</description>
             <test>OCGsNotContainInOrder == ''</test>
             <error>
-                <message>Optional content groups %1 are not present in the Order entry of the optional content configuration dictionary</message>
+                <message>Optional content group(s) %1 not presented in the Order entry of the optional content configuration dictionary</message>
                 <arguments>
                     <argument>OCGsNotContainInOrder</argument>
                 </arguments>
