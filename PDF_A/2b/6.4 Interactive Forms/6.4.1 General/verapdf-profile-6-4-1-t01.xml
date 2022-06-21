@@ -13,7 +13,7 @@
             <error>
                 <message>A Widget annotation contains %1 key(s)</message>
                 <arguments>
-                    <argument>keys.split('&amp;').filter(elem =&gt; elem == 'A' || elem == 'AA').toString()</argument>
+                    <argument>entries.split('&amp;').filter(elem =&gt; elem == 'A' || elem == 'AA').toString()</argument>
                 </arguments>
             </error>
             <references/>
