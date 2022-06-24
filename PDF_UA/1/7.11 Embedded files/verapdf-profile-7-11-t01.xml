@@ -11,8 +11,12 @@
             <description>The file specification dictionary for an embedded file shall contain the non-empty F and UF keys</description>
             <test>containsEF == false || (F != null &amp;&amp; F != '' &amp;&amp; UF != null &amp;&amp; UF != '')</test>
             <error>
-                <message>The file specification dictionary for an embedded file does not contain either F or EF key or at least one of the keys is empty</message>
-                <arguments/>
+                <message>The file specification dictionary for an embedded file does not contain either F or UF key or
+                    at least one of the keys is empty (F = %1, UF = %2)</message>
+                <arguments>
+                    <argument>F</argument>
+                    <argument>UF</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

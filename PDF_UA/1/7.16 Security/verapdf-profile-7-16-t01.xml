@@ -15,8 +15,12 @@
             <error>
                 <message>The file is encrypted but does not contain a P entry in its encryption dictionary or
                     the file is encrypted and does contain a P entry, but the 10th bit position of the P entry is false
+                    (P = %1, 10th bit = %2)
                 </message>
-                <arguments/>
+                <arguments>
+                    <argument>P</argument>
+                    <argument>P != null ? (P &amp; 512) >> 9 : null</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="7.6.3.2"/>
