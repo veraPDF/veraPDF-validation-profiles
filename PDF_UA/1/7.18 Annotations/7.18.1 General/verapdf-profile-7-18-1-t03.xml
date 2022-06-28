@@ -16,8 +16,8 @@
             <test>isOutsideCropBox == true || (F &amp; 2) == 2 || (TU != null &amp;&amp; TU != '') || (Alt != null &amp;&amp; Alt != '')</test>
             <error>
                 <message>A form field whose hidden flag is not set and whose rectangle is not outside the crop-box
-                    has neither TU key nor its Widget annotations do not have alternative descriptions
-                    (in the form of an Alt entry in the enclosing structure element)</message>
+                    neither has TU key nor its Widget annotations have alternative descriptions (in the form of an Alt
+                    entry in the enclosing structure element)</message>
                 <arguments/>
             </error>
             <references/>
