@@ -13,8 +13,14 @@
 			byte values shall have a decimal value greater than 127</description>
             <test>headerByte1 &gt; 127 &amp;&amp; headerByte2 &gt; 127 &amp;&amp; headerByte3 &gt; 127 &amp;&amp; headerByte4 &gt; 127</test>
             <error>
-                <message>Binary comment in the file header is missing or does not comply PDF/A requirements</message>
-                <arguments/>
+                <message>Binary comment in the file header is missing or does not start with 4 bytes with byte values
+                    above 127 (first four bytes = %1, %2, %3, %4)</message>
+                <arguments>
+                    <argument>headerByte1</argument>
+                    <argument>headerByte2</argument>
+                    <argument>headerByte3</argument>
+                    <argument>headerByte4</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

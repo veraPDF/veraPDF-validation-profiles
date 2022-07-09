@@ -18,10 +18,11 @@
             <test>isSymbolic == true || ((Encoding == &quot;MacRomanEncoding&quot; ||
                 Encoding == &quot;WinAnsiEncoding&quot;) &amp;&amp; containsDifferences == false)</test>
             <error>
-                <message>A non-symbolic TrueType font has an encoding %1 different from MacRomanEncoding or
-                    WinAnsiEncoding or Encoding entry contains a Differences entry.</message>
+                <message>A non-symbolic TrueType font encoding does not define a correct mapping to the Adobe Glyph List
+                    (Encoding = %1, Encoding entry contains a Differences = %2)</message>
                 <arguments>
                     <argument>Encoding</argument>
+                    <argument>containsDifferences</argument>
                 </arguments>
             </error>
             <references>

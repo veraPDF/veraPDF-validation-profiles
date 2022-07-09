@@ -17,8 +17,8 @@
                 OutputIntent, when the DeviceCMYK colour space is used, contains a 'CMYK' destination profile.</description>
             <test>(gPageOutputCS == null ? gDocumentOutputCS == 'CMYK' : gPageOutputCS == 'CMYK') || gTransparencyCS == 'CMYK'</test>
             <error>
-                <message>DeviceCMYK colour space is used without CMYK output intent profile and
-                    without current transparency CMYK blending space</message>
+                <message>DeviceCMYK colour space is used without CMYK output intent profile and without current
+                    transparency blending space being Device-independent CMYK</message>
                 <arguments/>
             </error>
             <references/>

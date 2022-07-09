@@ -13,7 +13,7 @@
                 colorantName == 'Magenta' || colorantName == 'Yellow' || colorantName == 'Black') ?
                 TransferFunction == null : TransferFunction != null)</test>
             <error>
-                <message>Invalid use of TransferFunction key in the Halftone dictionary</message>
+                <message>Custom TransferFunction in a Halftone dictionary is not permitted for primary (CMYK) colorants</message>
                 <arguments/>
             </error>
             <references>

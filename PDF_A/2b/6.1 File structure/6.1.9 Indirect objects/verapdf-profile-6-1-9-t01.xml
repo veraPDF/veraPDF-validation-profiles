@@ -15,7 +15,7 @@
 			keywords shall each be followed by an EOL marker.</description>
             <test>spacingCompliesPDFA</test>
             <error>
-                <message>Spacings of object number and generation number or keywords 'obj' and 'endobj' do not comply PDF/A specification</message>
+                <message>Extra spacings or missing EOL characters around indirect object/generation number or keywords 'obj' and 'endobj'</message>
                 <arguments/>
             </error>
             <references/>

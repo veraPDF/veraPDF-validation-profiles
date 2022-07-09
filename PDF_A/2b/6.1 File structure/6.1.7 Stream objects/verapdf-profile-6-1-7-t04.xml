@@ -23,7 +23,7 @@
                 (internalRepresentation == &quot;Crypt&quot; &amp;&amp; decodeParms == &quot;Identity&quot;)
             </test>
             <error>
-                <message>Inline image uses not permitted or unknown filter %1</message>
+                <message>Unknown or not permitted Stream filter %1 is used</message>
                 <arguments>
                     <argument>internalRepresentation</argument>
                 </arguments>

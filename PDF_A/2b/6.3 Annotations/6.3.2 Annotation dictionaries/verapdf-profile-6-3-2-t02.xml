@@ -11,8 +11,16 @@
             <description>If present, the F key's Print flag bit shall be set to 1 and its Hidden, Invisible, ToggleNoView, and NoView flag bits shall be set to 0.</description>
             <test>F == null || ((F &amp; 1) == 0 &amp;&amp; (F &amp; 2) == 0 &amp;&amp; (F &amp; 4) == 4 &amp;&amp; (F &amp; 32) == 0 &amp;&amp; (F &amp; 256) == 0)</test>
             <error>
-                <message>One of the annotation flags Hidden, Invisible, ToggleNoView, or NoView is set to 1, or the Print flag is set to 0</message>
-                <arguments/>
+                <message>Annotation flags are set the annotation to be hidden/invisible or non-printable
+                    (F = %1, Print = %2, Hidden = %3, Invisible = %4, NoView = %5, ToggleNoView = %6)</message>
+                <arguments>
+                    <argument>F</argument>
+                    <argument>(F &amp; 4) >> 2</argument>
+                    <argument>(F &amp; 1)</argument>
+                    <argument>(F &amp; 2) >> 1</argument>
+                    <argument>(F &amp; 32) >> 5</argument>
+                    <argument>(F &amp; 256) >> 8</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

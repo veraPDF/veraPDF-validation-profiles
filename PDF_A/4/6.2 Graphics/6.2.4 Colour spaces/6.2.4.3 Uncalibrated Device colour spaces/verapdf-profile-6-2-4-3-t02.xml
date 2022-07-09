@@ -18,8 +18,8 @@
             <test>(gPageOutputCS == null ? gDocumentOutputCS == 'RGB ' : gPageOutputCS == 'RGB ') ||
                 gTransparencyCS == 'RGB ' || gTransparencyCS == 'CalRGB'</test>
             <error>
-                <message>DeviceRGB colour space is used without RGB output intent profile and
-                    without current transparency RGB blending space</message>
+                <message>DeviceRGB colour space is used without RGB output intent profile and without current
+                    transparency blending space being Device-independent RGB</message>
                 <arguments/>
             </error>
             <references/>

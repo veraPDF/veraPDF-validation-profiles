@@ -13,7 +13,7 @@
 			character. The endstream keyword shall be preceded by an EOL marker.</description>
             <test>streamKeywordCRLFCompliant == true &amp;&amp; endstreamKeywordEOLCompliant == true</test>
             <error>
-                <message>Spacings of keywords 'stream' and 'endstream' do not comply PDF/A specification</message>
+                <message>Extra spacings or missing EOL characters around keywords 'stream' and 'endstream'</message>
                 <arguments/>
             </error>
             <references/>
