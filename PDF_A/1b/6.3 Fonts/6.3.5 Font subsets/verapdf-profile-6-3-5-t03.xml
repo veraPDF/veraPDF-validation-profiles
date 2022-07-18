@@ -13,7 +13,8 @@
 			CIDSet stream identifying which CIDs are present in the embedded CIDFont file, as described in PDF Reference Table 5.20</description>
             <test>fontName.search(/[A-Z]{6}\+/) != 0 || (CIDSet_size == 1 &amp;&amp; cidSetListsAllGlyphs == true)</test>
             <error>
-                <message>A CID Font subset does not define CIDSet entry in its Descriptor dictionary</message>
+                <message>A CIDSet entry in the Font descriptor is missing or does not correctly identify all glyphs
+                    present in the embedded font subset and used for rendering</message>
                 <arguments/>
             </error>
             <references>

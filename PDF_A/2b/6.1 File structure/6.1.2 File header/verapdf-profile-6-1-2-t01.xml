@@ -13,7 +13,8 @@
 			where 'n' is a single digit number between 0 (30h) and 7 (37h)</description>
             <test>headerOffset == 0 &amp;&amp; /^%PDF-1\.[0-7]$/.test(header)</test>
             <error>
-                <message>File header %1 starts at byte offset %2 instead of 0 or does not comply with the requirements of PDF/A-2 specification</message>
+                <message>File header %1 (offset = %2) starts at non-zero offset or does not match the pattern %PDF-1.n,
+                    where 'n' is a single digit number between 0 and 7</message>
                 <arguments>
                     <argument>header</argument>
                     <argument>headerOffset</argument>

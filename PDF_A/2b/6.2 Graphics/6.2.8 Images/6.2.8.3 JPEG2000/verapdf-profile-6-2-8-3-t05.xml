@@ -9,10 +9,12 @@
         <rule object="JPEG2000">
             <id specification="ISO_19005_2" clause="6.2.8.3" testNumber="5"/>
             <description>The bit-depth of the JPEG2000 data shall have a value in the range 1 to 38. All colour channels in the JPEG2000 data shall have the same bit-depth.</description>
-            <test>bpccBoxPresent == false &amp;&amp; (bitDepth &gt;= 1 &amp;&amp; bitDepth &lt;= 38) </test>
+            <test>bpccBoxPresent == false &amp;&amp; (bitDepth &gt;= 1 &amp;&amp; bitDepth &lt;= 38)</test>
             <error>
                 <message>JPEG2000 image has invalid bit-depth parameters</message>
-                <arguments/>
+                <arguments>
+                    <argument>bitDepth</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

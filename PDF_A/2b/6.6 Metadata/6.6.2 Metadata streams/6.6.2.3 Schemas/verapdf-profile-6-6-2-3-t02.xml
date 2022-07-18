@@ -13,7 +13,7 @@
 			The required schema namespace prefix is pdfaExtension. pdfaExtension:schemas - Bag Schema - Description of extension schemas</description>
             <test>isValidBag == true &amp;&amp; prefix == &quot;pdfaExtension&quot;</test>
             <error>
-                <message>Invalid syntax of the extension schema container</message>
+                <message>Invalid type or prefix of the extension schema container</message>
                 <arguments/>
             </error>
             <references/>
