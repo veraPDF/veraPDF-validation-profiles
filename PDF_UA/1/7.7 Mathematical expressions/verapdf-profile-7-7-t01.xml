@@ -13,7 +13,7 @@
                 14.8.4.5 and shall have Alt or ActualText attributes</description>
             <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
             <error>
-                <message>Formula tag is missing Alt and ActualText attributes</message>
+                <message>Formula structure element neither has an alternate description nor a replacement text</message>
                 <arguments/>
             </error>
             <references>
