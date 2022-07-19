@@ -13,7 +13,7 @@
                 marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
             <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
             <error>
-                <message>Figure tag alternative and replacement text missing</message>
+                <message>Figure structure element neither has an alternate description nor a replacement text</message>
                 <arguments/>
             </error>
             <references>
