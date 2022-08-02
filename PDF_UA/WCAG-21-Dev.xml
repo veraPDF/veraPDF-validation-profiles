@@ -298,6 +298,19 @@
             </error>
             <references/>
         </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="25"/>
+            <description>The structure type and attributes of a TOCI shall be semantically appropriate.</description>
+            <test>(correctType == 'TOCI' &amp;&amp; correctSemanticScore >= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
     </rules>
     <variables/>
 </profile>
