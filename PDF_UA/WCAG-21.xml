@@ -11,8 +11,10 @@
             <description>Text should not contain repeated non space characters</description>
             <test>isNonSpace == false || numberOfRepeatedCharacters &lt; 5</test>
             <error>
-                <message>Text contains repeated non space characters</message>
-                <arguments/>
+                <message>Text contains %1 repeated non space characters</message>
+                <arguments>
+                    <argument>numberOfRepeatedCharacters</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -21,8 +23,10 @@
             <description>Text should not contain repeated space characters</description>
             <test>isNonSpace == true || numberOfRepeatedCharacters &lt; 3</test>
             <error>
-                <message>Text contains repeated space characters</message>
-                <arguments/>
+                <message>Text contains %1 repeated space characters</message>
+                <arguments>
+                    <argument>numberOfRepeatedCharacters</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
