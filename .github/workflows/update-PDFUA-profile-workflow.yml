@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.11
+
       - name: Commit to veraPDF-library
         uses: drud/action-cross-commit@master
         with:
@@ -29,3 +30,13 @@ jobs:
           git-user: "Git User"
           git-commit-message: ${{ github.event.head_commit.message }}
           git-commit-sign-off: "false"
+
+      - name: Notify slack if library wasn't updated
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel_id: C03E3JJGLQL
+          status: FAILED
+          color: danger
