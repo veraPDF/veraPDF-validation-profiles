@@ -558,6 +558,70 @@
             </error>
             <references/>
         </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="28"/>
+            <description>The structure type and attributes of a TOCI shall be semantically appropriate.</description>
+            <test>correctType != 'TOCI' || standardType == 'TOCI'</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="29"/>
+            <description>TOCI shall contain one or more text lines</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
+            <error>
+                <message>TOCI doesn't have a text</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="30"/>
+            <description>TOCI should contain a link to the destination page</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1001).length == 0</test>
+            <error>
+                <message>TOCI doesn't have a destination</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="31"/>
+            <description>TOCI page label shall match the destination page</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1002).length == 0</test>
+            <error>
+                <message>TOCI has a wrong page label</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="32"/>
+            <description>TOCI shall have a right alignment that matches a right alignment of other TOCIs</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1003).length == 0</test>
+            <error>
+                <message>TOCI has a bad right alignment</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="33"/>
+            <description>TOCI text shall match the corresponding header on the destination page</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1005).length == 0</test>
+            <error>
+                <message>TOCI text not found on a destination page</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
         <rule object="MainXMPPackage">
             <id specification="ISO_14289_1" clause="5" testNumber="1"/>
             <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema.</description>
