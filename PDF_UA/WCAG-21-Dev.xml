@@ -172,10 +172,11 @@
             <description>The structure type and attributes of a list shall be semantically appropriate.</description>
             <test>(correctType == 'L' &amp;&amp; correctSemanticScore >= 0.75)</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -185,10 +186,11 @@
             <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
             <test>(correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75)</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -198,10 +200,11 @@
             <description>The structure type and attributes of a list label shall be semantically appropriate.</description>
             <test>(correctType == 'Lbl' &amp;&amp; correctSemanticScore >= 0.75)</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -211,10 +214,11 @@
             <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
             <test>(correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75)</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -227,10 +231,11 @@
                 correctType != 'Table') || (standardType != 'L' &amp;&amp; standardType != 'LI' &amp;&amp;
                 standardType != 'Lbl' &amp;&amp; standardType != 'LBody')</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -240,7 +245,7 @@
             <description>List item does not contain a label</description>
             <test>correctType != 'LI'</test>
             <error>
-                <message>score = %1, correct type = %2, structure id = %3</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
@@ -254,10 +259,11 @@
             <description>The structure type and attributes of table headers shall be semantically appropriate.</description>
             <test>(correctType == 'THead' &amp;&amp; correctSemanticScore >= 0.75)</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -267,10 +273,11 @@
             <description>The structure type and attributes of a table body shall be semantically appropriate.</description>
             <test>(correctType == 'TBody' &amp;&amp; correctSemanticScore >= 0.75)</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -280,10 +287,11 @@
             <description>The structure type and attributes of a table footer shall be semantically appropriate.</description>
             <test>(correctType == 'TFoot' &amp;&amp; correctSemanticScore >= 0.75)</test>
             <error>
-                <message>score = %1, correct type = %2</message>
+                <message>score = %1, correct type = %2, id = %3</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -298,79 +306,57 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
-            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="25"/>
-            <description>The structure type and attributes of a TOCI shall be semantically appropriate.</description>
-            <test>(correctType == 'TOCI' &amp;&amp; correctSemanticScore >= 0.75)</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SAStructElem">
-            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="26"/>
-            <description>The structure type and attributes of a TOCI shall be semantically appropriate.</description>
-            <test>correctType != 'TOCI' || standardType == 'TOCI'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SAStructElem">
-            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="27"/>
-            <description>TOCI should have a text</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
-            <error>
-                <message>TOCI doesn't have a text</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SAStructElem">
+        <rule object="SATableCell">
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="28"/>
-            <description>TOCI should have a destination</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1001).length == 0</test>
+            <description>This cell is below than some cells in the next row</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1100).length == 0</test>
             <error>
-                <message>TOCI doesn't have a destination</message>
+                <message>This cell is below than some cells in the next row</message>
                 <arguments/>
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SATableCell">
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="29"/>
-            <description>TOCI should have a page label that coincides with a destination page number</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1002).length == 0</test>
+            <description>This cell is above than some cells in the previous row</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
             <error>
-                <message>TOCI has a wrong page label</message>
+                <message>This cell is above than some cells in the previous row</message>
                 <arguments/>
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SATableCell">
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="30"/>
-            <description>TOCI should have a right alignment that matches a right alignment of other TOCIs</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1003).length == 0</test>
+            <description>This cell is to the right of some cells in the next column</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1102).length == 0</test>
             <error>
-                <message>TOCI has a bad right alignment</message>
+                <message>This cell is to the right of some cells in the next column</message>
                 <arguments/>
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SATableCell">
             <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="31"/>
-            <description>TOCI text should be placed on a destination page</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1005).length == 0</test>
+            <description>This cell is to the left of some cells in the previous column</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
             <error>
-                <message>TOCI text not found on a destination page</message>
+                <message>This cell is to the left of some cells in the previous column</message>
                 <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATH">
+            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="32"/>
+            <description>This structure element should be a table cell instead of a table header</description>
+            <test>correctType != 'TD'</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
