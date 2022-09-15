@@ -173,7 +173,11 @@
             <test>colSpan == 1 &amp;&amp; rowSpan == 1</test>
             <error>
                 <message>Table has merged cells</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -307,7 +311,8 @@
         <rule object="SAStructElem">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
             <description>Missing table element</description>
-            <test>hasLowestDepthError == false || (correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
+            <test>hasLowestDepthError == false || (correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) ||
+                ((correctType != 'TD' || standardType == 'TH') &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
                 correctType != 'TFoot' &amp;&amp; correctType != 'Table') || (standardType == 'L' ||
                 parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'L').length &gt; 0) || (standardType == 'TOC' ||
