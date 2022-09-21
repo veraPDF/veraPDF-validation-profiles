@@ -260,54 +260,6 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATR">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="6"/>
-            <description>The structure type and attributes of a table row shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'TR' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATH">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="7"/>
-            <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
-                correctType == 'TR' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody' || correctType == null</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATD">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="8"/>
-            <description>The structure type and attributes of a table cell shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'TD' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TR' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'Table' || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody' || correctType == null</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
         <rule object="SAStructElem">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
             <description>Missing table element</description>
@@ -647,6 +599,76 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1006).length == 0</test>
             <error>
                 <message>This TOC and neighbor TOC(s) should be tagged as one TOC</message>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATable">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="36"/>
+            <description>The number of rows of this table does not match the number of rows of the visual representation of this table</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1104).length == 0</test>
+            <error>
+                <message>The number of rows of this table does not match the number of rows of the visual representation of this table</message>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATable">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="37"/>
+            <description>The number of columns of this table does not match the number of columns of the visual representation of this table</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1105).length == 0</test>
+            <error>
+                <message>The number of columns of this table does not match the number of columns of the visual representation of this table</message>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATableCell">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="38"/>
+            <description>The row span of this table cell does not match the row span of the visual representation of this table cell</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1106).length == 0</test>
+            <error>
+                <message>The row span of this table cell does not match the row span of the visual representation of this table cell</message>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATableCell">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="39"/>
+            <description>The column span of this table cell does not match the column span of the visual representation of this table cell</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1107).length == 0</test>
+            <error>
+                <message>The column span of this table cell does not match the column span of the visual representation of this table cell</message>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAListItem">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="40"/>
+            <description>This content should be tagged as a list item</description>
+            <test>false</test>
+            <error>
+                <message>This content should be tagged as a list item</message>
                 <arguments>
                     <argument></argument>
                     <argument></argument>
