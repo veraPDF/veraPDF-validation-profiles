@@ -8,15 +8,15 @@
     <rules>
         <rule object="SETable">
             <id specification="ISO_14289_1" clause="7.2" testNumber="3"/>
-            <description>Table element may contain a Caption element as its first or last kid and
-                Table element may contain only TR, THead, TBody, TFoot and Caption elements</description>
-            <test>/^(Caption&amp;)?(TR|THead|TBody|TFoot)(&amp;(TR|THead|TBody|TFoot))*$/.test(kidsStandardTypes)
-                || /^(TR|THead|TBody|TFoot)(&amp;(TR|THead|TBody|TFoot))*(&amp;Caption)?$/.test(kidsStandardTypes)
-                || kidsStandardTypes == 'Caption' || kidsStandardTypes == ''</test>
+            <description>Table element may contain only TR, THead, TBody, TFoot and Caption elements</description>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR' &amp;&amp; elem != 'THead'
+                &amp;&amp; elem != 'TBody' &amp;&amp; elem != 'TFoot' &amp;&amp; elem != 'Caption').length == 0 || kidsStandardTypes == ''</test>
             <error>
-                <message>Table element contains more than one Caption element or Table element contains a Caption element not as its first or
-                    last kid or Table element contains not a TR, THead, TBody, TFoot or Caption elements</message>
-                <arguments/>
+                <message>Table element contains %1 element(s) instead of TR, THead, TBode, TFoot or Caption</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR' &amp;&amp; elem != 'THead'
+                        &amp;&amp; elem != 'TBody' &amp;&amp; elem != 'TFoot' &amp;&amp; elem != 'Caption').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>

@@ -27,8 +27,10 @@
                 require it.</description>
             <test>hasCorrectNestingLevel == true</test>
             <error>
-                <message>Does use numbered headings, but the first heading tag is not H1 or numbered heading levels in descending sequence are skipped</message>
-                <arguments/>
+                <message>Heading level %1 is skipped in a descending sequence of header levels</message>
+                <arguments>
+                    <argument>nestingLevel - 1</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.5"/>

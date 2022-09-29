@@ -36,12 +36,15 @@
         </rule>
         <rule object="SEL">
             <id specification="ISO_14289_1" clause="7.2" testNumber="19"/>
-            <description>L element may contain a Caption element as its first kid and L element may contain only L, LI and Caption elements</description>
-            <test>/^(Caption&amp;)?(L|LI)(&amp;(L|LI))*$/.test(kidsStandardTypes) || kidsStandardTypes == '' || kidsStandardTypes == 'Caption'</test>
+            <description>L element may contain only L, LI and Caption elements</description>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'L' &amp;&amp; elem != 'LI'
+                &amp;&amp; elem != 'Caption').length == 0 || kidsStandardTypes == ''</test>
             <error>
-                <message>L element contains more than one Caption element or L element contains a Caption element not as its first kid or
-                    L element contains not a L, LI or Caption elements</message>
-                <arguments/>
+                <message>L element contains %1 element(s) instead of L, LI or Caption</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'L' &amp;&amp; elem != 'LI'
+                        &amp;&amp; elem != 'Caption').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
