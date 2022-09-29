@@ -22,14 +22,15 @@
         </rule>
         <rule object="SETOC">
             <id specification="ISO_14289_1" clause="7.2" testNumber="27"/>
-            <description>TOC element may contain a Caption element as its first kid and
-                TOC element may contain only TOC, TOCI and Caption elements</description>
-            <test>/^(Caption&amp;)?(TOC|TOCI)(&amp;(TOC|TOCI))*$/.test(kidsStandardTypes) || kidsStandardTypes == 'Caption' ||
-                kidsStandardTypes == ''</test>
+            <description>TOC element may contain only TOC, TOCI and Caption elements</description>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TOC' &amp;&amp; elem != 'TOCI'
+                &amp;&amp; elem != 'Caption').length == 0 || kidsStandardTypes == ''</test>
             <error>
-                <message>TOC element contains more than one Caption element or TOC element contains a Caption element
-                    not as its first kid or TOC element contains not a TOC, TOCI or Caption elements</message>
-                <arguments/>
+                <message>TOC element contains %1 element(s) instead of TOC, TOCI or Caption</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TOC' &amp;&amp; elem != 'TOCI'
+                        &amp;&amp; elem != 'Caption').toString()</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>

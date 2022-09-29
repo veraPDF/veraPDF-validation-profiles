@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - Caption of TOC</name>
+        <description>TOC element may contain a Caption element only as its first kid</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETOC">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="28"/>
+            <description>TOC element may contain a Caption element only as its first kid</description>
+            <test>kidsStandardTypes == '' || kidsStandardTypes.split('&amp;').slice(1).findIndex(elem =&gt; elem == 'Caption') &lt; 0</test>
+            <error>
+                <message>TOC element contains Caption as its %1 child instead of first one</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').slice(1).findIndex(elem =&gt; elem == 'Caption') + 2</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1" clause="14.8.4.2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

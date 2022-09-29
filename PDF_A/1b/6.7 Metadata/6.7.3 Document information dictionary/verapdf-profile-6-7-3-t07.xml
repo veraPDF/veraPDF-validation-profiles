@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.269+03:00">
+        <name>ISO 19005-1:2005 - 6.7.3 Document Information Dictionary - Producer and pdf:Producer</name>
+        <description>The value of Producer entry from the document information dictionary, if present, and its
+            analogous XMP property pdf:Producer shall be equivalent.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosInfo">
+            <id specification="ISO_19005_1" clause="6.7.3" testNumber="7"/>
+            <description>The value of Producer entry from the document information dictionary, if present, and its
+                analogous XMP property pdf:Producer shall be equivalent.</description>
+            <test>Producer == null || Producer == XMPProducer</test>
+            <error>
+                <message>The value of Producer entry from the document Info dictionary and its matching XMP property
+                    pdf:Producer are not equivalent (Info /Producer = %1, XMP pdf:Producer = %2)</message>
+                <arguments>
+                    <argument>Producer</argument>
+                    <argument>XMPProducer</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 19005-1:2005/Cor.1:2007/Cor.2:2011" clause="6.7.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

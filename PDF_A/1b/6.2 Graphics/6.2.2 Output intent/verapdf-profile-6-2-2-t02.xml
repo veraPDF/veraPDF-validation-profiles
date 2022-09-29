@@ -13,8 +13,10 @@
 			key shall have as the value of that key the same indirect object, which shall be a valid ICC profile stream</description>
             <test>sameOutputProfileIndirect == true</test>
             <error>
-                <message>File's OutputIntents array contains output intent dictionaries with non-matching destination output profiles</message>
-                <arguments/>
+                <message>File's OutputIntents array contains output intent dictionaries with non-matching destination output profiles (indirect keys %1)</message>
+                <arguments>
+                    <argument>outputProfileIndirects</argument>
+                </arguments>
             </error>
             <references/>
         </rule>

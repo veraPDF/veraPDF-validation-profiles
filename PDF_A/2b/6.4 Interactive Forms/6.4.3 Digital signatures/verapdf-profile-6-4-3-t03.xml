@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:07.432+03:00">
-        <name>ISO 19005-2:2011 - 6.4.3 Digital signatures - Certificate of PKCS#7 object</name>
+        <name>ISO 19005-2:2011 - 6.4.3 Digital signatures - Signer of PKCS#7 object</name>
         <description>The PDF Signature (a DER-encoded PKCS#7 binary data object) shall be placed into the Contents entry of
 		the signature dictionary. The PKCS#7 object shall conform to the PKCS#7 specification in RFC 2315. At
-		minimum, it shall include the signer's X.509 signing certificate.</description>
+		minimum, there shall only be a single signer (e.g. a single "SignerInfo" structure) in the PDF Signature.</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PKCSDataObject">
-            <id specification="ISO_19005_2" clause="6.4.3" testNumber="2"/>
+            <id specification="ISO_19005_2" clause="6.4.3" testNumber="3"/>
             <description>The PDF Signature (a DER-encoded PKCS#7 binary data object) shall be placed into the Contents entry of
 			the signature dictionary. The PKCS#7 object shall conform to the PKCS#7 specification in RFC 2315. At
-			minimum, it shall include the signer's X.509 signing certificate.</description>
-            <test>signingCertificatePresent == true</test>
+			minimum, there shall only be a single signer (e.g. a single "SignerInfo" structure) in the PDF Signature.</description>
+            <test>SignerInfoCount == 1</test>
             <error>
-                <message>The DER-encoded PKCS#7 binary data object representing a PDF Signature does not include the signer's X.509 signing certificate</message>
-                <arguments/>
+                <message>The DER-encoded PKCS#7 binary data object representing a PDF Signature has %1
+                    signer(s) (e.g. a single "SignerInfo" structure) in the PDF Signature instead of one</message>
+                <arguments>
+                    <argument>SignerInfoCount</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 19005-2:2011" clause="Annex B"/>
