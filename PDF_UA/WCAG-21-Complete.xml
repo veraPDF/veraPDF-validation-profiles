@@ -218,22 +218,6 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATable">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="3"/>
-            <description>The structure type and attributes of a table shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'Table' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
-                correctType == 'TFoot' || correctType == 'TR' || correctType == 'L' || correctType == 'LI' ||
-                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TOC' || correctType == 'TOCI'</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
         <rule object="SAH">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="4"/>
             <description>Incorrect use of a heading</description>
@@ -672,6 +656,60 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATableCell">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="41"/>
+            <description>This cell is below than some cells in the next row</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1100).length == 0</test>
+            <error>
+                <message>This cell is below than some cells in the next row</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATableCell">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="42"/>
+            <description>This cell is above than some cells in the previous row</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
+            <error>
+                <message>This cell is above than some cells in the previous row</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATableCell">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="43"/>
+            <description>This cell is to the right of some cells in the next column</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1102).length == 0</test>
+            <error>
+                <message>This cell is to the right of some cells in the next column</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATableCell">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="44"/>
+            <description>This cell is to the left of some cells in the previous column</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
+            <error>
+                <message>This cell is to the left of some cells in the previous column</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATH">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="45"/>
+            <description>This structure element should be a table cell instead of a table header</description>
+            <test>correctType != 'TD'</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
                     <argument>structureID</argument>
                 </arguments>
             </error>
