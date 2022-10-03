@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:04.137+03:00">
-        <name>ISO 19005-1:2005 - 6.8.3 Artifacts - Standard roles</name>
-        <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type, as
-		defined in PDF Reference 9.7.4, in the role map dictionary of the structure tree root.</description>
+        <name>ISO 19005-1:2005 - 6.8.3 Artifacts - Circular mapping</name>
+        <description>A circular mapping shall not exist.</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="SENonStandard">
             <id specification="ISO_19005_1" clause="6.8.3" testNumber="2"/>
-            <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type, as
-			defined in PDF Reference 9.7.4, in the role map dictionary of the structure tree root.</description>
-            <test>circularMappingExist == true</test>
+            <description>A circular mapping shall not exist.</description>
+            <test>circularMappingExist != true</test>
             <error>
-                <message>Non-standard structure type %1 is not mapped to a standard type</message>
+                <message>A circular mapping exists for %1 structure type</message>
                 <arguments>
                     <argument>valueS</argument>
                 </arguments>
