@@ -667,7 +667,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1100).length == 0</test>
             <error>
                 <message>This cell is below than some cells in the next row</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -677,7 +681,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
             <error>
                 <message>This cell is above than some cells in the previous row</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -687,7 +695,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1102).length == 0</test>
             <error>
                 <message>This cell is to the right of some cells in the next column</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -697,7 +709,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
             <error>
                 <message>This cell is to the left of some cells in the previous column</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
