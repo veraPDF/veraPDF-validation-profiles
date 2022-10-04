@@ -667,7 +667,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1100).length == 0</test>
             <error>
                 <message>This cell is below than some cells in the next row</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -677,7 +681,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
             <error>
                 <message>This cell is above than some cells in the previous row</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -687,7 +695,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1102).length == 0</test>
             <error>
                 <message>This cell is to the right of some cells in the next column</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -697,7 +709,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
             <error>
                 <message>This cell is to the left of some cells in the previous column</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -886,7 +902,11 @@
             <error>
                 <message>Table element contains more than one Caption element or Table element contains a Caption element not as its first or
                     last kid or Table element contains not a TR, THead, TBody, TFoot or Caption elements</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -900,6 +920,8 @@
                 <message>TR element contained in %1 instead of Table, THead, TBody or TFoot element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -914,6 +936,8 @@
                 <message>THead element contained in %1 instead of Table element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -928,6 +952,8 @@
                 <message>TBody element contained in %1 instead of Table element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -942,6 +968,8 @@
                 <message>TFoot element contained in %1 instead of Table element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -956,6 +984,8 @@
                 <message>TH element contained in %1 instead of TR element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -970,6 +1000,8 @@
                 <message>TD element contained in %1 instead of TR element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -984,6 +1016,8 @@
                 <message>TR element contains %1 element(s) instead of TH or TD</message>
                 <arguments>
                     <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TD' &amp;&amp; elem != 'TH').toString()</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -996,7 +1030,11 @@
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &lt;= 1</test>
             <error>
                 <message>Table element contains more than one THead kid</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -1008,7 +1046,11 @@
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length &lt;= 1</test>
             <error>
                 <message>Table element contains more than one TFoot kid</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -1021,7 +1063,11 @@
                 kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
             <error>
                 <message>Table element contains TFoot kid, but not contains TBody kids</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -1034,7 +1080,11 @@
                 kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
             <error>
                 <message>Table element contains THead kid, but not contains TBody kids</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
@@ -1061,6 +1111,8 @@
                 <message>LI element contained in %1 instead of L element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -1075,6 +1127,8 @@
                 <message>LBody element contained in %1 instead of LI element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -1088,7 +1142,11 @@
             <error>
                 <message>L element contains more than one Caption element or L element contains a Caption element not as its first kid or
                     L element contains not a L, LI or Caption elements</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
@@ -1102,6 +1160,8 @@
                 <message>LI element contains %1 element(s) instead of Lbl or LBody</message>
                 <arguments>
                     <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'LBody' &amp;&amp; elem != 'Lbl').toString()</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -1167,6 +1227,8 @@
                 <message>TOCI element contained in %1 instead of TOC element</message>
                 <arguments>
                     <argument>parentStandardType</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -1182,7 +1244,11 @@
             <error>
                 <message>TOC element contains more than one Caption element or TOC element contains a Caption element
                     not as its first kid or TOC element contains not a TOC, TOCI or Caption elements</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>
@@ -1263,6 +1329,8 @@
                 <message>THead element contains %1 element(s) instead of TR</message>
                 <arguments>
                     <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').toString()</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -1277,6 +1345,8 @@
                 <message>TBody element contains %1 element(s) instead of TR</message>
                 <arguments>
                     <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').toString()</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
@@ -1291,6 +1361,8 @@
                 <message>TFoot element contains %1 element(s) instead of TR</message>
                 <arguments>
                     <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').toString()</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references>
