@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDDeviceCMYK">
-            <id specification="ISO_19005_1" clause="6.2.3" testNumber="3"/>
+            <id specification="ISO_19005_1" clause="6.2.3.3" testNumber="2"/>
             <description>DeviceCMYK may be used only if the file has a PDF/A-1 OutputIntent that uses a CMYK colour space</description>
             <test>gOutputCS != null &amp;&amp; gOutputCS == &quot;CMYK&quot;</test>
             <error>

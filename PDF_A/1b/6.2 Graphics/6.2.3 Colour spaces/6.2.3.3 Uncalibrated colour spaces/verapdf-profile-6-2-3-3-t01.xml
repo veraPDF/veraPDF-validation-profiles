@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDDeviceRGB">
-            <id specification="ISO_19005_1" clause="6.2.3" testNumber="2"/>
+            <id specification="ISO_19005_1" clause="6.2.3.3" testNumber="1"/>
             <description>DeviceRGB may be used only if the file has a PDF/A-1 OutputIntent that uses an RGB colour space</description>
             <test>gOutputCS != null &amp;&amp; gOutputCS == &quot;RGB &quot;</test>
             <error>

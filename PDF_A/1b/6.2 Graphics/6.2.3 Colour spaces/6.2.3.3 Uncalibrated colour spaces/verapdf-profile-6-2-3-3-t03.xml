@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="PDDeviceGray">
-            <id specification="ISO_19005_1" clause="6.2.3" testNumber="4"/>
+            <id specification="ISO_19005_1" clause="6.2.3.3" testNumber="3"/>
             <description>If an uncalibrated colour space is used in a file then that file shall contain a PDF/A-1 OutputIntent, as defined in 6.2.2</description>
             <test>gOutputCS != null</test>
             <error>
