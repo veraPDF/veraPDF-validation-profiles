@@ -538,8 +538,10 @@
             <description>TOCI page label shall match the destination page</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1002).length == 0</test>
             <error>
-                <message>TOCI has a wrong page label</message>
-                <arguments/>
+                <message>TOCI has a wrong page label. Possible page number(s), which page label could be used: %1</message>
+                <arguments>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1002)]</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -596,10 +598,10 @@
             <description>The number of rows of this table does not match the number of rows of the visual representation of this table</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1104).length == 0</test>
             <error>
-                <message>The number of rows of this table does not match the number of rows of the visual representation of this table</message>
+                <message>The number of rows %1 of this table does not match the number of rows %2 of the visual representation of this table</message>
                 <arguments>
-                    <argument></argument>
-                    <argument></argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1104)].split(';')[0]</argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1104)].split(';')[1]</argument>
                     <argument>structureID</argument>
                 </arguments>
             </error>
@@ -610,10 +612,10 @@
             <description>The number of columns of this table does not match the number of columns of the visual representation of this table</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1105).length == 0</test>
             <error>
-                <message>The number of columns of this table does not match the number of columns of the visual representation of this table</message>
+                <message>The number of columns %1 of this table does not match the number of columns %2 of the visual representation of this table</message>
                 <arguments>
-                    <argument></argument>
-                    <argument></argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[0]</argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[1]</argument>
                     <argument>structureID</argument>
                 </arguments>
             </error>
@@ -624,10 +626,10 @@
             <description>The row span of this table cell does not match the row span of the visual representation of this table cell</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1106).length == 0</test>
             <error>
-                <message>The row span of this table cell does not match the row span of the visual representation of this table cell</message>
+                <message>The row span %1 of this table cell does not match the row span %2 of the visual representation of this table cell</message>
                 <arguments>
-                    <argument></argument>
-                    <argument></argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1106)].split(';')[0]</argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1106)].split(';')[1]</argument>
                     <argument>structureID</argument>
                 </arguments>
             </error>
@@ -638,10 +640,10 @@
             <description>The column span of this table cell does not match the column span of the visual representation of this table cell</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1107).length == 0</test>
             <error>
-                <message>The column span of this table cell does not match the column span of the visual representation of this table cell</message>
+                <message>The column span %1 of this table cell does not match the column span %2 of the visual representation of this table cell</message>
                 <arguments>
-                    <argument></argument>
-                    <argument></argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1107)].split(';')[0]</argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1107)].split(';')[1]</argument>
                     <argument>structureID</argument>
                 </arguments>
             </error>
@@ -727,6 +729,52 @@
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
                     <argument>structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="46"/>
+            <description>TOCI text should be presented in the document</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1007).length == 0</test>
+            <error>
+                <message>TOCI text not found on the document</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="47"/>
+            <description>TOCI text should be presented on a destination page.</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1008).length == 0</test>
+            <error>
+                <message>TOCI text not found on a destination page. Possible destination page number(s): %1</message>
+                <arguments>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1008)]</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="48"/>
+            <description>TOCI should have a destination.</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1009).length == 0</test>
+            <error>
+                <message>TOCI doesn't have a destination. Possible destination page number(s): %1</message>
+                <arguments>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1009)]</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATOCI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="49"/>
+            <description>TOCI should have a right page label.</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1010).length == 0</test>
+            <error>
+                <message>TOCI has a wrong page label. Possible page number(s), which page label could be used: %1</message>
+                <arguments>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1010)]</argument>
                 </arguments>
             </error>
             <references/>
