@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem">
+        <rule object="SENonStandard">
             <id specification="ISO_19005_1" clause="6.8.3.4" testNumber="2"/>
             <description>A circular mapping shall not exist.</description>
             <test>circularMappingExist != true</test>
