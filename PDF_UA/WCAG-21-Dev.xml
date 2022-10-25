@@ -316,60 +316,6 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
-            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="28"/>
-            <description>This cell is below than some cells in the next row</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1100).length == 0</test>
-            <error>
-                <message>This cell is below than some cells in the next row</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATableCell">
-            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="29"/>
-            <description>This cell is above than some cells in the previous row</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
-            <error>
-                <message>This cell is above than some cells in the previous row</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATableCell">
-            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="30"/>
-            <description>This cell is to the right of some cells in the next column</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1102).length == 0</test>
-            <error>
-                <message>This cell is to the right of some cells in the next column</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATableCell">
-            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="31"/>
-            <description>This cell is to the left of some cells in the previous column</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
-            <error>
-                <message>This cell is to the left of some cells in the previous column</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATH">
-            <id specification="WCAG_2_1" clause="4.1.2.1" testNumber="32"/>
-            <description>This structure element should be a table cell instead of a table header</description>
-            <test>correctType != 'TD'</test>
-            <error>
-                <message>score = %1, correct type = %2, id = %3</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                    <argument>structureID</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
     </rules>
     <variables/>
 </profile>

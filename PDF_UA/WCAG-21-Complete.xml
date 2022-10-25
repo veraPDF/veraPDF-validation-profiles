@@ -519,17 +519,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
             <error>
                 <message>TOCI doesn't have a text</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATOCI">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="30"/>
-            <description>TOCI should contain a link to the destination page</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1001).length == 0</test>
-            <error>
-                <message>TOCI doesn't have a destination</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -541,6 +535,8 @@
                 <message>TOCI has a wrong page label. Possible page number(s), which page label could be used: %1</message>
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1002)]</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -551,17 +547,11 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1003).length == 0</test>
             <error>
                 <message>TOCI has a bad right alignment</message>
-                <arguments/>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATOCI">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="33"/>
-            <description>TOCI text shall match the corresponding header on the destination page</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1005).length == 0</test>
-            <error>
-                <message>TOCI text not found on a destination page</message>
-                <arguments/>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -738,8 +728,12 @@
             <description>TOCI text should be presented in the document</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1007).length == 0</test>
             <error>
-                <message>TOCI text not found on the document</message>
-                <arguments/>
+                <message>TOCI text is not found in the document</message>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
+                </arguments>
             </error>
             <references/>
         </rule>
@@ -748,9 +742,11 @@
             <description>TOCI text should be presented on a destination page.</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1008).length == 0</test>
             <error>
-                <message>TOCI text not found on a destination page. Possible destination page number(s): %1</message>
+                <message>TOCI text is not found on a destination page. Possible destination page number(s): %1</message>
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1008)]</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -763,6 +759,8 @@
                 <message>TOCI doesn't have a destination. Possible destination page number(s): %1</message>
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1009)]</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -775,6 +773,8 @@
                 <message>TOCI has a wrong page label. Possible page number(s), which page label could be used: %1</message>
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1010)]</argument>
+                    <argument></argument>
+                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>
