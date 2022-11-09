@@ -8,7 +8,7 @@
     <rules>
         <rule object="SELI">
             <id specification="ISO_14289_1" clause="7.2" testNumber="17"/>
-            <description>LI element should contained in L element</description>
+            <description>LI element should be contained in L element</description>
             <test>parentStandardType == 'L'</test>
             <error>
                 <message>LI element contained in %1 instead of L element</message>
@@ -22,7 +22,7 @@
         </rule>
         <rule object="SELBody">
             <id specification="ISO_14289_1" clause="7.2" testNumber="18"/>
-            <description>LBody element should contained in LI element</description>
+            <description>LBody element should be contained in LI element</description>
             <test>parentStandardType == 'LI'</test>
             <error>
                 <message>LBody element contained in %1 instead of LI element</message>

@@ -770,7 +770,7 @@
         </rule>
         <rule object="SATOCI">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="49"/>
-            <description>TOCI should have a right page label.</description>
+            <description>TOCI should have a correct page label.</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1010).length == 0</test>
             <error>
                 <message>TOCI has a wrong page label. Possible page number(s), which page label could be used: %1</message>
@@ -787,7 +787,7 @@
             <description>TOCI should have a correct numbering.</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1011).length == 0</test>
             <error>
-                <message>TOCI has a wrong numbering. Should be %correctNumbering% instead of %wrongNumbering%</message>
+                <message>TOCI has a wrong numbering. The heading number cannot start with %wrongNumbering%</message>
                 <arguments>
                     <argument name="wrongNumbering">errorArguments.split(';;')[errorCodes.split(',')
                         .findIndex(elem =&gt; elem == 1011)].split(';')[0]</argument>
