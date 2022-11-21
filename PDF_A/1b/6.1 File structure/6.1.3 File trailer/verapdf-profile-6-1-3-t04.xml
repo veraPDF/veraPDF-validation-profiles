@@ -15,8 +15,8 @@
             <error>
                 <message>Last ID (%1) is present in the Linearized PDF and does not match the first page ID (%2)</message>
                 <arguments>
-                    <argument>lastID</argument>
-                    <argument>firstPageID</argument>
+                    <argument>lastIDValue</argument>
+                    <argument>firstPageIDValue</argument>
                 </arguments>
             </error>
             <references>

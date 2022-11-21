@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
-    <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.555+03:00">
-        <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Extension schema ValueType type</name>
-        <description>The ValueType type is an XMP structure containing the definition of all property value
-	types used by embedded extension schemas that are not defined in the XMP Specification. The field namespace URI is &quot;http://www.aiim.org/pdfa/ns/type#&quot;.
-	The required field namespace prefix is pdfaType. The ValueType type includes the following fields: pdfaType:type (Text), pdfaType:namespaceURI (URI),
-	pdfaType:prefix (Text), pdfaType:description (Text), pdfaType:field (Seq Field).</description>
+    <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.442+03:00">
+        <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Extension schema definition - prefix field</name>
+        <description>Field 'prefix' of the PDF/A Schema value type in the PDF/A extension schema shall be present
+            and shall have type Text and namespace prefix 'pdfaSchema'.</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="ExtensionSchemaValueType">
+        <rule object="ExtensionSchemaDefinition">
             <id specification="ISO_19005_1" clause="6.7.8" testNumber="5"/>
-            <description>The ValueType type is an XMP structure containing the definition of all property value
-		types used by embedded extension schemas that are not defined in the XMP Specification. The field namespace URI is &quot;http://www.aiim.org/pdfa/ns/type#&quot;.
-		The required field namespace prefix is pdfaType. The ValueType type includes the following fields: pdfaType:type (Text), pdfaType:namespaceURI (URI),
-		pdfaType:prefix (Text), pdfaType:description (Text), pdfaType:field (Seq Field).</description>
-            <test>(isTypeValidText == true &amp;&amp; typePrefix == &quot;pdfaType&quot;) &amp;&amp;
-			(isNamespaceURIValidURI == true &amp;&amp; namespaceURIPrefix == &quot;pdfaType&quot;) &amp;&amp;
-			(isPrefixValidText == true &amp;&amp; prefixPrefix == &quot;pdfaType&quot;) &amp;&amp;
-			(isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaType&quot; ) &amp;&amp;
-			(isFieldValidSeq == true &amp;&amp; (fieldPrefix == null || fieldPrefix == &quot;pdfaType&quot;) )</test>
+            <description>Field 'prefix' of the PDF/A Schema value type in the PDF/A extension schema shall be present
+                and shall have type Text and namespace prefix 'pdfaSchema'.</description>
+            <test>isPrefixValidText == true &amp;&amp; prefixPrefix == &quot;pdfaSchema&quot;</test>
             <error>
-                <message>Invalid extension schema ValueType type definition</message>
-                <arguments/>
+                <message>Field 'prefix' of the PDF/A Schema value type is not present, or doesn't have prefix
+                    'pdfaSchema' (prefix prefix = %1) or doesn't have type Text (isPrefixValidText = %2)</message>
+                <arguments>
+                    <argument>prefixPrefix</argument>
+                    <argument>isPrefixValidText</argument>
+                </arguments>
             </error>
-            <references/>
+            <references>
+                <reference specification="ISO 19005-1:2005/Cor.1:2007" clause="6.7.8"/>
+            </references>
         </rule>
     </rules>
     <variables/>

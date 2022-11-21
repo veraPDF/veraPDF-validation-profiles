@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.442+03:00">
+        <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Extension schema definition - valueType field</name>
+        <description>Field 'valueType' of the PDF/A Schema value type in the PDF/A extension schema shall have type
+            Seq ValueType and namespace prefix 'pdfaSchema'.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="ExtensionSchemaDefinition">
+            <id specification="ISO_19005_1" clause="6.7.8" testNumber="7"/>
+            <description>Field 'valueType' of the PDF/A Schema value type in the PDF/A extension schema shall have type
+                Seq ValueType and namespace prefix 'pdfaSchema'.</description>
+            <test>isValueTypeValidSeq == true &amp;&amp; (valueTypePrefix == null || valueTypePrefix == &quot;pdfaSchema&quot;)</test>
+            <error>
+                <message>Field 'valueType' of the PDF/A Schema value type doesn't have prefix 'pdfaSchema'
+                    (valueType prefix = %1) or doesn't have type Seq ValueType (isValueTypeValidSeq = %2)</message>
+                <arguments>
+                    <argument>valueTypePrefix</argument>
+                    <argument>isValueTypeValidSeq</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 19005-1:2005/Cor.1:2007" clause="6.7.8"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

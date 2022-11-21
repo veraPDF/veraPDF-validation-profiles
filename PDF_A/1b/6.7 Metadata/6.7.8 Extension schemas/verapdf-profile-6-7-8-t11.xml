@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.496+03:00">
+        <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Extension schema property - description field</name>
+        <description>Field 'description' of the PDF/A Property value type in the PDF/A extension schema shall be
+            present and shall have type Text and namespace prefix 'pdfaProperty'.</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="ExtensionSchemaProperty">
+            <id specification="ISO_19005_1" clause="6.7.8" testNumber="11"/>
+            <description>Field 'description' of the PDF/A Property value type in the PDF/A extension schema shall be
+                present and shall have type Text and namespace prefix 'pdfaProperty'.</description>
+            <test>isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaProperty&quot;</test>
+            <error>
+                <message>Field 'description' of the PDF/A Property value type is not present, or doesn't have prefix
+                    'pdfaProperty' (description prefix = %1) or doesn't have type Text (isDescriptionValidText = %2)</message>
+                <arguments>
+                    <argument>descriptionPrefix</argument>
+                    <argument>isDescriptionValidText</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -16,7 +16,7 @@
             <test>SignerInfoCount == 1</test>
             <error>
                 <message>The DER-encoded PKCS#7 binary data object representing a PDF Signature has %1
-                    signer(s) (e.g. a single "SignerInfo" structure) in the PDF Signature instead of one</message>
+                    signer(s) in the PDF Signature instead of one</message>
                 <arguments>
                     <argument>SignerInfoCount</argument>
                 </arguments>
