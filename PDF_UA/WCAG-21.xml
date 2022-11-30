@@ -81,7 +81,7 @@
             <id specification="WCAG_2_1" clause="1.4.4" testNumber="1"/>
             <description>Font size is too small: text may not be resized without assistive technology
                 up to 200 percent without loss of content or functionality.</description>
-            <test>textSize >= 4.5</test>
+            <test>textSize >= 4.5 || isWhiteSpaceChunk == true</test>
             <error>
                 <message>textSize = %1</message>
                 <arguments>
