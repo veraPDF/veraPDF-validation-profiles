@@ -131,7 +131,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -172,7 +172,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -186,7 +186,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -200,7 +200,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -214,7 +214,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -228,7 +228,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -245,7 +245,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -259,7 +259,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -273,7 +273,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -287,7 +287,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -301,7 +301,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
