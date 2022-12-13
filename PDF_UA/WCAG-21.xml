@@ -176,19 +176,8 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SAPDFDocument">
-            <id specification="WCAG_2_1" clause="4.1.1" testNumber="4"/>
-            <description>The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry
-                of the document's Catalog dictionary</description>
-            <test>StructTreeRoot_size == 1</test>
-            <error>
-                <message>StructTreeRoot entry is not present in the document catalog</message>
-                <arguments/>
             </error>
             <references/>
         </rule>
@@ -258,7 +247,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -417,7 +406,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -508,7 +497,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -522,7 +511,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -536,7 +525,7 @@
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1002)]</argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -550,7 +539,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -564,7 +553,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -578,7 +567,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -592,7 +581,7 @@
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1104)].split(';')[0]</argument>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1104)].split(';')[1]</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -606,7 +595,7 @@
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[0]</argument>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[1]</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -620,7 +609,7 @@
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1106)].split(';')[0]</argument>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1106)].split(';')[1]</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -634,7 +623,7 @@
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1107)].split(';')[0]</argument>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1107)].split(';')[1]</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -648,7 +637,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -662,7 +651,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -676,7 +665,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -690,7 +679,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -704,7 +693,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -718,7 +707,7 @@
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -732,7 +721,7 @@
                 <arguments>
                     <argument></argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -763,7 +752,7 @@
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1009)]</argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
@@ -777,7 +766,7 @@
                 <arguments>
                     <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1010)]</argument>
                     <argument></argument>
-                    <argument>structureID</argument>
+                    <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
             <references/>
