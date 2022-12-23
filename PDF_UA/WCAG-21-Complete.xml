@@ -42,10 +42,10 @@
         </rule>
         <rule object="SATextChunk">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="4"/>
-            <description>If text has a different style, it shall be tagged as Span</description>
+            <description>If text has a different style, it shall be tagged as Span, Em, Strong or other appropriate inline element</description>
             <test>hasSpecialStyle == false</test>
             <error>
-                <message>Text has a different style and not tagged as Span</message>
+                <message>Text has a different style and not tagged as Span, Em, Strong or other appropriate inline element</message>
                 <arguments/>
             </error>
             <references/>
@@ -184,7 +184,7 @@
         <rule object="SAP">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="1"/>
             <description>Incorrect use of a paragraph</description>
-            <test>correctSemanticScore >= 0.75</test>
+            <test>correctSemanticScore >= 0.75 || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -197,7 +197,7 @@
         <rule object="SASpan">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="2"/>
             <description>Incorrect use of a span</description>
-            <test>correctSemanticScore >= 0.75</test>
+            <test>correctSemanticScore >= 0.75 || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -210,7 +210,7 @@
         <rule object="SAH">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="4"/>
             <description>Incorrect use of a heading</description>
-            <test>correctSemanticScore >= 0.75</test>
+            <test>correctSemanticScore >= 0.75 || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -223,7 +223,7 @@
         <rule object="SAHn">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="5"/>
             <description>Incorrect use of a numbered heading</description>
-            <test>correctSemanticScore >= 0.75</test>
+            <test>correctSemanticScore >= 0.75 || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -240,8 +240,7 @@
                 ((correctType != 'TD' || standardType == 'TH') &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
                 correctType != 'TFoot' &amp;&amp; correctType != 'Table') || (standardType == 'L' ||
-                parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'L').length &gt; 0) || (standardType == 'TOC' ||
-                parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TOC').length &gt; 0)</test>
+                parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'L').length &gt; 0)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
@@ -255,7 +254,7 @@
         <rule object="SAP">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="10"/>
             <description>This structure element should be a heading instead of a paragraph</description>
-            <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
+            <test>(correctType != 'H' &amp;&amp; correctType != 'Hn') || correctSemanticScore &lt; 0.75</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -399,8 +398,7 @@
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="21"/>
             <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
-                correctType != 'Lbl' &amp;&amp; correctType != 'LBody' &amp;&amp; correctType != 'L') || (isTableElem == true) || (standardType == 'TOC' ||
-                parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TOC').length &gt; 0)</test>
+                correctType != 'Lbl' &amp;&amp; correctType != 'LBody' &amp;&amp; correctType != 'L')</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
@@ -414,10 +412,10 @@
         <rule object="SAL">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="22"/>
             <description>The structure type and attributes of a list shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'L' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'LI' ||
-                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' || correctType == 'TFoot' ||
-                correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
+            <test>hasLowestDepthError == false || (correctType == 'L' &amp;&amp; correctSemanticScore >= 0.75) ||
+                correctType == 'TR' || correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' ||
+                correctType == 'THead' || correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' ||
+                correctType == 'TOCI'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -430,10 +428,10 @@
         <rule object="SALI">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="23"/>
             <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' || correctType == 'TFoot' ||
-                correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
+            <test>hasLowestDepthError == false || (correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) ||
+                correctType == 'TR' || correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' ||
+                correctType == 'THead' || correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' ||
+                correctType == 'TOCI'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -446,10 +444,10 @@
         <rule object="SALBody">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="25"/>
             <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75) || correctType == 'L' ||
-                correctType == 'LI' || correctType == 'Lbl' || correctType == 'TR' || correctType == 'TD' ||
-                correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' || correctType == 'TFoot' ||
-                correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
+            <test>hasLowestDepthError == false || (correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75) ||
+                correctType == 'TR' || correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' ||
+                correctType == 'THead' || correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' ||
+                correctType == 'TOCI'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -793,6 +791,26 @@
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1201).length == 0</test>
             <error>
                 <message>List contains only one child - list</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALI">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="52"/>
+            <description>The structure type and attributes of a list item shall be semantically appropriate</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1202).length == 0</test>
+            <error>
+                <message>This list item should be tagged as several different list items</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SASpan">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="53"/>
+            <description>This structure element should be a note instead of a span</description>
+            <test>correctType != 'Note'</test>
+            <error>
+                <message>This structure element should be a note instead of a span</message>
                 <arguments/>
             </error>
             <references/>
