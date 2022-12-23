@@ -184,7 +184,7 @@
         <rule object="SAP">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="1"/>
             <description>Incorrect use of a paragraph</description>
-            <test>correctSemanticScore >= 0.75 || correctType == null</test>
+            <test>correctSemanticScore >= 0.75 || correctType == null || correctType == 'H'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -254,7 +254,7 @@
         <rule object="SAP">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="10"/>
             <description>This structure element should be a heading instead of a paragraph</description>
-            <test>(correctType != 'H' &amp;&amp; correctType != 'Hn') || correctSemanticScore &lt; 0.75</test>
+            <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -398,7 +398,7 @@
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="21"/>
             <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
-                correctType != 'Lbl' &amp;&amp; correctType != 'LBody' &amp;&amp; correctType != 'L')</test>
+                correctType != 'Lbl' &amp;&amp; correctType != 'LBody' &amp;&amp; correctType != 'L') || (isTableElem == true)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
                 <arguments>
@@ -414,8 +414,8 @@
             <description>The structure type and attributes of a list shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctType == 'L' &amp;&amp; correctSemanticScore >= 0.75) ||
                 correctType == 'TR' || correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' ||
-                correctType == 'THead' || correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' ||
-                correctType == 'TOCI'</test>
+                correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -429,9 +429,9 @@
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="23"/>
             <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) ||
-                correctType == 'TR' || correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' ||
-                correctType == 'THead' || correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' ||
-                correctType == 'TOCI'</test>
+                correctType == 'L' || correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' ||
+                correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -445,9 +445,9 @@
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="25"/>
             <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75) ||
-                correctType == 'TR' || correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' ||
-                correctType == 'THead' || correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' ||
-                correctType == 'TOCI'</test>
+                correctType == 'L' || correctType == 'LI' || correctType == 'Lbl' || correctType == 'TR' ||
+                correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
