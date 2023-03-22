@@ -33,7 +33,7 @@
         <rule object="SATextChunk">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="3"/>
             <description>Underlined text</description>
-            <test>parentsStandardTypes.split('&amp;').filter(elem =&gt; (elem == 'Link' || elem == 'Reference')).length &gt; 0 || isUnderlined == false</test>
+            <test>isUnderlined == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; (elem == 'Link' || elem == 'Reference')).length &gt; 0</test>
             <error>
                 <message>Underlined text is detected</message>
                 <arguments/>
@@ -43,7 +43,7 @@
         <rule object="SATextChunk">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="4"/>
             <description>If text has a different style, it shall be tagged as Span, Em, Strong or other appropriate inline element</description>
-            <test>hasSpecialStyle == false</test>
+            <test>hasSpecialStyle == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
             <error>
                 <message>Text has a different style and not tagged as Span, Em, Strong or other appropriate inline element</message>
                 <arguments/>
@@ -66,9 +66,8 @@
             <id specification="WCAG_2_1" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1.
                 Large-scale text and images of large-scale text have a contrast ratio of at least 3:1.</description>
-            <test>parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0 ||
-                textSize &lt; 4.5 || ((textSize >= 18.0 ||
-                (textSize >= 14.0 &amp;&amp; textWeight >= 700.0)) ? (contrastRatio >= 3) : (contrastRatio >= 4.5))</test>
+            <test>textSize &lt; 4.5 || ((textSize >= 18.0 || (textSize >= 14.0 &amp;&amp; textWeight >= 700.0)) ? (contrastRatio >= 3) :
+                (contrastRatio >= 4.5)) || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
             <error>
                 <message>contrastRatio = %1</message>
                 <arguments>
@@ -81,7 +80,7 @@
             <id specification="WCAG_2_1" clause="1.4.4" testNumber="1"/>
             <description>Font size is too small: text may not be resized without assistive technology
                 up to 200 percent without loss of content or functionality.</description>
-            <test>textSize >= 4.5 || isWhiteSpaceChunk == true</test>
+            <test>textSize >= 4.5 || isWhiteSpaceChunk == true || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
             <error>
                 <message>textSize = %1</message>
                 <arguments>
