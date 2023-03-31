@@ -8,13 +8,16 @@
     <hash></hash>
     <rules>
         <rule object="SETD">
-            <id specification="ISO_14289_1" clause="7.5" testNumber="1"/>
+            <id specification="ISO_14289_1" clause="7.5" testNumber="2"/>
             <description>If the table's structure is not determinable via Headers and IDs,
                 then structure elements of type TH shall have a Scope attribute</description>
-            <test>hasConnectedHeader != false || unknownHeaders != ''</test>
+            <test>hasConnectedHeader != false || unknownHeaders == ''</test>
             <error>
-                <message>TD does not contain Headers attribute, and Headers for this table cell can not be determined
+                <message>TD references undefined Header(s) %1, and Headers for this table cell can not be determined
                     via algorithm from ISO32000-2, 14.8.4.8.3.</message>
+                <arguments>
+                    <argument>unknownHeaders</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO 32000-2" clause="14.8.4.8.3"/>
