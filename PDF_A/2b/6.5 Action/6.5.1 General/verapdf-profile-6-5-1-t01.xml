@@ -19,7 +19,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO32000-1:2008" clause="12.6.4.1, Table 198"/>
+                <reference specification="ISO 32000-1:2008" clause="12.6.4.1, Table 198"/>
             </references>
         </rule>
     </rules>

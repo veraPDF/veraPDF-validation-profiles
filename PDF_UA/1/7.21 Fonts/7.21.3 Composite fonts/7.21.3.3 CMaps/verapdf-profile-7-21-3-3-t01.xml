@@ -34,7 +34,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO32000-1:2008" clause="9.7.5.2, Table 118"/>
+                <reference specification="ISO 32000-1:2008" clause="9.7.5.2, Table 118"/>
             </references>
         </rule>
     </rules>
