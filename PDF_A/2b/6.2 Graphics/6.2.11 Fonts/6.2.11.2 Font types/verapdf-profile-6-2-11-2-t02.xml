@@ -24,12 +24,12 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO32000-1:2008" clause="9.6.2.1, Table 111"/>
-                <reference specification="ISO32000-1:2008" clause="9.6.2.3"/>
-                <reference specification="ISO32000-1:2008" clause="9.6.3"/>
-                <reference specification="ISO32000-1:2008" clause="9.6.5, Table 112"/>
-                <reference specification="ISO32000-1:2008" clause="9.7.4.1, Table 117"/>
-                <reference specification="ISO32000-1:2008" clause="9.7.6.1, Table 121"/>
+                <reference specification="ISO 32000-1:2008" clause="9.6.2.1, Table 111"/>
+                <reference specification="ISO 32000-1:2008" clause="9.6.2.3"/>
+                <reference specification="ISO 32000-1:2008" clause="9.6.3"/>
+                <reference specification="ISO 32000-1:2008" clause="9.6.5, Table 112"/>
+                <reference specification="ISO 32000-1:2008" clause="9.7.4.1, Table 117"/>
+                <reference specification="ISO 32000-1:2008" clause="9.7.6.1, Table 121"/>
             </references>
         </rule>
     </rules>

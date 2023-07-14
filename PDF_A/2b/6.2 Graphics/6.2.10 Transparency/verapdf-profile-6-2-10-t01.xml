@@ -25,7 +25,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO32000-1:2008" clause="11.3.5, Tables 136-137"/>
+                <reference specification="ISO 32000-1:2008" clause="11.3.5, Tables 136-137"/>
             </references>
         </rule>
     </rules>
