@@ -1,6 +1,6 @@
 # veraPDF validation profiles
 
-The repository contains all veraPDF validation profiles supported by veraPDF. They are split into individual rules and then grouped into validation profiles for each supported flavor.
+The repository contains all validation profiles supported by veraPDF. They are split into individual rules and then grouped into validation profiles for each supported flavor.
 
 The [PDF_A](https://github.com/veraPDF/veraPDF-validation-profiles/tree/integration/PDF_A) folder contains all rules for PDF/A validation against all PDF/A parts (ISO 19005) and conformance levels.  
 
