@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SARepeatedCharacters">
+        <rule object="SARepeatedCharacters" tags="cosmetic,machine,text">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="1"/>
             <description>Text should not contain repeated non space characters</description>
             <test>isNonSpace == false || numberOfRepeatedCharacters &lt; 5</test>
@@ -18,7 +18,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SARepeatedCharacters">
+        <rule object="SARepeatedCharacters" tags="cosmetic,machine,text">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="2"/>
             <description>Text should not contain repeated space characters</description>
             <test>isNonSpace == true || numberOfRepeatedCharacters &lt; 3</test>
@@ -30,7 +30,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk">
+        <rule object="SATextChunk" tags="cosmetic,human,text">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="3"/>
             <description>Underlined text</description>
             <test>isUnderlined == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; (elem == 'Link' || elem == 'Reference')).length &gt; 0</test>
@@ -40,7 +40,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk">
+        <rule object="SATextChunk" tags="minor,human,structure,text">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="4"/>
             <description>If text has a different style, it shall be tagged as Span, Em, Strong or other appropriate inline element</description>
             <test>hasSpecialStyle == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
@@ -50,7 +50,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDPage">
+        <rule object="PDPage" tags="minor,machine,syntax,page">
             <id specification="WCAG_2_1" clause="1.3.4" testNumber="1"/>
             <description>Pages shall have the same orientation</description>
             <test>orientation == 'Square' || gMostCommonPageOrientation == orientation</test>
@@ -62,7 +62,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk">
+        <rule object="SATextChunk" tags="major,human,contrast">
             <id specification="WCAG_2_1" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1.
                 Large-scale text and images of large-scale text have a contrast ratio of at least 3:1.</description>
@@ -76,7 +76,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk">
+        <rule object="SATextChunk" tags="major,machine,text">
             <id specification="WCAG_2_1" clause="1.4.4" testNumber="1"/>
             <description>Font size is too small: text may not be resized without assistive technology
                 up to 200 percent without loss of content or functionality.</description>
@@ -89,7 +89,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDFont">
+        <rule object="PDFont" tags="cosmetic,human,text">
             <id specification="WCAG_2_1" clause="1.4.8" testNumber="1"/>
             <description>Document should not contain illegible font</description>
             <test>fontName != null &amp;&amp; fontName.indexOf('AdobeDevanagari') == -1 &amp;&amp; fontName.indexOf('AgencyFB') == -1 &amp;&amp;
@@ -120,7 +120,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAFigure">
+        <rule object="SAFigure" tags="minor,machine,structure,figure">
             <id specification="WCAG_2_1" clause="1.4.10" testNumber="1"/>
             <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
             <test>page != lastPage || hasBBox == true</test>
@@ -132,7 +132,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.5.4.3"/>
             </references>
         </rule>
-        <rule object="SALinkAnnotation">
+        <rule object="SALinkAnnotation" tags="major,machine,structure,annotation,alt-text">
             <id specification="WCAG_2_1" clause="2.4.9" testNumber="1"/>
             <description>Links shall contain an alternate description via their Contents or Alt keys or in the text value</description>
             <test>(Contents != null &amp;&amp; Contents != '' &amp;&amp; contentsIsLink == false) || isOutsideCropBox == true ||
@@ -146,7 +146,7 @@
                 <reference specification="ISO 32000-1" clause="14.9.3"/>
             </references>
         </rule>
-        <rule object="SETD">
+        <rule object="SETD" tags="cosmetic,machine,structure,table">
             <id specification="WCAG_2_1" clause="4.1.1" testNumber="1"/>
             <description>Table shouldn't have merged cells</description>
             <test>ColSpan == 1 &amp;&amp; RowSpan == 1</test>
@@ -156,7 +156,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SETH">
+        <rule object="SETH" tags="cosmetic,machine,structure,table">
             <id specification="WCAG_2_1" clause="4.1.1" testNumber="2"/>
             <description>Table shouldn't have merged cells</description>
             <test>ColSpan == 1 &amp;&amp; RowSpan == 1</test>
@@ -166,7 +166,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableBorderCell">
+        <rule object="SATableBorderCell" tags="cosmetic,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.1" testNumber="3"/>
             <description>Table shouldn't have merged cells</description>
             <test>colSpan == 1 &amp;&amp; rowSpan == 1</test>
@@ -180,7 +180,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="1"/>
             <description>Incorrect use of a paragraph</description>
             <test>correctSemanticScore >= 0.75 || correctType == null || correctType == 'H'</test>
@@ -193,7 +193,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,human,structure,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="2"/>
             <description>Incorrect use of a span</description>
             <test>correctSemanticScore >= 0.75 || correctType == null</test>
@@ -206,7 +206,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAH">
+        <rule object="SAH" tags="minor,human,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="4"/>
             <description>Incorrect use of a heading</description>
             <test>correctSemanticScore >= 0.75 || correctType == null</test>
@@ -219,7 +219,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAHn">
+        <rule object="SAHn" tags="minor,human,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="5"/>
             <description>Incorrect use of a numbered heading</description>
             <test>correctSemanticScore >= 0.75 || correctType == null</test>
@@ -232,7 +232,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
             <description>Missing table element</description>
             <test>hasLowestDepthError == false || (correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) ||
@@ -250,7 +250,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,heading,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="10"/>
             <description>This structure element should be a heading instead of a paragraph</description>
             <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
@@ -263,7 +263,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,span,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="11"/>
             <description>This structure element should be a span instead of a paragraph</description>
             <test>correctType != 'Span'</test>
@@ -276,7 +276,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,human,structure,paragraph,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="12"/>
             <description>This structure element should be a paragraph instead of a span</description>
             <test>correctType != 'P'</test>
@@ -289,7 +289,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,human,structure,span,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="13"/>
             <description>This structure element should be a heading instead of a span</description>
             <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
@@ -302,7 +302,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAH">
+        <rule object="SAH" tags="minor,human,structure,heading,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="14"/>
             <description>This structure element should be a paragraph instead of a heading</description>
             <test>correctType != 'P'</test>
@@ -315,7 +315,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAHn">
+        <rule object="SAHn" tags="minor,human,structure,paragraph,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="15"/>
             <description>This structure element should be a paragraph instead of a numbered heading</description>
             <test>correctType != 'P'</test>
@@ -328,7 +328,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,machine,structure,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="16"/>
             <description>Redundant paragraph</description>
             <test>correctType != null</test>
@@ -341,7 +341,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,machine,structure,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="17"/>
             <description>Redundant span</description>
             <test>correctType != null</test>
@@ -354,7 +354,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAH">
+        <rule object="SAH" tags="minor,machine,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="18"/>
             <description>Redundant heading</description>
             <test>correctType != null</test>
@@ -367,7 +367,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAHn">
+        <rule object="SAHn" tags="minor,machine,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="19"/>
             <description>Redundant numbered heading</description>
             <test>correctType != null</test>
@@ -380,7 +380,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,paragraph,caption">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="20"/>
             <description>This structure element should be a caption instead of a paragraph</description>
             <test>correctType != 'Caption'</test>
@@ -393,7 +393,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="21"/>
             <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
@@ -408,7 +408,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAL">
+        <rule object="SAL" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="22"/>
             <description>The structure type and attributes of a list shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctType == 'L' &amp;&amp; correctSemanticScore >= 0.75) ||
@@ -424,7 +424,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SALI">
+        <rule object="SALI" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="23"/>
             <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) ||
@@ -440,7 +440,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SALBody">
+        <rule object="SALBody" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="25"/>
             <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
             <test>hasLowestDepthError == false || (correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75) ||
@@ -456,7 +456,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,table,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="26"/>
             <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering </description>
             <test>hasLowestDepthError == false || (correctType != 'TD' &amp;&amp; correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp;
@@ -472,7 +472,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="27"/>
             <description>This structure element should be a part or several different paragraphs instead of a paragraph</description>
             <test>correctType != 'Part' || correctSemanticScore &lt; 0.75</test>
@@ -485,7 +485,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="28"/>
             <description>The structure type and attributes of a TOCI shall be semantically appropriate.</description>
             <test>correctType != 'TOCI' || standardType == 'TOCI'</test>
@@ -499,7 +499,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="minor,machine,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="29"/>
             <description>TOCI shall contain one or more text lines</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
@@ -513,7 +513,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="minor,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="31"/>
             <description>TOCI page label shall match the destination page</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1002).length == 0</test>
@@ -527,7 +527,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="minor,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="32"/>
             <description>TOCI shall have a right alignment that matches a right alignment of other TOCIs</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1003).length == 0</test>
@@ -541,7 +541,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="34"/>
             <description>This list and neighbor list(s) should be tagged as one list</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1200).length == 0</test>
@@ -555,7 +555,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOC">
+        <rule object="SATOC" tags="minor,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="35"/>
             <description>This TOC and neighbor TOC(s) should be tagged as one TOC</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1006).length == 0</test>
@@ -569,7 +569,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="36"/>
             <description>The number of rows of this table does not match the number of rows of the visual representation of this table</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1104).length == 0</test>
@@ -583,7 +583,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="37"/>
             <description>The number of columns of this table does not match the number of columns of the visual representation of this table</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1105).length == 0</test>
@@ -597,7 +597,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="38"/>
             <description>The row span of this table cell does not match the row span of the visual representation of this table cell</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1106).length == 0</test>
@@ -611,7 +611,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="39"/>
             <description>The column span of this table cell does not match the column span of the visual representation of this table cell</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1107).length == 0</test>
@@ -625,7 +625,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAListItem">
+        <rule object="SAListItem" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="40"/>
             <description>This content should be tagged as a list item</description>
             <test>false</test>
@@ -639,7 +639,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="41"/>
             <description>This cell is below than some cells in the next row</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1100).length == 0</test>
@@ -653,7 +653,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="42"/>
             <description>This cell is above than some cells in the previous row</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
@@ -667,7 +667,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="43"/>
             <description>This cell is to the right of some cells in the next column</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1102).length == 0</test>
@@ -681,7 +681,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="44"/>
             <description>This cell is to the left of some cells in the previous column</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
@@ -695,7 +695,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATH">
+        <rule object="SATH" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="45"/>
             <description>This structure element should be a table cell instead of a table header</description>
             <test>correctType != 'TD'</test>
@@ -709,7 +709,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="46"/>
             <description>TOCI text should be presented in the document</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1007).length == 0</test>
@@ -723,7 +723,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="47"/>
             <description>TOCI text should be presented on a destination page.</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1008).length == 0</test>
@@ -740,7 +740,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="48"/>
             <description>TOCI should have a destination.</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1009).length == 0</test>
@@ -754,7 +754,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="49"/>
             <description>TOCI should have a correct page label.</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1010).length == 0</test>
@@ -768,7 +768,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="50"/>
             <description>TOCI should have a correct numbering.</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1011).length == 0</test>
@@ -784,7 +784,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAL">
+        <rule object="SAL" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="51"/>
             <description>List should contain list items.</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1201).length == 0</test>
@@ -794,7 +794,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SALI">
+        <rule object="SALI" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="52"/>
             <description>The structure type and attributes of a list item shall be semantically appropriate</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1202).length == 0</test>
@@ -804,7 +804,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,human,structure,span,note">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="53"/>
             <description>This structure element should be a note instead of a span</description>
             <test>correctType != 'Note'</test>
@@ -814,7 +814,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,paragraph,note">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="54"/>
             <description>This structure element should be a note instead of a paragraph</description>
             <test>correctType != 'Note'</test>
@@ -824,7 +824,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="55"/>
             <description>The structure type and attributes of a heading shall be semantically appropriate</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1300).length == 0</test>
@@ -835,7 +835,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="MainXMPPackage">
+        <rule object="MainXMPPackage" tags="minor,machine,metadata">
             <id specification="ISO_14289_1" clause="5" testNumber="1"/>
             <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema.</description>
             <test>UAIdentification_size == 1</test>
@@ -845,7 +845,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDFUAIdentification">
+        <rule object="PDFUAIdentification" tags="minor,machine,metadata">
             <id specification="ISO_14289_1" clause="5" testNumber="2"/>
             <description>The value of pdfuaid:part shall be the part number of the International Standard to which the file conforms.</description>
             <test>part == 1</test>
@@ -857,7 +857,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SEMarkedContent">
+        <rule object="SEMarkedContent" tags="major,machine,syntax,content">
             <id specification="ISO_14289_1" clause="7.1" testNumber="1"/>
             <description>Content marked as Artifact should not present inside tagged content</description>
             <test>tag != 'Artifact' || parentStructureTag == null</test>
@@ -869,7 +869,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SEMarkedContent">
+        <rule object="SEMarkedContent" tags="major,machine,syntax,content">
             <id specification="ISO_14289_1" clause="7.1" testNumber="2"/>
             <description>Tagged content should not present inside content marked as Artifact</description>
             <test>structureTag == null || parentsTags.split('&amp;').filter(elem =&gt; elem == 'Artifact').length == 0</test>
@@ -881,7 +881,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SESimpleContentItem">
+        <rule object="SESimpleContentItem" tags="critical,machine,syntax,content">
             <id specification="ISO_14289_1" clause="7.1" testNumber="3"/>
             <description>Content shall be marked as Artifact or tagged as real content</description>
             <test>parentStructureTag != null || parentsTags.split('&amp;').filter(elem =&gt; elem == 'Artifact').length &gt; 0</test>
@@ -891,7 +891,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="CosDocument">
+        <rule object="CosDocument" tags="minor,machine,syntax">
             <id specification="ISO_14289_1" clause="7.1" testNumber="4"/>
             <description>Files shall have a Suspects value of false(ISO 32000-1:2008, Table 321)</description>
             <test>Suspects != true</test>
@@ -903,7 +903,7 @@
                 <reference specification="ISO 32000-1" clause="14.7.1"/>
             </references>
         </rule>
-        <rule object="SENonStandard">
+        <rule object="SENonStandard" tags="major,machine,structure">
             <id specification="ISO_14289_1" clause="7.1" testNumber="5"/>
             <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type,
                 as defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root.
@@ -920,7 +920,7 @@
                 <reference specification="ISO 32000-1:2008" clause="14.8.4"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="major,machine,structure">
             <id specification="ISO_14289_1" clause="7.1" testNumber="6"/>
             <description>A circular mapping shall not exist</description>
             <test>circularMappingExist != true</test>
@@ -932,7 +932,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="major,machine,structure">
             <id specification="ISO_14289_1" clause="7.1" testNumber="7"/>
             <description>Standard tags defined in ISO 32000-1:2008, 14.8.4, shall not be remapped.</description>
             <test>isRemappedStandardType == false</test>
@@ -946,7 +946,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4"/>
             </references>
         </rule>
-        <rule object="PDDocument">
+        <rule object="PDDocument" tags="critical,machine,metadata">
             <id specification="ISO_14289_1" clause="7.1" testNumber="8"/>
             <description>The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2.</description>
             <test>metadata_size == 1</test>
@@ -958,7 +958,7 @@
                 <reference specification="ISO 32000-1" clause="14.3.2"/>
             </references>
         </rule>
-        <rule object="MainXMPPackage">
+        <rule object="MainXMPPackage" tags="major,machine,metadata">
             <id specification="ISO_14289_1" clause="7.1" testNumber="9"/>
             <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the
                 recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which
@@ -970,7 +970,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="CosDocument">
+        <rule object="CosDocument" tags="minor,machine,syntax">
             <id specification="ISO_14289_1" clause="7.1" testNumber="10"/>
             <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a
                 DisplayDocTitle key, whose value shall be true.</description>
@@ -986,7 +986,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDDocument">
+        <rule object="PDDocument" tags="critical,machine,structure">
             <id specification="ISO_14289_1" clause="7.1" testNumber="11"/>
             <description>The logical structure of the conforming file shall be described by a structure hierarchy
                 rooted in the StructTreeRoot entry of the document catalog dictionary,
@@ -999,8 +999,8 @@
             <references>
                 <reference specification="ISO 32000-1:2008" clause="14.7"/>
             </references>
-        </rule>     
-        <rule object="PDOutline">
+        </rule>
+        <rule object="PDOutline" tags="critical,machine,syntax,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="2"/>
             <description>Natural language in the Outline entries shall be determined</description>
             <test>gSizeCatalogLang != 0</test>
@@ -1010,7 +1010,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="3"/>
             <description>Table element may contain only TR, THead, TBody, TFoot and Caption elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR' &amp;&amp; elem != 'THead'
@@ -1028,7 +1028,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATR">
+        <rule object="SATR" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="4"/>
             <description>TR element should be contained in Table, THead, TBody or TFoot element</description>
             <test>/^(Table|THead|TBody|TFoot)$/.test(parentStandardType)</test>
@@ -1044,7 +1044,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATHead">
+        <rule object="SATHead" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="5"/>
             <description>THead element should be contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
@@ -1060,7 +1060,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATBody">
+        <rule object="SATBody" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="6"/>
             <description>TBody element should be contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
@@ -1076,7 +1076,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATFoot">
+        <rule object="SATFoot" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="7"/>
             <description>TFoot element should be contained in Table element</description>
             <test>parentStandardType == 'Table'</test>
@@ -1092,7 +1092,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATH">
+        <rule object="SATH" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="8"/>
             <description>TH element should be contained in TR element</description>
             <test>parentStandardType == 'TR'</test>
@@ -1108,7 +1108,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATD">
+        <rule object="SATD" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="9"/>
             <description>TD element should be contained in TR element</description>
             <test>parentStandardType == 'TR'</test>
@@ -1124,7 +1124,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATR">
+        <rule object="SATR" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="10"/>
             <description>TR element may contain only TH and TD elements</description>
             <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
@@ -1140,7 +1140,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="11"/>
             <description>Table element should contain zero or one THead kid</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &lt;= 1</test>
@@ -1156,7 +1156,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="12"/>
             <description>Table element should contain zero or one TFoot kid</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length &lt;= 1</test>
@@ -1172,7 +1172,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="13"/>
             <description>If Table element contains TFoot kid, Table element should contain one or more TBody kids</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 0 ||
@@ -1189,7 +1189,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="14"/>
             <description>If Table element contains THead kid, Table element should contain one or more TBody kids</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 0 ||
@@ -1206,7 +1206,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETableCell">
+        <rule object="SETableCell" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="15"/>
             <description>Table cell shall not have intersection with other cells</description>
             <test>hasIntersection != true</test>
@@ -1218,7 +1218,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="16"/>
             <description>Table element may contain a Caption element as its first or last kid</description>
             <test>kidsStandardTypes.indexOf('&amp;Caption&amp;') &lt; 0</test>
@@ -1234,7 +1234,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SALI">
+        <rule object="SALI" tags="major,machine,structure,list">
             <id specification="ISO_14289_1" clause="7.2" testNumber="17"/>
             <description>LI element should be contained in L element</description>
             <test>parentStandardType == 'L'</test>
@@ -1250,7 +1250,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
             </references>
         </rule>
-        <rule object="SALBody">
+        <rule object="SALBody" tags="major,machine,structure,list">
             <id specification="ISO_14289_1" clause="7.2" testNumber="18"/>
             <description>LBody element should be contained in LI element</description>
             <test>parentStandardType == 'LI'</test>
@@ -1266,7 +1266,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
             </references>
         </rule>
-        <rule object="SAL">
+        <rule object="SAL" tags="major,machine,structure,list">
             <id specification="ISO_14289_1" clause="7.2" testNumber="19"/>
             <description>L element may contain only L, LI and Caption elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'L' &amp;&amp; elem != 'LI'
@@ -1284,7 +1284,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
             </references>
         </rule>
-        <rule object="SALI">
+        <rule object="SALI" tags="major,machine,structure,list">
             <id specification="ISO_14289_1" clause="7.2" testNumber="20"/>
             <description>LI element may contain only Lbl and LBody elements</description>
             <test>/^(Lbl|LBody)(&amp;(Lbl|LBody))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
@@ -1300,7 +1300,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
             </references>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="major,machine,structure,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="21"/>
             <description>Natural language for text in ActualText attribute shall be determined</description>
             <test>ActualText == null || Lang_size != 0 || parentLang != null || gSizeCatalogLang != 0</test>
@@ -1310,7 +1310,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="major,machine,structure,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="22"/>
             <description>Natural language for text in Alt attribute shall be determined</description>
             <test>Alt == null || Lang_size != 0 || parentLang != null || gSizeCatalogLang != 0</test>
@@ -1320,7 +1320,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="major,machine,structure,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="23"/>
             <description>Natural language for text in E attribute shall be determined</description>
             <test>E == null || Lang_size != 0 || parentLang != null || gSizeCatalogLang != 0</test>
@@ -1330,7 +1330,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDAnnot">
+        <rule object="PDAnnot" tags="major,machine,structure,annotation,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="24"/>
             <description>Natural language in the Contents entry for annotations shall be determined</description>
             <test>Contents == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
@@ -1341,7 +1341,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDFormField">
+        <rule object="PDFormField" tags="major,machine,structure,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="25"/>
             <description>Natural language in the TU key for form fields shall be determined</description>
             <test>TU == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
@@ -1351,7 +1351,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,machine,structure,toc">
             <id specification="ISO_14289_1" clause="7.2" testNumber="26"/>
             <description>TOCI element should be contained in TOC element</description>
             <test>parentStandardType == 'TOC'</test>
@@ -1367,7 +1367,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>
             </references>
         </rule>
-        <rule object="SATOC">
+        <rule object="SATOC" tags="major,machine,structure,toc">
             <id specification="ISO_14289_1" clause="7.2" testNumber="27"/>
             <description>TOC element may contain only TOC, TOCI and Caption elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TOC' &amp;&amp; elem != 'TOCI'
@@ -1385,7 +1385,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>
             </references>
         </rule>
-        <rule object="SATOC">
+        <rule object="SATOC" tags="major,machine,structure,toc">
             <id specification="ISO_14289_1" clause="7.2" testNumber="28"/>
             <description>TOC element may contain a Caption element only as its first kid</description>
             <test>kidsStandardTypes == '' || kidsStandardTypes.split('&amp;').slice(1).findIndex(elem =&gt; elem == 'Caption') &lt; 0</test>
@@ -1401,7 +1401,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>
             </references>
         </rule>
-        <rule object="CosLang">
+        <rule object="CosLang" tags="critical,machine,syntax,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="29"/>
             <description>If the Lang entry is present in the document's Catalog dictionary or in a structure element dictionary or
 			property list, its value shall be a language identifier as described in ISO 32000-1:2008, 14.9.2.
@@ -1418,7 +1418,7 @@
                 <reference specification="RFC 3066" clause="2.1"/>
             </references>
         </rule>
-        <rule object="SEMarkedContent">
+        <rule object="SEMarkedContent" tags="major,machine,syntax,content,lang,alt-text">
             <id specification="ISO_14289_1" clause="7.2" testNumber="30"/>
             <description>Natural language for text in ActualText attribute in Span Marked Content shall be determined</description>
             <test>tag != 'Span' || ActualText == null || Lang_size != 0 || inheritedLang != null || gSizeCatalogLang != 0</test>
@@ -1428,7 +1428,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SEMarkedContent">
+        <rule object="SEMarkedContent" tags="major,machine,syntax,content,lang,alt-text">
             <id specification="ISO_14289_1" clause="7.2" testNumber="31"/>
             <description>Natural language for text in Alt attribute in Span Marked Content shall be determined</description>
             <test>tag != 'Span' || Alt == null || Lang_size != 0 || inheritedLang != null || gSizeCatalogLang != 0</test>
@@ -1438,7 +1438,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SEMarkedContent">
+        <rule object="SEMarkedContent" tags="major,machine,syntax,content,lang,alt-text">
             <id specification="ISO_14289_1" clause="7.2" testNumber="32"/>
             <description>Natural language for text in E attribute in Span Marked Content shall be determined</description>
             <test>tag != 'Span' || E == null || Lang_size != 0 || inheritedLang != null || gSizeCatalogLang != 0</test>
@@ -1448,7 +1448,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="XMPLangAlt" deferred="true">
+        <rule object="XMPLangAlt" deferred="true" tags="major,machine,metadata,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="33"/>
             <description>Natural language for document metadata shall be determined</description>
             <test>xDefault == false || gSizeCatalogLang != 0</test>
@@ -1458,7 +1458,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SETextItem">
+        <rule object="SETextItem" tags="major,machine,syntax,lang,text">
             <id specification="ISO_14289_1" clause="7.2" testNumber="34"/>
             <description>Natural language for text in page content shall be determined</description>
             <test>gSizeCatalogLang != 0 || Lang != null</test>
@@ -1468,7 +1468,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATHead">
+        <rule object="SATHead" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="36"/>
             <description>THead element may contain only TR elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0 || kidsStandardTypes == ''</test>
@@ -1484,7 +1484,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATBody">
+        <rule object="SATBody" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="37"/>
             <description>TBody element may contain only TR elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0 || kidsStandardTypes == ''</test>
@@ -1500,7 +1500,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATFoot">
+        <rule object="SATFoot" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="38"/>
             <description>TFoot element may contain only TR elements</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TR').length == 0 || kidsStandardTypes == ''</test>
@@ -1516,7 +1516,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="39"/>
             <description>Table element may contain only one Caption element</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Caption').length &lt; 2</test>
@@ -1532,7 +1532,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SAL">
+        <rule object="SAL" tags="major,machine,structure,list">
             <id specification="ISO_14289_1" clause="7.2" testNumber="40"/>
             <description>L element may contain a Caption element only as its first kid</description>
             <test>kidsStandardTypes == '' || kidsStandardTypes.split('&amp;').slice(1).findIndex(elem =&gt; elem == 'Caption') &lt; 0</test>
@@ -1548,7 +1548,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.2"/>
             </references>
         </rule>
-        <rule object="SETable">
+        <rule object="SETable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="41"/>
             <description>Table columns shall have the same number of rows (taking into account row spans)</description>
             <test>numberOfColumnWithWrongRowSpan == null</test>
@@ -1562,7 +1562,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETable">
+        <rule object="SETable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="42"/>
             <description>Table rows shall have the same number of columns (taking into account column spans)</description>
             <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>
@@ -1576,7 +1576,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SETable">
+        <rule object="SETable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="43"/>
             <description>Table rows shall have the same number of columns (taking into account column spans)</description>
             <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan == null</test>
@@ -1592,7 +1592,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SEFigure">
+        <rule object="SEFigure" tags="major,machine,structure,figure,alt-text">
             <id specification="ISO_14289_1" clause="7.3" testNumber="1"/>
             <description>Figure tags shall include an alternative representation or replacement text that represents the contents
                 marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
@@ -1605,7 +1605,7 @@
                 <reference specification="ISO 32000-1" clause="14.7.2"/>
             </references>
         </rule>
-        <rule object="SEHn">
+        <rule object="SEHn" tags="major,machine,structure,heading">
             <id specification="ISO_14289_1" clause="7.4.2" testNumber="1"/>
             <description>For documents that are not strongly structured, as described in ISO 32000-1:2008, 14.8.4.3.5,
                 heading tags shall be used as follows:
@@ -1627,7 +1627,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.3.5"/>
             </references>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="major,machine,structure,heading">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="1"/>
             <description>Each node in the tag tree shall contain at most one child H tag.</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'H').length &lt;= 1</test>
@@ -1637,7 +1637,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAH">
+        <rule object="SAH" tags="major,machine,structure,heading">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="2"/>
             <description>All documents shall be either strongly or weakly structured, but not both.</description>
             <test>usesHn == false</test>
@@ -1647,7 +1647,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAHn">
+        <rule object="SAHn" tags="major,machine,structure,heading">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="3"/>
             <description>All documents shall be either strongly or weakly structured, but not both.</description>
             <test>usesH == false</test>
@@ -1657,7 +1657,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SETD">
+        <rule object="SETD" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.5" testNumber="1"/>
             <description>If the table's structure is not determinable via Headers and IDs,
                 then structure elements of type TH shall have a Scope attribute</description>
@@ -1670,7 +1670,7 @@
                 <reference specification="ISO 32000-2" clause="14.8.4.8.3"/>
             </references>
         </rule>
-        <rule object="SETD">
+        <rule object="SETD" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.5" testNumber="2"/>
             <description>If the table's structure is not determinable via Headers and IDs,
                 then structure elements of type TH shall have a Scope attribute</description>
@@ -1686,7 +1686,7 @@
                 <reference specification="ISO 32000-2" clause="14.8.4.8.3"/>
             </references>
         </rule>
-        <rule object="SEFormula">
+        <rule object="SEFormula" tags="major,machine,structure,alt-text">
             <id specification="ISO_14289_1" clause="7.7" testNumber="1"/>
             <description>All mathematical expressions shall be enclosed within a Formula tag as detailed in ISO 32000-1:2008,
                 14.8.4.5 and shall have Alt or ActualText attributes</description>
@@ -1699,7 +1699,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.5"/>
             </references>
         </rule>
-        <rule object="SENote">
+        <rule object="SENote" tags="major,machine,structure,note">
             <id specification="ISO_14289_1" clause="7.9" testNumber="1"/>
             <description>Note tag shall have ID entry</description>
             <test>noteID != null &amp;&amp; noteID != ''</test>
@@ -1709,7 +1709,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SENote">
+        <rule object="SENote" tags="major,machine,structure,note">
             <id specification="ISO_14289_1" clause="7.9" testNumber="2"/>
             <description>Each Note tag shall have unique ID key</description>
             <test>hasDuplicateNoteID == false</test>
@@ -1721,7 +1721,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDOCConfig">
+        <rule object="PDOCConfig" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.10" testNumber="1"/>
             <description>Each optional content configuration dictionary that forms the value of the D key, or that is an element in the array that forms the 
 		value of the Configs key in the OCProperties dictionary, shall contain the Name key.</description>
@@ -1732,7 +1732,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDOCConfig">
+        <rule object="PDOCConfig" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.10" testNumber="2"/>
             <description>The AS key shall not appear in any optional content configuration dictionary.</description>
             <test>AS == null</test>
@@ -1742,7 +1742,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="CosFileSpecification">
+        <rule object="CosFileSpecification" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.11" testNumber="1"/>
             <description>The file specification dictionary for an embedded file shall contain the non-empty F and UF keys</description>
             <test>containsEF == false || (F != null &amp;&amp; F != '' &amp;&amp; UF != null &amp;&amp; UF != '')</test>
@@ -1756,7 +1756,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDAcroForm">
+        <rule object="PDAcroForm" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.15" testNumber="1"/>
             <description>Dynamic XFA forms shall not be used</description>
             <test>dynamicRender != 'required'</test>
@@ -1766,7 +1766,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDEncryption">
+        <rule object="PDEncryption" tags="critical,machine,syntax">
             <id specification="ISO_14289_1" clause="7.16" testNumber="1"/>
             <description>An encrypted conforming file shall contain a P key in its encryption dictionary (ISO 32000-1:2008,
                 7.6.3.2, Table 21). The 10th bit position of the P key shall be true.</description>
@@ -1785,7 +1785,7 @@
                 <reference specification="ISO 32000-1" clause="7.6.3.2"/>
             </references>
         </rule>
-        <rule object="PDAnnot">
+        <rule object="PDAnnot" tags="major,machine,syntax,annotation">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="1"/>
             <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
             <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || isOutsideCropBox == true ||
@@ -1799,7 +1799,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDAnnot">
+        <rule object="PDAnnot" tags="major,machine,syntax,annotation,alt-text">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="2"/>
             <description>An annotation (except annotations of type Link, Widget or Popup, or hidden annotations,
                 or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry
@@ -1816,7 +1816,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDWidgetAnnot">
+        <rule object="PDWidgetAnnot" tags="major,machine,syntax,annotation,alt-text">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="3"/>
             <description>A form field whose hidden flag is not set and whose rectangle is not outside the crop-box
                 shall have a TU key present or all its Widget annotations shall have alternative descriptions
@@ -1830,7 +1830,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDTrapNetAnnot">
+        <rule object="PDTrapNetAnnot" tags="major,machine,syntax,annotation">
             <id specification="ISO_14289_1" clause="7.18.2" testNumber="1"/>
             <description>Annotations of subtype TrapNet shall not be permitted.</description>
             <test>isOutsideCropBox == true || (F &amp; 2) == 2</test>
@@ -1840,7 +1840,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDPage">
+        <rule object="PDPage" tags="minor,machine,syntax,page">
             <id specification="ISO_14289_1" clause="7.18.3" testNumber="1"/>
             <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S.</description>
             <test>annots_size == 0 || Tabs == 'S'</test>
@@ -1852,7 +1852,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDWidgetAnnot">
+        <rule object="PDWidgetAnnot" tags="major,machine,syntax,annotation">
             <id specification="ISO_14289_1" clause="7.18.4" testNumber="1"/>
             <description>A Widget annotation shall be nested within a Form tag per ISO 32000-1:2008, 14.8.4.5, Table 340.</description>
             <test>structParentType == 'Form' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
@@ -1866,7 +1866,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.5"/>
             </references>
         </rule>
-        <rule object="SEForm">
+        <rule object="SEForm" tags="major,machine,structure">
             <id specification="ISO_14289_1" clause="7.18.4" testNumber="2"/>
             <description>If the Form element omits a Role attribute (Table 348), it shall have
                 only one child: an object reference (14.7.4.3) identifying the widget annotation
@@ -1880,7 +1880,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.5"/>
             </references>
         </rule>
-        <rule object="PDLinkAnnot">
+        <rule object="PDLinkAnnot" tags="major,machine,syntax,annotation">
             <id specification="ISO_14289_1" clause="7.18.5" testNumber="1"/>
             <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element.</description>
             <test>structParentType == 'Link' || structParentType == 'Reference' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
@@ -1894,7 +1894,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.4.4.2"/>
             </references>
         </rule>
-        <rule object="PDMediaClip">
+        <rule object="PDMediaClip" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.18.6.2" testNumber="1"/>
             <description>In the media clip data dictionary, the optional CT key (ISO 32000-1:2008, 13.2.4.2, Table 274)
                 is required.</description>
@@ -1907,7 +1907,7 @@
                 <reference specification="ISO 32000-1" clause="13.2.4.2"/>
             </references>
         </rule>
-        <rule object="PDMediaClip">
+        <rule object="PDMediaClip" tags="major,machine,alt-text">
             <id specification="ISO_14289_1" clause="7.18.6.2" testNumber="2"/>
             <description>In the media clip data dictionary, the optional Alt key (ISO 32000-1:2008, 13.2.4.2, Table 274)
                 is required.</description>
@@ -1922,7 +1922,7 @@
                 <reference specification="ISO 32000-1" clause="13.2.4.2"/>
             </references>
         </rule>
-        <rule object="PDPrinterMarkAnnot">
+        <rule object="PDPrinterMarkAnnot" tags="major,machine,syntax,annotation">
             <id specification="ISO_14289_1" clause="7.18.8" testNumber="1"/>
             <description>PrinterMark annotations, if present, shall be considered Incidental Artifacts, as if they are hidden page
                 elements as defined in ISO 32000-1:2008, 14.8.2.2.3.</description>
@@ -1935,7 +1935,7 @@
                 <reference specification="ISO 32000-1" clause="14.8.2.2.3"/>
             </references>
         </rule>
-        <rule object="PDXForm">
+        <rule object="PDXForm" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.20" testNumber="1"/>
             <description>A conforming file shall not contain any reference XObjects</description>
             <test>containsRef == false</test>
@@ -1945,7 +1945,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDXForm">
+        <rule object="PDXForm" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.20" testNumber="2"/>
             <description>The content of Form XObjects shall be incorporated into structure elements according to
                 ISO 32000-1:2008, 14.7.2.</description>
@@ -1958,7 +1958,7 @@
                 <reference specification="ISO 32000-1" clause="14.7.2"/>
             </references>
         </rule>
-        <rule object="PDType0Font">
+        <rule object="PDType0Font" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.3.1" testNumber="1"/>
             <description>For any given composite (Type 0) font within a conforming file, the CIDSystemInfo entry in its CIDFont dictionary and its Encoding dictionary 
 			shall have the following relationship: 
@@ -1984,7 +1984,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDCIDFont">
+        <rule object="PDCIDFont" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.3.2" testNumber="1"/>
             <description>ISO 32000-1:2008, 9.7.4, Table 117 requires that all embedded Type 2 CIDFonts in the CIDFont dictionary shall contain a 
 			CIDToGIDMap entry that shall be a stream mapping from CIDs to glyph indices or the name Identity, as described in ISO 32000-1:2008, 9.7.4, Table 117.</description>
@@ -1997,7 +1997,7 @@
                 <reference specification="ISO 32000-1:2008" clause="9.7.4, Table 117"/>
             </references>
         </rule>
-        <rule object="PDCMap">
+        <rule object="PDCMap" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.3.3" testNumber="1"/>
             <description>All CMaps used within a PDF/UA file, except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118, shall be embedded in that file as described
 			in ISO 32000-1:2008, 9.7.5.</description>
@@ -2027,7 +2027,7 @@
                 <reference specification="ISO 32000-1:2008" clause="9.7.5.2, Table 118"/>
             </references>
         </rule>
-        <rule object="CMapFile">
+        <rule object="CMapFile" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.3.3" testNumber="2"/>
             <description>For those CMaps that are embedded, the integer value of the WMode entry in the CMap dictionary shall be identical to the WMode value
 			in the embedded CMap stream.</description>
@@ -2041,7 +2041,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDReferencedCMap">
+        <rule object="PDReferencedCMap" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.3.3" testNumber="3"/>
             <description>A CMap shall not reference any other CMap except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118.</description>
             <test>CMapName == "Identity-H" || CMapName == "Identity-V" || CMapName == "GB-EUC-H" || CMapName == "GB-EUC-V" ||
@@ -2070,7 +2070,7 @@
                 <reference specification="ISO 32000-1:2008" clause="9.7.5.2, Table 118"/>
             </references>
         </rule>
-        <rule object="PDFont">
+        <rule object="PDFont" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.4.1" testNumber="1"/>
             <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9.</description>
             <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || fontFile_size == 1</test>
@@ -2082,7 +2082,7 @@
                 <reference specification="ISO 32000-1:2008" clause="9.9"/>
             </references>
         </rule>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.4.1" testNumber="2"/>
             <description>Embedded fonts shall define all glyphs referenced for rendering within the conforming file.
                 A font referenced for use solely in rendering mode 3 is therefore not rendered and is thus exempt
@@ -2098,7 +2098,7 @@
                 <reference specification="ISO 32000-1:2008" clause="9.6.6.4"/>
             </references>
         </rule>
-        <rule object="PDType1Font">
+        <rule object="PDType1Font" tags="minor,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.4.2" testNumber="1"/>
             <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs
 			present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not.</description>
@@ -2109,7 +2109,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDCIDFont">
+        <rule object="PDCIDFont" tags="minor,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.4.2" testNumber="2"/>
             <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program,
 			regardless of whether a CID in the font is referenced or used by the PDF or not.</description>
@@ -2120,7 +2120,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.5" testNumber="1"/>
             <description>For every font embedded in a conforming file and used for rendering, the glyph width information in the font dictionary and in the embedded 
 			font program shall be consistent.</description>
@@ -2135,7 +2135,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="TrueTypeFontProgram">
+        <rule object="TrueTypeFontProgram" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.6" testNumber="1"/>
             <description>For all non-symbolic TrueType fonts used for rendering, the embedded TrueType font program shall contain one or several non-symbolic
                     cmap entries such that all necessary glyph lookups can be carried out.</description>
@@ -2146,7 +2146,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDTrueTypeFont">
+        <rule object="PDTrueTypeFont" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.6" testNumber="2"/>
             <description>No non-symbolic TrueType font shall define a Differences array unless all of the glyph names in
 			the Differences array are listed in the Adobe Glyph List and the embedded font program contains at least the
@@ -2164,7 +2164,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDTrueTypeFont">
+        <rule object="PDTrueTypeFont" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.6" testNumber="3"/>
             <description>Symbolic TrueType fonts shall not contain an Encoding entry in the font dictionary</description>
             <test>isSymbolic == false || Encoding == null</test>
@@ -2174,7 +2174,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="TrueTypeFontProgram">
+        <rule object="TrueTypeFontProgram" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.6" testNumber="4"/>
             <description>The 'cmap' table in the embedded font program for a symbolic TrueType font shall contain either
                 exactly one encoding or it shall contain, at least, the Microsoft Symbol (3,0 - Platform ID=3,
@@ -2189,7 +2189,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="critical,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.7" testNumber="1"/>
             <description>The Font dictionary of all fonts shall define the map of all used character codes to Unicode values, either via a ToUnicode entry,
                 or other mechanisms as defined in ISO 14289-1, 7.21.7.</description>
@@ -2202,7 +2202,7 @@
                 <reference specification="ISO 14289-1:2014" clause="7.21.7"/>
             </references>
         </rule>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="critical,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.7" testNumber="2"/>
             <description>The Unicode values specified in the ToUnicode CMap shall all be greater than zero (0), but not equal to either U+FEFF or U+FFFE.</description>
             <test>toUnicode == null || (toUnicode.indexOf("\u0000") == -1 &amp;&amp; toUnicode.indexOf("\uFFFE") == -1 &amp;&amp; toUnicode.indexOf("\uFEFF")  == -1)</test>
@@ -2212,7 +2212,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="major,machine,syntax,font">
             <id specification="ISO_14289_1" clause="7.21.8" testNumber="1"/>
             <description>A PDF/UA compliant document shall not contain a reference to the .notdef glyph from any of the text showing
 			operators, regardless of text rendering mode, in any content stream.</description>
