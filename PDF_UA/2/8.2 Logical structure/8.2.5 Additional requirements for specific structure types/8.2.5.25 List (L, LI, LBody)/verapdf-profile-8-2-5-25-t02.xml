@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-2:202x - 8.2 logical structure - 8.2.5.25 List (L, LI, LBody) - Real content within LI</name>
+        <description>Any real content within an LI structure element that is not enclosed in an Lbl structure element 
+            shall be enclosed in an LBody structure element</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SELI">
+            <id specification="ISO_14289_2" clause="8.2.5.25" testNumber="2"/>
+            <description>Any real content within an LI structure element that is not enclosed in an Lbl structure 
+                element shall be enclosed in an LBody structure element</description>
+            <test>hasContentItems == false</test>
+            <error>
+                <message>The LI structure element contains real content as its direct child instead of enclosing it into 
+                    Lbl or LBody structure elements</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

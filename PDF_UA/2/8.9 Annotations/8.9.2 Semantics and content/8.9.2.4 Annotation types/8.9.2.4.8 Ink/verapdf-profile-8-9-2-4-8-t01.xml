@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.9 Annotations - 8.9.2.4 Annotation types - Ink annotation</name>
+        <description>A Contents entry describing the author’s intent shall be provided for Ink annotation</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDInkAnnot">
+            <id specification="ISO_14289_2" clause="8.9.2.4.8" testNumber="1"/>
+            <description>A Contents entry describing the author’s intent shall be provided for Ink annotation</description>
+            <test>Contents != null</test>
+            <error>
+                <message>Ink annotation does not contain Contents entry</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

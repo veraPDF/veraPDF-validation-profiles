@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.10 Forms - 8.10.1 General - Widget annotations count</name>
+        <description>A Form structure element shall contain at most one widget annotation</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEForm">
+            <id specification="ISO_14289_2" clause="8.10.1" testNumber="2"/>
+            <description>A Form structure element shall contain at most one widget annotation</description>
+            <test>widgetAnnotsCount &lt;= 1</test>
+            <error>
+                <message>A Form structure element contains %1 annotations</message>
+                <arguments>
+                    <argument>widgetAnnotsCount</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.9 Annotations - 8.9.2.4 Annotation types - PrinterMark annotation</name>
+        <description>A printer's mark annotation as specified in ISO 32000-2:2020, 14.11.3 shall be an artifact</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDPrinterMarkAnnot">
+            <id specification="ISO_14289_2" clause="8.9.2.4.14" testNumber="1"/>
+            <description>A printer's mark annotation as specified in ISO 32000-2:2020, 14.11.3 shall be an artifact</description>
+            <test>structParentType == null || isArtifact == true</test>
+            <error>
+                <message>A PrinterMark annotation is included in logical structure with tag %1 (standard type = %2)</message>
+                <arguments>
+                    <argument>structParentType</argument>
+                    <argument>structParentStandardType</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="14.11.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

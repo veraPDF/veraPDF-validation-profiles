@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T11:35:34.541+03:00">
+        <name>ISO 14289-2:202x - 8.4 Text representation for content - Unicode PUA</name>
+        <description>In all cases, where real content maps to Unicode PUA values, an ActualText or Alt entry shall be present</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="Glyph">
+            <id specification="ISO_14289_2" clause="8.4.3" testNumber="1"/>
+            <description>In all cases, where real content maps to Unicode PUA values, an ActualText or Alt entry shall be present</description>
+            <test>unicodePUA == false || actualTextPresent == true || altPresent == true</test>
+            <error>
+                <message>Real content maps to Unicode PUA values, but ActualText and Alt entry are not present</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

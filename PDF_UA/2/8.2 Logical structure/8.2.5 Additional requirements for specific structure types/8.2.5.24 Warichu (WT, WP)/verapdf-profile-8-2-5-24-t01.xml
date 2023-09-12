@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.5.24 Warichu (WT, WP) - Warichu's children</name>
+        <description>Content typeset as warichu shall be tagged in a three-element sequence consisting of the structure 
+            elements WP, WT and WP, grouped inside a Warichu structure element</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEWarichu">
+            <id specification="ISO_14289_2" clause="8.2.5.24" testNumber="1"/>
+            <description>Content typeset as warichu shall be tagged in a three-element sequence consisting of the 
+                structure elements WP, WT and WP, grouped inside a Warichu structure element</description>
+            <test>kidsStandardTypes == 'WP&amp;WT&amp;WP'</test>
+            <error>
+                <message>The Warichu structure element has invalid sequence of children: %1</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').toString()</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
