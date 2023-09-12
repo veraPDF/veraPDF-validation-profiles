@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.9 Annotations - 8.9.2.3 Markup annotations - Annot structure element</name>
+        <description>Markup annotations shall be enclosed within Annot structure elements</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDMarkupAnnot">
+            <id specification="ISO_14289_2" clause="8.9.2.3" testNumber="1"/>
+            <description>Markup annotations shall be enclosed within Annot structure elements</description>
+            <test>structParentStandardType == 'Annot'</test>
+            <error>
+                <message>A Markup annotation is an Artifact or is nested within %1 tag (standard type = %2) instead of Annot</message>
+                <arguments>
+                    <argument>structParentType</argument>
+                    <argument>structParentStandardType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

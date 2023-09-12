@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.9 Annotations - 8.9.4.2 Alt properties - Alt and Contents</name>
+        <description>Where both Contents and Alt entries are present for the annotation, they shall be identical</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_2" clause="8.9.4.2" testNumber="1"/>
+            <description>Where both Contents and Alt entries are present for the annotation, they shall be identical</description>
+            <test>Contents == null || Alt == null || Contents == Alt</test>
+            <error>
+                <message>Both Contents and Alt entries are present for the annotation, but they are not identical (Contents = %1, Alt = %2)</message>
+                <arguments>
+                    <argument>Contents</argument>
+                    <argument>Alt</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T11:35:34.541+03:00">
+        <name>ISO 14289-2:202x - 8.6 Text string objects - Unicode PUA</name>
+        <description>Text strings intended to be human readable shall not use the Unicode PUA</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosTextString">
+            <id specification="ISO_14289_2" clause="8.7" testNumber="1"/>
+            <description>Text strings intended to be human readable shall not use the Unicode PUA</description>
+            <test>containsPUA == false</test>
+            <error>
+                <message>Text string intended to be human readable uses Unicode PUA</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="7.9.2.2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

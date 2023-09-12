@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.2 logical structure - 8.2.5.26 Table - Regular Table</name>
+        <description>Tables shall be regular. Table rows shall have the same number of columns (taking into account 
+            column spans)</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETable">
+            <id specification="ISO_14289_2" clause="8.2.5.26" testNumber="4"/>
+            <description>Tables shall be regular. Table rows shall have the same number of columns (taking into account 
+                column spans)</description>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan == null</test>
+            <error>
+                <message>Table rows 1 and %1 span different number of columns (%2 and %3 respectively)</message>
+                <arguments>
+                    <argument>numberOfRowWithWrongColumnSpan + 1</argument>
+                    <argument>columnSpan</argument>
+                    <argument>wrongColumnSpan</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

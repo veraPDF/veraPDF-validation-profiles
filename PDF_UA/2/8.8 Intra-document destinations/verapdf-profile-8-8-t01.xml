@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.8 Intra-document destinations - Struct destination</name>
+        <description>All destinations whose target lies within the current document shall be structure destinations</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDDestination">
+            <id specification="ISO_14289_2" clause="8.8" testNumber="1"/>
+            <description>All destinations whose target lies within the current document shall be structure destinations</description>
+            <test>isStructDestination == true</test>
+            <error>
+                <message>Destination in Outline item or Link annotation is not a structure destination</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="12.3.2"/>
+                <reference specification="ISO 32000-2:2020" clause="12.3.2.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

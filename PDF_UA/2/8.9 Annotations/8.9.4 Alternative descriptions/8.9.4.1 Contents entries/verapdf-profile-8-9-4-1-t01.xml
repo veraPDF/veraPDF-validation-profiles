@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:202x - 8.9 Annotations - 8.9.4.1 Contents entries - Contents and Alt</name>
+        <description>Except Widget annotations, Contents entries in annotation dictionaries shall provide an alternative 
+            description of the annotation. If Contents cannot be used for this purpose, an alternate description shall 
+            be provided for the annotation via one of the other mechanisms defined in ISO 32000-2:2020, 14.9.3</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAnnot">
+            <id specification="ISO_14289_2" clause="8.9.4.1" testNumber="1"/>
+            <description>Except Widget annotations, Contents entries in annotation dictionaries shall provide an 
+                alternative description of the annotation. If Contents cannot be used for this purpose, an alternate 
+                description shall be provided for the annotation via one of the other mechanisms defined in 
+                ISO 32000-2:2020, 14.9.3</description>
+            <test>Subtype == 'Widget' || Contents != null || Alt != null</test>
+            <error>
+                <message>%1 annotation neither has a Contents entry nor alternate description</message>
+                <arguments>
+                    <argument>Subtype</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="14.9.3"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

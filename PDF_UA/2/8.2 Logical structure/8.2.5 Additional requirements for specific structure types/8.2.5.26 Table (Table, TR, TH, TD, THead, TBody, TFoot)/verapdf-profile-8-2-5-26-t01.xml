@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-2:202x - 8.2 logical structure - 8.2.5.26 Table - Regular Table</name>
+        <description>Tables shall be regular. Table cell shall not have intersection with other cells</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETableCell">
+            <id specification="ISO_14289_2" clause="8.2.5.26" testNumber="1"/>
+            <description>Tables shall be regular. Table cell shall not have intersection with other cells</description>
+            <test>hasIntersection != true</test>
+            <error>
+                <message>Table cell has intersection with other cells</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
