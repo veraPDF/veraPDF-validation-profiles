@@ -19,7 +19,7 @@
                     the widget annotation</message>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.5"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.5"/>
             </references>
         </rule>
     </rules>
