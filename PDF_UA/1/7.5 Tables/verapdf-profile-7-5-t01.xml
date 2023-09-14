@@ -17,7 +17,7 @@
                     via algorithm from ISO32000-2, 14.8.4.8.3.</message>
             </error>
             <references>
-                <reference specification="ISO 32000-2" clause="14.8.4.8.3"/>
+                <reference specification="ISO 32000-2:2020" clause="14.8.4.8.3"/>
             </references>
         </rule>
     </rules>

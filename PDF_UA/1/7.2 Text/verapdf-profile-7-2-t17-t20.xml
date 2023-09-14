@@ -17,7 +17,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.3"/>
             </references>
         </rule>
         <rule object="SELBody">
@@ -31,7 +31,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.3"/>
             </references>
         </rule>
         <rule object="SEL">
@@ -47,7 +47,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.3"/>
             </references>
         </rule>
         <rule object="SELI">
@@ -61,7 +61,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.3"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.3"/>
             </references>
         </rule>
     </rules>

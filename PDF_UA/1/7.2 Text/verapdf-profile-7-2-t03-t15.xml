@@ -19,7 +19,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETR">
@@ -33,7 +33,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETHead">
@@ -47,7 +47,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETBody">
@@ -61,7 +61,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETFoot">
@@ -75,7 +75,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETH">
@@ -89,7 +89,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETD">
@@ -103,7 +103,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETR">
@@ -117,7 +117,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETable">
@@ -129,7 +129,7 @@
                 <arguments/>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETable">
@@ -141,7 +141,7 @@
                 <arguments/>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETable">
@@ -154,7 +154,7 @@
                 <arguments/>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETable">
@@ -167,7 +167,7 @@
                 <arguments/>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
         <rule object="SETableCell">
@@ -179,7 +179,7 @@
                 <arguments/>
             </error>
             <references>
-                <reference specification="ISO 32000-1" clause="14.8.4.3.4"/>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
     </rules>
