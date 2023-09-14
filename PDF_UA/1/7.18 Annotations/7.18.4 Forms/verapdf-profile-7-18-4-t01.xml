@@ -9,11 +9,12 @@
         <rule object="PDWidgetAnnot">
             <id specification="ISO_14289_1" clause="7.18.4" testNumber="1"/>
             <description>A Widget annotation shall be nested within a Form tag per ISO 32000-1:2008, 14.8.4.5, Table 340.</description>
-            <test>structParentType == 'Form' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <test>structParentStandardType == 'Form' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
-                <message>A Widget annotation is nested within %1 tag instead of Form</message>
+                <message>A Widget annotation is artifact or is nested within %1 tag (standard type = %2) instead of Form</message>
                 <arguments>
                     <argument>structParentType</argument>
+                    <argument>structParentStandardType</argument>
                 </arguments>
             </error>
             <references>
