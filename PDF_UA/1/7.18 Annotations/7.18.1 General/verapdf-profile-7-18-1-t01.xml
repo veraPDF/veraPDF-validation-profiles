@@ -10,12 +10,13 @@
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="1"/>
             <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
             <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || isOutsideCropBox == true ||
-                (F &amp; 2) == 2 || structParentType == 'Annot'</test>
+                (F &amp; 2) == 2 || structParentStandardType == 'Annot'</test>
             <error>
-                <message>%1 annotation is nested within %2 tag instead of Annot</message>
+                <message>%1 annotation is artifact or is nested within %2 tag (standard type = %3) instead of Annot</message>
                 <arguments>
                     <argument>Subtype</argument>
                     <argument>structParentType</argument>
+                    <argument>structParentStandardType</argument>
                 </arguments>
             </error>
             <references/>
