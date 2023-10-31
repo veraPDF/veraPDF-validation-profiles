@@ -914,7 +914,7 @@
         <rule object="SEMarkedContent" tags="major,machine,syntax,content">
             <id specification="ISO_14289_1" clause="7.1" testNumber="1"/>
             <description>Content marked as Artifact should not present inside tagged content</description>
-            <test>tag != 'Artifact' || parentStructureTag == null</test>
+            <test>tag != 'Artifact' || (parentStructureTag == null || isArtifact == true)</test>
             <error>
                 <message>Content marked as Artifact is present inside tagged content (tag %1)</message>
                 <arguments>
@@ -926,11 +926,11 @@
         <rule object="SEMarkedContent" tags="major,machine,syntax,content">
             <id specification="ISO_14289_1" clause="7.1" testNumber="2"/>
             <description>Tagged content should not present inside content marked as Artifact</description>
-            <test>structureTag == null || parentsTags.split('&amp;').filter(elem =&gt; elem == 'Artifact').length == 0</test>
+            <test>(parentStructureTag == null || isArtifact == true) || parentsTags.split('&amp;').filter(elem =&gt; elem == 'Artifact').length == 0</test>
             <error>
                 <message>Tagged content (tag %1) is present inside content marked as Artifact</message>
                 <arguments>
-                    <argument>structureTag</argument>
+                    <argument>parentStructureTag</argument>
                 </arguments>
             </error>
             <references/>
@@ -1984,7 +1984,7 @@
             <id specification="ISO_14289_1" clause="7.18.8" testNumber="1"/>
             <description>PrinterMark annotations, if present, shall be considered Incidental Artifacts, as if they are hidden page
                 elements as defined in ISO 32000-1:2008, 14.8.2.2.3.</description>
-            <test>structParentType == null || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <test>(structParentType == null || isArtifact == true) || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
                 <message>A PrinterMark annotation is included in logical structure</message>
                 <arguments/>
@@ -2298,7 +2298,7 @@
         </variable>
         <variable name="gStructureTag" object="SEMarkedContent">
             <defaultValue>null</defaultValue>
-            <value>structureTag</value>
+            <value>parentStructureTag</value>
         </variable>
         <variable name="gMostCommonPageOrientation" object="PDDocument">
             <defaultValue>null</defaultValue>
