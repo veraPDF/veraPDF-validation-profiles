@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2023-11-11T10:58:04.940+03:00">
+        <name>ISO 19005-1:2005 - 6.1.4 Cross reference table - Xref stream</name>
+        <description>Xref streams shall not be used</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDDocument">
+            <id specification="ISO_19005_1" clause="6.1.4" testNumber="3"/>
+            <description>Xref streams shall not be used</description>
+            <test>containsXRefStream == false</test>
+            <error>
+                <message>The document uses xref streams</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
