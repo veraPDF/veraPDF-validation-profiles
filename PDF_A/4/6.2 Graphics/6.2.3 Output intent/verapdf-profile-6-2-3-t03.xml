@@ -2,13 +2,13 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
     <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.302+03:00">
         <name>ISO 19005-4:2020 - 6.2.3 Output intent - DestOutputProfileRef entry</name>
-        <description>The DestOutputProfileRef key, as defined in ISO 32000-2:2020, 14.11.5, Table 401, shall not be present in any output intent dictionary.</description>
+        <description>The DestOutputProfileRef key, as defined in ISO 32000-2:2020, 14.11.5, Table 401, shall not be present in any output intent dictionary</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDOutputIntent">
             <id specification="ISO_19005_4" clause="6.2.3" testNumber="3"/>
-            <description>The DestOutputProfileRef key, as defined in ISO 32000-2:2020, 14.11.5, Table 401, shall not be present in any output intent dictionary.</description>
+            <description>The DestOutputProfileRef key, as defined in ISO 32000-2:2020, 14.11.5, Table 401, shall not be present in any output intent dictionary</description>
             <test>containsDestOutputProfileRef == false</test>
             <error>
                 <message>The output intent dictionary contains forbidden entry DestOutputProfileRef</message>

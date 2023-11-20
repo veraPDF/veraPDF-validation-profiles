@@ -19,7 +19,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO19005-1:2005/Cor.2:2011" clause="6.6.1"/>
+                <reference specification="ISO 19005-1:2005/Cor.2:2011" clause="6.6.1"/>
             </references>
         </rule>
     </rules>

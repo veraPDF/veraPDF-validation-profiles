@@ -3,17 +3,17 @@
     <details creator="veraPDF Consortium" created="2016-03-18T15:33:45.326+03:00">
         <name>ISO 19005-2:2011 - 6.2.8.3 JPEG2000 - Colour spaces with APPROX field</name>
         <description>If the number of colour space specifications in the JPEG2000 data is greater than 1, there shall be exactly one colour space 
-		specification that has the value 0x01 in the APPROX field.</description>
+		specification that has the value 0x01 in the APPROX field</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="JPEG2000">
             <id specification="ISO_19005_2" clause="6.2.8.3" testNumber="2"/>
             <description>If the number of colour space specifications in the JPEG2000 data is greater than 1, there shall be exactly one colour space 
-			specification that has the value 0x01 in the APPROX field.</description>
+			specification that has the value 0x01 in the APPROX field</description>
             <test>hasColorSpace == true || nrColorSpaceSpecs == 1 || nrColorSpacesWithApproxField == 1</test>
             <error>
-                <message>The JPEG2000 image contains %1 colour specifications with the best colour fidelity (value 0x01 in the APPROX field).</message>
+                <message>The JPEG2000 image contains %1 colour specifications with the best colour fidelity (value 0x01 in the APPROX field)</message>
                 <arguments>
                     <argument>nrColorSpacesWithApproxField</argument>
                 </arguments>

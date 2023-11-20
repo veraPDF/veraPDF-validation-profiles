@@ -4,7 +4,7 @@
         <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Extension schema property - valueType field</name>
         <description>Field 'valueType' of the PDF/A Property value type in the PDF/A extension schema shall be
             present and shall have type Text and namespace prefix 'pdfaProperty'. Value of valueType property shall
-            be defined.</description>
+            be defined</description>
     </details>
     <hash></hash>
     <rules>
@@ -12,7 +12,7 @@
             <id specification="ISO_19005_1" clause="6.7.8" testNumber="9"/>
             <description>Field 'valueType' of the PDF/A Property value type in the PDF/A extension schema shall be
                 present and shall have type Text and namespace prefix 'pdfaProperty'. Value of valueType property shall
-                be defined.</description>
+                be defined</description>
             <test>isValueTypeValidText == true &amp;&amp; isValueTypeDefined == true &amp;&amp; valueTypePrefix == &quot;pdfaProperty&quot;</test>
             <error>
                 <message>Field 'valueType' of the PDF/A Property value type is not present, or doesn't have prefix

@@ -4,15 +4,15 @@
         <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.6 Character encodings - cmaps in the symbolic TrueType font program</name>
         <description>The 'cmap' table in the embedded font program for a symbolic TrueType font shall contain either
             exactly one encoding or it shall contain, at least, the Microsoft Symbol (3,0 - Platform ID=3,
-            Encoding ID=0) encoding.</description>
+            Encoding ID=0) encoding</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="TrueTypeFontProgram">
+        <rule object="TrueTypeFontProgram" tags="major,machine,font">
             <id specification="ISO_14289_1" clause="7.21.6" testNumber="4"/>
             <description>The 'cmap' table in the embedded font program for a symbolic TrueType font shall contain either
                 exactly one encoding or it shall contain, at least, the Microsoft Symbol (3,0 - Platform ID=3,
-                Encoding ID=0) encoding.</description>
+                Encoding ID=0) encoding</description>
             <test>isSymbolic == false || nrCmaps == 1 || cmap30Present == true</test>
             <error>
                 <message>The embedded font program for a symbolic TrueType font contains %1 cmap subtables and

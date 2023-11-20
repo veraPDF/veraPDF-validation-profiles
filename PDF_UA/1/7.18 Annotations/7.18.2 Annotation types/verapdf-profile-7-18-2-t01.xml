@@ -2,13 +2,13 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
         <name>ISO 14289-1:2014 - 7.18 Annotations - 7.18.2 Annotation types - TrapNext</name>
-        <description>Annotations of subtype TrapNet shall not be permitted.</description>
+        <description>Annotations of subtype TrapNet shall not be permitted</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDTrapNetAnnot">
+        <rule object="PDTrapNetAnnot" tags="major,machine,annotation">
             <id specification="ISO_14289_1" clause="7.18.2" testNumber="1"/>
-            <description>Annotations of subtype TrapNet shall not be permitted.</description>
+            <description>Annotations of subtype TrapNet shall not be permitted</description>
             <test>isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
                 <message>An annotation of subtype TrapNet exists</message>

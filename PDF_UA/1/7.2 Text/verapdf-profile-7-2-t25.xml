@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDFormField">
+        <rule object="PDFormField" tags="major,machine,structure,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="25"/>
             <description>Natural language in the TU key for form fields shall be determined</description>
             <test>TU == null || Lang_size != 0 || gSizeCatalogLang != 0</test>

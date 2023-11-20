@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEFigure">
+        <rule object="SEFigure" tags="major,machine,structure,figure,alt-text">
             <id specification="ISO_14289_1" clause="7.3" testNumber="1"/>
             <description>Figure tags shall include an alternative representation or replacement text that represents the contents
                 marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>

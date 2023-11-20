@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETable">
+        <rule object="SETable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="16"/>
             <description>Table element may contain a Caption element as its first or last kid</description>
             <test>kidsStandardTypes.indexOf('&amp;Caption&amp;') &lt; 0</test>

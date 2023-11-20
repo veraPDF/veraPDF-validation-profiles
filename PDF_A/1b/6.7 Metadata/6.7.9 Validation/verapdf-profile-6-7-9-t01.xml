@@ -11,7 +11,7 @@
             <description>The metadata stream shall conform to XMP Specification and well formed PDFAExtension Schema for all extensions</description>
             <test>isSerializationValid</test>
             <error>
-                <message>The serialization of the metadata stream does not conform to XMP Specification.</message>
+                <message>The serialization of the metadata stream does not conform to XMP Specification</message>
                 <arguments/>
             </error>
             <references>

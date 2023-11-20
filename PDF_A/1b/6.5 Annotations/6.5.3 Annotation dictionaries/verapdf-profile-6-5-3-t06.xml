@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:06.708+03:00">
         <name>ISO 19005-1:2005 - 6.5.3 Annotation dictionaries - Normal appearance</name>
         <description>If an annotation dictionary's Subtype key has value other than Widget, or if FT key associated
-            with Widget annotation has value other than Btn, the value of the N key shall be an appearance stream.</description>
+            with Widget annotation has value other than Btn, the value of the N key shall be an appearance stream</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
             <id specification="ISO_19005_1" clause="6.5.3" testNumber="6"/>
             <description>If an annotation dictionary's Subtype key has value other than Widget, or if FT key associated
-                with Widget annotation has value other than Btn, the value of the N key shall be an appearance stream.</description>
+                with Widget annotation has value other than Btn, the value of the N key shall be an appearance stream</description>
             <test>AP != &quot;N&quot; || (Subtype == &quot;Widget&quot; &amp;&amp; FT == &quot;Btn&quot;) || N_type == &quot;Stream&quot;</test>
             <error>
                 <message>An annotation dictionary's Subtype key has a value %1 and its FT key has a value %2, but the
@@ -21,7 +21,7 @@
                 </arguments>
             </error>
             <references>
-                <reference specification="ISO19005-1/Cor.2:2011" clause="6.5.3"/>
+                <reference specification="ISO 19005-1/Cor.2:2011" clause="6.5.3"/>
             </references>
         </rule>
     </rules>

@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETextItem">
+        <rule object="SETextItem" tags="major,machine,lang,text">
             <id specification="ISO_14289_1" clause="7.2" testNumber="34"/>
             <description>Natural language for text in page content shall be determined</description>
             <test>gSizeCatalogLang != 0 || Lang != null</test>

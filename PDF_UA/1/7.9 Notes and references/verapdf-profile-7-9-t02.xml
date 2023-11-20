@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SENote">
+        <rule object="SENote" tags="major,machine,structure,note">
             <id specification="ISO_14289_1" clause="7.9" testNumber="2"/>
             <description>Each Note tag shall have unique ID key</description>
             <test>hasDuplicateNoteID == false</test>

@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETable">
+        <rule object="SETable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="39"/>
             <description>Table element may contain only one Caption element</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Caption').length &lt; 2</test>

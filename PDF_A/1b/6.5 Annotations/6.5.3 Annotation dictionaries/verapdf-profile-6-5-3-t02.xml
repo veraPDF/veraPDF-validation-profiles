@@ -17,10 +17,10 @@
                     (F = %1, Print = %2, Hidden = %3, Invisible = %4, NoView = %5)</message>
                 <arguments>
                     <argument>F</argument>
-                    <argument>F != null ? (F &amp; 4) >> 2 : null</argument>
-                    <argument>F != null ? (F &amp; 2) >> 1 : null</argument>
+                    <argument>F != null ? (F &amp; 4) &gt;&gt; 2 : null</argument>
+                    <argument>F != null ? (F &amp; 2) &gt;&gt; 1 : null</argument>
                     <argument>F != null ? (F &amp; 1) : null</argument>
-                    <argument>F != null ? (F &amp; 32) >> 5 : null</argument>
+                    <argument>F != null ? (F &amp; 32) &gt;&gt; 5 : null</argument>
                 </arguments>
             </error>
             <references/>

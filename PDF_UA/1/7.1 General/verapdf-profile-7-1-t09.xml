@@ -4,15 +4,15 @@
         <name>ISO 14289-1:2014 - 7.1 General - Dc title</name>
         <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the
             recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which
-            clearly identifies the document.</description>
+            clearly identifies the document</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="MainXMPPackage">
+        <rule object="MainXMPPackage" tags="major,machine,metadata">
             <id specification="ISO_14289_1" clause="7.1" testNumber="9"/>
             <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the
                 recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which
-                clearly identifies the document.</description>
+                clearly identifies the document</description>
             <test>dc_title != null</test>
             <error>
                 <message>Metadata stream does not contain dc:title</message>

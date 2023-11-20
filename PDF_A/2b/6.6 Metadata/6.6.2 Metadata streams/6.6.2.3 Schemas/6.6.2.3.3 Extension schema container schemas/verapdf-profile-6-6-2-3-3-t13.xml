@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.555+03:00">
         <name>ISO 19005-2:2011 - 6.6.2.3 Schemas - Extension schema ValueType type - prefix field</name>
         <description>Field 'prefix' of the PDF/A ValueType value type in the PDF/A extension schema shall be present and
-            shall have type Text and namespace prefix 'pdfaType'.</description>
+            shall have type Text and namespace prefix 'pdfaType'</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="ExtensionSchemaValueType">
             <id specification="ISO_19005_2" clause="6.6.2.3.3" testNumber="13"/>
             <description>Field 'prefix' of the PDF/A ValueType value type in the PDF/A extension schema shall be present and
-                shall have type Text and namespace prefix 'pdfaType'.</description>
+                shall have type Text and namespace prefix 'pdfaType'</description>
             <test>isPrefixValidText == true &amp;&amp; prefixPrefix == &quot;pdfaType&quot;</test>
             <error>
                 <message>Field 'prefix' of the PDF/A ValueType value type is not present, or doesn't have prefix

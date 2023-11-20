@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="CosFileSpecification">
+        <rule object="CosFileSpecification" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.11" testNumber="1"/>
             <description>The file specification dictionary for an embedded file shall contain the non-empty F and UF keys</description>
             <test>containsEF == false || (F != null &amp;&amp; F != '' &amp;&amp; UF != null &amp;&amp; UF != '')</test>

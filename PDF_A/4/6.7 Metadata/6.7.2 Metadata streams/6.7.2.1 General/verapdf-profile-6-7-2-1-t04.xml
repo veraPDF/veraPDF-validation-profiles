@@ -3,17 +3,17 @@
     <details creator="veraPDF Consortium" created="2020-12-15T10:53:07.614+03:00">
         <name>ISO 19005-4:2020 - 6.7.2.1 General - Conforms to XMP Specification.</name>
         <description>All content of all XMP packets located in any metadata stream present in the PDF shall be
-            well-formed as defined by XMP (ISO 16684-1).</description>
+            well-formed as defined by XMP (ISO 16684-1)</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="XMPPackage">
             <id specification="ISO_19005_4" clause="6.7.2.1" testNumber="4"/>
             <description>All content of all XMP packets located in any metadata stream present in the PDF shall be
-                well-formed as defined by XMP (ISO 16684-1).</description>
+                well-formed as defined by XMP (ISO 16684-1)</description>
             <test>isSerializationValid</test>
             <error>
-                <message>A metadata stream is serialized incorrectly and can not be parsed.</message>
+                <message>A metadata stream is serialized incorrectly and can not be parsed</message>
                 <arguments/>
             </error>
             <references>

@@ -2,13 +2,13 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
         <name>ISO 14289-1:2014 - 7.18 Annotations - 7.18.5 Links - Link annotation</name>
-        <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element.</description>
+        <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDLinkAnnot">
+        <rule object="PDLinkAnnot" tags="major,machine,annotation">
             <id specification="ISO_14289_1" clause="7.18.5" testNumber="1"/>
-            <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element.</description>
+            <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element</description>
             <test>structParentStandardType == 'Link' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
                 <message>A Link annotation is artifact or is nested within %1 tag (standard type = %2) instead of Link</message>

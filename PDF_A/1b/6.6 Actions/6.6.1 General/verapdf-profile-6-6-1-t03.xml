@@ -2,7 +2,7 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:06.795+03:00">
         <name>ISO 19005-1:2005 - 6.6.1 Actions General - Form fields</name>
-        <description>Interactive form fields shall not perform actions of any type.</description>
+        <description>Interactive form fields shall not perform actions of any type</description>
     </details>
     <hash></hash>
     <rules>

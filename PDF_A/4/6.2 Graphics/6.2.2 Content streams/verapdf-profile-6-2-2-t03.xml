@@ -4,7 +4,7 @@
         <name>ISO 19005-4:2020 - 6.2.2 Content streams - Resources dictionary</name>
         <description>A content stream's named resources shall be defined by a resource dictionary, which shall
             enumerate the named resources needed by the operators in the content stream and the names by which
-            they can be referred to.</description>
+            they can be referred to</description>
     </details>
     <hash></hash>
     <rules>
@@ -12,10 +12,10 @@
             <id specification="ISO_19005_4" clause="6.2.2" testNumber="3"/>
             <description>A content stream's named resources shall be defined by a resource dictionary, which shall
                 enumerate the named resources needed by the operators in the content stream and the names by which
-                they can be referred to.</description>
+                they can be referred to</description>
             <test>undefinedResourceNames == ''</test>
             <error>
-                <message>A content stream references named resource(s) %1 not defined by a resource dictionary.</message>
+                <message>A content stream references named resource(s) %1 not defined by a resource dictionary</message>
                 <arguments>
                     <argument>undefinedResourceNames</argument>
                 </arguments>

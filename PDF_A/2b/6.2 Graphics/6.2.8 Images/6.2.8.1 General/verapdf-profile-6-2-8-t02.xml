@@ -2,7 +2,7 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.490+03:00">
         <name>ISO 19005-2:2011 - 6.2.8 Images - OPI</name>
-        <description>An Image dictionary shall not contain the OPI key.</description>
+        <description>An Image dictionary shall not contain the OPI key</description>
     </details>
     <hash></hash>
     <rules>

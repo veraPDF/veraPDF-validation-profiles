@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="major,machine,structure">
             <id specification="ISO_14289_1" clause="7.1" testNumber="6"/>
             <description>A circular mapping shall not exist</description>
             <test>circularMappingExist != true</test>
