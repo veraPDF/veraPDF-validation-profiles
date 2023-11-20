@@ -5,7 +5,7 @@
         <description>A content stream that references other objects, such as images and fonts that are necessary to
             fully render or process the stream, shall have an explicitly associated Resources dictionary as described
             in ISO 32000-2:2020, 7.8.3. Such resource dictionaries shall define all named resources referenced by this
-            content stream.</description>
+            content stream</description>
     </details>
     <hash></hash>
     <rules>
@@ -14,7 +14,7 @@
             <description>A content stream that references other objects, such as images and fonts that are necessary to
                 fully render or process the stream, shall have an explicitly associated Resources dictionary as
                 described in ISO 32000-2:2020, 7.8.3. Such resource dictionaries shall define all named resources
-                referenced by this content stream.</description>
+                referenced by this content stream</description>
             <test>inheritedResourceNames == ''</test>
             <error>
                 <message>A content stream refers to resource(s) %1 not defined in an explicitly associated Resources dictionary</message>

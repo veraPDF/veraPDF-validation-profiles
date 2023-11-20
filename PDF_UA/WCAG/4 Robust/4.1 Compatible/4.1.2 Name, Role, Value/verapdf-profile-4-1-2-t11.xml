@@ -2,14 +2,14 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
         <name>ISO 14289-1:2014 - 4.1 Compatible - 4.1.2 Name, Role, Value - Table elements</name>
-        <description>The structure type and attributes of table elements shall be semantically appropriate.</description>
+        <description>The structure type and attributes of table elements shall be semantically appropriate</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="SAStructElem">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="11"/>
-            <description>The structure type and attributes of table elements shall be semantically appropriate.</description>
-            <test>(correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
+            <description>The structure type and attributes of table elements shall be semantically appropriate</description>
+            <test>(correctSemanticScore &gt;= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
                 correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table')</test>
             <error>

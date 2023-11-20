@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.496+03:00">
         <name>ISO 19005-2:2011 - 6.6.2.3 Schemas - Extension schema definition - namespaceURI field</name>
         <description>Field 'namespaceURI' of the PDF/A Schema value type in the PDF/A extension schema shall be
-            present and shall have type URI and namespace prefix 'pdfaSchema'.</description>
+            present and shall have type URI and namespace prefix 'pdfaSchema'</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="ExtensionSchemaDefinition">
             <id specification="ISO_19005_2" clause="6.6.2.3.3" testNumber="3"/>
             <description>Field 'namespaceURI' of the PDF/A Schema value type in the PDF/A extension schema shall be
-                present and shall have type URI and namespace prefix 'pdfaSchema'.</description>
+                present and shall have type URI and namespace prefix 'pdfaSchema'</description>
             <test>isNamespaceURIValidURI == true &amp;&amp; namespaceURIPrefix == &quot;pdfaSchema&quot;</test>
             <error>
                 <message>Field 'namespaceURI' of the PDF/A Schema value type is not present, or doesn't have prefix

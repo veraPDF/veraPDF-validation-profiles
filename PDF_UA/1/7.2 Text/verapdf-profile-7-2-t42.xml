@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETable">
+        <rule object="SETable" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="42"/>
             <description>Table rows shall have the same number of columns (taking into account column spans)</description>
             <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>

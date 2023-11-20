@@ -3,15 +3,15 @@
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
         <name>ISO 14289-1:2014 - 7.1 General - StructTreeRoot</name>
         <description>The logical structure of the conforming file shall be described by a structure hierarchy rooted in the
-            StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7.</description>
+            StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDDocument">
+        <rule object="PDDocument" tags="critical,machine,structure">
             <id specification="ISO_14289_1" clause="7.1" testNumber="11"/>
             <description>The logical structure of the conforming file shall be described by a structure hierarchy
                 rooted in the StructTreeRoot entry of the document catalog dictionary,
-                as described in ISO 32000-1:2008, 14.7.</description>
+                as described in ISO 32000-1:2008, 14.7</description>
             <test>StructTreeRoot_size == 1</test>
             <error>
                 <message>StructTreeRoot entry is not present in the document catalog</message>

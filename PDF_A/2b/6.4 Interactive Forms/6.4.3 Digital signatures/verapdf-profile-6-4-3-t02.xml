@@ -4,7 +4,7 @@
         <name>ISO 19005-2:2011 - 6.4.3 Digital signatures - Certificate of PKCS#7 object</name>
         <description>The PDF Signature (a DER-encoded PKCS#7 binary data object) shall be placed into the Contents entry of
 		the signature dictionary. The PKCS#7 object shall conform to the PKCS#7 specification in RFC 2315. At
-		minimum, it shall include the signer's X.509 signing certificate.</description>
+		minimum, it shall include the signer's X.509 signing certificate</description>
     </details>
     <hash></hash>
     <rules>
@@ -12,7 +12,7 @@
             <id specification="ISO_19005_2" clause="6.4.3" testNumber="2"/>
             <description>The PDF Signature (a DER-encoded PKCS#7 binary data object) shall be placed into the Contents entry of
 			the signature dictionary. The PKCS#7 object shall conform to the PKCS#7 specification in RFC 2315. At
-			minimum, it shall include the signer's X.509 signing certificate.</description>
+			minimum, it shall include the signer's X.509 signing certificate</description>
             <test>signingCertificatePresent == true</test>
             <error>
                 <message>The DER-encoded PKCS#7 binary data object representing a PDF Signature does not include the signer's X.509 signing certificate</message>

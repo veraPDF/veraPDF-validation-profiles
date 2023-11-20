@@ -2,13 +2,13 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_A">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:04.137+03:00">
         <name>ISO 19005-2:2011 - 6.7.3 Artefacts - Circular mapping</name>
-        <description>A circular mapping shall not exist.</description>
+        <description>A circular mapping shall not exist</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="SENonStandard">
             <id specification="ISO_19005_2" clause="6.7.3.4" testNumber="2"/>
-            <description>A circular mapping shall not exist.</description>
+            <description>A circular mapping shall not exist</description>
             <test>circularMappingExist != true</test>
             <error>
                 <message>A circular mapping exists for %1 structure type</message>

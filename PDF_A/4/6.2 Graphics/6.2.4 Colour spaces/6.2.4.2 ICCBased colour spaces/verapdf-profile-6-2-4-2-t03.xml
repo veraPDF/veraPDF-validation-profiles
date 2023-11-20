@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2021-03-15T12:29:08.314+03:00">
         <name>ISO 19005-4:2020 - 6.2.4 Colour Spaces - 6.2.4.2 ICCBased color spaces</name>
         <description>An ICCBased colour space shall not be used where the profile is a CMYK destination profile and is
-            identical to that in the current PDF/A OutputIntent or the current transparency blending colorspace.</description>
+            identical to that in the current PDF/A OutputIntent or the current transparency blending colorspace</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDICCBasedCMYK">
             <id specification="ISO_19005_4" clause="6.2.4.2" testNumber="3"/>
             <description>An ICCBased colour space shall not be used where the profile is a CMYK destination profile and
-                is identical to that in the current PDF/A OutputIntent or the current transparency blending colorspace.</description>
+                is identical to that in the current PDF/A OutputIntent or the current transparency blending colorspace</description>
             <test>(ICCProfileIndirect == null || (ICCProfileIndirect != gOutputProfileIndirect &amp;&amp;
                 ICCProfileIndirect != currentTransparencyProfileIndirect)) &amp;&amp; (ICCProfileMD5 == null ||
                 (ICCProfileMD5 != gOutputICCProfileMD5 &amp;&amp; ICCProfileMD5 != currentTransparencyICCProfileMD5))</test>

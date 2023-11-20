@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
         <name>ISO 14289-1:2014 - 7.1 General - DisplayDocTitle</name>
         <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a
-            DisplayDocTitle key, whose value shall be true.</description>
+            DisplayDocTitle key, whose value shall be true</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="CosDocument">
+        <rule object="CosDocument" tags="minor,machine,syntax">
             <id specification="ISO_14289_1" clause="7.1" testNumber="10"/>
             <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a
-                DisplayDocTitle key, whose value shall be true.</description>
+                DisplayDocTitle key, whose value shall be true</description>
             <test>DisplayDocTitle == true</test>
             <error>
                 <message>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is

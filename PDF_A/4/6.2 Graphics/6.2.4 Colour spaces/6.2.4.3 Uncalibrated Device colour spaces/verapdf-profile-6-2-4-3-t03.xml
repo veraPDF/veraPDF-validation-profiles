@@ -5,7 +5,7 @@
         <description>DeviceCMYK shall only be used if a device independent DefaultCMYK colour space has been set when
             the DeviceCMYK colour space is used or if the current transparency blending space, when the DeviceCMYK
             colour space is used, is a device independent CMYK-based colour space or the current PDF/A OutputIntent,
-            when the DeviceCMYK colour space is used, contains a 'CMYK' destination profile.</description>
+            when the DeviceCMYK colour space is used, contains a 'CMYK' destination profile</description>
     </details>
     <hash></hash>
     <rules>
@@ -14,7 +14,7 @@
             <description>DeviceCMYK shall only be used if a device independent DefaultCMYK colour space has been set
                 when the DeviceCMYK colour space is used or if the current transparency blending space, when the
                 DeviceCMYK colour space is used, is a device independent CMYK-based colour space or the current PDF/A
-                OutputIntent, when the DeviceCMYK colour space is used, contains a 'CMYK' destination profile.</description>
+                OutputIntent, when the DeviceCMYK colour space is used, contains a 'CMYK' destination profile</description>
             <test>(gPageOutputCS == null ? gDocumentOutputCS == 'CMYK' : gPageOutputCS == 'CMYK') || gTransparencyCS == 'CMYK'</test>
             <error>
                 <message>DeviceCMYK colour space is used without CMYK output intent profile and without current

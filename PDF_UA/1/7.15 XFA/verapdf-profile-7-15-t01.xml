@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAcroForm">
+        <rule object="PDAcroForm" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.15" testNumber="1"/>
             <description>Dynamic XFA forms shall not be used</description>
             <test>dynamicRender != 'required'</test>

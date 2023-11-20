@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:07.827+03:00">
         <name>ISO 19005-2:2011 - 6.1.8 Name objects</name>
         <description>Font names, names of colourants in Separation and DeviceN colour spaces, and structure type names, after expansion of character sequences escaped with 
-	a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences.</description>
+	a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="CosUnicodeName">
             <id specification="ISO_19005_2" clause="6.1.8" testNumber="1"/>
             <description>Font names, names of colourants in Separation and DeviceN colour spaces, and structure type names, after expansion of character sequences escaped with 
-			a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences.</description>
+			a NUMBER SIGN (23h), if any, shall be valid UTF-8 character sequences</description>
             <test>isValidUtf8 == true</test>
             <error>
                 <message>The name value %1 does not represent a correct UTF-8 character sequence</message>

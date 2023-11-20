@@ -13,7 +13,7 @@
 			or extension schemas that comply with XMP Specification</description>
             <test>isPredefinedInXMP2004 == true || isDefinedInCurrentPackage == true</test>
             <error>
-                <message>A property is either not defined in XMP Specification, or is not defined in any of the extension schemas.</message>
+                <message>A property is either not defined in XMP Specification, or is not defined in any of the extension schemas</message>
                 <arguments/>
             </error>
             <references/>

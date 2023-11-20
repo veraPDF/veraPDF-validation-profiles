@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.068+03:00">
         <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.3 Composite fonts - CMaps</name>
         <description>All CMaps used within a PDF/UA file, except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118, shall be embedded in that file as described
-	in ISO 32000-1:2008, 9.7.5.</description>
+	in ISO 32000-1:2008, 9.7.5</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDCMap">
+        <rule object="PDCMap" tags="major,machine,font">
             <id specification="ISO_14289_1" clause="7.21.3.3" testNumber="1"/>
             <description>All CMaps used within a PDF/UA file, except those listed in ISO 32000-1:2008, 9.7.5.2, Table 118, shall be embedded in that file as described
-			in ISO 32000-1:2008, 9.7.5.</description>
+			in ISO 32000-1:2008, 9.7.5</description>
             <test>CMapName == &quot;Identity-H&quot; || CMapName == &quot;Identity-V&quot; || CMapName == &quot;GB-EUC-H&quot; || CMapName == &quot;GB-EUC-V&quot; ||
 			CMapName == &quot;GBpc-EUC-H&quot; || CMapName == &quot;GBpc-EUC-V&quot; || CMapName == &quot;GBK-EUC-H&quot; || CMapName == &quot;GBK-EUC-V&quot; ||
 			CMapName == &quot;GBKp-EUC-H&quot; || CMapName == &quot;GBKp-EUC-V&quot; || CMapName == &quot;GBK2K-H&quot; || CMapName == &quot;GBK2K-V&quot; ||

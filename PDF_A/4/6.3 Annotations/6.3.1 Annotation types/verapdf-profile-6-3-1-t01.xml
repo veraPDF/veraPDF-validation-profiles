@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.557+03:00">
         <name>ISO 19005-4:2020 - 6.3.1 Annotation types</name>
         <description>Annotation types not defined in ISO 32000-2:2020, 12.5.6.1, Table 171 shall not be permitted.
-            Additionally, the Sound, Screen, Movie, 3D, RichMedia and FileAttachment types shall not be permitted.</description>
+            Additionally, the Sound, Screen, Movie, 3D, RichMedia and FileAttachment types shall not be permitted</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
             <id specification="ISO_19005_4" clause="6.3.1" testNumber="1"/>
             <description>Annotation types not defined in ISO 32000-2:2020, 12.5.6.1, Table 171 shall not be permitted.
-                Additionally, the Sound, Screen, Movie, 3D, RichMedia and FileAttachment types shall not be permitted.</description>
+                Additionally, the Sound, Screen, Movie, 3D, RichMedia and FileAttachment types shall not be permitted</description>
             <test>Subtype == &quot;Text&quot; || Subtype == &quot;Link&quot; || Subtype == &quot;FreeText&quot; || Subtype == &quot;Line&quot; || 
 			Subtype == &quot;Square&quot; || Subtype == &quot;Circle&quot; || Subtype == &quot;Polygon&quot; || Subtype == &quot;PolyLine&quot; ||
 			Subtype == &quot;Highlight&quot; || Subtype == &quot;Underline&quot; ||	Subtype == &quot;Squiggly&quot; || Subtype == &quot;StrikeOut&quot; || 

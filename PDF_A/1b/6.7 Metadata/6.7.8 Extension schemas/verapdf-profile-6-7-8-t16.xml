@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.555+03:00">
         <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Extension schema ValueType type - field field</name>
         <description>Field 'field' of the PDF/A ValueType value type in the PDF/A extension schema shall have type
-            Seq Field and namespace prefix 'pdfaType'.</description>
+            Seq Field and namespace prefix 'pdfaType'</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="ExtensionSchemaValueType">
             <id specification="ISO_19005_1" clause="6.7.8" testNumber="16"/>
             <description>Field 'field' of the PDF/A ValueType value type in the PDF/A extension schema shall have type
-                Seq Field and namespace prefix 'pdfaType'.</description>
+                Seq Field and namespace prefix 'pdfaType'</description>
             <test>isFieldValidSeq == true &amp;&amp; (fieldPrefix == null || fieldPrefix == &quot;pdfaType&quot;)</test>
             <error>
                 <message>Field 'field' of the PDF/A ValueType value type doesn't have prefix 'pdfaType'

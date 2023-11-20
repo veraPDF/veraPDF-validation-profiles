@@ -8,7 +8,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAnnot">
+        <rule object="PDAnnot" tags="major,machine,annotation,alt-text">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="2"/>
             <description>An annotation (except annotations of type Link, Widget or Popup, or hidden annotations,
                 or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry

@@ -2,14 +2,14 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
         <name>ISO 14289-1:2014 - 4.1 Compatible - 4.1.2 Name, Role, Value - Table header cell</name>
-        <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
+        <description>The structure type and attributes of a table header cell shall be semantically appropriate</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="SATH">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
-            <description>The structure type and attributes of a table header cell shall be semantically appropriate.</description>
-            <test>correctType == 'TH' &amp;&amp; correctSemanticScore >= 0.75</test>
+            <description>The structure type and attributes of a table header cell shall be semantically appropriate</description>
+            <test>correctType == 'TH' &amp;&amp; correctSemanticScore &gt;= 0.75</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>

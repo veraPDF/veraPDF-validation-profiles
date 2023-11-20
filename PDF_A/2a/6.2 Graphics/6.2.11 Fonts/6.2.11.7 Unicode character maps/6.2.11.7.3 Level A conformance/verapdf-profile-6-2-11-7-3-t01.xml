@@ -5,7 +5,7 @@
         <description>For any character, regardless of its rendering mode, that is mapped to a code
 		or codes in the Unicode Private Use Area (PUA), an ActualText entry as described in
 		ISO 32000-1:2008, 14.9.4 shall be present for this character or a sequence of characters of which such a
-		character is a part.</description>
+		character is a part</description>
     </details>
     <hash></hash>
     <rules>
@@ -14,7 +14,7 @@
             <description>For any character, regardless of its rendering mode, that is mapped to a code
 			or codes in the Unicode Private Use Area (PUA), an ActualText entry as described in
 			ISO 32000-1:2008, 14.9.4 shall be present for this character or a sequence of characters of which such a
-			character is a part.</description>
+			character is a part</description>
             <test>unicodePUA == false || actualTextPresent == true</test>
             <error>
                 <message>The character has Unicode value from Private Use Area, and no replacement text present</message>

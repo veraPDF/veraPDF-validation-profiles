@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDXForm">
+        <rule object="PDXForm" tags="major,machine,syntax">
             <id specification="ISO_14289_1" clause="7.20" testNumber="1"/>
             <description>A conforming file shall not contain any reference XObjects</description>
             <test>containsRef == false</test>

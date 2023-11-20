@@ -4,7 +4,7 @@
         <name>ISO 19005-4:2020 - 6.1.8 Indirect objects - Spacings</name>
         <description>The object number and generation number shall be separated by a single white-space character. The generation number and obj keyword shall be 
 	    separated by a single white-space character. The object number and endobj keyword shall each be preceded by an EOL marker. The obj and endobj
-	    keywords shall each be followed by an EOL marker.</description>
+	    keywords shall each be followed by an EOL marker</description>
     </details>
     <hash></hash>
     <rules>
@@ -12,7 +12,7 @@
             <id specification="ISO_19005_4" clause="6.1.8" testNumber="1"/>
             <description>The object number and generation number shall be separated by a single white-space character. The generation number and obj keyword shall be 
 			separated by a single white-space character. The object number and endobj keyword shall each be preceded by an EOL marker. The obj and endobj
-			keywords shall each be followed by an EOL marker.</description>
+			keywords shall each be followed by an EOL marker</description>
             <test>spacingCompliesPDFA</test>
             <error>
                 <message>Extra spacings or missing EOL characters around indirect object/generation number or keywords 'obj' and 'endobj'</message>

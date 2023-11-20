@@ -2,24 +2,24 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.583+03:00">
         <name>ISO 19005-2:2011 - 6.3.2 Annotation dictionaries - Generic flag values</name>
-        <description>If present, the F key's Print flag bit shall be set to 1 and its Hidden, Invisible, ToggleNoView, and NoView flag bits shall be set to 0.</description>
+        <description>If present, the F key's Print flag bit shall be set to 1 and its Hidden, Invisible, ToggleNoView, and NoView flag bits shall be set to 0</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
             <id specification="ISO_19005_2" clause="6.3.2" testNumber="2"/>
-            <description>If present, the F key's Print flag bit shall be set to 1 and its Hidden, Invisible, ToggleNoView, and NoView flag bits shall be set to 0.</description>
+            <description>If present, the F key's Print flag bit shall be set to 1 and its Hidden, Invisible, ToggleNoView, and NoView flag bits shall be set to 0</description>
             <test>F == null || ((F &amp; 1) == 0 &amp;&amp; (F &amp; 2) == 0 &amp;&amp; (F &amp; 4) == 4 &amp;&amp; (F &amp; 32) == 0 &amp;&amp; (F &amp; 256) == 0)</test>
             <error>
                 <message>Annotation flags are set the annotation to be hidden/invisible or non-printable
                     (F = %1, Print = %2, Hidden = %3, Invisible = %4, NoView = %5, ToggleNoView = %6)</message>
                 <arguments>
                     <argument>F</argument>
-                    <argument>(F &amp; 4) >> 2</argument>
-                    <argument>(F &amp; 2) >> 1</argument>
+                    <argument>(F &amp; 4) &gt;&gt; 2</argument>
+                    <argument>(F &amp; 2) &gt;&gt; 1</argument>
                     <argument>(F &amp; 1)</argument>
-                    <argument>(F &amp; 32) >> 5</argument>
-                    <argument>(F &amp; 256) >> 8</argument>
+                    <argument>(F &amp; 32) &gt;&gt; 5</argument>
+                    <argument>(F &amp; 256) &gt;&gt; 8</argument>
                 </arguments>
             </error>
             <references/>

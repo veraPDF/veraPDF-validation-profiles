@@ -8,7 +8,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDWidgetAnnot">
+        <rule object="PDWidgetAnnot" tags="major,machine,annotation,alt-text">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="3"/>
             <description>A form field whose hidden flag is not set and whose rectangle is not outside the crop-box
                 shall have a TU key present or all its Widget annotations shall have alternative descriptions

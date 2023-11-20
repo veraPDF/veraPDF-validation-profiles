@@ -7,14 +7,15 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETD">
+        <rule object="SETD" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.5" testNumber="1"/>
             <description>If the table's structure is not determinable via Headers and IDs,
                 then structure elements of type TH shall have a Scope attribute</description>
             <test>hasConnectedHeader != false || unknownHeaders != ''</test>
             <error>
                 <message>TD does not contain Headers attribute, and Headers for this table cell cannot be determined
-                    via algorithm from ISO32000-2, 14.8.4.8.3.</message>
+                    via algorithm from ISO 32000-2, 14.8.4.8.3</message>
+                <arguments/>
             </error>
             <references>
                 <reference specification="ISO 32000-2:2020" clause="14.8.4.8.3"/>

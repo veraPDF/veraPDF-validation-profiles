@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEMarkedContent">
+        <rule object="SEMarkedContent" tags="major,machine,lang,alt-text">
             <id specification="ISO_14289_1" clause="7.2" testNumber="32"/>
             <description>Natural language for text in E attribute in Span Marked Content shall be determined</description>
             <test>tag != 'Span' || E == null || Lang_size != 0 || inheritedLang != null || gSizeCatalogLang != 0</test>

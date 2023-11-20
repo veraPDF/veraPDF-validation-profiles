@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:08.188+03:00">
         <name>ISO 14289-1:2014 - 7.21 Fonts - 7.21.5 Font metrics - Font metrics</name>
         <description>For every font embedded in a conforming file and used for rendering, the glyph width information in the font dictionary and in the embedded 
-	font program shall be consistent.</description>
+	font program shall be consistent</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="major,machine,font">
             <id specification="ISO_14289_1" clause="7.21.5" testNumber="1"/>
             <description>For every font embedded in a conforming file and used for rendering, the glyph width information in the font dictionary and in the embedded 
-			font program shall be consistent.</description>
+			font program shall be consistent</description>
             <test>renderingMode == 3 || widthFromFontProgram == null || widthFromDictionary == null ||
                 Math.abs(widthFromFontProgram - widthFromDictionary) &lt;= 1</test>
             <error>

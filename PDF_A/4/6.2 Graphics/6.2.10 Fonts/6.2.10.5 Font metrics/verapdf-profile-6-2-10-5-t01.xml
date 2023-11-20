@@ -4,7 +4,7 @@
         <name>ISO 19005-4:2020 - 6.2.10 Fonts - 6.2.10.5 Font metrics</name>
         <description>For every font embedded in a conforming file, the glyph width information in the font dictionary
             and in the embedded font program shall be consistent for every glyph referenced for rendering. Glyphs that
-            are referenced only with rendering mode 3 are exempt from this requirement.</description>
+            are referenced only with rendering mode 3 are exempt from this requirement</description>
     </details>
     <hash></hash>
     <rules>
@@ -12,7 +12,7 @@
             <id specification="ISO_19005_4" clause="6.2.10.5" testNumber="1"/>
             <description>For every font embedded in a conforming file, the glyph width information in the font
                 dictionary and in the embedded font program shall be consistent for every glyph referenced for
-                rendering. Glyphs that are referenced only with rendering mode 3 are exempt from this requirement.</description>
+                rendering. Glyphs that are referenced only with rendering mode 3 are exempt from this requirement</description>
             <test>renderingMode == 3 || widthFromFontProgram == null || widthFromDictionary == null ||
                 Math.abs(widthFromFontProgram - widthFromDictionary) &lt;= 1</test>
             <error>

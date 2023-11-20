@@ -4,7 +4,7 @@
         <name>ISO 19005-2:2011 - 6.2.4 Colour Spaces - 6.2.4.4 Separation and DeviceN colour spaces - Consistency of Separations</name>
         <description>All Separation arrays within a single PDF/A-2 file (including those in Colorants dictionaries) that have the same name shall have the 
 	same tintTransform and alternateSpace. In evaluating equivalence, the PDF objects shall be compared, rather than the computational result of the 
-	use of those PDF objects. Compression and whether or not an object is direct or indirect shall be ignored.</description>
+	use of those PDF objects. Compression and whether or not an object is direct or indirect shall be ignored</description>
     </details>
     <hash></hash>
     <rules>
@@ -13,7 +13,7 @@
             <description>All Separation arrays within a single PDF/A-2 file (including those in Colorants dictionaries) that have the
 			same name shall have the same tintTransform and alternateSpace. In evaluating equivalence, the PDF
 			objects shall be compared, rather than the computational result of the use of those PDF objects. Compression
-			and whether or not an object is direct or indirect shall be ignored.</description>
+			and whether or not an object is direct or indirect shall be ignored</description>
             <test>areTintAndAlternateConsistent == true</test>
             <error>
                 <message>Several occurrences of a Separation colour space with the same name are not consistent</message>

@@ -2,13 +2,13 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.571+03:00">
         <name>ISO 19005-2:2011 - 6.3.2 Annotation dictionaries - F key</name>
-        <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key.</description>
+        <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
             <id specification="ISO_19005_2" clause="6.3.2" testNumber="1"/>
-            <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key.</description>
+            <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key</description>
             <test>Subtype == &quot;Popup&quot; || F != null</test>
             <error>
                 <message>A dictionary of %1 annotation does not contain F key</message>

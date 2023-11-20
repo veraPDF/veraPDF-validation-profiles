@@ -10,11 +10,11 @@
             (*) If document semantics require a descending sequence of headers, such a sequence shall proceed
             in strict numerical order and shall not skip an intervening heading level.
             (*) A document may increment its heading sequence without restarting at H1 if document semantics
-            require it.</description>
+            require it</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEHn">
+        <rule object="SEHn" tags="major,machine,structure,heading">
             <id specification="ISO_14289_1" clause="7.4.2" testNumber="1"/>
             <description>For documents that are not strongly structured, as described in ISO 32000-1:2008, 14.8.4.3.5,
                 heading tags shall be used as follows:
@@ -24,7 +24,7 @@
                 (*) If document semantics require a descending sequence of headers, such a sequence shall proceed
                 in strict numerical order and shall not skip an intervening heading level.
                 (*) A document may increment its heading sequence without restarting at H1 if document semantics
-                require it.</description>
+                require it</description>
             <test>hasCorrectNestingLevel == true</test>
             <error>
                 <message>Heading level %1 is skipped in a descending sequence of header levels</message>

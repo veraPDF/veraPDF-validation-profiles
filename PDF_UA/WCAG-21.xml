@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SARepeatedCharacters">
+        <rule object="SARepeatedCharacters" tags="cosmetic,machine,text">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="1"/>
             <description>Text should not contain repeated non space characters</description>
             <test>isNonSpace == false || numberOfRepeatedCharacters &lt; 5</test>
@@ -18,7 +18,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SARepeatedCharacters">
+        <rule object="SARepeatedCharacters" tags="cosmetic,machine,text">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="2"/>
             <description>Text should not contain repeated space characters</description>
             <test>isNonSpace == true || numberOfRepeatedCharacters &lt; 3</test>
@@ -30,7 +30,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk">
+        <rule object="SATextChunk" tags="cosmetic,human,text">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="3"/>
             <description>Underlined text</description>
             <test>isUnderlined == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; (elem == 'Link' || elem == 'Reference')).length &gt; 0</test>
@@ -40,7 +40,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk">
+        <rule object="SATextChunk" tags="minor,human,structure,text">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="4"/>
             <description>If text has a different style, it shall be tagged as Span, Em, Strong or other appropriate inline element</description>
             <test>hasSpecialStyle == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
@@ -50,7 +50,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDPage">
+        <rule object="PDPage" tags="minor,machine,page">
             <id specification="WCAG_2_1" clause="1.3.4" testNumber="1"/>
             <description>Pages shall have the same orientation</description>
             <test>orientation == 'Square' || gMostCommonPageOrientation == orientation</test>
@@ -62,12 +62,12 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk">
+        <rule object="SATextChunk" tags="major,human,contrast">
             <id specification="WCAG_2_1" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1.
-                Large-scale text and images of large-scale text have a contrast ratio of at least 3:1.</description>
-            <test>textSize &lt; 4.5 || ((textSize >= 18.0 || (textSize >= 14.0 &amp;&amp; textWeight >= 700.0)) ? (contrastRatio >= 3) :
-                (contrastRatio >= 4.5)) || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
+                Large-scale text and images of large-scale text have a contrast ratio of at least 3:1</description>
+            <test>textSize &lt; 4.5 || ((textSize &gt;= 18.0 || (textSize &gt;= 14.0 &amp;&amp; textWeight &gt;= 700.0)) ? (contrastRatio &gt;= 3) :
+                (contrastRatio &gt;= 4.5)) || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
             <error>
                 <message>contrastRatio = %1</message>
                 <arguments>
@@ -76,11 +76,11 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk">
+        <rule object="SATextChunk" tags="major,machine,text">
             <id specification="WCAG_2_1" clause="1.4.4" testNumber="1"/>
             <description>Font size is too small: text may not be resized without assistive technology
-                up to 200 percent without loss of content or functionality.</description>
-            <test>textSize >= 4.5 || isWhiteSpaceChunk == true || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
+                up to 200 percent without loss of content or functionality</description>
+            <test>textSize &gt;= 4.5 || isWhiteSpaceChunk == true || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
             <error>
                 <message>textSize = %1</message>
                 <arguments>
@@ -89,7 +89,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDFont">
+        <rule object="PDFont" tags="cosmetic,human,text">
             <id specification="WCAG_2_1" clause="1.4.8" testNumber="1"/>
             <description>Document should not contain illegible font</description>
             <test>fontName != null &amp;&amp; fontName.indexOf('AdobeDevanagari') == -1 &amp;&amp; fontName.indexOf('AgencyFB') == -1 &amp;&amp;
@@ -120,7 +120,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAFigure">
+        <rule object="SAFigure" tags="minor,machine,structure,figure">
             <id specification="WCAG_2_1" clause="1.4.10" testNumber="1"/>
             <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
             <test>page != lastPage || hasBBox == true</test>
@@ -132,7 +132,7 @@
                 <reference specification="ISO 32000-1:2008" clause="14.8.5.4.3"/>
             </references>
         </rule>
-        <rule object="SALinkAnnotation">
+        <rule object="SALinkAnnotation" tags="major,machine,structure,annotation,alt-text">
             <id specification="WCAG_2_1" clause="2.4.9" testNumber="1"/>
             <description>Links shall contain an alternate description via their Contents or Alt keys or in the text value</description>
             <test>(Contents != null &amp;&amp; Contents != '' &amp;&amp; contentsIsLink == false) || isOutsideCropBox == true ||
@@ -146,7 +146,7 @@
                 <reference specification="ISO 32000-1:2008" clause="14.9.3"/>
             </references>
         </rule>
-        <rule object="SETD">
+        <rule object="SETD" tags="cosmetic,machine,structure,table">
             <id specification="WCAG_2_1" clause="4.1.1" testNumber="1"/>
             <description>Table shouldn't have merged cells</description>
             <test>ColSpan == 1 &amp;&amp; RowSpan == 1</test>
@@ -156,7 +156,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SETH">
+        <rule object="SETH" tags="cosmetic,machine,structure,table">
             <id specification="WCAG_2_1" clause="4.1.1" testNumber="2"/>
             <description>Table shouldn't have merged cells</description>
             <test>ColSpan == 1 &amp;&amp; RowSpan == 1</test>
@@ -166,7 +166,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableBorderCell">
+        <rule object="SATableBorderCell" tags="cosmetic,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.1" testNumber="3"/>
             <description>Table shouldn't have merged cells</description>
             <test>colSpan == 1 &amp;&amp; rowSpan == 1</test>
@@ -180,10 +180,10 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="1"/>
             <description>Incorrect use of a paragraph</description>
-            <test>correctSemanticScore >= 0.75 || correctType == null || correctType == 'H'</test>
+            <test>correctSemanticScore &gt;= 0.75 || correctType == null || correctType == 'H'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -193,10 +193,10 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,human,structure,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="2"/>
             <description>Incorrect use of a span</description>
-            <test>correctSemanticScore >= 0.75 || correctType == null</test>
+            <test>correctSemanticScore &gt;= 0.75 || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -206,10 +206,10 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAH">
+        <rule object="SAH" tags="minor,human,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="4"/>
             <description>Incorrect use of a heading</description>
-            <test>correctSemanticScore >= 0.75 || correctType == null</test>
+            <test>correctSemanticScore &gt;= 0.75 || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -219,10 +219,10 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAHn">
+        <rule object="SAHn" tags="minor,human,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="5"/>
             <description>Incorrect use of a numbered heading</description>
-            <test>correctSemanticScore >= 0.75 || correctType == null</test>
+            <test>correctSemanticScore &gt;= 0.75 || correctType == null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>
@@ -232,11 +232,11 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
-            <description>Missing table element</description>
-            <test>hasLowestDepthError == false || (correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) ||
-                ((correctType != 'TD' || standardType == 'TH') &amp;&amp;
+        <rule object="SAStructElem" tags="minor,human,structure,table">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="8"/>
+            <description>Incorrect table element</description>
+            <test>hasLowestDepthError == false || (correctSemanticScore &gt;= 0.75 &amp;&amp; standardType == correctType) ||
+                (isTableElem != true) || ((correctType != 'TD' || standardType == 'TH') &amp;&amp;
                 correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
                 correctType != 'TFoot' &amp;&amp; correctType != 'Table') || (standardType == 'L' ||
                 parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'L').length &gt; 0)</test>
@@ -250,7 +250,25 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAStructElem" tags="minor,human,structure,table">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="9"/>
+            <description>Missing table element</description>
+            <test>hasLowestDepthError == false || (correctSemanticScore &gt;= 0.75 &amp;&amp; standardType == correctType) ||
+                (isTableElem == true) || (correctType != 'TD' &amp;&amp;
+                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
+                correctType != 'TFoot' &amp;&amp; correctType != 'Table') || (standardType == 'L' ||
+                parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'L').length &gt; 0)</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAP" tags="minor,human,structure,heading,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="10"/>
             <description>This structure element should be a heading instead of a paragraph</description>
             <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
@@ -263,7 +281,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,span,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="11"/>
             <description>This structure element should be a span instead of a paragraph</description>
             <test>correctType != 'Span'</test>
@@ -276,7 +294,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,human,structure,paragraph,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="12"/>
             <description>This structure element should be a paragraph instead of a span</description>
             <test>correctType != 'P'</test>
@@ -289,7 +307,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,human,structure,span,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="13"/>
             <description>This structure element should be a heading instead of a span</description>
             <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
@@ -302,7 +320,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAH">
+        <rule object="SAH" tags="minor,human,structure,heading,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="14"/>
             <description>This structure element should be a paragraph instead of a heading</description>
             <test>correctType != 'P'</test>
@@ -315,7 +333,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAHn">
+        <rule object="SAHn" tags="minor,human,structure,paragraph,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="15"/>
             <description>This structure element should be a paragraph instead of a numbered heading</description>
             <test>correctType != 'P'</test>
@@ -328,7 +346,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,machine,structure,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="16"/>
             <description>Redundant paragraph</description>
             <test>correctType != null</test>
@@ -341,7 +359,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,machine,structure,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="17"/>
             <description>Redundant span</description>
             <test>correctType != null</test>
@@ -354,7 +372,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAH">
+        <rule object="SAH" tags="minor,machine,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="18"/>
             <description>Redundant heading</description>
             <test>correctType != null</test>
@@ -367,7 +385,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAHn">
+        <rule object="SAHn" tags="minor,machine,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="19"/>
             <description>Redundant numbered heading</description>
             <test>correctType != null</test>
@@ -380,7 +398,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,paragraph,caption">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="20"/>
             <description>This structure element should be a caption instead of a paragraph</description>
             <test>correctType != 'Caption'</test>
@@ -393,10 +411,10 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="21"/>
-            <description>The structure type and attributes of list elements shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctSemanticScore >= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
+            <description>The structure type and attributes of list elements shall be semantically appropriate</description>
+            <test>hasLowestDepthError == false || (correctSemanticScore &gt;= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
                 correctType != 'Lbl' &amp;&amp; correctType != 'LBody' &amp;&amp; correctType != 'L') || (isTableElem == true)</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
@@ -408,10 +426,10 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAL">
+        <rule object="SAL" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="22"/>
-            <description>The structure type and attributes of a list shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'L' &amp;&amp; correctSemanticScore >= 0.75) ||
+            <description>The structure type and attributes of a list shall be semantically appropriate</description>
+            <test>hasLowestDepthError == false || (correctType == 'L' &amp;&amp; correctSemanticScore &gt;= 0.75) ||
                 correctType == 'TR' || correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' ||
                 correctType == 'LI' || correctType == 'Lbl' || correctType == 'LBody' || correctType == 'THead' ||
                 correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
@@ -424,10 +442,10 @@
             </error>
             <references/>
         </rule>
-        <rule object="SALI">
+        <rule object="SALI" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="23"/>
-            <description>The structure type and attributes of a list item shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'LI' &amp;&amp; correctSemanticScore >= 0.75) ||
+            <description>The structure type and attributes of a list item shall be semantically appropriate</description>
+            <test>hasLowestDepthError == false || (correctType == 'LI' &amp;&amp; correctSemanticScore &gt;= 0.75) ||
                 correctType == 'L' || correctType == 'Lbl' || correctType == 'LBody' || correctType == 'TR' ||
                 correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
                 correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
@@ -440,10 +458,10 @@
             </error>
             <references/>
         </rule>
-        <rule object="SALBody">
+        <rule object="SALBody" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="25"/>
-            <description>The structure type and attributes of a list body shall be semantically appropriate.</description>
-            <test>hasLowestDepthError == false || (correctType == 'LBody' &amp;&amp; correctSemanticScore >= 0.75) ||
+            <description>The structure type and attributes of a list body shall be semantically appropriate</description>
+            <test>hasLowestDepthError == false || (correctType == 'LBody' &amp;&amp; correctSemanticScore &gt;= 0.75) ||
                 correctType == 'L' || correctType == 'LI' || correctType == 'Lbl' || correctType == 'TR' ||
                 correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
                 correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
@@ -456,9 +474,9 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,table,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="26"/>
-            <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering </description>
+            <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering</description>
             <test>hasLowestDepthError == false || (correctType != 'TD' &amp;&amp; correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp;
                 correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp;
                 correctType != 'Table') || (standardType != 'L' &amp;&amp; standardType != 'LI' &amp;&amp;
@@ -472,7 +490,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="27"/>
             <description>This structure element should be a part or several different paragraphs instead of a paragraph</description>
             <test>correctType != 'Part' || correctSemanticScore &lt; 0.75</test>
@@ -485,9 +503,9 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="28"/>
-            <description>The structure type and attributes of a TOCI shall be semantically appropriate.</description>
+            <description>The structure type and attributes of a TOCI shall be semantically appropriate</description>
             <test>correctType != 'TOCI' || standardType == 'TOCI'</test>
             <error>
                 <message>score = %1, correct type = %2, structure id = %3</message>
@@ -499,7 +517,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="minor,machine,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="29"/>
             <description>TOCI shall contain one or more text lines</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
@@ -513,7 +531,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="minor,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="31"/>
             <description>TOCI page label shall match the destination page</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1002).length == 0</test>
@@ -527,7 +545,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="minor,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="32"/>
             <description>TOCI shall have a right alignment that matches a right alignment of other TOCIs</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1003).length == 0</test>
@@ -541,7 +559,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="34"/>
             <description>This list and neighbor list(s) should be tagged as one list</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1200).length == 0</test>
@@ -555,7 +573,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOC">
+        <rule object="SATOC" tags="minor,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="35"/>
             <description>This TOC and neighbor TOC(s) should be tagged as one TOC</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1006).length == 0</test>
@@ -569,7 +587,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="36"/>
             <description>The number of rows of this table does not match the number of rows of the visual representation of this table</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1104).length == 0</test>
@@ -583,7 +601,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATable">
+        <rule object="SATable" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="37"/>
             <description>The number of columns of this table does not match the number of columns of the visual representation of this table</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1105).length == 0</test>
@@ -597,7 +615,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="38"/>
             <description>The row span of this table cell does not match the row span of the visual representation of this table cell</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1106).length == 0</test>
@@ -611,7 +629,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="39"/>
             <description>The column span of this table cell does not match the column span of the visual representation of this table cell</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1107).length == 0</test>
@@ -625,7 +643,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAListItem">
+        <rule object="SAListItem" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="40"/>
             <description>This content should be tagged as a list item</description>
             <test>false</test>
@@ -639,7 +657,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="41"/>
             <description>This cell is below than some cells in the next row</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1100).length == 0</test>
@@ -653,7 +671,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="42"/>
             <description>This cell is above than some cells in the previous row</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
@@ -667,7 +685,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="43"/>
             <description>This cell is to the right of some cells in the next column</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1102).length == 0</test>
@@ -681,7 +699,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATableCell">
+        <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="44"/>
             <description>This cell is to the left of some cells in the previous column</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
@@ -695,7 +713,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATH">
+        <rule object="SATH" tags="minor,human,structure,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="45"/>
             <description>This structure element should be a table cell instead of a table header</description>
             <test>correctType != 'TD'</test>
@@ -709,7 +727,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="46"/>
             <description>TOCI text should be presented in the document</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1007).length == 0</test>
@@ -723,9 +741,9 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="47"/>
-            <description>TOCI text should be presented on a destination page.</description>
+            <description>TOCI text should be presented on a destination page</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1008).length == 0</test>
             <error>
                 <message>TOCI text is not found on a destination page %wrongDestinationPage%.
@@ -740,9 +758,9 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="48"/>
-            <description>TOCI should have a destination.</description>
+            <description>TOCI should have a destination</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1009).length == 0</test>
             <error>
                 <message>TOCI doesn't have a destination. Possible destination page number(s): %1</message>
@@ -754,9 +772,9 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="49"/>
-            <description>TOCI should have a correct page label.</description>
+            <description>TOCI should have a correct page label</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1010).length == 0</test>
             <error>
                 <message>TOCI has a wrong page label. Possible page number(s), which page label could be used: %1</message>
@@ -768,9 +786,9 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATOCI">
+        <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="50"/>
-            <description>TOCI should have a correct numbering.</description>
+            <description>TOCI should have a correct numbering</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1011).length == 0</test>
             <error>
                 <message>TOCI has a wrong numbering. The heading number cannot start with %wrongNumbering%</message>
@@ -784,9 +802,9 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAL">
+        <rule object="SAL" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="51"/>
-            <description>List should contain list items.</description>
+            <description>List should contain list items</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1201).length == 0</test>
             <error>
                 <message>List contains only one child - list</message>
@@ -794,7 +812,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SALI">
+        <rule object="SALI" tags="minor,human,structure,list">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="52"/>
             <description>The structure type and attributes of a list item shall be semantically appropriate</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1202).length == 0</test>
@@ -804,7 +822,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan">
+        <rule object="SASpan" tags="minor,human,structure,span,note">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="53"/>
             <description>This structure element should be a note instead of a span</description>
             <test>correctType != 'Note'</test>
@@ -814,7 +832,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP">
+        <rule object="SAP" tags="minor,human,structure,paragraph,note">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="54"/>
             <description>This structure element should be a note instead of a paragraph</description>
             <test>correctType != 'Note'</test>
@@ -824,7 +842,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem">
+        <rule object="SAStructElem" tags="minor,human,structure,heading">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="55"/>
             <description>The structure type and attributes of a heading shall be semantically appropriate</description>
             <test>errorCodes.split(',').filter(elem =&gt; elem == 1300).length == 0</test>

@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.626+03:00">
         <name>ISO 19005-2:2011 - 6.3.3 Annotations appearances - Normal appearance</name>
         <description>For all annotation dictionaries containing an AP key, the appearance dictionary that it defines as
-            its value shall contain only the N key.</description>
+            its value shall contain only the N key</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
             <id specification="ISO_19005_2" clause="6.3.3" testNumber="2"/>
             <description>For all annotation dictionaries containing an AP key, the appearance dictionary that it defines
-                as its value shall contain only the N key.</description>
+                as its value shall contain only the N key</description>
             <test>AP == null || AP == &quot;N&quot;</test>
             <error>
                 <message>Annotation's appearance dictionary contains entries %1 other than N</message>

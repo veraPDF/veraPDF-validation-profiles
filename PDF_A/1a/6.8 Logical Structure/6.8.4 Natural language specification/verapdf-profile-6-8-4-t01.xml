@@ -4,7 +4,7 @@
         <name>ISO 19005-1:2005 - 6.8.4 Natural language specification</name>
         <description>If the Lang entry is present in the document catalog dictionary or in a structure element
             dictionary or property list, its value shall be a language identifier as defined by RFC 1766, Tags for the
-            Identification of Languages, as described in PDF Reference 9.8.1.</description>
+            Identification of Languages, as described in PDF Reference 9.8.1</description>
     </details>
     <hash></hash>
     <rules>
@@ -12,7 +12,7 @@
             <id specification="ISO_19005_1" clause="6.8.4" testNumber="1"/>
             <description>If the Lang entry is present in the document catalog dictionary or in a structure element
                 dictionary or property list, its value shall be a language identifier as defined by RFC 1766, Tags for
-                the Identification of Languages, as described in PDF Reference 9.8.1.</description>
+                the Identification of Languages, as described in PDF Reference 9.8.1</description>
             <test>unicodeValue == '' || /^[a-zA-Z]{1,8}(-[a-zA-Z]{1,8})*$/.test(unicodeValue)</test>
             <error>
                 <message>Value %1 of the Lang entry is not Language-Tag</message>

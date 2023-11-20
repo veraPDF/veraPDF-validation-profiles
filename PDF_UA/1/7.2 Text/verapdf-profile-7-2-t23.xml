@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="major,machine,structure,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="23"/>
             <description>Natural language for text in E attribute shall be determined</description>
             <test>E == null || Lang_size != 0 || parentLang != null || gSizeCatalogLang != 0</test>

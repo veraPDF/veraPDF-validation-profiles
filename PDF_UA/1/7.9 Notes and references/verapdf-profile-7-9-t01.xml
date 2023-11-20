@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SENote">
+        <rule object="SENote" tags="major,machine,structure,note">
             <id specification="ISO_14289_1" clause="7.9" testNumber="1"/>
             <description>Note tag shall have ID entry</description>
             <test>noteID != null &amp;&amp; noteID != ''</test>

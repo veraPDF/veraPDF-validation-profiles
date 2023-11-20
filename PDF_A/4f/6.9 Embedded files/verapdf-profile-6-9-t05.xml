@@ -3,18 +3,18 @@
     <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.854+03:00">
         <name>ISO 19005-4:2020 - 6.9 Embedded files</name>
         <description>A PDF/A-4f conforming file shall contain an EmbeddedFiles key in the name dictionary of the
-            document catalog dictionary.</description>
+            document catalog dictionary</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="CosDocument">
             <id specification="ISO_19005_4" clause="6.9" testNumber="5"/>
             <description>A PDF/A-4f conforming file shall contain an EmbeddedFiles key in the name dictionary of the
-                document catalog dictionary.</description>
+                document catalog dictionary</description>
             <test>containsEmbeddedFiles == true</test>
             <error>
                 <message>A PDF/A-4f conforming file does not contain an EmbeddedFiles key in the name dictionary of the
-                    document catalog dictionary.</message>
+                    document catalog dictionary</message>
                 <arguments/>
             </error>
             <references>

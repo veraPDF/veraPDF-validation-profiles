@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.626+03:00">
         <name>ISO 19005-2:2011 - 6.3.3 Annotations appearances - Normal appearance</name>
         <description>If an annotation dictionary's Subtype key has a value of Widget and its FT key has a value of Btn,
-            the value of the N key shall be an appearance subdictionary.</description>
+            the value of the N key shall be an appearance subdictionary</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDAnnot">
             <id specification="ISO_19005_2" clause="6.3.3" testNumber="3"/>
             <description>If an annotation dictionary's Subtype key has a value of Widget and its FT key has a value of
-                Btn, the value of the N key shall be an appearance subdictionary.</description>
+                Btn, the value of the N key shall be an appearance subdictionary</description>
             <test>AP != &quot;N&quot; || Subtype != &quot;Widget&quot; || FT != &quot;Btn&quot; || (N_type == &quot;Dict&quot; &amp;&amp; appearance_size &gt; 0)</test>
             <error>
                 <message>An annotation dictionary's Subtype key has a value of Widget and its FT key has a value of

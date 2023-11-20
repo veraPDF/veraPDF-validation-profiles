@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETOC">
+        <rule object="SETOC" tags="major,machine,structure,toc">
             <id specification="ISO_14289_1" clause="7.2" testNumber="28"/>
             <description>TOC element may contain a Caption element only as its first kid</description>
             <test>kidsStandardTypes == '' || kidsStandardTypes.split('&amp;').slice(1).findIndex(elem =&gt; elem == 'Caption') &lt; 0</test>

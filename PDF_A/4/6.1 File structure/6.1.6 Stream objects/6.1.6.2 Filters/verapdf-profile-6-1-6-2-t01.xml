@@ -5,7 +5,7 @@
         <description>All standard stream filters listed in ISO 32000-2:2020, 7.4, Table 6 may be used, with the
             exception of LZWDecode. Filters that are not listed in ISO 32000-2:2020, 7.4, Table 6 shall not be used. In
             addition, the Crypt filter shall not be used unless the value of the Name key in the decode parameters
-            dictionary is Identity.</description>
+            dictionary is Identity</description>
     </details>
     <hash></hash>
     <rules>
@@ -14,14 +14,13 @@
             <description>All standard stream filters listed in ISO 32000-2:2020, 7.4, Table 6 may be used, with the
                 exception of LZWDecode. Filters that are not listed in ISO 32000-2:2020, 7.4, Table 6 shall not be used.
                 In addition, the Crypt filter shall not be used unless the value of the Name key in the decode
-                parameters dictionary is Identity.</description>
+                parameters dictionary is Identity</description>
             <test>
                 internalRepresentation == &quot;ASCIIHexDecode&quot; ||  internalRepresentation == &quot;ASCII85Decode&quot; ||
                 internalRepresentation == &quot;FlateDecode&quot; ||  internalRepresentation == &quot;RunLengthDecode&quot; ||
                 internalRepresentation == &quot;CCITTFaxDecode&quot; ||  internalRepresentation == &quot;JBIG2Decode&quot; ||
                 internalRepresentation == &quot;DCTDecode&quot; ||  internalRepresentation == &quot;JPXDecode&quot; ||
-                (internalRepresentation == &quot;Crypt&quot; &amp;&amp; decodeParms == &quot;Identity&quot;)
-            </test>
+                (internalRepresentation == &quot;Crypt&quot; &amp;&amp; decodeParms == &quot;Identity&quot;)</test>
             <error>
                 <message>Unknown or not permitted Stream filter %1 is used</message>
                 <arguments>

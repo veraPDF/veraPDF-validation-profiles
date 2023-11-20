@@ -4,7 +4,7 @@
         <name>ISO 19005-2:2011 - 6.2.10 Transparency - Page transparency</name>
         <description>If the document does not contain a PDF/A OutputIntent, then all Page objects
 		that contain transparency shall include the Group key, and the attribute dictionary that forms the value of that
-		Group key shall include a CS entry whose value shall be used as the default blending colour space.</description>
+		Group key shall include a CS entry whose value shall be used as the default blending colour space</description>
     </details>
     <hash></hash>
     <rules>
@@ -12,10 +12,10 @@
             <id specification="ISO_19005_2" clause="6.2.10" testNumber="2"/>
             <description>If the document does not contain a PDF/A OutputIntent, then all Page objects
 			that contain transparency shall include the Group key, and the attribute dictionary that forms the value of that
-			Group key shall include a CS entry whose value shall be used as the default blending colour space.</description>
+			Group key shall include a CS entry whose value shall be used as the default blending colour space</description>
             <test>gOutputCS != null || containsGroupCS == true || containsTransparency == false</test>
             <error>
-                <message>The page contains transparent objects with no blending colour space defined.</message>
+                <message>The page contains transparent objects with no blending colour space defined</message>
                 <arguments/>
             </error>
             <references>

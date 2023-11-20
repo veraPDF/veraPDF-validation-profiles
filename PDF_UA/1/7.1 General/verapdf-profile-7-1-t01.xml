@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEMarkedContent">
+        <rule object="SEMarkedContent" tags="major,machine,artifact">
             <id specification="ISO_14289_1" clause="7.1" testNumber="1"/>
             <description>Content marked as Artifact should not present inside tagged content</description>
             <test>tag != 'Artifact' || parentStructureTag == null</test>

@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.496+03:00">
         <name>ISO 19005-2:2011 - 6.6.2.3 Schemas - Extension schema property - name field</name>
         <description>Field 'name' of the PDF/A Property value type in the PDF/A extension schema shall be present
-            and shall have type Text and namespace prefix 'pdfaProperty'.</description>
+            and shall have type Text and namespace prefix 'pdfaProperty'</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="ExtensionSchemaProperty">
             <id specification="ISO_19005_2" clause="6.6.2.3.3" testNumber="7"/>
             <description>Field 'name' of the PDF/A Property value type in the PDF/A extension schema shall be present
-                and shall have type Text and namespace prefix 'pdfaProperty'.</description>
+                and shall have type Text and namespace prefix 'pdfaProperty'</description>
             <test>isNameValidText == true &amp;&amp; namePrefix == &quot;pdfaProperty&quot;</test>
             <error>
                 <message>Field 'name' of the PDF/A Property value type is not present, or doesn't have prefix

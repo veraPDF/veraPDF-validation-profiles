@@ -5,7 +5,7 @@
         <description>If the document does not contain a PDF/A output intent, then all pages that contain transparency
             shall either have a page-level PDF/A output intent or the page dictionary shall include the Group key, and
             the attribute dictionary that forms the value of that Group key shall include a CS entry whose value shall
-            be used as the default blending colour space.</description>
+            be used as the default blending colour space</description>
     </details>
     <hash></hash>
     <rules>
@@ -14,10 +14,10 @@
             <description>If the document does not contain a PDF/A output intent, then all pages that contain transparency
                 shall either have a page-level PDF/A output intent or the page dictionary shall include the Group key, and
                 the attribute dictionary that forms the value of that Group key shall include a CS entry whose value shall
-                be used as the default blending colour space.</description>
+                be used as the default blending colour space</description>
             <test>gDocumentOutputCS != null || outputColorSpace != null || containsGroupCS == true || containsTransparency == false</test>
             <error>
-                <message>The page contains transparent objects with no blending colour space defined.</message>
+                <message>The page contains transparent objects with no blending colour space defined</message>
                 <arguments/>
             </error>
             <references>

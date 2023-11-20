@@ -3,14 +3,14 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.583+03:00">
         <name>ISO 19005-1:2005 - 6.7.8 Extension schemas - Extension schema Field type - description field</name>
         <description>Field 'description' of the PDF/A Field value type in the PDF/A extension schema shall have type
-            Text and namespace prefix 'pdfaField'.</description>
+            Text and namespace prefix 'pdfaField'</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="ExtensionSchemaField">
             <id specification="ISO_19005_1" clause="6.7.8" testNumber="19"/>
             <description>Field 'description' of the PDF/A Field value type in the PDF/A extension schema shall have type
-                Text and namespace prefix 'pdfaField'.</description>
+                Text and namespace prefix 'pdfaField'</description>
             <test>isDescriptionValidText == true &amp;&amp; descriptionPrefix == &quot;pdfaField&quot;</test>
             <error>
                 <message>Field 'description' of the PDF/A Field value type is not present, or doesn't have prefix
