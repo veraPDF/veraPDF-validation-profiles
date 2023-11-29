@@ -17,7 +17,7 @@
 			as defined in RFC 3066, Tags for the Identification of Languages</description>
             <test>unicodeValue == '' || /^[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*$/.test(unicodeValue)</test>
             <error>
-                <message>Value %1 of the Lang entry is not Language-Tag</message>
+                <message>Value %1 of the Lang entry is not a Language-Tag</message>
                 <arguments>
                     <argument>unicodeValue</argument>
                 </arguments>

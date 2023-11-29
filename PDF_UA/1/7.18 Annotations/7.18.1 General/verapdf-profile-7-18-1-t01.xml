@@ -12,7 +12,7 @@
             <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || isOutsideCropBox == true ||
                 (F &amp; 2) == 2 || structParentStandardType == 'Annot'</test>
             <error>
-                <message>%1 annotation is artifact or is nested within %2 tag (standard type = %3) instead of Annot</message>
+                <message>%1 annotation is an Artifact or is nested within %2 tag (standard type = %3) instead of Annot</message>
                 <arguments>
                     <argument>Subtype</argument>
                     <argument>structParentType</argument>

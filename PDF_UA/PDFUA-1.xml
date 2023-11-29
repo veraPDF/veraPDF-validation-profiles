@@ -549,7 +549,7 @@
             <description>If the Lang entry is present in the document's Catalog dictionary or in a structure element dictionary or property list, its value shall be a language identifier as described in ISO 32000-1:2008, 14.9.2. A language identifier shall be a Language-Tag as defined in RFC 3066, Tags for the Identification of Languages</description>
             <test>/^[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*$/.test(unicodeValue)</test>
             <error>
-                <message>Value %1 of the Lang entry is not Language-Tag</message>
+                <message>Value %1 of the Lang entry is not a Language-Tag</message>
                 <arguments>
                     <argument>unicodeValue</argument>
                 </arguments>
@@ -784,7 +784,7 @@
             <description>If the table's structure is not determinable via Headers and IDs, then structure elements of type TH shall have a Scope attribute</description>
             <test>hasConnectedHeader != false || unknownHeaders != ''</test>
             <error>
-                <message>TD does not contain Headers attribute, and Headers for this table cell cannot be determined via algorithm from ISO 32000-2, 14.8.4.8.3</message>
+                <message>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</message>
                 <arguments/>
             </error>
             <references>
@@ -796,7 +796,7 @@
             <description>If the table's structure is not determinable via Headers and IDs, then structure elements of type TH shall have a Scope attribute</description>
             <test>hasConnectedHeader != false || unknownHeaders == ''</test>
             <error>
-                <message>TD references undefined Header(s) %1, and Headers for this table cell cannot be determined via algorithm from ISO 32000-2, 14.8.4.8.3</message>
+                <message>TD references undefined Header(s) %1, and Headers for this table cell cannot be determined algorithmically</message>
                 <arguments>
                     <argument>unknownHeaders</argument>
                 </arguments>
@@ -902,7 +902,7 @@
             <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
             <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || isOutsideCropBox == true || (F &amp; 2) == 2 || structParentStandardType == 'Annot'</test>
             <error>
-                <message>%1 annotation is artifact or is nested within %2 tag (standard type = %3) instead of Annot</message>
+                <message>%1 annotation is an Artifact or is nested within %2 tag (standard type = %3) instead of Annot</message>
                 <arguments>
                     <argument>Subtype</argument>
                     <argument>structParentType</argument>
@@ -948,7 +948,7 @@
             <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S</description>
             <test>annots_size == 0 || Tabs == 'S'</test>
             <error>
-                <message>A page containing an annotation contains a Tabs key with value %1 instead of S</message>
+                <message>A page with annotation(s) contains Tabs key with value %1 instead of S</message>
                 <arguments>
                     <argument>Tabs</argument>
                 </arguments>
@@ -960,7 +960,7 @@
             <description>A Widget annotation shall be nested within a Form tag per ISO 32000-1:2008, 14.8.4.5, Table 340</description>
             <test>structParentStandardType == 'Form' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
-                <message>A Widget annotation is artifact or is nested within %1 tag (standard type = %2) instead of Form</message>
+                <message>A Widget annotation is an Artifact or is nested within %1 tag (standard type = %2) instead of Form</message>
                 <arguments>
                     <argument>structParentType</argument>
                     <argument>structParentStandardType</argument>
@@ -987,7 +987,7 @@
             <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element</description>
             <test>structParentStandardType == 'Link' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
-                <message>A Link annotation is artifact or is nested within %1 tag (standard type = %2) instead of Link</message>
+                <message>A Link annotation is an Artifact or is nested within %1 tag (standard type = %2) instead of Link</message>
                 <arguments>
                     <argument>structParentType</argument>
                     <argument>structParentStandardType</argument>

@@ -11,7 +11,7 @@
             <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element</description>
             <test>structParentStandardType == 'Link' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
-                <message>A Link annotation is artifact or is nested within %1 tag (standard type = %2) instead of Link</message>
+                <message>A Link annotation is an Artifact or is nested within %1 tag (standard type = %2) instead of Link</message>
                 <arguments>
                     <argument>structParentType</argument>
                     <argument>structParentStandardType</argument>
