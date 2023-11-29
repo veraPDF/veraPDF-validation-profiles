@@ -1,4 +1,4 @@
-name: Update PDF_UA profile in veraPDF-library
+name: Update PDF_UA profiles in veraPDF-library
 
 on:
   push:
@@ -6,6 +6,7 @@ on:
       [ integration ]
     paths:
       - 'PDF_UA/PDFUA-1.xml'
+      - 'PDF_UA/PDFUA-2.xml'
 
 jobs:
   update-files:
@@ -23,13 +24,14 @@ jobs:
       - name: Commit to veraPDF-library
         uses: drud/action-cross-commit@master
         with:
-          source-folder: PDF_UA/PDFUA-1.xml
+          source-folder: PDF_UA
           destination-repository: https://veraPDF:${{ secrets.WORKFLOW_TOKEN }}@github.com/veraPDF/veraPDF-library
           destination-folder: core/src/main/resources/org/verapdf/pdfa/validation
           destination-branch: integration
           git-user: "Git User"
           git-commit-message: ${{ github.event.head_commit.message }}
           git-commit-sign-off: "false"
+          excludes: 1:2:WCAG:ISO-32000-1-Tagged.xml:ISO-32000-2-Tagged.xml:ISO-32005-Tagged.xml:WCAG-21.xml:WCAG-21-Complete.xml:WCAG-21-Dev.xml:PDFA-1A.xml:PDFA-1B.xml:PDFA-2A.xml:PDFA-2B.xml:PDFA-2U.xml:PDFA-3A.xml:PDFA-3B.xml:PDFA-3U.xml:PDFA-4.xml:PDFA-4E.xml:PDFA-4F.xml:validationProfile.xsd
 
       - name: Notify slack if library wasn't updated
         if: failure()
