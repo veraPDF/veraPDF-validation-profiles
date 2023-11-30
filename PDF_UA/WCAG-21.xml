@@ -40,7 +40,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk" tags="minor,human,structure,text">
+        <rule object="SATextChunk" tags="minor,human,text,structure">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="4"/>
             <description>If text has a different style, it shall be tagged as Span, Em, Strong or other appropriate inline element</description>
             <test>hasSpecialStyle == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
@@ -62,7 +62,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk" tags="major,human,contrast">
+        <rule object="SATextChunk" tags="major,machine,contrast">
             <id specification="WCAG_2_1" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1.
                 Large-scale text and images of large-scale text have a contrast ratio of at least 3:1</description>
@@ -132,7 +132,7 @@
                 <reference specification="ISO 32000-1:2008" clause="14.8.5.4.3"/>
             </references>
         </rule>
-        <rule object="SALinkAnnotation" tags="major,machine,structure,annotation,alt-text">
+        <rule object="SALinkAnnotation" tags="major,machine,alt-text,structure,annotation">
             <id specification="WCAG_2_1" clause="2.4.9" testNumber="1"/>
             <description>Links shall contain an alternate description via their Contents or Alt keys or in the text value</description>
             <test>(Contents != null &amp;&amp; Contents != '' &amp;&amp; contentsIsLink == false) || isOutsideCropBox == true ||
@@ -307,7 +307,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan" tags="minor,human,structure,span,heading">
+        <rule object="SASpan" tags="minor,human,structure,heading,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="13"/>
             <description>This structure element should be a heading instead of a span</description>
             <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
@@ -398,7 +398,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP" tags="minor,human,structure,paragraph,caption">
+        <rule object="SAP" tags="minor,human,structure,caption,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="20"/>
             <description>This structure element should be a caption instead of a paragraph</description>
             <test>correctType != 'Caption'</test>
@@ -474,7 +474,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem" tags="minor,human,structure,table,list">
+        <rule object="SAStructElem" tags="minor,human,structure,list,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="26"/>
             <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering</description>
             <test>hasLowestDepthError == false || (correctType != 'TD' &amp;&amp; correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp;
@@ -822,7 +822,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan" tags="minor,human,structure,span,note">
+        <rule object="SASpan" tags="minor,human,structure,note,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="53"/>
             <description>This structure element should be a note instead of a span</description>
             <test>correctType != 'Note'</test>
@@ -832,7 +832,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP" tags="minor,human,structure,paragraph,note">
+        <rule object="SAP" tags="minor,human,structure,note,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="54"/>
             <description>This structure element should be a note instead of a paragraph</description>
             <test>correctType != 'Note'</test>

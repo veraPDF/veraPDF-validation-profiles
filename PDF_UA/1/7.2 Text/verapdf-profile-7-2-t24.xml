@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAnnot" tags="major,machine,structure,annotation,lang">
+        <rule object="PDAnnot" tags="major,machine,lang,annotation,structure">
             <id specification="ISO_14289_1" clause="7.2" testNumber="24"/>
             <description>Natural language in the Contents entry for annotations shall be
                 determined</description>

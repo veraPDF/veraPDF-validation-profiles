@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="XMPLangAlt" deferred="true" tags="major,machine,metadata,lang">
+        <rule object="XMPLangAlt" deferred="true" tags="major,machine,lang,metadata">
             <id specification="ISO_14289_1" clause="7.2" testNumber="33"/>
             <description>Natural language for document metadata shall be determined</description>
             <test>xDefault == false || gSizeCatalogLang != 0</test>
