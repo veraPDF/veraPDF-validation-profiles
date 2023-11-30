@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
-    <details creator="veraPDF Consortium" created="2020-04-07T14:37:52.486+03:00">
+    <details creator="veraPDF Consortium" created="2020-04-07T11:37:52.486Z">
         <name>WCAG-2.1-Complete validation profile</name>
         <description>Validation rules against WCAG 2.1 and ISO 14289-1:2014</description>
     </details>
@@ -40,7 +40,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk" tags="minor,human,structure,text">
+        <rule object="SATextChunk" tags="minor,human,text,structure">
             <id specification="WCAG_2_1" clause="1.3.1" testNumber="4"/>
             <description>If text has a different style, it shall be tagged as Span, Em, Strong or other appropriate inline element</description>
             <test>hasSpecialStyle == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
@@ -62,7 +62,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SATextChunk" tags="major,human,contrast">
+        <rule object="SATextChunk" tags="major,machine,contrast">
             <id specification="WCAG_2_1" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1. Large-scale text and images of large-scale text have a contrast ratio of at least 3:1</description>
             <test>textSize &lt; 4.5 || ((textSize &gt;= 18.0 || (textSize &gt;= 14.0 &amp;&amp; textWeight &gt;= 700.0)) ? (contrastRatio &gt;= 3) : (contrastRatio &gt;= 4.5)) || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
@@ -108,7 +108,7 @@
                 <reference specification="ISO 32000-1:2008" clause="14.8.5.4.3"/>
             </references>
         </rule>
-        <rule object="SALinkAnnotation" tags="major,machine,structure,annotation,alt-text">
+        <rule object="SALinkAnnotation" tags="major,machine,alt-text,structure,annotation">
             <id specification="WCAG_2_1" clause="2.4.9" testNumber="1"/>
             <description>Links shall contain an alternate description via their Contents or Alt keys or in the text value</description>
             <test>(Contents != null &amp;&amp; Contents != '' &amp;&amp; contentsIsLink == false) || isOutsideCropBox == true || (F &amp; 2) == 2 || (textValue != null &amp;&amp; textValue != '' &amp;&amp; textValueIsLink == false) || (Alt != null &amp;&amp; Alt != '' &amp;&amp; altIsLink == false)</test>
@@ -273,7 +273,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan" tags="minor,human,structure,span,heading">
+        <rule object="SASpan" tags="minor,human,structure,heading,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="13"/>
             <description>This structure element should be a heading instead of a span</description>
             <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
@@ -364,7 +364,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP" tags="minor,human,structure,paragraph,caption">
+        <rule object="SAP" tags="minor,human,structure,caption,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="20"/>
             <description>This structure element should be a caption instead of a paragraph</description>
             <test>correctType != 'Caption'</test>
@@ -430,7 +430,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAStructElem" tags="minor,human,structure,table,list">
+        <rule object="SAStructElem" tags="minor,human,structure,list,table">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="26"/>
             <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering</description>
             <test>hasLowestDepthError == false || (correctType != 'TD' &amp;&amp; correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table') || (standardType != 'L' &amp;&amp; standardType != 'LI' &amp;&amp; standardType != 'Lbl' &amp;&amp; standardType != 'LBody')</test>
@@ -774,7 +774,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SASpan" tags="minor,human,structure,span,note">
+        <rule object="SASpan" tags="minor,human,structure,note,span">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="53"/>
             <description>This structure element should be a note instead of a span</description>
             <test>correctType != 'Note'</test>
@@ -784,7 +784,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAP" tags="minor,human,structure,paragraph,note">
+        <rule object="SAP" tags="minor,human,structure,note,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="54"/>
             <description>This structure element should be a note instead of a paragraph</description>
             <test>correctType != 'Note'</test>
@@ -1263,7 +1263,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDAnnot" tags="major,machine,structure,annotation,lang">
+        <rule object="PDAnnot" tags="major,machine,lang,annotation,structure">
             <id specification="ISO_14289_1" clause="7.2" testNumber="24"/>
             <description>Natural language in the Contents entry for annotations shall be determined</description>
             <test>Contents == null || Lang_size != 0 || gSizeCatalogLang != 0</test>
@@ -1377,7 +1377,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="XMPLangAlt" deferred="true" tags="major,machine,metadata,lang">
+        <rule object="XMPLangAlt" deferred="true" tags="major,machine,lang,metadata">
             <id specification="ISO_14289_1" clause="7.2" testNumber="33"/>
             <description>Natural language for document metadata shall be determined</description>
             <test>xDefault == false || gSizeCatalogLang != 0</test>
@@ -1521,7 +1521,7 @@
                 <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
             </references>
         </rule>
-        <rule object="SEFigure" tags="major,machine,structure,figure,alt-text">
+        <rule object="SEFigure" tags="major,machine,alt-text,structure,figure">
             <id specification="ISO_14289_1" clause="7.3" testNumber="1"/>
             <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
             <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
@@ -1785,7 +1785,7 @@
             <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element</description>
             <test>structParentStandardType == 'Link' || structParentStandardType == 'Reference' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
-                <message>A Link annotation is an Artifact or is nested within %1 tag (standard type = %2) instead of Link or Reference</message>
+                <message>A Link annotation is artifact or is nested within %1 tag (standard type = %2) instead of Link or Reference</message>
                 <arguments>
                     <argument>structParentType</argument>
                     <argument>structParentStandardType</argument>
