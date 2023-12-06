@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
-        <name>ISO 14289-1:2014 - 1.3 Adaptable - 1.3.4 Orientation - Single display orientation</name>
+        <name>WCAG 2.1 - 1.3 Adaptable - 1.3.4 Orientation - Single display orientation</name>
         <description>Pages shall have the same orientation</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDPage">
-            <id specification="WCAG2.1" clause="1.3.4" testNumber="1"/>
+        <rule object="PDPage" tags="minor,machine,page">
+            <id specification="WCAG_2_1" clause="1.3.4" testNumber="1"/>
             <description>Pages shall have the same orientation</description>
             <test>orientation == 'Square' || gMostCommonPageOrientation == orientation</test>
             <error>

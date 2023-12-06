@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
-        <name>WCAG 2.1 - 4.1 Compatible - 4.1.2 Name, Role, Value - Heading instead of paragraph</name>
-        <description>This structure element should be a heading instead of a paragraph</description>
+        <name>WCAG 2.1 - 4.1 Compatible - 4.1.2 Name, Role, Value - Caption instead of paragraph</name>
+        <description>This structure element should be a caption instead of a paragraph</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="SAP" tags="minor,human,structure,heading,paragraph">
-            <id specification="WCAG_2_1" clause="4.1.2" testNumber="10"/>
-            <description>This structure element should be a heading instead of a paragraph</description>
-            <test>correctType != 'H' &amp;&amp; correctType != 'Hn'</test>
+        <rule object="SAP" tags="minor,human,structure,caption,paragraph">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="20"/>
+            <description>This structure element should be a caption instead of a paragraph</description>
+            <test>correctType != 'Caption'</test>
             <error>
                 <message>score = %1, correct type = %2</message>
                 <arguments>

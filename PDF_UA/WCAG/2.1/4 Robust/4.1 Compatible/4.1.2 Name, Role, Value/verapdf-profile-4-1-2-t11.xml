@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
-        <name>ISO 14289-1:2014 - 4.1 Compatible - 4.1.2 Name, Role, Value - Table elements</name>
-        <description>The structure type and attributes of table elements shall be semantically appropriate</description>
+        <name>WCAG 2.1 - 4.1 Compatible - 4.1.2 Name, Role, Value - Span instead of paragraph</name>
+        <description>This structure element should be a span instead of a paragraph</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="SAStructElem">
+        <rule object="SAP" tags="minor,human,structure,span,paragraph">
             <id specification="WCAG_2_1" clause="4.1.2" testNumber="11"/>
-            <description>The structure type and attributes of table elements shall be semantically appropriate</description>
-            <test>(correctSemanticScore &gt;= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
-                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp;
-                correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp; correctType != 'Table')</test>
+            <description>This structure element should be a span instead of a paragraph</description>
+            <test>correctType != 'Span'</test>
             <error>
-                <message>score = %1, correct type = %2, structure id = %3</message>
+                <message>score = %1, correct type = %2</message>
                 <arguments>
                     <argument>correctSemanticScore</argument>
                     <argument>correctType</argument>
-                    <argument>structureID</argument>
                 </arguments>
             </error>
             <references/>

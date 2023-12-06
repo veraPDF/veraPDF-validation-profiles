@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.1 - 4.1 Compatible - 4.1.2 Name, Role, Value - List</name>
+        <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SAStructElem" tags="minor,human,structure,list,table">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="26"/>
+            <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering</description>
+            <test>hasLowestDepthError == false || (correctType != 'TD' &amp;&amp; correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp;
+                correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp;
+                correctType != 'Table') || (standardType != 'L' &amp;&amp; standardType != 'LI' &amp;&amp;
+                standardType != 'Lbl' &amp;&amp; standardType != 'LBody')</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
