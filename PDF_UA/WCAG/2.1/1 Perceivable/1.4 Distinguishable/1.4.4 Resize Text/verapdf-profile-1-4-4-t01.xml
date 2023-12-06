@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.1 - 1.4 Distinguishable - 1.4.4 Resize Text - Small text</name>
+        <description>Font size is too small: text may not be resized without assistive technology
+            up to 200 percent without loss of content or functionality</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SATextChunk" tags="major,machine,text">
+            <id specification="WCAG_2_1" clause="1.4.4" testNumber="1"/>
+            <description>Font size is too small: text may not be resized without assistive technology
+                up to 200 percent without loss of content or functionality</description>
+            <test>textSize &gt;= 4.5 || isWhiteSpaceChunk == true || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
+            <error>
+                <message>textSize = %1</message>
+                <arguments>
+                    <argument>textSize</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

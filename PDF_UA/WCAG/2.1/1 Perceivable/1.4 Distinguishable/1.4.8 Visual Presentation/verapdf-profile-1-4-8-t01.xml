@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.1 - 1.4 Distinguishable - 1.4.8 Visual Presentation - Illegible font</name>
+        <description>Document should not contain illegible font</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDFont" tags="cosmetic,human,text">
+            <id specification="WCAG_2_1" clause="1.4.8" testNumber="1"/>
+            <description>Document should not contain illegible font</description>
+            <test>fontName != null &amp;&amp; fontName.indexOf('AdobeDevanagari') == -1 &amp;&amp; fontName.indexOf('AgencyFB') == -1 &amp;&amp;
+                fontName.indexOf('BlackadderITC') == -1 &amp;&amp; fontName.indexOf('BodoniMTPosterCompressed') == -1 &amp;&amp;
+                fontName.indexOf('BradleyHandITC') == -1 &amp;&amp; fontName.indexOf('BrushScriptMT') == -1 &amp;&amp;
+                fontName.indexOf('Chiller') == -1 &amp;&amp; fontName.indexOf('ColonnaMT') == -1 &amp;&amp;
+                fontName.indexOf('CurlzMT') == -1 &amp;&amp; fontName.indexOf('EdwardianScriptITC') == -1 &amp;&amp;
+                fontName.indexOf('ESRIArcGISTDN') == -1 &amp;&amp; fontName.indexOf('FreestyleScript') == -1 &amp;&amp;
+                fontName.indexOf('FrenchScriptMT') == -1 &amp;&amp; fontName.indexOf('Gabriola') == -1 &amp;&amp;
+                fontName.indexOf('Gigi') == -1 &amp;&amp; fontName.indexOf('GillSansMT-ExtraCondensedBold') == -1 &amp;&amp;
+                fontName.indexOf('HarlowSolidItalic') == -1 &amp;&amp; fontName.indexOf('Harrington') == -1 &amp;&amp;
+                fontName.indexOf('InformalRoman') == -1 &amp;&amp; fontName.indexOf('Jokerman') == -1 &amp;&amp;
+                fontName.indexOf('FrenchScriptMT') == -1 &amp;&amp; fontName.indexOf('Gabriola') == -1 &amp;&amp;
+                fontName.indexOf('JuiceITC') == -1 &amp;&amp; fontName.indexOf('KunstlerScript') == -1 &amp;&amp;
+                fontName.indexOf('Magneto') == -1 &amp;&amp; fontName.indexOf('MaturaMTScriptCapitals') == -1 &amp;&amp;
+                fontName.indexOf('MicrosoftUighur') == -1 &amp;&amp; fontName.indexOf('Mistral') == -1 &amp;&amp;
+                fontName.indexOf('OldEnglishTextMT') == -1 &amp;&amp; fontName.indexOf('Onyx') == -1 &amp;&amp;
+                fontName.indexOf('PalaceScriptMT') == -1 &amp;&amp; fontName.indexOf('Parchment') == -1 &amp;&amp;
+                fontName.indexOf('Playbill') == -1 &amp;&amp; fontName.indexOf('Pristina') == -1 &amp;&amp;
+                fontName.indexOf('RageItalic') == -1 &amp;&amp; fontName.indexOf('Ravie') == -1 &amp;&amp;
+                fontName.indexOf('SegoeScript') == -1 &amp;&amp; fontName.indexOf('ShowcardGothic') == -1 &amp;&amp;
+                fontName.indexOf('SnapITC') == -1 &amp;&amp; fontName.indexOf('Vivaldi') == -1 &amp;&amp;
+                fontName.indexOf('VladimirScript') == -1 &amp;&amp;
+                (fontName.indexOf('HarlowSolid') == -1 || isItalic != true)</test>
+            <error>
+                <message>Document contains illegible font</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

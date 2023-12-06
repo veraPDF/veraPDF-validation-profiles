@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.1 - 4.1 Compatible - 4.1.2 Name, Role, Value - Table cell column span</name>
+        <description>The column span of this table cell does not match the column span of the visual representation of this table cell</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SATableCell" tags="minor,human,structure,table">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="39"/>
+            <description>The column span of this table cell does not match the column span of the visual representation of this table cell</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1107).length == 0</test>
+            <error>
+                <message>The column span %1 of this table cell does not match the column span %2 of the visual representation of this table cell</message>
+                <arguments>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1107)].split(';')[0]</argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1107)].split(';')[1]</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

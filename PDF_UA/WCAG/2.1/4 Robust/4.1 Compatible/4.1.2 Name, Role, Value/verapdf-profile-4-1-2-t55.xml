@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.1 - 4.1 Compatible - 4.1.2 Name, Role, Value - Heading</name>
+        <description>The structure type and attributes of a heading shall be semantically appropriate</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SAStructElem" tags="minor,human,structure,heading">
+            <id specification="WCAG_2_1" clause="4.1.2" testNumber="55"/>
+            <description>The structure type and attributes of a heading shall be semantically appropriate</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1300).length == 0</test>
+            <error>
+                <message>This node is the single child with content. One of its ancestor nodes should be tagged as heading
+                    instead of this one</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
