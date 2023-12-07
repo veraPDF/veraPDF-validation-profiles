@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_1">
-    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+    <details creator="veraPDF Consortium" created="2020-03-13T07:58:04.098Z">
         <name>WCAG 2.1 validation profile</name>
         <description>Extra rules for WCAG 2.1 validation in addition to PDF/UA-1</description>
     </details>
