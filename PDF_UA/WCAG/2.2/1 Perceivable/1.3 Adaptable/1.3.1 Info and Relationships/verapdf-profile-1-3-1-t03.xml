@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>WCAG 2.2 - 1.3 Adaptable - 1.3.1 Info and Relationships - Underlined text</name>
+        <description>Underlined text</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SATextChunk" tags="cosmetic,human,text">
+            <id specification="WCAG_2_2" clause="1.3.1" testNumber="3"/>
+            <description>Underlined text</description>
+            <test>isUnderlined == false || parentsStandardTypes.split('&amp;').filter(elem =&gt; (elem == 'Link' || elem == 'Reference')).length &gt; 0</test>
+            <error>
+                <message>Underlined text is detected</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

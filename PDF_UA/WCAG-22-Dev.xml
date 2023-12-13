@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>WCAG 2.2 development validation profile</name>
+        <description>Extra rules for WCAG 2.2 validation in addition to PDF/UA-1</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SATextChunk">
+            <id specification="WCAG_2_2" clause="1.3.1" testNumber="5"/>
+            <description>If text has a different background color, it shall be tagged as Span</description>
+            <test>hasSpecialBackground == false</test>
+            <error>
+                <message>Text has a different background color and not tagged as Span</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAP">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="1"/>
+            <description>The structure type and attributes of a paragraph shall be semantically appropriate</description>
+            <test>correctType == 'P' &amp;&amp; correctSemanticScore &gt;= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SASpan">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="2"/>
+            <description>The structure type and attributes of a span shall be semantically appropriate</description>
+            <test>correctType == 'Span' &amp;&amp; correctSemanticScore &gt;= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATable">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="3"/>
+            <description>The structure type and attributes of a table shall be semantically appropriate</description>
+            <test>(correctType == 'Table' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAH">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="4"/>
+            <description>The structure type and attributes of a heading shall be semantically appropriate</description>
+            <test>correctType == 'H' &amp;&amp; correctSemanticScore &gt;= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAHn">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="5"/>
+            <description>The structure type and attributes of a numbered heading shall be semantically appropriate</description>
+            <test>correctType == 'Hn' &amp;&amp; correctSemanticScore &gt;= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATR">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="6"/>
+            <description>The structure type and attributes of a table row shall be semantically appropriate</description>
+            <test>(correctType == 'TR' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATH">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="7"/>
+            <description>The structure type and attributes of a table header cell shall be semantically appropriate</description>
+            <test>(correctType == 'TH' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATD">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="8"/>
+            <description>The structure type and attributes of a table cell shall be semantically appropriate</description>
+            <test>(correctType == 'TD' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="9"/>
+            <description>The structure type and attributes of table elements shall be semantically appropriate</description>
+            <test>(correctSemanticScore &gt;= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'TD' &amp;&amp;
+                correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp; correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp;
+                correctType != 'TFoot')</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SACaption">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="11"/>
+            <description>The structure type and attributes of a caption shall be semantically appropriate</description>
+            <test>correctType == 'Caption' &amp;&amp; correctSemanticScore &gt;= 0.75</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="12"/>
+            <description>The structure type and attributes of a caption shall be semantically appropriate</description>
+            <test>standardType == 'Caption' || correctType != 'Caption'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="13"/>
+            <description>The structure type and attributes of list elements shall be semantically appropriate</description>
+            <test>(correctSemanticScore &gt;= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'L' &amp;&amp;
+                correctType != 'LI' &amp;&amp; correctType != 'Lbl' &amp;&amp; correctType != 'LBody')</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAL">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="14"/>
+            <description>The structure type and attributes of a list shall be semantically appropriate</description>
+            <test>(correctType == 'L' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALI">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="15"/>
+            <description>The structure type and attributes of a list item shall be semantically appropriate</description>
+            <test>(correctType == 'LI' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALbl">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="16"/>
+            <description>The structure type and attributes of a list label shall be semantically appropriate</description>
+            <test>(correctType == 'Lbl' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALBody">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="17"/>
+            <description>The structure type and attributes of a list body shall be semantically appropriate</description>
+            <test>(correctType == 'LBody' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAStructElem">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="18"/>
+            <description>A table element is incorrectly tagged as a list element or a list has the wrong numbering</description>
+            <test>(correctType != 'TD' &amp;&amp; correctType != 'TR' &amp;&amp; correctType != 'TH' &amp;&amp;
+                correctType != 'TBody' &amp;&amp; correctType != 'THead' &amp;&amp; correctType != 'TFoot' &amp;&amp;
+                correctType != 'Table') || (standardType != 'L' &amp;&amp; standardType != 'LI' &amp;&amp;
+                standardType != 'Lbl' &amp;&amp; standardType != 'LBody')</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALBody">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="19"/>
+            <description>List item does not contain a label</description>
+            <test>correctType != 'LI'</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATHead">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="21"/>
+            <description>The structure type and attributes of table headers shall be semantically appropriate</description>
+            <test>(correctType == 'THead' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATBody">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="22"/>
+            <description>The structure type and attributes of a table body shall be semantically appropriate</description>
+            <test>(correctType == 'TBody' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATFoot">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="23"/>
+            <description>The structure type and attributes of a table footer shall be semantically appropriate</description>
+            <test>(correctType == 'TFoot' &amp;&amp; correctSemanticScore &gt;= 0.75)</test>
+            <error>
+                <message>score = %1, correct type = %2, id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SALineArtChunk">
+            <id specification="WCAG_2_2" clause="4.1.2.1" testNumber="24"/>
+            <description>line art</description>
+            <test>false</test>
+            <error>
+                <message>line art</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - Table columns</name>
+        <description>The number of columns of this table does not match the number of columns of the visual representation of this table</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SATable" tags="minor,human,structure,table">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="37"/>
+            <description>The number of columns of this table does not match the number of columns of the visual representation of this table</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1105).length == 0</test>
+            <error>
+                <message>The number of columns %1 of this table does not match the number of columns %2 of the visual representation of this table</message>
+                <arguments>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[0]</argument>
+                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[1]</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
