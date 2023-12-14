@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.1 General - Struct element parent</name>
+        <description>Struct element shall contain the P entry according to ISO 32000-1:2008, 14.7.2, Table 355</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructElem" tags="critical,machine,structure">
+            <id specification="ISO_14289_1" clause="7.1" testNumber="12"/>
+            <description>A struct element shall contain the P entry according to ISO 32000-1:2008, 14.7.2, Table 355</description>
+            <test>containsParent == true</test>
+            <error>
+                <message>A struct element does not contain the P entry</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="14.7.2, Table 355"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
