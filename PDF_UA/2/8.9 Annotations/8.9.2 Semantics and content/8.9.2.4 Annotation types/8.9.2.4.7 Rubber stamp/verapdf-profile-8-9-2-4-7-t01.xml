@@ -16,7 +16,9 @@
                 <message>Rubber stamp annotation contains neither Name nor Contents entry</message>
                 <arguments/>
             </error>
-            <references/>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="12.5.6.2"/>
+            </references>
         </rule>
     </rules>
     <variables/>

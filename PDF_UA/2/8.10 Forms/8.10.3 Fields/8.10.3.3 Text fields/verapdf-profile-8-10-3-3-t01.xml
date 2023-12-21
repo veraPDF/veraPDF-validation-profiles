@@ -19,7 +19,10 @@
                     <argument>V</argument>
                 </arguments>
             </error>
-            <references/>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="Table 226"/>
+                <reference specification="ISO 32000-2:2020" clause="Table 228"/>
+            </references>
         </rule>
     </rules>
     <variables/>

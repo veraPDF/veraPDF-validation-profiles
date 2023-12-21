@@ -16,7 +16,9 @@
                 <message>The document contains a reference to the .notdef glyph</message>
                 <arguments/>
             </error>
-            <references/>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="9.7.6.3"/>
+            </references>
         </rule>
     </rules>
     <variables/>
