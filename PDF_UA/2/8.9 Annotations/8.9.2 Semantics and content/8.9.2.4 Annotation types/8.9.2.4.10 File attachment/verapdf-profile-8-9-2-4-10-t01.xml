@@ -2,16 +2,14 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
         <name>ISO 14289-2:202x - 8.9 Annotations - 8.9.2.4 Annotation types - File attachment annotation</name>
-        <description>When a file attachment annotation references a file specification dictionary in accordance with 
-            ISO 32000-2:2020, 7.11.3 using the FS entry in accordance with ISO 32000-2:2020, 12.5.6.15, that file 
+        <description>When a file attachment annotation references a file specification dictionary, the file
             specification dictionary shall include an AFRelationship entry</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDFileAttachmentAnnot">
             <id specification="ISO_14289_2" clause="8.9.2.4.10" testNumber="1"/>
-            <description>When a file attachment annotation references a file specification dictionary in accordance with
-                ISO 32000-2:2020, 7.11.3 using the FS entry in accordance with ISO 32000-2:2020, 12.5.6.15, that file
+            <description>When a file attachment annotation references a file specification dictionary, the file 
                 specification dictionary shall include an AFRelationship entry</description>
             <test>containsFS == false || AFRelationship != null</test>
             <error>
