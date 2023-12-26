@@ -6,12 +6,12 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="CosActualText">
+        <rule object="CosAlt">
             <id specification="ISO_14289_2" clause="8.4.3" testNumber="3"/>
             <description>The Alt entry shall not contain any PUA values</description>
             <test>containsPUA == false</test>
             <error>
-                <message>The Alt entry contains a Private Unicoide Area value</message>
+                <message>The Alt entry contains a Private Unicode Area value</message>
                 <arguments/>
             </error>
             <references/>

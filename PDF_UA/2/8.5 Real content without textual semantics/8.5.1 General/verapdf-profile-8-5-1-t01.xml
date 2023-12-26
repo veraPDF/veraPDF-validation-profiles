@@ -11,7 +11,7 @@
             <id specification="ISO_14289_2" clause="8.5.1" testNumber="1"/>
             <description>Real content that does not possess the semantics of text objects and does not have an alternate
                 textual representation shall be enclosed within Figure or Formula structure elements as appropriate</description>
-            <test>itemType == 'text' || parentStructureTag == null || ActualText != null ||
+            <test>itemType == 'text' || isTaggedContent == false || ActualText != null ||
                 isArtifact == true || isFigure == true || isFormula == true</test>
             <error>
                 <message>Real content that does not possess the semantics of text objects and does not have an alternate 
