@@ -11,7 +11,7 @@
             <description>The ActualText entry shall not contain any PUA values</description>
             <test>containsPUA == false</test>
             <error>
-                <message>The ActualText entry contains a Private Unicoide Area value</message>
+                <message>The ActualText entry contains a Private Unicode Area value</message>
                 <arguments/>
             </error>
             <references/>
