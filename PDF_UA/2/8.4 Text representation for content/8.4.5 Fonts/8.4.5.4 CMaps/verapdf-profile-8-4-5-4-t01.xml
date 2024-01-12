@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDCMap">
+        <rule object="PDCMap" tags="font">
             <id specification="ISO_14289_2" clause="8.4.5.4" testNumber="1"/>
             <description>All CMaps used within a file that conforms to PDF/UA-2, except those listed in
                 ISO 32000-2:2020, Table 116, shall be embedded in that file, as described in ISO 32000-2:2020, 9.7.5</description>

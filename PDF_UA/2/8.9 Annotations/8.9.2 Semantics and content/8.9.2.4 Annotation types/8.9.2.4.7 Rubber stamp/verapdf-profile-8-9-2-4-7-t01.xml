@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDRubberStampAnnot">
+        <rule object="PDRubberStampAnnot" tags="annotation,alt-text">
             <id specification="ISO_14289_2" clause="8.9.2.4.7" testNumber="1"/>
             <description>If the Name entry is insufficient to describe the intent of the stamp annotation, a Contents
                 entry describing the author’s intent shall be provided</description>

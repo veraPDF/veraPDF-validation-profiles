@@ -9,7 +9,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="CosLang">
+        <rule object="CosLang" tags="lang">
             <id specification="ISO_14289_2" clause="8.4.4" testNumber="2"/>
             <description>If the Lang entry is present in the document's Catalog dictionary or in a structure element 
                 dictionary or property list, its value shall be a language identifier as described in ISO 32000-2:2020, 

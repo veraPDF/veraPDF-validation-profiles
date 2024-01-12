@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDWidgetAnnot">
+        <rule object="PDWidgetAnnot" tags="annotation,alt-text">
             <id specification="ISO_14289_2" clause="8.10.2.3" testNumber="2"/>
             <description>If an additional action (AA) entry is present in a widget annotation dictionary, the respective 
                 widget's Contents entry shall be present</description>

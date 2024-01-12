@@ -11,7 +11,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDTrueTypeFont">
+        <rule object="PDTrueTypeFont" tags="font">
             <id specification="ISO_14289_2" clause="8.4.5.7" testNumber="2"/>
             <description>All non-symbolic TrueType fonts shall have either MacRomanEncoding or WinAnsiEncoding as the
                 value for the Encoding key in the Font dictionary or as the value for the BaseEncoding key in the

@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEForm">
+        <rule object="SEForm" tags="annotation,structure">
             <id specification="ISO_14289_2" clause="8.10.1" testNumber="2"/>
             <description>A Form structure element shall contain at most one widget annotation</description>
             <test>widgetAnnotsCount &lt;= 1</test>

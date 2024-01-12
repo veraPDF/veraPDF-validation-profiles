@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEL">
+        <rule object="SEL" tags="structure,list">
             <id specification="ISO_14289_2" clause="8.2.5.25" testNumber="1"/>
             <description>If Lbl structure elements are present, the ListNumbering attribute shall be present on the
                 respective L structure element; in such cases the value None shall not be used</description>

@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDScreenAnnot">
+        <rule object="PDScreenAnnot" tags="annotation,alt-text">
             <id specification="ISO_14289_2" clause="8.9.2.4.12" testNumber="1"/>
             <description>Screen annotations shall include a Contents entry</description>
             <test>Contents != null</test>

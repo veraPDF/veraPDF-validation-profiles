@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDRichMediaAnnot">
+        <rule object="PDRichMediaAnnot" tags="annotation,alt-text">
             <id specification="ISO_14289_2" clause="8.9.2.4.19" testNumber="2"/>
             <description>RichMedia annotation shall include alternate description in respective Contents entry</description>
             <test>Contents != null</test>

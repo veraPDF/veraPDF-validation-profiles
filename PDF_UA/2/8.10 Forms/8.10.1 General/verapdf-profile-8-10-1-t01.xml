@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDWidgetAnnot">
+        <rule object="PDWidgetAnnot" tags="annotation,structure,artifact">
             <id specification="ISO_14289_2" clause="8.10.1" testNumber="1"/>
             <description>Each widget annotation shall be enclosed by a Form structure element unless the widget
                 annotation is an artifact</description>

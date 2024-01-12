@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAnnot">
+        <rule object="PDAnnot" tags="annotation,artifact">
             <id specification="ISO_14289_2" clause="8.9.2.2" testNumber="1"/>
             <description>Annotations shall be artifacts, if the Invisible flag is set in accordance with ISO 32000-2:2020,
                 Table 167</description>

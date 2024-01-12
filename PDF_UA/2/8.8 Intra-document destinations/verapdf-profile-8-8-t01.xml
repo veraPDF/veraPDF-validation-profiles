@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDDestination">
+        <rule object="PDDestination" tags="syntax">
             <id specification="ISO_14289_2" clause="8.8" testNumber="1"/>
             <description>All destinations whose target lies within the current document shall be structure destinations</description>
             <test>isStructDestination == true</test>

@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDPage">
+        <rule object="PDPage" tags="page,annotation">
             <id specification="ISO_14289_2" clause="8.9.3.3" testNumber="1"/>
             <description>Every page that includes an annotation shall contain a Tabs entry in its page dictionary in
                 accordance with ISO 32000-2:2020, Table 31, and its value shall be A, W or S</description>

@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="structure">
             <id specification="ISO_14289_2" clause="8.2.4" testNumber="3"/>
             <description>Structure types shall not be role mapped to other structure types in the same namespace</description>
             <test>roleMapToSameNamespaceTag == null</test>

@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructTreeRoot">
+        <rule object="PDStructTreeRoot" tags="structure">
             <id specification="ISO_14289_2" clause="8.2.5.2" testNumber="2"/>
             <description>The structure tree root shall contain a single Document structure element as its only child. 
                 The namespace for that element shall be specified as the PDF 2.0 namespace</description>

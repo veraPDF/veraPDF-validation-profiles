@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="MainXMPPackage">
+        <rule object="MainXMPPackage" tags="metadata">
             <id specification="ISO_14289_2" clause="8.11.1" testNumber="1"/>
             <description>The Metadata stream as specified in ISO 32000-2:2020, 14.3 in the document catalog dictionary
                 shall contain a dc:title entry</description>

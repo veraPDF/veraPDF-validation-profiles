@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAcroForm">
+        <rule object="PDAcroForm" tags="syntax">
             <id specification="ISO_14289_2" clause="8.10.1" testNumber="3"/>
             <description>XFA forms shall not be present</description>
             <test>containsXFA == false</test>

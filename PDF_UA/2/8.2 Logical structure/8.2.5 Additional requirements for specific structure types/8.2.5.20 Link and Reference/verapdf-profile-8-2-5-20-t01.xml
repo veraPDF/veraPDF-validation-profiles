@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDLinkAnnot">
+        <rule object="PDLinkAnnot" tags="annotation,structure">
             <id specification="ISO_14289_2" clause="8.2.5.20" testNumber="1"/>
             <description>A link annotation and its associated content shall be enclosed in either a Link or Reference
                 structure element</description>

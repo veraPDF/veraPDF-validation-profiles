@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="text,alt-text">
             <id specification="ISO_14289_2" clause="8.4.3" testNumber="1"/>
             <description>In all cases, where real content maps to Unicode PUA values, an ActualText or Alt entry shall be present</description>
             <test>unicodePUA == false || actualTextPresent == true || altPresent == true</test>

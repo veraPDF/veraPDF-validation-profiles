@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDFileAttachmentAnnot">
+        <rule object="PDFileAttachmentAnnot" tags="annotation,syntax">
             <id specification="ISO_14289_2" clause="8.9.2.4.10" testNumber="1"/>
             <description>When a file attachment annotation references a file specification dictionary, the file 
                 specification dictionary shall include an AFRelationship entry</description>

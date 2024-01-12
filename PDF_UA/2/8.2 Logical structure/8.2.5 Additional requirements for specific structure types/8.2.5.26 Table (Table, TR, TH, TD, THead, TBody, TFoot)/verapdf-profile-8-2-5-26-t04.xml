@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETable">
+        <rule object="SETable" tags="structure,table">
             <id specification="ISO_14289_2" clause="8.2.5.26" testNumber="4"/>
             <description>Tables shall be regular. Table rows shall have the same number of columns (taking into account 
                 column spans)</description>
