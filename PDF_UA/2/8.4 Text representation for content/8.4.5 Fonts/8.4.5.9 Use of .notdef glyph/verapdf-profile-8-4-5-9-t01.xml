@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="font">
             <id specification="ISO_14289_2" clause="8.4.5.9" testNumber="1"/>
             <description>A file in conformance with PDF/UA-2 shall not contain a reference to the .notdef glyph from any
                 of the text showing operators, regardless of text rendering mode, in any content stream</description>

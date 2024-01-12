@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SENote">
+        <rule object="SENote" tags="structure,note">
             <id specification="ISO_14289_2" clause="8.2.5.14" testNumber="1"/>
             <description>The Note standard structure type shall not be present in conforming documents unless role
                 mapped to a structure element in the PDF 2.0 namespace</description>

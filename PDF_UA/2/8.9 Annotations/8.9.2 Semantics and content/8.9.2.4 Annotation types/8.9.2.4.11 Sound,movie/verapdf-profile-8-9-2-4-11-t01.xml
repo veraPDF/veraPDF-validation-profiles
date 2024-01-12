@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDSoundAnnot">
+        <rule object="PDSoundAnnot" tags="annotation">
             <id specification="ISO_14289_2" clause="8.9.2.4.11" testNumber="1"/>
             <description>Sound annotation cannot be used when conforming to PDF/UA-2</description>
             <test>false</test>

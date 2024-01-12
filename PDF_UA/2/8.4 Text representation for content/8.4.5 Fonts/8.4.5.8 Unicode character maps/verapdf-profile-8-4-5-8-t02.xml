@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="font">
             <id specification="ISO_14289_2" clause="8.4.5.8" testNumber="2"/>
             <description> If a ToUnicode CMap is present, the Unicode values it specifies shall all be greater than
                 zero (0), but not equal to either U+FEFF or U+FFFE</description>

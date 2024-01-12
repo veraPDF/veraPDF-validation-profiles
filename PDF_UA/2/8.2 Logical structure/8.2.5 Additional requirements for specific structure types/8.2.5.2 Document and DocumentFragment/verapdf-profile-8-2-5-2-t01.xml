@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructTreeRoot">
+        <rule object="PDStructTreeRoot" tags="structure">
             <id specification="ISO_14289_2" clause="8.2.5.2" testNumber="1"/>
             <description>The structure tree root shall contain a single Document structure element as its only child, 
                 as specified in ISO 32000-2:2020, Annex L and ISO/TS 32005</description>

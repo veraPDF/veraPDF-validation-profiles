@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="font">
             <id specification="ISO_14289_2" clause="8.4.5.8" testNumber="1"/>
             <description>The Font dictionary of all fonts shall define the map of all used character codes to Unicode
                 values, either via a ToUnicode entry, or other mechanisms as defined in ISO 14289-2, 8.4.5.8</description>

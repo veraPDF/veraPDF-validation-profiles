@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SERuby">
+        <rule object="SERuby" tags="structure">
             <id specification="ISO_14289_2" clause="8.2.5.23" testNumber="1"/>
             <description>A Ruby structure element shall contain a single RB structure element and a single RT structure
                 element or a Ruby structure element shall consist of a four-element subsequence: RB, RP, RT, RP</description>

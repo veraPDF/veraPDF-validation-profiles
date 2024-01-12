@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETableCell">
+        <rule object="SETableCell" tags="structure,table">
             <id specification="ISO_14289_2" clause="8.2.5.26" testNumber="1"/>
             <description>Tables shall be regular. Table cell shall not have intersection with other cells</description>
             <test>hasIntersection != true</test>

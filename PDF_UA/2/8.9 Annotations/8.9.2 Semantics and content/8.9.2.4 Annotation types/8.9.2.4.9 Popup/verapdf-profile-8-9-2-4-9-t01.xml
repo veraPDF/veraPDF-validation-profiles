@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDPopupAnnot">
+        <rule object="PDPopupAnnot" tags="annotation,artifact">
             <id specification="ISO_14289_2" clause="8.9.2.4.9" testNumber="1"/>
             <description>Popup annotations shall not be present in the structure tree</description>
             <test>structParentType == null || isArtifact == true</test>

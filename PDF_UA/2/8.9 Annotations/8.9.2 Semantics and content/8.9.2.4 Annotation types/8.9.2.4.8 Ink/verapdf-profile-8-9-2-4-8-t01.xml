@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDInkAnnot">
+        <rule object="PDInkAnnot" tags="annotation,alt-text">
             <id specification="ISO_14289_2" clause="8.9.2.4.8" testNumber="1"/>
             <description>A Contents entry describing the author’s intent shall be provided for Ink annotation</description>
             <test>Contents != null</test>

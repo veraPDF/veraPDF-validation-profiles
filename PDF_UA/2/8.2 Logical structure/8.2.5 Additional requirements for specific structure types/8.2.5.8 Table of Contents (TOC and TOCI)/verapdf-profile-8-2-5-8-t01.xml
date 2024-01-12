@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETOCI">
+        <rule object="SETOCI" tags="structure,toc">
             <id specification="ISO_14289_2" clause="8.2.5.8" testNumber="1"/>
             <description>Each TOCI in the table of contents shall identify the target of the reference using the Ref entry,
                 either directly on the TOCI structure element itself or on a child structure element contained within</description>

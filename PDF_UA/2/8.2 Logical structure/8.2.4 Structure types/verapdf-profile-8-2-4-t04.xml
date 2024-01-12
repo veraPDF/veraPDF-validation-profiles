@@ -10,7 +10,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SENonStandard">
+        <rule object="SENonStandard" tags="structure">
             <id specification="ISO_14289_2" clause="8.2.4" testNumber="4"/>
             <description>All structure elements shall belong to, or be role mapped to, at least one of the following 
                 namespaces specified in ISO 32000-2:2020, 14.8.6:

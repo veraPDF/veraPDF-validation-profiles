@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEFENote">
+        <rule object="SEFENote" tags="structure,note">
             <id specification="ISO_14289_2" clause="8.2.5.14" testNumber="3"/>
             <description>The value of the NoteType attribute of the FENote structure element shall be Footnote, Endnote or None</description>
             <test>NoteType == 'Footnote' || NoteType == 'Endnote' || NoteType == 'None'</test>

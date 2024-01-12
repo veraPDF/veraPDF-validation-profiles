@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDWidgetAnnot">
+        <rule object="PDWidgetAnnot" tags="annotation,artifact">
             <id specification="ISO_14289_2" clause="8.9.2.4.13" testNumber="1"/>
             <description>A widget annotation of zero height and width shall be an artifact</description>
             <test>width != 0 || height != 0 || structParentType == null || isArtifact == true</test>

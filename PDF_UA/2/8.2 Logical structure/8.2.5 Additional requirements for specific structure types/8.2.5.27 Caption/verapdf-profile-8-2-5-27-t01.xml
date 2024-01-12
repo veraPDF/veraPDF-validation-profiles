@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem">
+        <rule object="PDStructElem" tags="structure,caption">
             <id specification="ISO_14289_2" clause="8.2.5.27" testNumber="1"/>
             <description>When present, the Caption element shall be the first or the last child of the structure element</description>
             <test>kidsStandardTypes.indexOf('&amp;Caption&amp;') &lt; 0</test>

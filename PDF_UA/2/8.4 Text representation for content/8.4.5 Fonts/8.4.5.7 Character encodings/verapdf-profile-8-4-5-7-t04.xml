@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="TrueTypeFontProgram">
+        <rule object="TrueTypeFontProgram" tags="font">
             <id specification="ISO_14289_2" clause="8.4.5.7" testNumber="4"/>
             <description>The 'cmap' subtable in the embedded font program shall either contain the Microsoft Symbol
                 (3,0 – Platform ID=3, Encoding ID=0) or the Mac Roman (1,0 – Platform ID=1, Encoding ID=1) encoding</description>

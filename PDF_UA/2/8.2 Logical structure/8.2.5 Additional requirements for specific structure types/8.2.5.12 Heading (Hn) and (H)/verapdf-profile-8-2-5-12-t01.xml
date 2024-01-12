@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEH">
+        <rule object="SEH" tags="structure,heading">
             <id specification="ISO_14289_2" clause="8.2.5.12" testNumber="1"/>
             <description>Conforming files shall not use the H structure type</description>
             <test>false</test>

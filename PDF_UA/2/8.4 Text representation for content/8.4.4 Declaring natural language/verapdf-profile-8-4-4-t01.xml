@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDDocument">
+        <rule object="PDDocument" tags="lang">
             <id specification="ISO_14289_2" clause="8.4.4" testNumber="1"/>
             <description>The default natural language for content and text strings shall be specified using the Lang 
                 entry, with a non-empty value, in the catalog dictionary</description>

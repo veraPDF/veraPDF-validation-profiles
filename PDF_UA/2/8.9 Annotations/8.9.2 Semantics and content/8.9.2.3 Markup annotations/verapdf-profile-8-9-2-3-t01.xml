@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDMarkupAnnot">
+        <rule object="PDMarkupAnnot" tags="annotation,structure">
             <id specification="ISO_14289_2" clause="8.9.2.3" testNumber="1"/>
             <description>Markup annotations shall be enclosed within Annot structure elements</description>
             <test>structParentStandardType == 'Annot'</test>

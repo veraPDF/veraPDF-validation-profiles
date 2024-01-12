@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDFUAIdentification">
+        <rule object="PDFUAIdentification" tags="metadata">
             <id specification="ISO_14289_2" clause="5" testNumber="5"/>
             <description>The value of pdfuaid:rev shall be the four digit year</description>
             <test>/^\d{4}$/.test(rev)</test>

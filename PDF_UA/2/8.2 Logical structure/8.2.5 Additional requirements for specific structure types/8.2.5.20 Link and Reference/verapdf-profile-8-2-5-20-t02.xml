@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDLinkAnnot">
+        <rule object="PDLinkAnnot" tags="annotation">
             <id specification="ISO_14289_2" clause="8.2.5.20" testNumber="2"/>
             <description>Link annotations that target different locations shall be in separate Link or Reference
                 structure elements</description>

@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDLinkAnnot">
+        <rule object="PDLinkAnnot" tags="annotation,structure">
             <id specification="ISO_14289_2" clause="8.2.5.20" testNumber="3"/>
             <description>Multiple link annotations shall be included in a single Link or Reference structure element if 
                 they target the same location and are semantically perceived to be a single link</description>

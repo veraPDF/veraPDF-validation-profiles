@@ -11,7 +11,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDOCConfig">
+        <rule object="PDOCConfig" tags="syntax">
             <id specification="ISO_14289_2" clause="8.7" testNumber="1"/>
             <description>All optional content configuration dictionaries in the document, including the default optional
                 content configuration dictionary, shall contain a Name entry (see ISO 32000-2:2020, Table 96) whose value 

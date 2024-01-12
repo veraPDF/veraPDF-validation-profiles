@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PD3DAnnot">
+        <rule object="PD3DAnnot" tags="annotation,alt-text">
             <id specification="ISO_14289_2" clause="8.9.2.4.19" testNumber="1"/>
             <description>3D annotation shall include alternate description in respective Contents entry</description>
             <test>Contents != null</test>

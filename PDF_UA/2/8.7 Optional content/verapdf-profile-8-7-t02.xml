@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDOCConfig">
+        <rule object="PDOCConfig" tags="syntax">
             <id specification="ISO_14289_2" clause="8.7" testNumber="2"/>
             <description>The AS key shall not appear in any optional content configuration dictionary</description>
             <test>AS == null</test>

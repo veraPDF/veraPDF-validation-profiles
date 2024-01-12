@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDWidgetAnnot">
+        <rule object="PDWidgetAnnot" tags="annotation,alt-text">
             <id specification="ISO_14289_2" clause="8.10.2.3" testNumber="1"/>
             <description>If a label for a widget annotation is not present, a Contents entry shall be provided to supply
                 description and context for the widget</description>

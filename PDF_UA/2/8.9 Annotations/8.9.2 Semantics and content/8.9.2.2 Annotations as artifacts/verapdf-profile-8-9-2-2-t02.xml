@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAnnot">
+        <rule object="PDAnnot" tags="annotation,artifact">
             <id specification="ISO_14289_2" clause="8.9.2.2" testNumber="2"/>
             <description>Annotations shall be artifacts if the NoView flag is set and the ToggleNoView flag is not set 
                 in accordance with ISO 32000-2:2020, Table 167</description>

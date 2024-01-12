@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SELI">
+        <rule object="SELI" tags="structure,list">
             <id specification="ISO_14289_2" clause="8.2.5.25" testNumber="2"/>
             <description>Any real content within an LI structure element that is not enclosed in an Lbl structure 
                 element shall be enclosed in an LBody structure element</description>

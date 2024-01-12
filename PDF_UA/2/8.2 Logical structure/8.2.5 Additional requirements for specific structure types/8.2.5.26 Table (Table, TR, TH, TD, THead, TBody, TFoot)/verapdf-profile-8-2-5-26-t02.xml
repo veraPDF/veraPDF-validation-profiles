@@ -8,7 +8,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETable">
+        <rule object="SETable" tags="structure,table">
             <id specification="ISO_14289_2" clause="8.2.5.26" testNumber="2"/>
             <description>Tables shall be regular. Row groupings formed by THead, TBody and TFoot structure elements 
                 shall be regular. Table columns shall have the same number of rows (taking into account row spans) in 

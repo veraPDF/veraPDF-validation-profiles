@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDDocument">
+        <rule object="PDDocument" tags="structure">
             <id specification="ISO_14289_2" clause="8.2.1" testNumber="1"/>
             <description>The logical structure of the conforming file shall be described by a structure hierarchy rooted 
                 in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-2:2020, 14.7</description>

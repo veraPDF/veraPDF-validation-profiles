@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDPrinterMarkAnnot">
+        <rule object="PDPrinterMarkAnnot" tags="annotation,artifact">
             <id specification="ISO_14289_2" clause="8.9.2.4.14" testNumber="1"/>
             <description>A printer's mark annotation shall be an artifact</description>
             <test>structParentType == null || isArtifact == true</test>

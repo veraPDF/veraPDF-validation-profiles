@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDAnnot">
+        <rule object="PDAnnot" tags="alt-text,annotation">
             <id specification="ISO_14289_2" clause="8.9.4.2" testNumber="1"/>
             <description>Where an annotation has a Contents entry and the directly enclosing structure element has an Alt
                 entry, the values of Alt and Contents shall be identical</description>

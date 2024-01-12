@@ -10,7 +10,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="Glyph">
+        <rule object="Glyph" tags="font">
             <id specification="ISO_14289_2" clause="8.4.5.5.1" testNumber="2"/>
             <description>Embedded fonts shall define all glyphs referenced for rendering within the conforming file.
                 A font referenced solely in text rendering mode 3 is not rendered and is thus exempt from the requirements

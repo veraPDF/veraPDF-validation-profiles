@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="CosActualText">
+        <rule object="CosActualText" tags="alt-text">
             <id specification="ISO_14289_2" clause="8.4.3" testNumber="2"/>
             <description>The ActualText entry shall not contain any PUA values</description>
             <test>containsPUA == false</test>

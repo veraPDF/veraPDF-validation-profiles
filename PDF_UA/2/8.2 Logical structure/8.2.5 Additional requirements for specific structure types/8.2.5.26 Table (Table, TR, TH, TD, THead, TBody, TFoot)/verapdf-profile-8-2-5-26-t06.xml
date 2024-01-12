@@ -8,7 +8,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SETD">
+        <rule object="SETD" tags="structure,table">
             <id specification="ISO_14289_2" clause="8.2.5.26" testNumber="6"/>
             <description>When a table contains header cells, that table shall provide sufficient semantic information to
                 allow accurate determination of which of its table header cells (structure element TH) pertain to other

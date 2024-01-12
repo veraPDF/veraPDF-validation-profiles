@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDTextField">
+        <rule object="PDTextField" tags="alt-text,text">
             <id specification="ISO_14289_2" clause="8.10.3.3" testNumber="1"/>
             <description>For text fields, when an RV entry is present a V entry shall also be present, and they shall be
                 textually equivalent</description>
