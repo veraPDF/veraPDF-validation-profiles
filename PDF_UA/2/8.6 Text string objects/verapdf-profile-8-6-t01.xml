@@ -7,7 +7,7 @@
     <hash></hash>
     <rules>
         <rule object="CosTextString">
-            <id specification="ISO_14289_2" clause="8.7" testNumber="1"/>
+            <id specification="ISO_14289_2" clause="8.6" testNumber="1"/>
             <description>Text strings intended to be human readable shall not use the Unicode PUA</description>
             <test>containsPUA == false</test>
             <error>
