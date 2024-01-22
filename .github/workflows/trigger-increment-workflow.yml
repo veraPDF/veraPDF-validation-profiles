@@ -6,6 +6,8 @@ on:
       [ integration ]
     paths:
       - 'PDF_UA/**'
+      - '!PDF_UA/1/**'
+      - '!PDF_UA/2/**'
 
 jobs:
   trigger_build:
