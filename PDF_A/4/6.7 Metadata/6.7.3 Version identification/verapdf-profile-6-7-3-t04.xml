@@ -2,16 +2,16 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
     <details creator="veraPDF Consortium" created="2020-12-15T10:53:07.180+03:00">
         <name>ISO 19005-4:2020 - 6.7.3 Version identification - PDF/A Identification Schema property part.</name>
-        <description>Property part of the PDF/A Identification Schema shall have namespace prefix pdfaid</description>
+        <description>Property &quot;part&quot; of the PDF/A Identification Schema shall have namespace prefix &quot;pdfaid&quot;</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDFAIdentification">
             <id specification="ISO_19005_4" clause="6.7.3" testNumber="4"/>
-            <description>Property part of the PDF/A Identification Schema shall have namespace prefix pdfaid</description>
+            <description>Property &quot;part&quot; of the PDF/A Identification Schema shall have namespace prefix &quot;pdfaid&quot;</description>
             <test>partPrefix == null || partPrefix == &quot;pdfaid&quot;</test>
             <error>
-                <message>Property part of the PDF/A Identification Schema has invalid namespace prefix %1</message>
+                <message>Property &quot;part&quot; of the PDF/A Identification Schema has invalid namespace prefix %1</message>
                 <arguments>
                     <argument>partPrefix</argument>
                 </arguments>

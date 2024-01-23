@@ -3,18 +3,18 @@
     <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.269+03:00">
         <name>ISO 19005-1:2005 - 6.7.3 Document Information Dictionary - Keywords and pdf:Keywords</name>
         <description>The value of Keywords entry from the document information dictionary, if present, and its
-            analogous XMP property pdf:Keywords shall be equivalent</description>
+            analogous XMP property &quot;pdf:Keywords&quot; shall be equivalent</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="CosInfo">
             <id specification="ISO_19005_1" clause="6.7.3" testNumber="5"/>
             <description>The value of Keywords entry from the document information dictionary, if present, and its
-                analogous XMP property pdf:Keywords shall be equivalent</description>
+                analogous XMP property &quot;pdf:Keywords&quot; shall be equivalent</description>
             <test>Keywords == null || Keywords == XMPKeywords</test>
             <error>
                 <message>The value of Keywords entry from the document Info dictionary and its matching XMP property
-                    pdf:Keywords are not equivalent (Info /Keywords = %1, XMP pdf:Keywords = %2)</message>
+                    &quot;pdf:Keywords&quot; are not equivalent (Info /Keywords = %1, XMP pdf:Keywords = %2)</message>
                 <arguments>
                     <argument>Keywords</argument>
                     <argument>XMPKeywords</argument>

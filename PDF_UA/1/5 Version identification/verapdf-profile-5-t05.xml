@@ -2,16 +2,16 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:53:07.114+03:00">
         <name>ISO 14289-1:2014 - 5 Version identification - corr prefix</name>
-        <description>Property corr of the PDF/UA Identification Schema shall have namespace prefix pdfuaid</description>
+        <description>Property &quot;corr&quot; of the PDF/UA Identification Schema shall have namespace prefix &quot;pdfuaid&quot;</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDFUAIdentification" tags="minor,machine,metadata">
             <id specification="ISO_14289_1" clause="5" testNumber="5"/>
-            <description>Property corr of the PDF/UA Identification Schema shall have namespace prefix pdfuaid</description>
+            <description>Property &quot;corr&quot; of the PDF/UA Identification Schema shall have namespace prefix &quot;pdfuaid&quot;</description>
             <test>corrPrefix == null || corrPrefix == &quot;pdfuaid&quot;</test>
             <error>
-                <message>Property corr of the PDF/UA Identification Schema has invalid namespace prefix %1</message>
+                <message>Property &quot;corr&quot; of the PDF/UA Identification Schema has invalid namespace prefix %1</message>
                 <arguments>
                     <argument>corrPrefix</argument>
                 </arguments>

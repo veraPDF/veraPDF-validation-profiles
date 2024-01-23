@@ -2,16 +2,16 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:07.114+03:00">
         <name>ISO 14289-2:202x - 5 Version identification - part prefix</name>
-        <description>Property part of the PDF/UA Identification Schema shall have namespace prefix pdfuaid</description>
+        <description>Property &quot;part&quot; of the PDF/UA Identification Schema shall have namespace prefix &quot;pdfuaid&quot;</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDFUAIdentification" tags="metadata">
             <id specification="ISO_14289_2" clause="5" testNumber="3"/>
-            <description>Property part of the PDF/UA Identification Schema shall have namespace prefix pdfuaid</description>
+            <description>Property &quot;part&quot; of the PDF/UA Identification Schema shall have namespace prefix &quot;pdfuaid&quot;</description>
             <test>partPrefix == null || partPrefix == &quot;pdfuaid&quot;</test>
             <error>
-                <message>Property part of the PDF/UA Identification Schema has invalid namespace prefix %1</message>
+                <message>Property &quot;part&quot; of the PDF/UA Identification Schema has invalid namespace prefix %1</message>
                 <arguments>
                     <argument>partPrefix</argument>
                 </arguments>
