@@ -2,17 +2,17 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.137+03:00">
         <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.5.14 Footnotes and Endnotes (FENote) - Ref entry</name>
-        <description>Real content that refers to footnotes or endnotes (real content enclosed in FENote structure 
-            elements) shall use the Ref entry as specified in 8.8 on the referring structure element to reference the 
-            FENote. The corresponding FENote shall also use the Ref entry to identify all citations that reference it</description>
+        <description>Real content that refers to footnotes or endnotes (real content enclosed in FENote structure
+            elements) shall use the Ref entry on the referring structure element to reference the FENote. The
+            corresponding FENote shall also use the Ref entry to identify all citations that reference it</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="SEFENote" deferred="true" tags="structure,note">
             <id specification="ISO_14289_2" clause="8.2.5.14" testNumber="2"/>
             <description>Real content that refers to footnotes or endnotes (real content enclosed in FENote structure 
-                elements) shall use the Ref entry as specified in 8.8 on the referring structure element to reference the 
-                FENote. The corresponding FENote shall also use the Ref entry to identify all citations that reference it</description>
+                elements) shall use the Ref entry on the referring structure element to reference the FENote. The 
+                corresponding FENote shall also use the Ref entry to identify all citations that reference it</description>
             <test>orphanRefs == null</test>
             <error>
                 <message>Ref entry in the FENote does not reference structure elements with object numbers %1, while 

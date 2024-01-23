@@ -2,15 +2,15 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.137+03:00">
         <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.5.8 Table of Contents (TOC/TOCI) - Reference in TOCI</name>
-        <description>Each TOCI in the table of contents shall identify the target of the reference using the Ref entry, 
-            either directly on the TOCI structure element itself or on a child structure element contained within</description>
+        <description>Each TOCI in the table of contents shall identify the target of the reference using the Ref entry,
+            either directly on the TOCI structure element itself or on one of its child structure elements</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="SETOCI" tags="structure,toc">
             <id specification="ISO_14289_2" clause="8.2.5.8" testNumber="1"/>
             <description>Each TOCI in the table of contents shall identify the target of the reference using the Ref entry,
-                either directly on the TOCI structure element itself or on a child structure element contained within</description>
+                either directly on the TOCI structure element itself or on one of its child structure elements</description>
             <test>containsRef == true</test>
             <error>
                 <message>TOCI in the TOC does not contain the Ref entry, neither directly on the TOCI structure element 

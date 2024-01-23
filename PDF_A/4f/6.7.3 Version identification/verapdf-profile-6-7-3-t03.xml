@@ -2,13 +2,13 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4_F">
     <details creator="veraPDF Consortium" created="2020-12-15T10:53:07.146+03:00">
         <name>ISO 19005-4:2020 - 6.7.3 Version and conformance level identification - Conformance level.</name>
-        <description>A PDF/A-4f conforming file (as described in Annex A) shall specify the value of pdfaid:conformance as F</description>
+        <description>A PDF/A-4f conforming file (as described in Annex A) shall specify the value of &quot;pdfaid:conformance&quot; as F</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDFAIdentification">
             <id specification="ISO_19005_4" clause="6.7.3" testNumber="3"/>
-            <description>A PDF/A-4f conforming file (as described in Annex A) shall specify the value of pdfaid:conformance as F</description>
+            <description>A PDF/A-4f conforming file (as described in Annex A) shall specify the value of &quot;pdfaid:conformance&quot; as F</description>
             <test>conformance == &quot;F&quot;</test>
             <error>
                 <message>The &quot;conformance&quot; property of the PDF/A Identification Schema is %1 instead of &quot;F&quot; for PDF/A-4F conforming file</message>
