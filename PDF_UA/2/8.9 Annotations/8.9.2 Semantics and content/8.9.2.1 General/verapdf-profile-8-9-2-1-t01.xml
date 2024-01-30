@@ -2,20 +2,20 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
         <name>ISO 14289-2:202x - 8.9 Annotations - 8.9.2 Semantics and content - Annotations in structure tree</name>
-        <description>Annotations shall be included in the structure tree unless explicitly excluded by the following
-            subclauses</description>
+        <description>Annotations shall be included in the structure tree unless explicitly excluded by the specification 
+            (popups, printer marks, invisible annotations)</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDAnnot" tags="annotation,structure">
             <id specification="ISO_14289_2" clause="8.9.2.1" testNumber="1"/>
-            <description>Annotations shall be included in the structure tree unless explicitly excluded by the following 
-                subclauses</description>
+            <description>Annotations shall be included in the structure tree unless explicitly excluded by the 
+                specification (popups, printer marks, invisible annotations)</description>
             <test>(structParentType != null &amp;&amp; isArtifact == false) || 
                 (Subtype == &quot;Popup&quot;) || <!-- rule 8.9.2.4.9-1 --> 
                 (Subtype == &quot;PrinterMark&quot;) || <!-- rule 8.9.2.4.14-1 -->
                 (Subtype == &quot;Widget&quot; &amp;&amp; width == 0 &amp;&amp; height == 0) || <!-- rule 8.9.2.4.13-1 -->
-                ((F &amp; 1) == 1) || ((F &amp; 32) == 1 &amp;&amp; (F &amp; 256) == 0) <!-- rule 8.9.2.2-1 --> 
+                ((F &amp; 1) == 1) || ((F &amp; 32) == 1 &amp;&amp; (F &amp; 256) == 0) <!-- rules 8.9.2.2-1 & 8.9.2.2-2 --> 
             </test>
             <error>
                 <message>Annotation is not included in the structure tree</message>
