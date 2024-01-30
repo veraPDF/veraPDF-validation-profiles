@@ -2,13 +2,15 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.137+03:00">
         <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.4 Structure types - Same namespace mapping</name>
-        <description>Structure types shall not be role mapped to other structure types in the same namespace</description>
+        <description>Within a given explicitly provided namespace, structure types shall not be role mapped to other 
+            structure types in the same namespace</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDStructElem" tags="structure">
             <id specification="ISO_14289_2" clause="8.2.4" testNumber="3"/>
-            <description>Structure types shall not be role mapped to other structure types in the same namespace</description>
+            <description>Within a given explicitly provided namespace, structure types shall not be role mapped to other 
+                structure types in the same namespace</description>
             <test>roleMapToSameNamespaceTag == null</test>
             <error>
                 <message>Structure type %1 is role mapped to other structure type in the same namespace</message>
