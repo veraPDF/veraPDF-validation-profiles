@@ -13,7 +13,7 @@
                 in accordance with ISO 32000-2:2020, Table 167</description>
             <test>structParentType == null || isArtifact == true || ((F &amp; 32) == 0 || (F &amp; 256) == 1)</test>
             <error>
-                <message>An invisible annotation is included in logical structure with tag %1 (standard type = %2, 
+                <message>A no-view annotation is included in logical structure with tag %1 (standard type = %2, 
                     NoView = %3, ToggleNoView = %4)</message>
                 <arguments>
                     <argument>structParentType</argument>

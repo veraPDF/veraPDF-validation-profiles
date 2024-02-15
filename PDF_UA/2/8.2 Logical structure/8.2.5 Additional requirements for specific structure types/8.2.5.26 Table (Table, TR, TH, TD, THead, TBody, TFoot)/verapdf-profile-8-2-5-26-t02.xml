@@ -15,7 +15,7 @@
                 table and each row groupings formed by THead, TBody and TFoot structure elements</description>
             <test>numberOfColumnWithWrongRowSpan == null</test>
             <error>
-                <message>Columns 1 and %1 span different number of rows in table or one of row groupings formed by THead, 
+                <message>Columns 1 and %1 span different number of rows in table, or within one of row groupings formed by THead, 
                     TBody and TFoot structure elements</message>
                 <arguments>
                     <argument>numberOfColumnWithWrongRowSpan + 1</argument>
