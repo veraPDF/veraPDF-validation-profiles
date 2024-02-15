@@ -12,7 +12,7 @@
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 0 ||
                 kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
             <error>
-                <message>Table element contains TFoot kid, but not contains TBody kids</message>
+                <message>Table element contains TFoot kid, but does not contain TBody kids</message>
                 <arguments/>
             </error>
             <references>

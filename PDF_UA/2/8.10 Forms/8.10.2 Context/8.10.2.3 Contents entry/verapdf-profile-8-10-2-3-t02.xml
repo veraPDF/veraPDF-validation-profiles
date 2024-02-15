@@ -13,7 +13,7 @@
                 widget's Contents entry shall be present</description>
             <test>containsAA == false || Contents != null</test>
             <error>
-                <message>Widget annotation dictionary contains an AA entry, but not contains the Contents entry</message>
+                <message>Widget annotation dictionary contains an AA entry, but does not contain the Contents entry</message>
                 <arguments/>
             </error>
             <references>

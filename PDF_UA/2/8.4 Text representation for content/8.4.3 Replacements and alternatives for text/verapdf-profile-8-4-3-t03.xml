@@ -11,7 +11,7 @@
             <description>The Alt entry shall not contain any PUA values</description>
             <test>containsPUA == false</test>
             <error>
-                <message>The Alt entry contains a Private Unicode Area value</message>
+                <message>The Alt entry contains Unicode PUA (Private Use Area) code points</message>
                 <arguments/>
             </error>
             <references/>
