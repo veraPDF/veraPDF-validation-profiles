@@ -327,7 +327,7 @@
             <description>If Table element contains TFoot kid, Table element should contain one or more TBody kids</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TFoot').length == 0 || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
             <error>
-                <message>Table element contains TFoot kid, but not contains TBody kids</message>
+                <message>Table element contains TFoot kid, but does not contain TBody kids</message>
                 <arguments>
                     <argument></argument>
                     <argument></argument>
@@ -343,7 +343,7 @@
             <description>If Table element contains THead kid, Table element should contain one or more TBody kids</description>
             <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 0 || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
             <error>
-                <message>Table element contains THead kid, but not contains TBody kids</message>
+                <message>Table element contains THead kid, but does not contain TBody kids</message>
                 <arguments>
                     <argument></argument>
                     <argument></argument>
@@ -745,20 +745,6 @@
             </error>
             <references>
                 <reference specification="ISO 32000-1:2008" clause="14.7.2"/>
-            </references>
-        </rule>
-        <rule object="SEHn" tags="major,machine,structure,heading">
-            <id specification="ISO_14289_1" clause="7.4.2" testNumber="1"/>
-            <description>For documents that are not strongly structured, as described in ISO 32000-1:2008, 14.8.4.3.5, heading tags shall be used as follows: (*) If any heading tags are used, H1 shall be the first. (*) A document may use more than one instance of any specific tag level. For example, a tag level may be repeated if document content requires it. (*) If document semantics require a descending sequence of headers, such a sequence shall proceed in strict numerical order and shall not skip an intervening heading level. (*) A document may increment its heading sequence without restarting at H1 if document semantics require it</description>
-            <test>hasCorrectNestingLevel == true</test>
-            <error>
-                <message>Heading level %1 is skipped in a descending sequence of header levels</message>
-                <arguments>
-                    <argument>nestingLevel - 1</argument>
-                </arguments>
-            </error>
-            <references>
-                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.5"/>
             </references>
         </rule>
         <rule object="SAStructElem" tags="major,machine,structure,heading">
@@ -1260,7 +1246,7 @@
             <description>The Unicode values specified in the ToUnicode CMap shall all be greater than zero (0), but not equal to either U+FEFF or U+FFFE</description>
             <test>toUnicode == null || (toUnicode.indexOf("\u0000") == -1 &amp;&amp; toUnicode.indexOf("\uFFFE") == -1 &amp;&amp; toUnicode.indexOf("\uFEFF") == -1)</test>
             <error>
-                <message>The glyph has an invalid Unicode value, which is either 0, or is equal to U+FEFF or U+FFFE</message>
+                <message>The glyph has Unicode value 0, U+FEFF or U+FFFE, which is invalid by Unicode standard</message>
                 <arguments/>
             </error>
             <references/>
