@@ -11,7 +11,7 @@
             <description>The value of &quot;pdfuaid:rev&quot; shall be the four digit year</description>
             <test>/^\d{4}$/.test(rev)</test>
             <error>
-                <message>The value of &quot;pdfuaid:rev&quot; (%1) not the four digit year</message>
+                <message>The value of &quot;pdfuaid:rev&quot; (%1) is not the four digit year</message>
                 <arguments>
                     <argument>rev</argument>
                 </arguments>

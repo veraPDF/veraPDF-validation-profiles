@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2022-05-23T21:45:28.872+03:00">
         <name>Tagged PDF profile for ISO 32005 specification</name>
         <description>Profile for validation of Tagged PDF structure tree relations for PDF 1.7 and PDF 2.0 standard structure types</description>
@@ -19910,11 +19910,25 @@
         </rule>
         <rule object="PDStructElem" tags="structure">
             <id specification="ISO_32005" clause="6.2" testNumber="1659"/>
-            <description>Struct element shall contain the P entry according to ISO 32000-2:2020, 14.7.2, Table 323</description>
+            <description>A structure element dictionary shall contain the P (parent) entry according to ISO 32000-2:2020, 14.7.2, Table 323</description>
             <test>containsParent == true</test>
             <error>
-                <message>A struct element does not contain the P entry</message>
+                <message>A structure element dictionary does not contain the P (parent) entry</message>
                 <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO-32000-2" clause="Annex_L"/>
+            </references>
+        </rule>
+        <rule object="SEMathMLStructureElement" tags="structure">
+            <id specification="ISO_32005" clause="6.2" testNumber="1660"/>
+            <description>The math structure type shall occur only as a child of a Formula structure element</description>
+            <test>parentStandardType == 'Formula' || parentStandardType == 'MathML'</test>
+            <error>
+                <message>The math structure type is nested within %1 tag instead of Formula</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
             </error>
             <references>
                 <reference specification="ISO-32000-2" clause="Annex_L"/>
