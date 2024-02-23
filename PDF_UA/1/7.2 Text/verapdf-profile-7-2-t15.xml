@@ -2,13 +2,13 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
         <name>ISO 14289-1:2014 - 7.2 Text - Intersections of cells</name>
-        <description>Table cell shall not have intersection with other cells</description>
+        <description>A table cell shall not have intersection with other cells</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="SETableCell" tags="major,machine,structure,table">
             <id specification="ISO_14289_1" clause="7.2" testNumber="15"/>
-            <description>Table cell shall not have intersection with other cells</description>
+            <description>A table cell shall not have intersection with other cells</description>
             <test>hasIntersection != true</test>
             <error>
                 <message>Table cell has intersection with other cells</message>
