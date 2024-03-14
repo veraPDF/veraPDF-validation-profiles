@@ -11,7 +11,7 @@
             <description>All destinations whose target lies within the current document shall be structure destinations</description>
             <test>isStructDestination == true</test>
             <error>
-                <message>Destination in Outline item or Link annotation is not a structure destination</message>
+                <message>Destination in Outline item, OpenAction or Link annotation is not a structure destination</message>
                 <arguments/>
             </error>
             <references>
