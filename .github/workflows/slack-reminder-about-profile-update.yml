@@ -1,0 +1,54 @@
+name: Slack reminder about profile(s) update 
+: # Probably need to update corresponding single rule wcag profile(s)
+
+on:
+  push:
+    branches:
+      [ integration ]
+    paths:
+      - 'PDF_UA/1/7.1 General/verapdf-profile-7-1-t01.xml'
+      - 'PDF_UA/1/7.1 General/verapdf-profile-7-1-t02.xml'
+      - 'PDF_UA/1/7.1 General/verapdf-profile-7-1-t09.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t03.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t04.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t05.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t06.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t07.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t08.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t09.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t10.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t11.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t12.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t13.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t14.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t16.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t17.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t18.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t19.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t20.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t26.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t27.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t28.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t36.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t37.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t38.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t39.xml'
+      - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t40.xml'
+      - 'PDF_UA/1/7.4 Headings/7.4.4 Unnumbered headings/verapdf-profile-7-4-4-t01.xml'
+      - 'PDF_UA/1/7.4 Headings/7.4.4 Unnumbered headings/verapdf-profile-7-4-4-t02.xml'
+      - 'PDF_UA/1/7.4 Headings/7.4.4 Unnumbered headings/verapdf-profile-7-4-4-t03.xml'
+      - 'PDF_UA/1/7.18 Annotations/7.18.5 Links/verapdf-profile-7-18-5-t01.xml'
+      - 'PDF_UA/1/7.18 Annotations/7.18.8 PrinterMark/verapdf-profile-7-18-8-t01.xml'
+
+jobs:
+  slack-notification:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Notify slack
+      env:
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+      uses: voxmedia/github-action-slack-notify-build@v1
+      with:
+        channel_id: C03E3JJGLQL
+        status: FAILED
+        color: danger
