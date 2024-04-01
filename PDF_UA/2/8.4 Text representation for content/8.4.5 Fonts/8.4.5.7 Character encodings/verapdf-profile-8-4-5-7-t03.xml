@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:58:08.235+03:00">
-        <name>ISO 14289-2:202x - 8.4.5 Fonts - 8.4.5.7 Character encodings - Symbolic TrueType fonts</name>
+        <name>ISO 14289-2:2024 - 8.4.5 Fonts - 8.4.5.7 Character encodings - Symbolic TrueType fonts</name>
         <description>Symbolic TrueType fonts shall not contain an Encoding entry in the font dictionary</description>
     </details>
     <hash></hash>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:58:08.247+03:00">
-        <name>ISO 14289-2:202x - 8.4.5 Fonts - 8.4.5.7 Character encodings - cmaps in the symbolic TrueType font program</name>
+        <name>ISO 14289-2:2024 - 8.4.5 Fonts - 8.4.5.7 Character encodings - cmaps in the symbolic TrueType font program</name>
         <description>The 'cmap' subtable in the embedded font program shall either contain the Microsoft Symbol
             (3,0 – Platform ID=3, Encoding ID=0) or the Mac Roman (1,0 – Platform ID=1, Encoding ID=1) encoding</description>
     </details>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.137+03:00">
-        <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.5.2 Document and DocumentFragment - Struct tree root child</name>
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.2 Document and DocumentFragment - Struct tree root child</name>
         <description>The structure tree root shall contain a single Document structure element as its only child, as 
             specified in ISO 32000-2:2020, Annex L and ISO/TS 32005</description>
     </details>

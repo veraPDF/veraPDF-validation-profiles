@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
-        <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.5.28 Figure - Figure alternative and replacement text</name>
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.28 Figure - Figure alternative and replacement text</name>
         <description>A Figure structure element shall have at least one of the following properties:
             a) an alternate description (Alt property), as specified in ISO 32000-2:2020, 14.9.3;
             b) a replacement text (ActualText property) that represents the content enclosed by the Figure structure element</description>

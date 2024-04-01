@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
-        <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.5.29 Formula - Math structure type</name>
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.29 Formula - Math structure type</name>
         <description>The math structure type shall occur only as a child of a Formula structure element</description>
     </details>
     <hash></hash>
