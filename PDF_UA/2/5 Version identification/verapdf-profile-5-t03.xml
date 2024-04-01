@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:07.114+03:00">
-        <name>ISO 14289-2:202x - 5 Version identification - part prefix</name>
+        <name>ISO 14289-2:2024 - 5 Version identification - part prefix</name>
         <description>Property &quot;part&quot; of the PDF/UA Identification Schema shall have namespace prefix &quot;pdfuaid&quot;</description>
     </details>
     <hash></hash>

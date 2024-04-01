@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
-        <name>ISO 14289-2:202x - 8.11 Metadata - 8.11.1 General - Dc title</name>
+        <name>ISO 14289-2:2024 - 8.11 Metadata - 8.11.1 General - Dc title</name>
         <description>The Metadata stream as specified in ISO 32000-2:2020, 14.3 in the document catalog dictionary shall
             contain a dc:title entry</description>
     </details>

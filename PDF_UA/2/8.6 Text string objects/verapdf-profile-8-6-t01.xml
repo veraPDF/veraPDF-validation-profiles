@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T11:35:34.541+03:00">
-        <name>ISO 14289-2:202x - 8.6 Text string objects - Unicode PUA</name>
+        <name>ISO 14289-2:2024 - 8.6 Text string objects - Unicode PUA</name>
         <description>Text strings intended to be human readable shall not use the Unicode PUA</description>
     </details>
     <hash></hash>

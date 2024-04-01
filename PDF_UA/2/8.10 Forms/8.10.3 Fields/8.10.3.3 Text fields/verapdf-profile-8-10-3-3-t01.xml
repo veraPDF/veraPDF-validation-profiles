@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
-        <name>ISO 14289-2:202x - 8.10 Forms - 8.10.3.3 Text fields - RV and V entries</name>
+        <name>ISO 14289-2:2024 - 8.10 Forms - 8.10.3.3 Text fields - RV and V entries</name>
         <description>For text fields, when an RV entry is present a V entry shall also be present, and they shall be
             textually equivalent</description>
     </details>
