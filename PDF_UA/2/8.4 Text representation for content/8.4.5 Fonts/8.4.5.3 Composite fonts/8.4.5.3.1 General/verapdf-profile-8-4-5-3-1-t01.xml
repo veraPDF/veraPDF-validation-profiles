@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-12-15T10:58:08.022+03:00">
-        <name>ISO 14289-2:202x - 8.4.5 Fonts - 8.4.5.3 Composite fonts - CIDSystemInfo</name>
+        <name>ISO 14289-2:2024 - 8.4.5 Fonts - 8.4.5.3 Composite fonts - CIDSystemInfo</name>
         <description>For any given composite (Type 0) font within a conforming file, the CIDSystemInfo entry in its
             CIDFont dictionary and its Encoding dictionary shall have the following relationship:
 	        - If the Encoding key in the Type 0 font dictionary has a value of Identity-H or Identity-V, then any values

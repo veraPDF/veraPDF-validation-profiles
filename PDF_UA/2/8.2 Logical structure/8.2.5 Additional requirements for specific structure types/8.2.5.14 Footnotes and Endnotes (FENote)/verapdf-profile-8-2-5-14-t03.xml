@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.137+03:00">
-        <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.5.14 Footnotes and Endnotes (FENote) - Ref entry</name>
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.14 Footnotes and Endnotes (FENote) - Ref entry</name>
         <description>Real content that refers to footnotes or endnotes (real content enclosed in FENote structure
             elements) shall use the Ref entry on the referring structure element to reference the FENote. The
             corresponding FENote shall also use the Ref entry to identify all citations that reference it</description>

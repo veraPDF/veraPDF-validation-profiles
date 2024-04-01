@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
-        <name>ISO 14289-2:202x - 8.2 Logical structure - 8.2.5.23 Ruby (Ruby, RB, RT, RP) - Ruby's children</name>
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.23 Ruby (Ruby, RB, RT, RP) - Ruby's children</name>
         <description>A Ruby structure element shall contain a single RB structure element and a single RT structure 
             element or a Ruby structure element shall consist of a four-element subsequence: RB, RP, RT, RP</description>
     </details>

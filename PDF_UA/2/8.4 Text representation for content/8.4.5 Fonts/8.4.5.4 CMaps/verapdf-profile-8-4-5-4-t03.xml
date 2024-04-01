@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-12-15T18:44:08.068+03:00">
-        <name>ISO 14289-2:202x - 8.4.5 Fonts - 8.4.5.4 Composite fonts - CMaps</name>
+        <name>ISO 14289-2:2024 - 8.4.5 Fonts - 8.4.5.4 Composite fonts - CMaps</name>
         <description>A CMap shall not reference any other CMap except those listed in ISO 32000-2:2020, 9.7.5.2 Table 116</description>
     </details>
     <hash></hash>

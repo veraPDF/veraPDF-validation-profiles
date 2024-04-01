@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
-        <name>ISO 14289-2:202x - 8.9 Annotations - 8.9.3.3 Tab order - Tabs in page with annotations</name>
+        <name>ISO 14289-2:2024 - 8.9 Annotations - 8.9.3.3 Tab order - Tabs in page with annotations</name>
         <description>Every page that includes an annotation shall contain a Tabs entry in its page dictionary in
             accordance with ISO 32000-2:2020, Table 31, and its value shall be A, W or S</description>
     </details>

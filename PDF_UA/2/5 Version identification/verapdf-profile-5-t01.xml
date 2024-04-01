@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
-        <name>ISO 14289-2:202x - 5 Version identification - PDF/UA Identification Schema</name>
+        <name>ISO 14289-2:2024 - 5 Version identification - PDF/UA Identification Schema</name>
         <description>The PDF/UA version of a file shall be specified in the value of the Metadata entry in the document catalog using the PDF/UA identification schema</description>
     </details>
     <hash></hash>

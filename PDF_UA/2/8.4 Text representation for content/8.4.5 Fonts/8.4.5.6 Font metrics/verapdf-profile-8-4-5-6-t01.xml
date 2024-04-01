@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
     <details creator="veraPDF Consortium" created="2023-03-13T10:58:08.188+03:00">
-        <name>ISO 14289-2:202x - 8.4.5 Fonts - 8.4.5.6 Font metrics - Glyph width</name>
+        <name>ISO 14289-2:2024 - 8.4.5 Fonts - 8.4.5.6 Font metrics - Glyph width</name>
         <description>For every font embedded in a conforming file and referenced for rendering, the glyph width
             information in the font dictionary and in the embedded font program shall be consistent for every glyph</description>
     </details>
