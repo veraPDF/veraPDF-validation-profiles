@@ -1,5 +1,5 @@
-name: Slack reminder about profile(s) update 
-: # Probably need to update corresponding single rule wcag profile(s)
+name: Slack reminder about profiles update 
+# Probably need to update corresponding single rule wcag profile(s)
 
 on:
   push:
