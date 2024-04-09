@@ -2,14 +2,14 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
     <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
         <name>ISO 14289-1:2014 - 7.18 Annotations - 7.18.1 General - Annot tag</name>
-        <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
+        <description>An annotation, excluding annotations of subtype Widget, PrinterMark or Link, shall be nested within an Annot tag</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="PDAnnot" tags="major,machine,annotation">
             <id specification="ISO_14289_1" clause="7.18.1" testNumber="1"/>
-            <description>An annotation, excluding annotations of subtype Widget, Popup or Link, shall be nested within an Annot tag</description>
-            <test>Subtype == 'Widget' || Subtype == 'Popup' || Subtype == 'Link' || isOutsideCropBox == true ||
+            <description>An annotation, excluding annotations of subtype Widget, PrinterMark or Link, shall be nested within an Annot tag</description>
+            <test>Subtype == 'Widget' || Subtype == 'PrinterMark' || Subtype == 'Link' || isOutsideCropBox == true ||
                 (F &amp; 2) == 2 || structParentStandardType == 'Annot'</test>
             <error>
                 <message>%1 annotation is an Artifact or is nested within %2 tag (standard type = %3) instead of Annot</message>
