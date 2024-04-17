@@ -7,6 +7,8 @@ on:
     paths:
       - 'PDF_UA/PDFUA-1.xml'
       - 'PDF_UA/PDFUA-2-ISO32005.xml'
+      - 'PDF_UA/WTPDF-1-0-Accessibility.xml'
+      - 'PDF_UA/WTPDF-1-0-Reuse.xml'
 
 jobs:
   update-files:
