@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
         <name>WCAG 2.2 - 1.4 Distinguishable - 1.4.10 Reflow - Bounding box of figure</name>
         <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
