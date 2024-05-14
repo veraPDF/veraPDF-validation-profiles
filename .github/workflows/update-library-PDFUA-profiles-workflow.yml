@@ -33,7 +33,7 @@ jobs:
           git-user: "Git User"
           git-commit-message: ${{ github.event.head_commit.message }}
           git-commit-sign-off: "false"
-          excludes: 1:2:WCAG:ISO-32000-1-Tagged.xml:ISO-32000-2-Tagged.xml:PDFUA-2.xml:ISO-32005-Tagged.xml:WCAG-2-2.xml:WCAG-2-2-Machine.xml:WCAG-2-2-Complete.xml:WCAG-2-2-Dev.xml:PDFA-1A.xml:PDFA-1B.xml:PDFA-2A.xml:PDFA-2B.xml:PDFA-2U.xml:PDFA-3A.xml:PDFA-3B.xml:PDFA-3U.xml:PDFA-4.xml:PDFA-4E.xml:PDFA-4F.xml:validationProfile.xsd
+          excludes: 1:2:WCAG:WTPDF:ISO-32000-1-Tagged.xml:ISO-32000-2-Tagged.xml:PDFUA-2.xml:ISO-32005-Tagged.xml:WCAG-2-2.xml:WCAG-2-2-Machine.xml:WCAG-2-2-Complete.xml:WCAG-2-2-Dev.xml:PDFA-1A.xml:PDFA-1B.xml:PDFA-2A.xml:PDFA-2B.xml:PDFA-2U.xml:PDFA-3A.xml:PDFA-3B.xml:PDFA-3U.xml:PDFA-4.xml:PDFA-4E.xml:PDFA-4F.xml:validationProfile.xsd
 
       - name: Notify slack if library wasn't updated
         if: failure()
