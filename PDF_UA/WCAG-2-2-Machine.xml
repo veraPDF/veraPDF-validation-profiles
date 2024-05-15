@@ -21,7 +21,7 @@
         <rule object="SEMarkedContent" tags="major,machine,artifact">
             <id specification="ISO_14289_1" clause="7.1" testNumber="2"/>
             <description>Tagged content should not present inside content marked as Artifact</description>
-            <test>(isTaggedContent == false || isArtifact == true) || parentsTags.split('&amp;').filter(elem =&gt; elem == 'Artifact').length == 0</test>
+            <test>(isTaggedContent == false || isArtifact == true) || parentsTags.contains('Artifact') == false</test>
             <error>
                 <message>Tagged content (parent struct element %1) is present inside content marked as Artifact</message>
                 <arguments>
@@ -33,7 +33,7 @@
         <rule object="SESimpleContentItem" tags="critical,machine,artifact">
             <id specification="ISO_14289_1" clause="7.1" testNumber="3"/>
             <description>Content shall be marked as Artifact or tagged as real content</description>
-            <test>isTaggedContent == true || parentsTags.split('&amp;').filter(elem =&gt; elem == 'Artifact').length &gt; 0</test>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
             <error>
                 <message>Content is neither marked as Artifact nor tagged as real content</message>
                 <arguments/>
@@ -1420,7 +1420,7 @@
         <rule object="SATOCI" tags="minor,machine,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="29"/>
             <description>TOCI shall contain one or more text lines</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
+            <test>errorCodes.contains('1000') == false</test>
             <error>
                 <message>TOCI doesn't have a text</message>
                 <arguments>

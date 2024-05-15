@@ -473,7 +473,7 @@
         <rule object="SATOCI" tags="minor,machine,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="29"/>
             <description>TOCI shall contain one or more text lines</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
+            <test>errorCodes.contains('1000') == false</test>
             <error>
                 <message>TOCI doesn't have a text</message>
                 <arguments>
@@ -487,11 +487,11 @@
         <rule object="SATOCI" tags="minor,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="31"/>
             <description>TOCI page label shall match the destination page</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1002).length == 0</test>
+            <test>errorCodes.contains('1002') == false</test>
             <error>
                 <message>TOCI has a wrong page label. Possible page number(s), which page label could be used: %1</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1002)]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1002')).get(0)</argument>
                     <argument></argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
@@ -501,7 +501,7 @@
         <rule object="SATOCI" tags="minor,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="32"/>
             <description>TOCI shall have a right alignment that matches a right alignment of other TOCIs</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1003).length == 0</test>
+            <test>errorCodes.contains('1003') == false</test>
             <error>
                 <message>TOCI has a bad right alignment</message>
                 <arguments>
@@ -515,7 +515,7 @@
         <rule object="SAStructElem" tags="minor,human,structure,list">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="34"/>
             <description>This list and neighbor list(s) should be tagged as one list</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1200).length == 0</test>
+            <test>errorCodes.contains('1200') == false</test>
             <error>
                 <message>This list and neighbor list(s) should be tagged as one list</message>
                 <arguments>
@@ -529,7 +529,7 @@
         <rule object="SATOC" tags="minor,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="35"/>
             <description>This TOC and neighbor TOC(s) should be tagged as one TOC</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1006).length == 0</test>
+            <test>errorCodes.contains('1006') == false</test>
             <error>
                 <message>This TOC and neighbor TOC(s) should be tagged as one TOC</message>
                 <arguments>
@@ -543,12 +543,12 @@
         <rule object="SATable" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="36"/>
             <description>The number of rows of this table does not match the number of rows of the visual representation of this table</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1104).length == 0</test>
+            <test>errorCodes.contains('1104') == false</test>
             <error>
                 <message>The number of rows %1 of this table does not match the number of rows %2 of the visual representation of this table</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1104)].split(';')[0]</argument>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1104)].split(';')[1]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1104')).get(0)</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1104')).get(1)</argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
@@ -557,12 +557,12 @@
         <rule object="SATable" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="37"/>
             <description>The number of columns of this table does not match the number of columns of the visual representation of this table</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1105).length == 0</test>
+            <test>errorCodes.contains('1105') == false</test>
             <error>
                 <message>The number of columns %1 of this table does not match the number of columns %2 of the visual representation of this table</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[0]</argument>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[1]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1105')).get(0)</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1105')).get(1)</argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
@@ -571,12 +571,12 @@
         <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="38"/>
             <description>The row span of this table cell does not match the row span of the visual representation of this table cell</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1106).length == 0</test>
+            <test>errorCodes.contains('1106') == false</test>
             <error>
                 <message>The row span %1 of this table cell does not match the row span %2 of the visual representation of this table cell</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1106)].split(';')[0]</argument>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1106)].split(';')[1]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1106')).get(0)</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1106')).get(1)</argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
@@ -585,12 +585,12 @@
         <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="39"/>
             <description>The column span of this table cell does not match the column span of the visual representation of this table cell</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1107).length == 0</test>
+            <test>errorCodes.contains('1107') == false</test>
             <error>
                 <message>The column span %1 of this table cell does not match the column span %2 of the visual representation of this table cell</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1107)].split(';')[0]</argument>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1107)].split(';')[1]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1107')).get(0)</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1107')).get(1)</argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
@@ -613,7 +613,7 @@
         <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="41"/>
             <description>This cell is below than some cells in the next row</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1100).length == 0</test>
+            <test>errorCodes.contains('1100') == false</test>
             <error>
                 <message>This cell is below than some cells in the next row</message>
                 <arguments>
@@ -627,7 +627,7 @@
         <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="42"/>
             <description>This cell is above than some cells in the previous row</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
+            <test>errorCodes.contains('1101') == false</test>
             <error>
                 <message>This cell is above than some cells in the previous row</message>
                 <arguments>
@@ -641,7 +641,7 @@
         <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="43"/>
             <description>This cell is to the right of some cells in the next column</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1102).length == 0</test>
+            <test>errorCodes.contains('1102') == false</test>
             <error>
                 <message>This cell is to the right of some cells in the next column</message>
                 <arguments>
@@ -655,7 +655,7 @@
         <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="44"/>
             <description>This cell is to the left of some cells in the previous column</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
+            <test>errorCodes.contains('1103') == false</test>
             <error>
                 <message>This cell is to the left of some cells in the previous column</message>
                 <arguments>
@@ -683,7 +683,7 @@
         <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="46"/>
             <description>TOCI text should be presented in the document</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1007).length == 0</test>
+            <test>errorCodes.contains('1007') == false</test>
             <error>
                 <message>TOCI text is not found in the document</message>
                 <arguments>
@@ -697,14 +697,12 @@
         <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="47"/>
             <description>TOCI text should be presented on a destination page</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1008).length == 0</test>
+            <test>errorCodes.contains('1008') == false</test>
             <error>
                 <message>TOCI text is not found on a destination page %wrongDestinationPage%. Possible destination page number(s): %possiblePageNumbers%</message>
                 <arguments>
-                    <argument name="possiblePageNumbers">errorArguments.split(';;')[errorCodes.split(',')
-                        .findIndex(elem =&gt; elem == 1008)].split(';')[0]</argument>
-                    <argument name="wrongDestinationPage">errorArguments.split(';;')[errorCodes.split(',')
-                        .findIndex(elem =&gt; elem == 1008)].split(';')[1]</argument>
+                    <argument name="possiblePageNumbers">errorArguments.get(errorCodes.indexOf('1008')).get(0)</argument>
+                    <argument name="wrongDestinationPage">errorArguments.get(errorCodes.indexOf('1008')).get(1)</argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
@@ -713,11 +711,11 @@
         <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="48"/>
             <description>TOCI should have a destination</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1009).length == 0</test>
+            <test>errorCodes.contains('1009') == false</test>
             <error>
                 <message>TOCI doesn't have a destination. Possible destination page number(s): %1</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1009)]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf(1009)).get(0)</argument>
                     <argument></argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
@@ -727,11 +725,11 @@
         <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="49"/>
             <description>TOCI should have a correct page label</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1010).length == 0</test>
+            <test>errorCodes.contains('1010') == false</test>
             <error>
                 <message>TOCI has a wrong page label. Possible page number(s), which page label could be used: %1</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1010)]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1010')).get(0)</argument>
                     <argument></argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
@@ -741,14 +739,12 @@
         <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="50"/>
             <description>TOCI should have a correct numbering</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1011).length == 0</test>
+            <test>errorCodes.contains('1011') == false</test>
             <error>
                 <message>TOCI has a wrong numbering. The heading number cannot start with %wrongNumbering%</message>
                 <arguments>
-                    <argument name="wrongNumbering">errorArguments.split(';;')[errorCodes.split(',')
-                        .findIndex(elem =&gt; elem == 1011)].split(';')[0]</argument>
-                    <argument name="correctNumbering">errorArguments.split(';;')[errorCodes.split(',')
-                        .findIndex(elem =&gt; elem == 1011)].split(';')[1]</argument>
+                    <argument name="wrongNumbering">errorArguments.get(errorCodes.indexOf('1011')).get(0)</argument>
+                    <argument name="correctNumbering">errorArguments.get(errorCodes.indexOf('1011')).get(1)</argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
             </error>
@@ -757,7 +753,7 @@
         <rule object="SAL" tags="minor,human,structure,list">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="51"/>
             <description>List should contain list items</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1201).length == 0</test>
+            <test>errorCodes.contains('1201') == false</test>
             <error>
                 <message>List contains only one child - list</message>
                 <arguments/>
@@ -767,7 +763,7 @@
         <rule object="SALI" tags="minor,human,structure,list">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="52"/>
             <description>The structure type and attributes of a list item shall be semantically appropriate</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1202).length == 0</test>
+            <test>errorCodes.contains('1202') == false</test>
             <error>
                 <message>This list item should be tagged as several different list items</message>
                 <arguments/>
@@ -797,7 +793,7 @@
         <rule object="SAStructElem" tags="minor,human,structure,heading">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="55"/>
             <description>The structure type and attributes of a heading shall be semantically appropriate</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1300).length == 0</test>
+            <test>errorCodes.contains('1300') == false</test>
             <error>
                 <message>This node is the single child with content. One of its ancestor nodes should be tagged as heading instead of this one</message>
                 <arguments/>
