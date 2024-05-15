@@ -9,7 +9,7 @@
         <rule object="SEMarkedContent" tags="major,machine,artifact">
             <id specification="ISO_14289_1" clause="7.1" testNumber="2"/>
             <description>Tagged content should not present inside content marked as Artifact</description>
-            <test>isTaggedContent == false || parentsTags.split('&amp;').filter(elem =&gt; elem == 'Artifact').length == 0</test>
+            <test>isTaggedContent == false || parentsTags.contains('Artifact') == false</test>
             <error>
                 <message>Tagged content (parent struct element %1) is present inside content marked as Artifact</message>
                 <arguments>

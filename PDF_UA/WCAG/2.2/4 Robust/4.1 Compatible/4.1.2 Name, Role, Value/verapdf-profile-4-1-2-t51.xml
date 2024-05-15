@@ -9,7 +9,7 @@
         <rule object="SAL" tags="minor,human,structure,list">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="51"/>
             <description>List should contain list items</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1201).length == 0</test>
+            <test>errorCodes.contains('1201') == false</test>
             <error>
                 <message>List contains only one child - list</message>
                 <arguments/>
