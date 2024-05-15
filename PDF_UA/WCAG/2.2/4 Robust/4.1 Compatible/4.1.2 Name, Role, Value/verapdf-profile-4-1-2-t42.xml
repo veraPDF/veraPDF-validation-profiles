@@ -9,7 +9,7 @@
         <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="42"/>
             <description>This cell is above than some cells in the previous row</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1101).length == 0</test>
+            <test>errorCodes.contains('1101') == false</test>
             <error>
                 <message>This cell is above than some cells in the previous row</message>
                 <arguments>

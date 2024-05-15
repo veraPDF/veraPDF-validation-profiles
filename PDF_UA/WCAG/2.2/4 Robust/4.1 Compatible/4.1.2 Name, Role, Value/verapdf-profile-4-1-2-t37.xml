@@ -9,12 +9,12 @@
         <rule object="SATable" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="37"/>
             <description>The number of columns of this table does not match the number of columns of the visual representation of this table</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1105).length == 0</test>
+            <test>errorCodes.contains('1105') == false</test>
             <error>
                 <message>The number of columns %1 of this table does not match the number of columns %2 of the visual representation of this table</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[0]</argument>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1105)].split(';')[1]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1105')).get(0)</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1105')).get(1)</argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
             </error>

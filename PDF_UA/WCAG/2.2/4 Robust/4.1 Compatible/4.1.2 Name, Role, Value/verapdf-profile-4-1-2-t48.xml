@@ -9,11 +9,11 @@
         <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="48"/>
             <description>TOCI should have a destination</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1009).length == 0</test>
+            <test>errorCodes.contains('1009') == false</test>
             <error>
                 <message>TOCI doesn't have a destination. Possible destination page number(s): %1</message>
                 <arguments>
-                    <argument>errorArguments.split(';;')[errorCodes.split(',').findIndex(elem =&gt; elem == 1009)]</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf(1009)).get(0)</argument>
                     <argument></argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>

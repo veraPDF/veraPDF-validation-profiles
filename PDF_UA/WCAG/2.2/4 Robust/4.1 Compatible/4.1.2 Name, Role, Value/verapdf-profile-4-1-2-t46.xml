@@ -9,7 +9,7 @@
         <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="46"/>
             <description>TOCI text should be presented in the document</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1007).length == 0</test>
+            <test>errorCodes.contains('1007') == false</test>
             <error>
                 <message>TOCI text is not found in the document</message>
                 <arguments>

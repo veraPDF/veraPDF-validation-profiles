@@ -9,7 +9,7 @@
         <rule object="SATOCI" tags="minor,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="32"/>
             <description>TOCI shall have a right alignment that matches a right alignment of other TOCIs</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1003).length == 0</test>
+            <test>errorCodes.contains('1003') == false</test>
             <error>
                 <message>TOCI has a bad right alignment</message>
                 <arguments>

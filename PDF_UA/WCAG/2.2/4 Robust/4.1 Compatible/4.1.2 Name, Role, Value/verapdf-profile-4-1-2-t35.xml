@@ -9,7 +9,7 @@
         <rule object="SATOC" tags="minor,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="35"/>
             <description>This TOC and neighbor TOC(s) should be tagged as one TOC</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1006).length == 0</test>
+            <test>errorCodes.contains('1006') == false</test>
             <error>
                 <message>This TOC and neighbor TOC(s) should be tagged as one TOC</message>
                 <arguments>

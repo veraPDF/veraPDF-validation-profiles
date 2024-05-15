@@ -9,7 +9,7 @@
         <rule object="SATableCell" tags="minor,human,structure,table">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="44"/>
             <description>This cell is to the left of some cells in the previous column</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
+            <test>errorCodes.contains('1103') == false</test>
             <error>
                 <message>This cell is to the left of some cells in the previous column</message>
                 <arguments>

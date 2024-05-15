@@ -9,7 +9,7 @@
         <rule object="SATOCI" tags="minor,machine,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="29"/>
             <description>TOCI shall contain one or more text lines</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
+            <test>errorCodes.contains('1000') == false</test>
             <error>
                 <message>TOCI doesn't have a text</message>
                 <arguments>
