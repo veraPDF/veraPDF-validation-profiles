@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-25T10:58:08.799+03:00">
+        <name>ISO 19005-4:2020 - 6.9 Embedded files</name>
+        <description>All of the embedded files shall be compliant with ISO 19005-1, 19005-2 or 19005-4</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="EmbeddedFile">
+            <id specification="ISO_19005_4" clause="6.9" testNumber="3"/>
+            <description>All of the embedded files shall be compliant with ISO 19005-1, 19005-2 or 19005-4</description>
+            <test>isValidPDFA124 == true</test>
+            <error>
+                <message>An embedded file does not comply to either ISO 19005-1, ISO 19005-2 or ISO 19005-4</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

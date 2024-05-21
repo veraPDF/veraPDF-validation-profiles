@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-2:2024 - 8.2 logical structure - 8.2.5.26 Table - Headers, IDs and Scope</name>
+        <description>When a table contains header cells, that table shall provide sufficient semantic information to
+            allow accurate determination of which of its table header cells (structure element TH) pertain to other
+            cells as specified in ISO 32000-2:2020, 14.8.5.7</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETD" tags="structure,table">
+            <id specification="ISO_14289_2" clause="8.2.5.26" testNumber="6"/>
+            <description>When a table contains header cells, that table shall provide sufficient semantic information to
+                allow accurate determination of which of its table header cells (structure element TH) pertain to other
+                cells as specified in ISO 32000-2:2020, 14.8.5.7</description>
+            <test>hasConnectedHeader != false || unknownHeaders == ''</test>
+            <error>
+                <message>TD references undefined Header(s) %1, and Headers for this table cell cannot be determined algorithmically</message>
+                <arguments>
+                    <argument>unknownHeaders</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="14.8.4.8.3"/>
+                <reference specification="ISO 32000-2:2020" clause="14.8.5.7"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

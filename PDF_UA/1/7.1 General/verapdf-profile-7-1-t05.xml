@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.137+03:00">
+        <name>ISO 14289-1:2014 - 7.1 General - Standard roles</name>
+        <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type,
+            as defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root.
+            This mapping may be indirect; within the role map a non-standard type can map directly to another
+            non-standard type, but eventually the mapping shall terminate at a standard type</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SENonStandard" tags="major,machine,structure">
+            <id specification="ISO_14289_1" clause="7.1" testNumber="5"/>
+            <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type,
+                as defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root.
+                This mapping may be indirect; within the role map a non-standard type can map directly to another
+                non-standard type, but eventually the mapping shall terminate at a standard type</description>
+            <test>isNotMappedToStandardType == false</test>
+            <error>
+                <message>Non-standard structure type %1 is not mapped to a standard type</message>
+                <arguments>
+                    <argument>valueS</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

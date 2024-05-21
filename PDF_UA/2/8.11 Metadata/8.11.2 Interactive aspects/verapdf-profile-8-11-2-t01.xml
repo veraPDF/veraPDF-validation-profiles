@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-2:2024 - 8.11 Metadata - 8.11.2 Interactive aspects - DisplayDocTitle</name>
+        <description>The ViewerPreferences dictionary of the document catalog dictionary shall be present and shall
+            contain at least the DisplayDocTitle key with a value of true, as described in ISO 32000-2:2020, Table 147</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosDocument" tags="syntax">
+            <id specification="ISO_14289_2" clause="8.11.2" testNumber="1"/>
+            <description>The ViewerPreferences dictionary of the document catalog dictionary shall be present and shall
+                contain at least the DisplayDocTitle key with a value of true, as described in ISO 32000-2:2020, Table 147</description>
+            <test>DisplayDocTitle == true</test>
+            <error>
+                <message>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is
+                    set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = %1,
+                    DisplayDocTitle = %2)</message>
+                <arguments>
+                    <argument>ViewerPreferences</argument>
+                    <argument>DisplayDocTitle</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="12.2, Table 147"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

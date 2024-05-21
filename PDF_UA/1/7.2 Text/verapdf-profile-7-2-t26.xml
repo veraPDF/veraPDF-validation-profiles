@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - parent of TOCI</name>
+        <description>TOCI element should be contained in TOC element</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETOCI" tags="major,machine,structure,toc">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="26"/>
+            <description>TOCI element should be contained in TOC element</description>
+            <test>parentStandardType == 'TOC'</test>
+            <error>
+                <message>TOCI element contained in %1 instead of TOC element</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

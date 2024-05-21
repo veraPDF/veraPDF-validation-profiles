@@ -1,0 +1,54 @@
+name: Update PDF_A profiles in veraPDF-library
+
+on:
+  push:
+    branches:
+      [ integration ]
+    paths:
+      - 'PDF_A/**'
+      - '!PDF_A/1a/**'
+      - '!PDF_A/1b/**'
+      - '!PDF_A/2a/**'
+      - '!PDF_A/2b/**'
+      - '!PDF_A/2u/**'
+      - '!PDF_A/3a/**'
+      - '!PDF_A/3b/**'
+      - '!PDF_A/3u/**'
+      - '!PDF_A/4/**'
+      - '!PDF_A/4e/**'
+      - '!PDF_A/4f/**'
+
+jobs:
+  update-profiles:
+    if: github.repository == 'veraPDF/veraPDF-validation-profiles'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Set up JDK 1.11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+
+      - name: Commit to veraPDF-library
+        uses: drud/action-cross-commit@master
+        with:
+          source-folder: PDF_A
+          destination-repository: https://veraPDF:${{ secrets.WORKFLOW_TOKEN }}@github.com/veraPDF/veraPDF-library
+          destination-folder: core/src/main/resources/org/verapdf/pdfa/validation
+          destination-branch: integration
+          git-user: "Git User"
+          git-commit-message: ${{ github.event.head_commit.message }}
+          git-commit-sign-off: "false"
+          excludes: 1a:1b:2a:2b:2u:3a:3b:3u:4:4e:4f:PDFUA-1.xml:PDFUA-2-ISO32005.xml:validationProfile.xsd
+
+      - name: Notify slack if library wasn't updated
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel_id: C03E3JJGLQL
+          status: FAILED
+          color: danger

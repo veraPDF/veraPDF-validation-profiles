@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - List body</name>
+        <description>The structure type and attributes of a list body shall be semantically appropriate</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SALBody" tags="minor,human,structure,list">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="25"/>
+            <description>The structure type and attributes of a list body shall be semantically appropriate</description>
+            <test>hasLowestDepthError == false || (correctType == 'LBody' &amp;&amp; correctSemanticScore &gt;= 0.75) ||
+                correctType == 'L' || correctType == 'LI' || correctType == 'Lbl' || correctType == 'TR' ||
+                correctType == 'TD' || correctType == 'TH' || correctType == 'TBody' || correctType == 'THead' ||
+                correctType == 'TFoot' || correctType == 'Table' || correctType == 'TOC' || correctType == 'TOCI'</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

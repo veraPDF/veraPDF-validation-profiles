@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-12-15T10:58:08.022+03:00">
+        <name>ISO 14289-2:2024 - 8.4.5 Fonts - 8.4.5.3 Composite fonts - CIDSystemInfo</name>
+        <description>For any given composite (Type 0) font within a conforming file, the CIDSystemInfo entry in its
+            CIDFont dictionary and its Encoding dictionary shall have the following relationship:
+	        - If the Encoding key in the Type 0 font dictionary has a value of Identity-H or Identity-V, then any values
+            for the Registry, Ordering, and Supplement keys may be used in the CIDSystemInfo dictionary of the CIDFont.
+	        - Otherwise the corresponding values of the Registry and Ordering keys in both CIDSystemInfo dictionaries
+            shall be identical, and the value of the Supplement key in the CIDSystemInfo dictionary of the CIDFont shall
+            be greater than or equal to the value of the Supplement key in the CIDSystemInfo dictionary of the CMap</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDType0Font" tags="font">
+            <id specification="ISO_14289_2" clause="8.4.5.3.1" testNumber="1"/>
+            <description>For any given composite (Type 0) font within a conforming file, the CIDSystemInfo entry in its
+                CIDFont dictionary and its Encoding dictionary shall have the following relationship:
+                - If the Encoding key in the Type 0 font dictionary has a value of Identity-H or Identity-V, then any values
+                for the Registry, Ordering, and Supplement keys may be used in the CIDSystemInfo dictionary of the CIDFont.
+                - Otherwise the corresponding values of the Registry and Ordering keys in both CIDSystemInfo dictionaries
+                shall be identical, and the value of the Supplement key in the CIDSystemInfo dictionary of the CIDFont shall
+                be less than or equal to the value of the Supplement key in the CIDSystemInfo dictionary of the CMap</description>
+            <test>cmapName == &quot;Identity-H&quot; || cmapName == &quot;Identity-V&quot; || (CIDFontOrdering != null &amp;&amp;
+                CIDFontOrdering == CMapOrdering &amp;&amp; CIDFontRegistry != null &amp;&amp; CIDFontRegistry == CMapRegistry &amp;&amp;
+                CIDFontSupplement != null &amp;&amp; CMapSupplement != null &amp;&amp; CIDFontSupplement &lt;= CMapSupplement)</test>
+            <error>
+                <message>CIDSystemInfo entries the CIDFont and CMap dictionaries of a Type 0 font are not compatible
+                    (CIDSystemInfo Ordering = %1, CMap Ordering = %2, CIDSystemInfo Registry = %3,
+                    CMap Registry = %4, CIDSystemInfo Supplement = %5, CMap Supplement = %6)</message>
+                <arguments>
+                    <argument>CIDFontOrdering</argument>
+                    <argument>CMapOrdering</argument>
+                    <argument>CIDFontRegistry</argument>
+                    <argument>CMapRegistry</argument>
+                    <argument>CIDFontSupplement</argument>
+                    <argument>CMapSupplement</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

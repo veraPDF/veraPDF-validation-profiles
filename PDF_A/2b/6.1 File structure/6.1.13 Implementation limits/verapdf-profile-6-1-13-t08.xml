@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:07.367+03:00">
+        <name>ISO 19005-2:2011 - 6.1.13 Implementation limits - Graphics state nesting</name>
+        <description>A conforming file shall not nest q/Q pairs by more than 28 nesting levels</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="Op_q_gsave">
+            <id specification="ISO_19005_2" clause="6.1.13" testNumber="8"/>
+            <description>A conforming file shall not nest q/Q pairs by more than 28 nesting levels</description>
+            <test>nestingLevel &lt;= 28</test>
+            <error>
+                <message>Depth of graphics state nesting of q/Q operators (%1) exceeded 28</message>
+                <arguments>
+                    <argument>nestingLevel</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

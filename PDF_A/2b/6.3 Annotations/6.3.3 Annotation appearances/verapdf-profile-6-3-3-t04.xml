@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.626+03:00">
+        <name>ISO 19005-2:2011 - 6.3.3 Annotations appearances - Normal appearance</name>
+        <description>If an annotation dictionary's Subtype key has value other than Widget, or if FT key associated
+            with Widget annotation has value other than Btn, the value of the N key shall be an appearance stream</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAnnot">
+            <id specification="ISO_19005_2" clause="6.3.3" testNumber="4"/>
+            <description>If an annotation dictionary's Subtype key has value other than Widget, or if FT key associated
+                with Widget annotation has value other than Btn, the value of the N key shall be an appearance stream</description>
+            <test>AP != &quot;N&quot; || (Subtype == &quot;Widget&quot; &amp;&amp; FT == &quot;Btn&quot;) || N_type == &quot;Stream&quot;</test>
+            <error>
+                <message>An annotation dictionary's Subtype key has a value %1 and its FT key has a value %2, but the
+                    value of the N key is not an appearance stream</message>
+                <arguments>
+                    <argument>Subtype</argument>
+                    <argument>FT</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

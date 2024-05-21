@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - Table cell position</name>
+        <description>This cell is to the left of some cells in the previous column</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SATableCell" tags="minor,human,structure,table">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="44"/>
+            <description>This cell is to the left of some cells in the previous column</description>
+            <test>errorCodes.split(',').filter(elem =&gt; elem == 1103).length == 0</test>
+            <error>
+                <message>This cell is to the left of some cells in the previous column</message>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

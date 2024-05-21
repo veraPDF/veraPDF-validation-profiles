@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:08.405+03:00">
+        <name>ISO 19005-4:2020 - 6.2.5 Extended graphics state - TR key</name>
+        <description>A graphics state parameter dictionary (ISO 32000-2:2020, 8.4.5) shall not contain the TR key</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDExtGState">
+            <id specification="ISO_19005_4" clause="6.2.5" testNumber="1"/>
+            <description>A graphics state parameter dictionary (ISO 32000-2:2020, 8.4.5) shall not contain the TR key</description>
+            <test>TR == null</test>
+            <error>
+                <message>A graphics state parameter dictionary contains the TR key</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="8.4.5"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

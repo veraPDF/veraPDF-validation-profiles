@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:2024 - 8.9 Annotations - 8.9.2.2 Annotations as artifacts - Invisible flag</name>
+        <description>Annotations shall be artifacts, if the Invisible flag is set in accordance with ISO 32000-2:2020, 
+            Table 167</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAnnot" tags="annotation,artifact">
+            <id specification="ISO_14289_2" clause="8.9.2.2" testNumber="1"/>
+            <description>Annotations shall be artifacts, if the Invisible flag is set in accordance with ISO 32000-2:2020,
+                Table 167</description>
+            <test>structParentType == null || isArtifact == true || (F &amp; 1) == 0</test>
+            <error>
+                <message>An invisible annotation is included in logical structure with tag %1 (standard type = %2, Invisible = %3)</message>
+                <arguments>
+                    <argument>structParentType</argument>
+                    <argument>structParentStandardType</argument>
+                    <argument>F != null ? (F &amp; 1) : null</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="12.5.3, Table 167"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

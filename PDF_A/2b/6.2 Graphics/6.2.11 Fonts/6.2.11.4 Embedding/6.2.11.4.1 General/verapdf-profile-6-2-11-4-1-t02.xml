@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.134+03:00">
+        <name>ISO 19005-2:2011 - 6.2.11 Fonts - 6.2.11.4 Embedding - Glyphs</name>
+        <description>Embedded fonts shall define all glyphs referenced for rendering within the conforming file.
+            A font referenced for use solely in rendering mode 3 is therefore not rendered and is thus exempt
+            from the embedding requirement. In all cases for TrueType fonts that are to be rendered, character codes
+            shall be able to be mapped to glyphs according to ISO 32000-1:2008, 9.6.6.4 without the use of
+            a non-standard mapping chosen by the conforming processor</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="Glyph">
+            <id specification="ISO_19005_2" clause="6.2.11.4.1" testNumber="2"/>
+            <description>Embedded fonts shall define all glyphs referenced for rendering within the conforming file.
+                A font referenced for use solely in rendering mode 3 is therefore not rendered and is thus exempt
+                from the embedding requirement. In all cases for TrueType fonts that are to be rendered, character codes
+                shall be able to be mapped to glyphs according to ISO 32000-1:2008, 9.6.6.4 without the use of
+                a non-standard mapping chosen by the conforming processor</description>
+            <test>renderingMode == 3 || isGlyphPresent == null || isGlyphPresent == true</test>
+            <error>
+                <message>Not all glyphs referenced for rendering are present in the embedded font program</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="9.6.6.4"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T15:39:24.349+03:00">
+        <name>ISO 19005-4:2020 - 6.2.7.3 JPEG2000 - Colour specification method</name>
+        <description>The value of the METH entry in its 'colr' box shall be 0x01, 0x02 or 0x03. A conforming processor shall use only
+		that colour space and shall ignore all other colour space specifications</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="JPEG2000">
+            <id specification="ISO_19005_4" clause="6.2.7.3" testNumber="3"/>
+            <description>The value of the METH entry in its 'colr' box shall be 0x01, 0x02 or 0x03. A conforming processor shall use only
+			that colour space and shall ignore all other colour space specifications</description>
+            <test>hasColorSpace == true || colrMethod == 1 || colrMethod == 2 || colrMethod == 3</test>
+            <error>
+                <message>Invalid JPEG2000 image: the value of the METH entry (%1) in its 'colr' box is different from 0x01, 0x02 or 0x03</message>
+                <arguments>
+                    <argument>colrMethod</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

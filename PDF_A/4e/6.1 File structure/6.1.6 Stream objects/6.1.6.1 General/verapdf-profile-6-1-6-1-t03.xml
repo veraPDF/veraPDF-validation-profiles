@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4_E">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:58:07.785+03:00">
+        <name>ISO 19005-4:2020 - 6.1.6 Stream objects - 6.1.6.1 General - 3D stream</name>
+        <description>The Subtype entry in a 3D stream dictionary (ISO 32000-2:2020, 13.6.3) shall have a value which is
+            either U3D or PRC as described in Annex B</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PD3DStream">
+            <id specification="ISO_19005_4" clause="6.1.6.1" testNumber="3"/>
+            <description>The Subtype entry in a 3D stream dictionary (ISO 32000-2:2020, 13.6.3) shall have a value which
+                is either U3D or PRC as described in Annex B</description>
+            <test>Subtype == 'U3D' || Subtype == 'PRC'</test>
+            <error>
+                <message>The Subtype entry in the 3D stream dictionary (ISO 32000-2:2020, 13.6.3) has value %1 that is
+                    neither U3D nor PRC</message>
+                <arguments>
+                    <argument>Subtype</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 19005-4:2020" clause="Annex B"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

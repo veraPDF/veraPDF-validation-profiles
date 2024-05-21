@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.23 Ruby (Ruby, RB, RT, RP) - Ruby's children</name>
+        <description>A Ruby structure element shall contain a single RB structure element and a single RT structure 
+            element or a Ruby structure element shall consist of a four-element subsequence: RB, RP, RT, RP</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SERuby" tags="structure">
+            <id specification="ISO_14289_2" clause="8.2.5.23" testNumber="1"/>
+            <description>A Ruby structure element shall contain a single RB structure element and a single RT structure
+                element or a Ruby structure element shall consist of a four-element subsequence: RB, RP, RT, RP</description>
+            <test>kidsStandardTypes == 'RB&amp;RT' || kidsStandardTypes == 'RB&amp;RP&amp;RT&amp;RP'</test>
+            <error>
+                <message>The Ruby structure element has invalid sequence of children: %1</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').toString()</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

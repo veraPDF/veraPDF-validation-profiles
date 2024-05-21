@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.137+03:00">
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.2 Document and DocumentFragment - Struct tree root child</name>
+        <description>The structure tree root shall contain a single Document structure element as its only child. 
+            The namespace for that element shall be specified as the PDF 2.0 namespace</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructTreeRoot" tags="structure">
+            <id specification="ISO_14289_2" clause="8.2.5.2" testNumber="2"/>
+            <description>The structure tree root shall contain a single Document structure element as its only child. 
+                The namespace for that element shall be specified as the PDF 2.0 namespace</description>
+            <test>kidsStandardTypes != 'Document' || firstChildStandardTypeNamespaceURL == 'http://iso.org/pdf2/ssn'</test>
+            <error>
+                <message>The structure tree root contains a single Document structure element, but this element is not 
+                    within the PDF 2.0 namespace (namespace URI = %1)</message>
+                <arguments>
+                    <argument>firstChildStandardTypeNamespaceURL</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="14.7.2"/>
+                <reference specification="ISO 32000-2:2020" clause="14.8.6"/>
+                <reference specification="ISO 32000-2:2020" clause="Annex L"/>
+                <reference specification="ISO/TS 32005"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

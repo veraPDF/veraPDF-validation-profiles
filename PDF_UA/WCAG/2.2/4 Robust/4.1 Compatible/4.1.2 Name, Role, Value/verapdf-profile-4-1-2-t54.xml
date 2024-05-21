@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - Note instead of paragraph</name>
+        <description>This structure element should be a note instead of a paragraph</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SAP" tags="minor,human,structure,note,paragraph">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="54"/>
+            <description>This structure element should be a note instead of a paragraph</description>
+            <test>correctType != 'Note'</test>
+            <error>
+                <message>This structure element should be a note instead of a paragraph</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

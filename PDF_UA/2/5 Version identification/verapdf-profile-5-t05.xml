@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:07.114+03:00">
+        <name>ISO 14289-2:2024 - 5 Version identification - rev property</name>
+        <description>The value of &quot;pdfuaid:rev&quot; shall be the four digit year</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDFUAIdentification" tags="metadata">
+            <id specification="ISO_14289_2" clause="5" testNumber="5"/>
+            <description>The value of &quot;pdfuaid:rev&quot; shall be the four digit year</description>
+            <test>/^\d{4}$/.test(rev)</test>
+            <error>
+                <message>The value of &quot;pdfuaid:rev&quot; (%1) is not the four digit year</message>
+                <arguments>
+                    <argument>rev</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - List item</name>
+        <description>This content should be tagged as a list item</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SAListItem" tags="minor,human,structure,list">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="40"/>
+            <description>This content should be tagged as a list item</description>
+            <test>false</test>
+            <error>
+                <message>This content should be tagged as a list item</message>
+                <arguments>
+                    <argument></argument>
+                    <argument></argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

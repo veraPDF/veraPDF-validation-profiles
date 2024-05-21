@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:2024 - 8.9 Annotations - 8.9.2.4.16 Watermark - Annot structure element</name>
+        <description>When used as real content, Watermark annotations shall be enclosed within Annot structure elements</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDWatermarkAnnot" tags="annotation,structure">
+            <id specification="ISO_14289_2" clause="8.9.2.4.16" testNumber="1"/>
+            <description>When used as real content, Watermark annotations shall be enclosed within Annot structure elements</description>
+            <test>structParentType == null || isArtifact == true || structParentStandardType == 'Annot'</test>
+            <error>
+                <message>A Watermark annotation is nested within %1 tag (standard type = %2) instead of Annot</message>
+                <arguments>
+                    <argument>structParentType</argument>
+                    <argument>structParentStandardType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

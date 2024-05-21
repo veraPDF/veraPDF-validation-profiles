@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - Regular Table</name>
+        <description>Table columns shall have the same number of rows (taking into account row spans)</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETable" tags="major,machine,structure,table">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="41"/>
+            <description>Table columns shall have the same number of rows (taking into account row spans)</description>
+            <test>numberOfColumnWithWrongRowSpan == null</test>
+            <error>
+                <message>Table columns 1 and %1 span different number of rows</message>
+                <arguments>
+                    <argument>numberOfColumnWithWrongRowSpan + 1</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

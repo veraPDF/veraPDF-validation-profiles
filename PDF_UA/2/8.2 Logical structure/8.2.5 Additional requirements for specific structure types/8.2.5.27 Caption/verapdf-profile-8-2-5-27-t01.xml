@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.27 Caption - Caption index</name>
+        <description>When present, the Caption element shall be the first or the last child of the structure element</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructElem" tags="structure,caption">
+            <id specification="ISO_14289_2" clause="8.2.5.27" testNumber="1"/>
+            <description>When present, the Caption element shall be the first or the last child of the structure element</description>
+            <test>kidsStandardTypes.indexOf('&amp;Caption&amp;') &lt; 0</test>
+            <error>
+                <message>Structure element %1 contains Caption as its %2 child instead of first or last one</message>
+                <arguments>
+                    <argument>objectKey</argument>
+                    <argument>kidsStandardTypes.split('&amp;').slice(1).findIndex(elem =&gt; elem == 'Caption') + 2</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

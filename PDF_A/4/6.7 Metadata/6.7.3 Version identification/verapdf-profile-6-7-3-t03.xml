@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2020-12-15T10:53:07.146+03:00">
+        <name>ISO 19005-4:2020 - 6.7.3 Version identification - Conformance level.</name>
+        <description>A file that does not conform to either PDF/A-4e or PDF/A-4f shall not provide any &quot;pdfaid:conformance&quot;</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDFAIdentification">
+            <id specification="ISO_19005_4" clause="6.7.3" testNumber="3"/>
+            <description>A file that does not conform to either PDF/A-4e or PDF/A-4f shall not provide any &quot;pdfaid:conformance&quot;</description>
+            <test>conformance == null</test>
+            <error>
+                <message>The &quot;conformance&quot; property of the PDF/A Identification Schema is %1 instead of null for PDF/A-4 conforming file</message>
+                <arguments>
+                    <argument>conformance</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

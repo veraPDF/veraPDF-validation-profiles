@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
+    <details creator="veraPDF Consortium" created="2016-12-15T10:58:08.455+03:00">
+        <name>ISO 19005-4:2020 - 6.2.5 Extended graphics state - TransferFunction in halftones</name>
+        <description>The TransferFunction key in a halftone dictionary shall be used only as required by ISO 32000-2:2020</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDHalftone">
+            <id specification="ISO_19005_4" clause="6.2.5" testNumber="6"/>
+            <description>The TransferFunction key in a halftone dictionary shall be used only as required by ISO 32000-2:2020</description>
+            <test>colorantName == 'Default' || ((colorantName == null || colorantName == 'Cyan' ||
+                colorantName == 'Magenta' || colorantName == 'Yellow' || colorantName == 'Black') ?
+                TransferFunction == null : TransferFunction != null)</test>
+            <error>
+                <message>Custom TransferFunction in a Halftone dictionary is not permitted for primary (CMYK) colorants</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="10.6.5.2, Table 128"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-1:2014 - 7.18 Annotations - 7.18.6.2 Media clip data - Alt in media clip dictionary</name>
+        <description>In the media clip data dictionary, the optional Alt key (ISO 32000-1:2008, 13.2.4.2, Table 274)
+            is required</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDMediaClip" tags="major,machine,alt-text">
+            <id specification="ISO_14289_1" clause="7.18.6.2" testNumber="2"/>
+            <description>In the media clip data dictionary, the optional Alt key (ISO 32000-1:2008, 13.2.4.2, Table 274)
+                is required</description>
+            <test>hasCorrectAlt == true</test>
+            <error>
+                <message>Alt key (value %1) is missing from the media clip data dictionary or has incorrect value</message>
+                <arguments>
+                    <argument>Alt</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="13.2.4.2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

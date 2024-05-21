@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:08.134+03:00">
+        <name>ISO 14289-2:2024 - 8.4.5 Fonts - 8.4.5.5 Embedding - Glyphs</name>
+        <description>Embedded fonts shall define all glyphs referenced for rendering within the conforming file.
+            A font referenced solely in text rendering mode 3 is not rendered and is thus exempt from the requirements
+            that impact the visual representation of the glyphs of a font. In all cases for TrueType fonts that are to
+            be rendered, character codes shall be able to be mapped to glyphs in accordance with ISO 32000-2:2020, 9.6.5,
+            without the use of a non-standard mapping chosen by the conforming processor</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="Glyph" tags="font">
+            <id specification="ISO_14289_2" clause="8.4.5.5.1" testNumber="2"/>
+            <description>Embedded fonts shall define all glyphs referenced for rendering within the conforming file.
+                A font referenced solely in text rendering mode 3 is not rendered and is thus exempt from the requirements
+                that impact the visual representation of the glyphs of a font. In all cases for TrueType fonts that are to
+                be rendered, character codes shall be able to be mapped to glyphs in accordance with ISO 32000-2:2020, 9.6.5,
+                without the use of a non-standard mapping chosen by the conforming processor</description>
+            <test>renderingMode == 3 || isGlyphPresent == null || isGlyphPresent == true</test>
+            <error>
+                <message>Not all glyphs referenced for rendering are present in the embedded font program</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="9.3.6"/>
+                <reference specification="ISO 32000-2:2020" clause="9.6.5"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

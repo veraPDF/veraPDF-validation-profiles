@@ -1,25 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" model="org.verapdf.model.PDFA1a">
-    <name>ISO 19005-1:2005 - 6.1.12 Implementation limits - Indirect obejcts</name>
-    <description>Maximum number of indirect objects in a PDF file is 8,388,607</description>
-    <creator>veraPDF Consortium</creator>
-    <created>2015-05-8T15:46:15Z</created>
-    <hash>sha-1 hash code</hash>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_1_A">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:04.633+03:00">
+        <name>ISO 19005-1:2005 - 6.1.12 Implementation limits - Indirect obejcts</name>
+        <description>Maximum number of indirect objects in a PDF file is 8,388,607</description>
+    </details>
+    <hash></hash>
     <rules>
-		<rule id="6-1-12-t07" object="CosDocument">
+        <rule object="CosDocument">
+            <id specification="ISO_19005_1" clause="6.1.12" testNumber="7"/>
             <description>Maximum number of indirect objects in a PDF file is 8,388,607</description>
             <test>nrIndirects &lt;= 8388607</test>
             <error>
-                <message>Maximum number of indirect objects (8,388,607) in a PDF file exceeded</message>
+                <message>Number of indirect objects in a PDF file (%1) exceeded 8,388,607</message>
+                <arguments>
+                    <argument>nrIndirects</argument>
+                </arguments>
             </error>
-            <reference>
-                <specification>ISO19005-1</specification>
-                <clause>6.1.12</clause>
-				<reference>
-					<specification>PDF Reference 1.4</specification>
-					<clause>Table C.1</clause>
-				</reference>
-            </reference>
+            <references>
+                <reference specification="PDF Reference 1.4" clause="Table C.1"/>
+            </references>
         </rule>
-	</rules>
+    </rules>
+    <variables/>
 </profile>

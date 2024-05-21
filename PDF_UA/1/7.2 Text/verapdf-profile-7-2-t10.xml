@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-1:2014 - 7.2 Text - children of TR</name>
+        <description>TR element may contain only TH and TD elements</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SETR" tags="major,machine,structure,table">
+            <id specification="ISO_14289_1" clause="7.2" testNumber="10"/>
+            <description>TR element may contain only TH and TD elements</description>
+            <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <error>
+                <message>TR element contains %1 element(s) instead of TH or TD</message>
+                <arguments>
+                    <argument>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem != 'TD' &amp;&amp; elem != 'TH').toString()</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="14.8.4.3.4"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

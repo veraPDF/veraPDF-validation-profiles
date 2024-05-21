@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:2024 - 8.10 Forms - 8.10.1 General - XFA form</name>
+        <description>XFA forms shall not be present</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDAcroForm" tags="syntax">
+            <id specification="ISO_14289_2" clause="8.10.1" testNumber="3"/>
+            <description>XFA forms shall not be present</description>
+            <test>containsXFA == false</test>
+            <error>
+                <message>XFA form is present</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="Annex K"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

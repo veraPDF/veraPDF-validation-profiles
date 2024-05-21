@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:2024 - 8.9 Annotations - 8.9.2.3 Markup annotations - RC and Contents entries</name>
+        <description>When both RC and Contents entries are present for markup annotation, they shall be textually equivalent</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDMarkupAnnot" tags="annotation,alt-text">
+            <id specification="ISO_14289_2" clause="8.9.2.3" testNumber="2"/>
+            <description>When both RC and Contents entries are present for markup annotation, they shall be textually equivalent</description>
+            <test>containsRC == false || Contents == null || RC == Contents</test>
+            <error>
+                <message>A Markup annotation contains Contents and RC entries with non-equivalent textual values (RC = %1, Contents = %2)</message>
+                <arguments>
+                    <argument>RC</argument>
+                    <argument>Contents</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

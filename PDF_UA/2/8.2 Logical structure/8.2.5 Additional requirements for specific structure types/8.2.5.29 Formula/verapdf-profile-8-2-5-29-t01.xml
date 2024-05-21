@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:06.894+03:00">
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.29 Formula - Math structure type</name>
+        <description>The math structure type shall occur only as a child of a Formula structure element</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEMathMLStructureElement" tags="structure">
+            <id specification="ISO_14289_2" clause="8.2.5.29" testNumber="1"/>
+            <description>The math structure type shall occur only as a child of a Formula structure element</description>
+            <test>parentStandardType == 'Formula' || parentStandardType == 'MathML'</test>
+            <error>
+                <message>The math structure type is nested within %1 tag instead of Formula</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T11:35:34.541+03:00">
+        <name>ISO 14289-2:2024 - 8.4 Text representation for content - Natural language specification</name>
+        <description>If the Lang entry is present in the document's Catalog dictionary or in a structure element
+            dictionary or property list, its value shall be a language identifier as described in ISO 32000-2:2020,
+            14.9.2. A language identifier shall be a Language-Tag as defined in RFC 3066, Tags for the Identification
+            of Languages</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosLang" tags="lang">
+            <id specification="ISO_14289_2" clause="8.4.4" testNumber="2"/>
+            <description>If the Lang entry is present in the document's Catalog dictionary or in a structure element 
+                dictionary or property list, its value shall be a language identifier as described in ISO 32000-2:2020, 
+                14.9.2. A language identifier shall be a Language-Tag as defined in RFC 3066, Tags for the Identification 
+                of Languages</description>
+            <test>/^[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*$/.test(unicodeValue)</test>
+            <error>
+                <message>Value %1 of the Lang entry is not a Language-Tag</message>
+                <arguments>
+                    <argument>unicodeValue</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="14.9.2"/>
+                <reference specification="RFC 3066" clause="2.1"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.496+03:00">
+        <name>ISO 19005-2:2011 - 6.6.2.3 Schemas - Extension schema property - category field</name>
+        <description>Field 'category' of the PDF/A Property value type in the PDF/A extension schema shall be
+            present and shall have type Text, value external or internal and namespace prefix 'pdfaProperty'</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="ExtensionSchemaProperty">
+            <id specification="ISO_19005_2" clause="6.6.2.3.3" testNumber="9"/>
+            <description>Field 'category' of the PDF/A Property value type in the PDF/A extension schema shall be
+                present and shall have type Text, value external or internal and namespace prefix 'pdfaProperty'</description>
+            <test>isCategoryValidText == true &amp;&amp; (category == &quot;external&quot; || category == &quot;internal&quot;) &amp;&amp;
+                categoryPrefix == &quot;pdfaProperty&quot;</test>
+            <error>
+                <message>Field 'category' of the PDF/A Property value type is not present, or doesn't have prefix
+                    'pdfaProperty' (category prefix = %1) or doesn't have type Text (isCategoryValidText = %2) or
+                    has value different from external or internal (category value = %3)</message>
+                <arguments>
+                    <argument>categoryPrefix</argument>
+                    <argument>isCategoryValidText</argument>
+                    <argument>category</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

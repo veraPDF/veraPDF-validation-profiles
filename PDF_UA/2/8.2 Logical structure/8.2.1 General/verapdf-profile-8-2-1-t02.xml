@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.098+03:00">
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.1 General - Struct element parent</name>
+        <description>A structure element dictionary shall contain the P (parent) entry according to ISO 32000-2:2020, 
+            14.7.2, Table 323</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructElem" tags="structure">
+            <id specification="ISO_14289_2" clause="8.2.1" testNumber="2"/>
+            <description>A structure element dictionary shall contain the P (parent) entry according to ISO 32000-2:2020, 
+                14.7.2, Table 323</description>
+            <test>containsParent == true</test>
+            <error>
+                <message>A structure element dictionary does not contain the P (parent) entry</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="14.7.2, Table 323"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

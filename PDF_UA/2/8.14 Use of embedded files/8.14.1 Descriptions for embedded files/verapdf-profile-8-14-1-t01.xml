@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:08.812+03:00">
+        <name>ISO 14289-2:2024 - 8.14 Use of embedded files - 8.14.1 Descriptions for embedded files - Desc entry</name>
+        <description>The Desc entry shall be present on all file specification dictionaries present in the EmbeddedFiles
+            name tree of a conforming document</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosFileSpecification" tags="syntax">
+            <id specification="ISO_14289_2" clause="8.14.1" testNumber="1"/>
+            <description>The Desc entry shall be present on all file specification dictionaries present in the
+                EmbeddedFiles name tree of a conforming document</description>
+            <test>containsDesc == true || presentInEmbeddedFiles == false</test>
+            <error>
+                <message>The file specification dictionary for an embedded file does not contain Desc key</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

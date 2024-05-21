@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - List elements</name>
+        <description>The structure type and attributes of list elements shall be semantically appropriate</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SAStructElem" tags="minor,human,structure,list">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="21"/>
+            <description>The structure type and attributes of list elements shall be semantically appropriate</description>
+            <test>hasLowestDepthError == false || (correctSemanticScore &gt;= 0.75 &amp;&amp; standardType == correctType) || (correctType != 'LI' &amp;&amp;
+                correctType != 'Lbl' &amp;&amp; correctType != 'LBody' &amp;&amp; correctType != 'L') || (isTableElem == true)</test>
+            <error>
+                <message>score = %1, correct type = %2, structure id = %3</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                    <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

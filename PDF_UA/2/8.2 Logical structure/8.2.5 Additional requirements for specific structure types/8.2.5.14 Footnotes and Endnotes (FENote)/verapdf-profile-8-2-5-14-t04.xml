@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.137+03:00">
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.5.14 Footnotes and Endnotes (FENote) - NoteType</name>
+        <description>The value of the NoteType attribute of the FENote structure element shall be Footnote, Endnote or None</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="SEFENote" tags="structure,note">
+            <id specification="ISO_14289_2" clause="8.2.5.14" testNumber="4"/>
+            <description>The value of the NoteType attribute of the FENote structure element shall be Footnote, Endnote or None</description>
+            <test>NoteType == 'Footnote' || NoteType == 'Endnote' || NoteType == 'None'</test>
+            <error>
+                <message>NoteType attribute of the FENote structure element has value %1 instead of Footnote, Endnote or None</message>
+                <arguments>
+                    <argument>NoteType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

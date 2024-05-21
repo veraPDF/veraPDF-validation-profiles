@@ -1,0 +1,45 @@
+name: Update PDF_UA profiles
+
+on:
+  push:
+    branches:
+      [ integration ]
+    paths:
+      - 'PDF_UA/1/**'
+      - 'PDF_UA/2/**'
+      - 'PDF_UA/WCAG/**'
+      - 'PDF_UA/ISO-32005-Tagged.xml'
+
+jobs:
+  update-profiles:
+    if: github.repository == 'veraPDF/veraPDF-validation-profiles'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          token: ${{ secrets.WORKFLOW_TOKEN }}
+      - name: Set up JDK 1.11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+      - name: Generate PDF_UA profiles
+        run: |
+          curl -LO https://raw.githubusercontent.com/veraPDF/veraPDF-tools/master/profile-merger/profile-merger-1.0-SNAPSHOT.jar
+          java -jar profile-merger-1.0-SNAPSHOT.jar pdfua
+          rm profile-merger-1.0-SNAPSHOT.jar
+          git pull origin
+      - name: Push PDF_UA profiles
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: ${{ github.event.head_commit.message }}
+
+      - name: Notify slack if action didn't run
+        if: failure()
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_NOTIFICATIONS_BOT_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel_id: C03E3JJGLQL
+          status: FAILED
+          color: danger

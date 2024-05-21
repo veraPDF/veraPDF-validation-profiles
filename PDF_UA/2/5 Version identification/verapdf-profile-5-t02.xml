@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:53:07.114+03:00">
+        <name>ISO 14289-2:2024 - 5 Version identification - Part number</name>
+        <description>The value of &quot;pdfuaid:part&quot; shall be the part number of the International Standard to which the file
+            conforms</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDFUAIdentification" tags="metadata">
+            <id specification="ISO_14289_2" clause="5" testNumber="2"/>
+            <description>The value of &quot;pdfuaid:part&quot; shall be the part number of the International Standard to which the 
+                file conforms</description>
+            <test>part == 2</test>
+            <error>
+                <message>The &quot;part&quot; property of the PDF/UA Identification Schema is %1 instead of 2 for 
+                    PDF/UA-2 conforming file</message>
+                <arguments>
+                    <argument>part</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

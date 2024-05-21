@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_3_B">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:58:08.854+03:00">
+        <name>ISO 19005-3:2012 - 6.8 Embedded files - AFRelationship</name>
+        <description>The file specification dictionary shall contain key AFRelationship of type Name identifying the
+            relationship between the embedded file and the content of the document</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosFileSpecification">
+            <id specification="ISO_19005_3" clause="6.8" testNumber="3"/>
+            <description>The file specification dictionary shall contain key AFRelationship of type Name identifying the 
+                relationship between the embedded file and the content of the document</description>
+            <test>AFRelationship != null</test>
+            <error>
+                <message>The file specification dictionary for an embedded file does not contain the AFRelationship key 
+                    or it has invalid value type</message>
+                <arguments/>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

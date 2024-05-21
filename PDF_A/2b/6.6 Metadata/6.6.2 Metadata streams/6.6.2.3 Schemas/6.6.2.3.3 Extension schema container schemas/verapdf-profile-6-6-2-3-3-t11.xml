@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
+    <details creator="veraPDF Consortium" created="2016-02-15T10:53:07.555+03:00">
+        <name>ISO 19005-2:2011 - 6.6.2.3 Schemas - Extension schema ValueType type - type field</name>
+        <description>Field 'type' of the PDF/A ValueType value type in the PDF/A extension schema shall be present
+            and shall have type Text and namespace prefix 'pdfaType'</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="ExtensionSchemaValueType">
+            <id specification="ISO_19005_2" clause="6.6.2.3.3" testNumber="11"/>
+            <description>Field 'type' of the PDF/A ValueType value type in the PDF/A extension schema shall be present
+                and shall have type Text and namespace prefix 'pdfaType'</description>
+            <test>isTypeValidText == true &amp;&amp; typePrefix == &quot;pdfaType&quot;</test>
+            <error>
+                <message>Field 'type' of the PDF/A ValueType value type is not present, or doesn't have prefix
+                    'pdfaType' (type prefix = %1) or doesn't have type Text (isTypeValidText = %2)</message>
+                <arguments>
+                    <argument>typePrefix</argument>
+                    <argument>isTypeValidText</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

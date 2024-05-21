@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2023-03-13T10:58:04.137+03:00">
+        <name>ISO 14289-2:2024 - 8.2 Logical structure - 8.2.4 Structure types - Circular mapping</name>
+        <description>A circular mapping shall not exist</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDStructElem" tags="structure">
+            <id specification="ISO_14289_2" clause="8.2.4" testNumber="2"/>
+            <description>A circular mapping shall not exist</description>
+            <test>circularMappingExist != true</test>
+            <error>
+                <message>A circular mapping exists for %1 structure type</message>
+                <arguments>
+                    <argument>valueS</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
