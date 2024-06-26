@@ -9,7 +9,7 @@
         <rule object="PDExtGState">
             <id specification="ISO_19005_2" clause="6.2.5" testNumber="1"/>
             <description>An ExtGState dictionary shall not contain the TR key</description>
-            <test>TR == null</test>
+            <test>containsTR == false</test>
             <error>
                 <message>An ExtGState dictionary contains the TR key</message>
                 <arguments/>
