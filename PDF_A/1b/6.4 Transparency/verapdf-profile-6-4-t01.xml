@@ -9,12 +9,10 @@
         <rule object="PDExtGState">
             <id specification="ISO_19005_1" clause="6.4" testNumber="1"/>
             <description>If an SMask key appears in an ExtGState dictionary, its value shall be None</description>
-            <test>SMask == null || SMask == &quot;None&quot;</test>
+            <test>containsSMask == false || SMaskNameValue == &quot;None&quot;</test>
             <error>
-                <message>An ExtGState contains SMask key with value %1 instead of None</message>
-                <arguments>
-                    <argument>SMask</argument>
-                </arguments>
+                <message>An ExtGState contains SMask key with a value other than None</message>
+                <arguments/>
             </error>
             <references/>
         </rule>
