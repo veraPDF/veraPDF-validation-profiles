@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEMathMLStructureElement" tags="structure">
+        <rule object="SEMathMLStructElem" tags="structure">
             <id specification="ISO_14289_2" clause="8.2.5.29" testNumber="1"/>
             <description>The math structure type shall occur only as a child of a Formula structure element</description>
             <test>parentStandardType == 'Formula' || parentStandardType == 'MathML'</test>
