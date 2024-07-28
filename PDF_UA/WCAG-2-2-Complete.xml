@@ -1970,7 +1970,7 @@
             <error>
                 <message>TOCI doesn't have a destination. Possible destination page number(s): %1</message>
                 <arguments>
-                    <argument>errorArguments.get(errorCodes.indexOf(1009)).get(0)</argument>
+                    <argument>errorArguments.get(errorCodes.indexOf('1009')).get(0)</argument>
                     <argument></argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
