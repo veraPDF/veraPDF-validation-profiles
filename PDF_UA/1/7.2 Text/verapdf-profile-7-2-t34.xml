@@ -9,7 +9,7 @@
         <rule object="SETextItem" tags="major,machine,lang,text">
             <id specification="ISO_14289_1" clause="7.2" testNumber="34"/>
             <description>Natural language for text in page content shall be determined</description>
-            <test>gSizeCatalogLang != 0 || Lang != null</test>
+            <test>gContainsCatalogLang == true || Lang != null</test>
             <error>
                 <message>Natural language for text in page content cannot be determined</message>
                 <arguments/>
@@ -18,9 +18,9 @@
         </rule>
     </rules>
     <variables>
-        <variable name="gSizeCatalogLang" object="PDDocument">
-            <defaultValue>0</defaultValue>
-            <value>Lang_size</value>
+        <variable name="gContainsCatalogLang" object="PDDocument">
+            <defaultValue>false</defaultValue>
+            <value>containsLang</value>
         </variable>
     </variables>
 </profile>

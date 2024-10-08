@@ -9,7 +9,7 @@
         <rule object="XMPLangAlt" deferred="true" tags="major,machine,lang,metadata">
             <id specification="ISO_14289_1" clause="7.2" testNumber="33"/>
             <description>Natural language for document metadata shall be determined</description>
-            <test>xDefault == false || gSizeCatalogLang != 0</test>
+            <test>xDefault == false || gContainsCatalogLang == true</test>
             <error>
                 <message>Natural language for document metadata cannot be determined</message>
                 <arguments/>
@@ -18,9 +18,9 @@
         </rule>
     </rules>
     <variables>
-        <variable name="gSizeCatalogLang" object="PDDocument">
-            <defaultValue>0</defaultValue>
-            <value>Lang_size</value>
+        <variable name="gContainsCatalogLang" object="PDDocument">
+            <defaultValue>false</defaultValue>
+            <value>containsLang</value>
         </variable>
     </variables>
 </profile>

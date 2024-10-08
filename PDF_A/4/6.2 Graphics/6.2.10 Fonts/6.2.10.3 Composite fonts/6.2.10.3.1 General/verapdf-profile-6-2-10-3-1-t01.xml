@@ -8,7 +8,7 @@
             for the Registry, Ordering, and Supplement keys may be used in the CIDSystemInfo dictionary of the CIDFont.
 	        - Otherwise the corresponding values of the Registry and Ordering keys in both CIDSystemInfo dictionaries
             shall be identical, and the value of the Supplement key in the CIDSystemInfo dictionary of the CIDFont shall
-            be greater than or equal to the value of the Supplement key in the CIDSystemInfo dictionary of the CMap</description>
+            be less than or equal to the value of the Supplement key in the CIDSystemInfo dictionary of the CMap</description>
     </details>
     <hash></hash>
     <rules>

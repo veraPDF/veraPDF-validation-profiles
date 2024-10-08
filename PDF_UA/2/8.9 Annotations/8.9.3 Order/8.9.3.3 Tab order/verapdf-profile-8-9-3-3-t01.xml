@@ -11,7 +11,7 @@
             <id specification="ISO_14289_2" clause="8.9.3.3" testNumber="1"/>
             <description>Every page that includes an annotation shall contain a Tabs entry in its page dictionary in
                 accordance with ISO 32000-2:2020, Table 31, and its value shall be A, W or S</description>
-            <test>annots_size == 0 || Tabs == 'A' || Tabs == 'W' || Tabs == 'S'</test>
+            <test>containsAnnotations == false || Tabs == 'A' || Tabs == 'W' || Tabs == 'S'</test>
             <error>
                 <message>A page with annotation(s) contains Tabs key with value %1 instead of A, W or S</message>
                 <arguments>

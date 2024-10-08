@@ -9,7 +9,7 @@
         <rule object="MainXMPPackage">
             <id specification="ISO_19005_1" clause="6.7.11" testNumber="1"/>
             <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
-            <test>Identification_size == 1</test>
+            <test>containsPDFAIdentification == true</test>
             <error>
                 <message>The document metadata stream doesn't contains PDF/A Identification Schema</message>
                 <arguments/>
