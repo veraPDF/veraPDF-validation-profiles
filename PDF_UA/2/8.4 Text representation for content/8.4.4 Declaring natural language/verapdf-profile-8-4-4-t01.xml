@@ -11,7 +11,7 @@
             <id specification="ISO_14289_2" clause="8.4.4" testNumber="1"/>
             <description>The default natural language for content and text strings shall be specified using the Lang 
                 entry, with a non-empty value, in the catalog dictionary</description>
-            <test>Lang_size &gt; 0</test>
+            <test>containsLang == true</test>
             <error>
                 <message>Catalog dictionary does not contain Lang entry</message>
                 <arguments/>

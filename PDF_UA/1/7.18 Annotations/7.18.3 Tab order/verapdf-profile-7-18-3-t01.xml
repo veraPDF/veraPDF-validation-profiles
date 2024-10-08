@@ -9,7 +9,7 @@
         <rule object="PDPage" tags="minor,machine,page">
             <id specification="ISO_14289_1" clause="7.18.3" testNumber="1"/>
             <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S</description>
-            <test>annots_size == 0 || Tabs == 'S'</test>
+            <test>containsAnnotations == false || Tabs == 'S'</test>
             <error>
                 <message>A page with annotation(s) contains Tabs key with value %1 instead of S</message>
                 <arguments>

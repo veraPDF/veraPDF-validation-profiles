@@ -9,7 +9,7 @@
         <rule object="SEMarkedContent" tags="major,machine,lang,alt-text">
             <id specification="ISO_14289_1" clause="7.2" testNumber="31"/>
             <description>Natural language for text in Alt attribute in Span Marked Content shall be determined</description>
-            <test>tag != 'Span' || Alt == null || Lang != null || inheritedLang != null || gSizeCatalogLang != 0</test>
+            <test>tag != 'Span' || Alt == null || Lang != null || inheritedLang != null || gContainsCatalogLang == true</test>
             <error>
                 <message>Natural language for text in Alt attribute in Span Marked Content cannot be determined</message>
                 <arguments/>
@@ -18,9 +18,9 @@
         </rule>
     </rules>
     <variables>
-        <variable name="gSizeCatalogLang" object="PDDocument">
-            <defaultValue>0</defaultValue>
-            <value>Lang_size</value>
+        <variable name="gContainsCatalogLang" object="PDDocument">
+            <defaultValue>false</defaultValue>
+            <value>containsLang</value>
         </variable>
     </variables>
 </profile>

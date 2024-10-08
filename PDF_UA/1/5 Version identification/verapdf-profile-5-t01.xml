@@ -9,7 +9,7 @@
         <rule object="MainXMPPackage" tags="minor,machine,metadata">
             <id specification="ISO_14289_1" clause="5" testNumber="1"/>
             <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
-            <test>UAIdentification_size == 1</test>
+            <test>containsPDFUAIdentification == true</test>
             <error>
                 <message>The document metadata stream doesn't contains PDF/UA Identification Schema</message>
                 <arguments/>

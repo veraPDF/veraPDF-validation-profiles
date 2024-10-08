@@ -19899,7 +19899,7 @@
         <rule object="PDDocument" tags="structure">
             <id specification="ISO_32005" clause="6.2" testNumber="1658"/>
             <description>The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-2:2020, 14.7</description>
-            <test>StructTreeRoot_size == 1</test>
+            <test>containsStructTreeRoot == true</test>
             <error>
                 <message>StructTreeRoot entry is not present in the document catalog</message>
                 <arguments/>
