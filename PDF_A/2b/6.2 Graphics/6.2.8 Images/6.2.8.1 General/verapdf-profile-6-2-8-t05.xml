@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_2_B">
+    <details creator="veraPDF Consortium" created="2023-07-10T10:58:05.420+03:00">
+        <name>ISO 19005-2:2011 - 6.2.8 Images - BitsPerComponent in image mask</name>
+        <description>If an image mask dictionary contains the BitsPerComponent key, its value shall be 1</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDMaskImage">
+            <id specification="ISO_19005_2" clause="6.2.8" testNumber="5"/>
+            <description>If an image mask dictionary contains the BitsPerComponent key, its value shall be 1</description>
+            <test>BitsPerComponent == null || BitsPerComponent == 1</test>
+            <error>
+                <message>The value of the BitsPerComponent key in the image mask dictionary is %1</message>
+                <arguments>
+                    <argument>BitsPerComponent</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="8.9.5.1, Table 89"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
