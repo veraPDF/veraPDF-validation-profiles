@@ -11,7 +11,7 @@
             <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
             <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
             <error>
-                <message>A link annotation does not include an alternate description in the Contents Key</message>
+                <message>A link annotation does not include an alternate description in the Contents key</message>
                 <arguments/>
             </error>
             <references>
