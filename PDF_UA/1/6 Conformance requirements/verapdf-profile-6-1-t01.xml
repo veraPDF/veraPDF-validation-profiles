@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="CosDocument">
+        <rule object="CosDocument" tags="minor,machine,syntax">
             <id specification="ISO_19005_2" clause="6.1" testNumber="1"/>
             <description>The file header shall consist of &quot;%PDF-1.n&quot; followed by a single EOL marker, where 'n' is a single 
                 digit number between 0 (30h) and 7 (37h)</description>
