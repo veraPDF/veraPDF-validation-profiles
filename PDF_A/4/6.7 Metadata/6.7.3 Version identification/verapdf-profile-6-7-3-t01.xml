@@ -13,7 +13,7 @@
                 The PDF/A Identification schema defined in Table 2 uses the namespace URI &quot;http://www.aiim.org/pdfa/ns/id/&quot;</description>
             <test>containsPDFAIdentification == true</test>
             <error>
-                <message>The document metadata stream doesn't contains PDF/A Identification Schema</message>
+                <message>The document metadata stream doesn't contain PDF/A Identification Schema</message>
                 <arguments/>
             </error>
             <references/>
