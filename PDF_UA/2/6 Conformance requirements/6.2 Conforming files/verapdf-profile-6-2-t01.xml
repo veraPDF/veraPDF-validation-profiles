@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2025-02-15T10:58:04.098+03:00">
+        <name>ISO 14289-2:2024 - 6 Conformance requirements - 6.2 Conforming files - Marked entry</name>
+        <description>The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosDocument" tags="syntax">
+            <id specification="ISO_14289_2" clause="6.2" testNumber="1"/>
+            <description>The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true</description>
+            <test>Marked == true</test>
+            <error>
+                <message>MarkInfo dictionary is not present in the document catalog, or Marked entry is set to false or
+                    is not present in the MarkInfo dictionary (MarkInfo = %1, Marked = %2)</message>
+                <arguments>
+                    <argument>MarkInfo</argument>
+                    <argument>Marked</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="14.7.1"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>
