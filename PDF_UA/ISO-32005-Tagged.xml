@@ -19714,6 +19714,20 @@
                 <reference specification="ISO-32000-2" clause="Annex_L"/>
             </references>
         </rule>
+        <rule object="SEMathMLStructureElement" tags="structure">
+            <id specification="ISO_32005" clause="6.2" testNumber="1660"/>
+            <description>The math structure type shall occur only as a child of a Formula structure element</description>
+            <test>parentStandardType == 'Formula' || parentStandardType == 'MathML'</test>
+            <error>
+                <message>The math structure type is nested within %1 tag instead of Formula</message>
+                <arguments>
+                    <argument>parentStandardType</argument>
+                </arguments>
+            </error>
+            <references>
+                <reference specification="ISO-32000-2" clause="Annex_L"/>
+            </references>
+        </rule>
     </rules>
     <variables/>
 </profile>
