@@ -9,7 +9,7 @@
         <rule object="PDOutline" tags="critical,machine,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="2"/>
             <description>Natural language in the Outline entries shall be determined</description>
-            <test>gSizeCatalogLang != 0</test>
+            <test>gContainsCatalogLang == true</test>
             <error>
                 <message>Natural language in the Outline entries cannot be determined</message>
                 <arguments/>
@@ -18,9 +18,9 @@
         </rule>
     </rules>
     <variables>
-        <variable name="gSizeCatalogLang" object="PDDocument">
-            <defaultValue>0</defaultValue>
-            <value>Lang_size</value>
+        <variable name="gContainsCatalogLang" object="PDDocument">
+            <defaultValue>false</defaultValue>
+            <value>containsLang</value>
         </variable>
     </variables>
 </profile>

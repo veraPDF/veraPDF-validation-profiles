@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
         <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - List item</name>
         <description>The structure type and attributes of a list item shall be semantically appropriate</description>
@@ -9,7 +9,7 @@
         <rule object="SALI" tags="minor,human,structure,list">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="52"/>
             <description>The structure type and attributes of a list item shall be semantically appropriate</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1202).length == 0</test>
+            <test>errorCodes.contains('1202') == false</test>
             <error>
                 <message>This list item should be tagged as several different list items</message>
                 <arguments/>

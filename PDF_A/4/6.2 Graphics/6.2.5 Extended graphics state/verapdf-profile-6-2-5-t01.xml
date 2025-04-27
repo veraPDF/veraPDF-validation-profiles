@@ -9,7 +9,7 @@
         <rule object="PDExtGState">
             <id specification="ISO_19005_4" clause="6.2.5" testNumber="1"/>
             <description>A graphics state parameter dictionary (ISO 32000-2:2020, 8.4.5) shall not contain the TR key</description>
-            <test>TR == null</test>
+            <test>containsTR == false</test>
             <error>
                 <message>A graphics state parameter dictionary contains the TR key</message>
                 <arguments/>

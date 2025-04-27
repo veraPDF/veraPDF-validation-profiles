@@ -26,7 +26,7 @@
 			CMapName == &quot;UniJIS-UTF16-H&quot; || CMapName == &quot;UniJIS-UTF16-V&quot; || CMapName == &quot;KSC-EUC-H&quot; || CMapName == &quot;KSC-EUC-V&quot; ||
 			CMapName == &quot;KSCms-UHC-H&quot; || CMapName == &quot;KSCms-UHC-V&quot; || CMapName == &quot;KSCms-UHC-HW-H&quot; || CMapName == &quot;KSCms-UHC-HW-V&quot; ||
 			CMapName == &quot;KSCpc-EUC-H&quot; || CMapName == &quot;UniKS-UCS2-H&quot; || CMapName == &quot;UniKS-UCS2-V&quot; || CMapName == &quot;UniKS-UTF16-H&quot; || CMapName == &quot;UniKS-UTF16-V&quot; ||
-			embeddedFile_size == 1</test>
+			containsEmbeddedFile == true</test>
             <error>
                 <message>A non-standard CMap %1 is not embedded</message>
                 <arguments>

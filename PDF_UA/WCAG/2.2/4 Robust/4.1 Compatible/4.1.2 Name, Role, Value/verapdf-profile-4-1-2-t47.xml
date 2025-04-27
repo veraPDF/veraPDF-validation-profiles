@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
         <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - TOCI text on page</name>
         <description>TOCI text should be presented on a destination page</description>
@@ -9,15 +9,13 @@
         <rule object="SATOCI" tags="major,human,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="47"/>
             <description>TOCI text should be presented on a destination page</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1008).length == 0</test>
+            <test>errorCodes.contains('1008') == false</test>
             <error>
                 <message>TOCI text is not found on a destination page %wrongDestinationPage%.
                     Possible destination page number(s): %possiblePageNumbers%</message>
                 <arguments>
-                    <argument name="possiblePageNumbers">errorArguments.split(';;')[errorCodes.split(',')
-                        .findIndex(elem =&gt; elem == 1008)].split(';')[0]</argument>
-                    <argument name="wrongDestinationPage">errorArguments.split(';;')[errorCodes.split(',')
-                        .findIndex(elem =&gt; elem == 1008)].split(';')[1]</argument>
+                    <argument name="possiblePageNumbers">errorArguments.get(errorCodes.indexOf('1008')).get(0)</argument>
+                    <argument name="wrongDestinationPage">errorArguments.get(errorCodes.indexOf('1008')).get(1)</argument>
                     <argument name="structureID">structureID</argument>
                 </arguments>
             </error>

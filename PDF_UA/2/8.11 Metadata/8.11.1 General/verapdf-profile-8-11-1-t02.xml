@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_2">
+    <details creator="veraPDF Consortium" created="2024-03-13T10:53:07.215+03:00">
+        <name>ISO 14289-2:2024 - 8.11 Metadata - 8.11.1 General - Metadata key in the Catalog</name>
+        <description>The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata 
+            stream as defined in ISO 32000-2:2020, 14.3. The metadata stream dictionary shall contain entry Type with
+            value /Metadata and entry Subtype with value /XML</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="PDDocument" tags="metadata">
+            <id specification="ISO_14289_2" clause="8.11.1" testNumber="2"/>
+            <description>The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata 
+                stream as defined in ISO 32000-2:2020, 14.3. The metadata stream dictionary shall contain entry Type with
+                value /Metadata and entry Subtype with value /XML</description>
+            <test>containsMetadata == true</test>
+            <error>
+                <message>The document catalog dictionary doesn't contain metadata key or metadata stream dictionary does
+                    not contain either entry Type with value /Metadata or entry Subtype with value /XML</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-2:2020" clause="14.3.2"/>
+            </references>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

@@ -11,9 +11,9 @@
             <id specification="ISO_19005_4" clause="6.7.3" testNumber="1"/>
             <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema.
                 The PDF/A Identification schema defined in Table 2 uses the namespace URI &quot;http://www.aiim.org/pdfa/ns/id/&quot;</description>
-            <test>Identification_size == 1</test>
+            <test>containsPDFAIdentification == true</test>
             <error>
-                <message>The document metadata stream doesn't contains PDF/A Identification Schema</message>
+                <message>The document metadata stream doesn't contain PDF/A Identification Schema</message>
                 <arguments/>
             </error>
             <references/>

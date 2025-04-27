@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFUA_1">
+    <details creator="veraPDF Consortium" created="2025-01-24T10:58:07.432+03:00">
+        <name>ISO 14289-1:2014 - 6 Conformance requirements - 6.1 General - PDF header</name>
+        <description>The file header shall consist of “%PDF-1.n” followed by a single EOL marker, where 'n' is a single 
+            digit number between 0 (30h) and 7 (37h)</description>
+    </details>
+    <hash></hash>
+    <rules>
+        <rule object="CosDocument" tags="minor,machine,syntax">
+            <id specification="ISO_14289_1" clause="6.1" testNumber="1"/>
+            <description>The file header shall consist of &quot;%PDF-1.n&quot; followed by a single EOL marker, where 'n' is a single 
+                digit number between 0 (30h) and 7 (37h)</description>
+            <test>/^%PDF-1\.[0-7]$/.test(header)</test>
+            <error>
+                <message>File header %1 does not match the pattern %PDF-1.n, where 'n' is a single digit number between 
+                    0 and 7</message>
+                <arguments>
+                    <argument>header</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+    </rules>
+    <variables/>
+</profile>

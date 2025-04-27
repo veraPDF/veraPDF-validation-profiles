@@ -9,7 +9,7 @@
         <rule object="PDStructElem" tags="major,machine,structure,lang">
             <id specification="ISO_14289_1" clause="7.2" testNumber="22"/>
             <description>Natural language for text in Alt attribute shall be determined</description>
-            <test>Alt == null || Lang_size != 0 || parentLang != null || gSizeCatalogLang != 0</test>
+            <test>Alt == null || containsLang == true || parentLang != null || gContainsCatalogLang == true</test>
             <error>
                 <message>Natural language for text in Alt attribute cannot be determined</message>
                 <arguments/>
@@ -18,9 +18,9 @@
         </rule>
     </rules>
     <variables>
-        <variable name="gSizeCatalogLang" object="PDDocument">
-            <defaultValue>0</defaultValue>
-            <value>Lang_size</value>
+        <variable name="gContainsCatalogLang" object="PDDocument">
+            <defaultValue>false</defaultValue>
+            <value>containsLang</value>
         </variable>
     </variables>
 </profile>

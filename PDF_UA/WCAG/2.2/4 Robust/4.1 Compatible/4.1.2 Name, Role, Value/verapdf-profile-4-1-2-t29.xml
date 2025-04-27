@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG2_2">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
         <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - TOCI without text</name>
         <description>TOCI shall contain one or more text lines</description>
@@ -9,7 +9,7 @@
         <rule object="SATOCI" tags="minor,machine,structure,toc">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="29"/>
             <description>TOCI shall contain one or more text lines</description>
-            <test>errorCodes.split(',').filter(elem =&gt; elem == 1000).length == 0</test>
+            <test>errorCodes.contains('1000') == false</test>
             <error>
                 <message>TOCI doesn't have a text</message>
                 <arguments>

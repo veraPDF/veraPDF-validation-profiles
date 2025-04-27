@@ -11,7 +11,7 @@
             <id specification="ISO_19005_2" clause="6.2.11.4.2" testNumber="1"/>
             <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs
 			present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not</description>
-            <test>fontFile_size == 0 || fontName.search(/[A-Z]{6}\+/) != 0 || CharSet == null || charSetListsAllGlyphs == true</test>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || CharSet == null || charSetListsAllGlyphs == true</test>
             <error>
                 <message>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</message>
                 <arguments/>

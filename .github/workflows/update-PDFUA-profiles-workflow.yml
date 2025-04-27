@@ -8,6 +8,7 @@ on:
       - 'PDF_UA/1/**'
       - 'PDF_UA/2/**'
       - 'PDF_UA/WCAG/**'
+      - 'PDF_UA/WTPDF/**'
       - 'PDF_UA/ISO-32005-Tagged.xml'
 
 jobs:
