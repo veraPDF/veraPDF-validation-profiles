@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2_HUMAN">
     <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
         <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - Table cell column span</name>
         <description>The column span of this table cell does not match the column span of the visual representation of this table cell</description>

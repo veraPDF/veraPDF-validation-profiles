@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2">
+<profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2_HUMAN">
     <details creator="veraPDF Consortium" created="2020-03-13T10:58:04.098+03:00">
         <name>WCAG 2.2 - 1.3 Adaptable - 1.3.1 Info and Relationships - Different text style</name>
         <description>If text has a different style, it shall be tagged as Span, Em, Strong or other appropriate inline element</description>
