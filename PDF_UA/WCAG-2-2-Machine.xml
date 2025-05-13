@@ -1268,6 +1268,30 @@
             </error>
             <references/>
         </rule>
+        <rule object="SARepeatedCharacters" tags="cosmetic,machine,text">
+            <id specification="WCAG_2_2" clause="1.3.1" testNumber="2"/>
+            <description>Text should not contain repeated space characters</description>
+            <test>isNonSpace == true || numberOfRepeatedCharacters &lt; 3</test>
+            <error>
+                <message>Text contains %1 repeated space characters</message>
+                <arguments>
+                    <argument>numberOfRepeatedCharacters</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="PDPage" tags="minor,machine,page">
+            <id specification="WCAG_2_2" clause="1.3.4" testNumber="1"/>
+            <description>Pages shall have the same orientation</description>
+            <test>orientation == 'Square' || gMostCommonPageOrientation == orientation</test>
+            <error>
+                <message>Page %1 has different orientation</message>
+                <arguments>
+                    <argument>pageNumber + 1</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
         <rule object="SATextChunk" tags="major,machine,contrast">
             <id specification="WCAG_2_2" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1. Large-scale text and images of large-scale text have a contrast ratio of at least 3:1</description>
@@ -1279,6 +1303,30 @@
                 </arguments>
             </error>
             <references/>
+        </rule>
+        <rule object="SATextChunk" tags="major,machine,text">
+            <id specification="WCAG_2_2" clause="1.4.4" testNumber="1"/>
+            <description>Font size is too small: text may not be resized without assistive technology up to 200 percent without loss of content or functionality</description>
+            <test>textSize &gt;= 4.5 || isWhiteSpaceChunk == true || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
+            <error>
+                <message>textSize = %1</message>
+                <arguments>
+                    <argument>textSize</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAFigure" tags="minor,machine,structure,figure">
+            <id specification="WCAG_2_2" clause="1.4.10" testNumber="1"/>
+            <description>Bounding box should be present for a figure appearing in its entirety on a single page to indicate the area of the figure on the page</description>
+            <test>page != lastPage || hasBBox == true</test>
+            <error>
+                <message>"Figure" structure element on a single page with no bounding box</message>
+                <arguments/>
+            </error>
+            <references>
+                <reference specification="ISO 32000-1:2008" clause="14.8.5.4.3"/>
+            </references>
         </rule>
         <rule object="SALinkAnnotation" tags="major,machine,alt-text,structure,annotation">
             <id specification="WCAG_2_2" clause="2.4.9" testNumber="1"/>
@@ -1295,6 +1343,45 @@
         <rule object="SAP" tags="minor,machine,structure,paragraph">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="16"/>
             <description>Redundant paragraph</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SASpan" tags="minor,machine,structure,span">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="17"/>
+            <description>Redundant span</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAH" tags="minor,machine,structure,heading">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="18"/>
+            <description>Redundant heading</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SAHn" tags="minor,machine,structure,heading">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="19"/>
+            <description>Redundant numbered heading</description>
             <test>correctType != null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
