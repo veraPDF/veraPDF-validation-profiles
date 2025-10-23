@@ -8,7 +8,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDDocument" tags="metadata">
+        <rule object="PDDocument" tags="critical,machine,metadata">
             <id specification="ISO_14289_2" clause="8.11.1" testNumber="2"/>
             <description>The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata 
                 stream as defined in ISO 32000-2:2020, 14.3. The metadata stream dictionary shall contain entry Type with

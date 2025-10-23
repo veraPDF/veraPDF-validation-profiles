@@ -8,7 +8,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEFENote" deferred="true" tags="structure,note">
+        <rule object="SEFENote" deferred="true" tags="major,machine,structure,note">
             <id specification="ISO_14289_2" clause="8.2.5.14" testNumber="2"/>
             <description>Real content that refers to footnotes or endnotes (real content enclosed in FENote structure 
                 elements) shall use the Ref entry on the referring structure element to reference the FENote. The 

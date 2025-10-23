@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDFUAIdentification" tags="metadata">
+        <rule object="PDFUAIdentification" tags="minor,machine,metadata">
             <id specification="ISO_14289_2" clause="5" testNumber="3"/>
             <description>Property &quot;part&quot; of the PDF/UA Identification Schema shall have namespace prefix &quot;pdfuaid&quot;</description>
             <test>partPrefix == null || partPrefix == &quot;pdfuaid&quot;</test>

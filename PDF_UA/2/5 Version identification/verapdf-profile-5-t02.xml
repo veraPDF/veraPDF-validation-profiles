@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDFUAIdentification" tags="metadata">
+        <rule object="PDFUAIdentification" tags="minor,machine,metadata">
             <id specification="ISO_14289_2" clause="5" testNumber="2"/>
             <description>The value of &quot;pdfuaid:part&quot; shall be the part number of the International Standard to which the 
                 file conforms</description>

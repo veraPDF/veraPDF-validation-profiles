@@ -7,7 +7,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="PDStructElem" tags="structure">
+        <rule object="PDStructElem" tags="critical,machine,structure">
             <id specification="ISO_14289_2" clause="8.2.1" testNumber="2"/>
             <description>A structure element dictionary shall contain the P (parent) entry according to ISO 32000-2:2020, 
                 14.7.2, Table 323</description>
