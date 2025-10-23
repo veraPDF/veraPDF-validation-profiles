@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="CosDocument" tags="syntax">
+        <rule object="CosDocument" tags="minor,machine,syntax">
             <id specification="ISO_14289_2" clause="6.2" testNumber="1"/>
             <description>The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true</description>
             <test>Marked == true</test>
