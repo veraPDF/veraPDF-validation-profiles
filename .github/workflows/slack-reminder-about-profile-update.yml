@@ -39,6 +39,7 @@ on:
       - 'PDF_UA/1/7.4 Headings/7.4.4 Unnumbered headings/verapdf-profile-7-4-4-t03.xml'
       - 'PDF_UA/1/7.18 Annotations/7.18.5 Links/verapdf-profile-7-18-5-t01.xml'
       - 'PDF_UA/1/7.18 Annotations/7.18.8 PrinterMark/verapdf-profile-7-18-8-t01.xml'
+      - 'PDF_UA/2/8.11 Metadata/8.11.1 General/verapdf-profile-8-11-1-t01.xml'
 
 jobs:
   slack-notification:
