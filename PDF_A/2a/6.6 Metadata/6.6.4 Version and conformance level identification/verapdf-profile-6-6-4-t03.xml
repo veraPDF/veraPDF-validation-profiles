@@ -13,7 +13,7 @@
                 &quot;pdfaid:conformance&quot; as B. A Level U conforming file shall specify the value of &quot;pdfaid:conformance&quot; as U</description>
             <test>conformance == &quot;A&quot;</test>
             <error>
-                <message>The &quot;conformance&quot; property of the PDF/A Identification Schema is %1 instead of &quot;A&quot; for PDF/A-2A conforming file</message>
+                <message>The &quot;conformance&quot; property of the PDF/A Identification Schema is %1 instead of &quot;A&quot; for PDF/A-2a conforming file</message>
                 <arguments>
                     <argument>conformance</argument>
                 </arguments>
