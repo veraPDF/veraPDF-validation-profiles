@@ -11,7 +11,7 @@
             <description>A PDF/A-4f conforming file (as described in Annex A) shall specify the value of &quot;pdfaid:conformance&quot; as F</description>
             <test>conformance == &quot;F&quot;</test>
             <error>
-                <message>The &quot;conformance&quot; property of the PDF/A Identification Schema is %1 instead of &quot;F&quot; for PDF/A-4F conforming file</message>
+                <message>The &quot;conformance&quot; property of the PDF/A Identification Schema is %1 instead of &quot;F&quot; for PDF/A-4f conforming file</message>
                 <arguments>
                     <argument>conformance</argument>
                 </arguments>
