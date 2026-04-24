@@ -772,7 +772,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAH" tags="major,machine,structure,heading">
+        <rule object="SAH" deferred="true" tags="major,machine,structure,heading">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="2"/>
             <description>All documents shall be either strongly or weakly structured, but not both</description>
             <test>usesHn == false</test>
@@ -782,7 +782,7 @@
             </error>
             <references/>
         </rule>
-        <rule object="SAHn" tags="major,machine,structure,heading">
+        <rule object="SAHn" deferred="true" tags="major,machine,structure,heading">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="3"/>
             <description>All documents shall be either strongly or weakly structured, but not both</description>
             <test>usesH == false</test>
