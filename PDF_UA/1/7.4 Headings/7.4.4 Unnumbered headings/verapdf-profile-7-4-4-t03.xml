@@ -6,7 +6,7 @@
     </details>
     <hash></hash>
     <rules>
-        <rule object="SEHn" tags="major,machine,structure,heading">
+        <rule object="SEHn" deferred="true" tags="major,machine,structure,heading">
             <id specification="ISO_14289_1" clause="7.4.4" testNumber="3"/>
             <description>All documents shall be either strongly or weakly structured, but not both</description>
             <test>usesH == false</test>
