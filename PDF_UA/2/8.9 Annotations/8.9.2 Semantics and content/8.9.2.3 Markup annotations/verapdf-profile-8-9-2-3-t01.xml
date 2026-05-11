@@ -9,7 +9,7 @@
         <rule object="PDMarkupAnnot" tags="major,machine,annotation,structure">
             <id specification="ISO_14289_2" clause="8.9.2.3" testNumber="1"/>
             <description>Markup annotations shall be enclosed within Annot structure elements</description>
-            <test>structParentStandardType == 'Annot'</test>
+            <test>structParentStandardType == 'Annot' || structParentType == null || isArtifact == true</test>
             <error>
                 <message>A Markup annotation is an Artifact or is nested within %1 tag (standard type = %2) instead of Annot</message>
                 <arguments>
