@@ -11,7 +11,7 @@
             <description>All documents shall be either strongly or weakly structured, but not both</description>
             <test>usesH == false</test>
             <error>
-                <message>Document uses both H and H# tags</message>
+                <message>Document uses Hn tags in presence of H tags</message>
                 <arguments/>
             </error>
             <references/>
