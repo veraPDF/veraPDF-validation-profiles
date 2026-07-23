@@ -18,9 +18,6 @@
                     <argument>streamLength</argument>
                 </arguments>
             </error>
-            <references>
-                <reference specification="ISO 32000-2:2020" clause="8.9.7"/>
-            </references>
         </rule>
     </rules>
     <variables/>
