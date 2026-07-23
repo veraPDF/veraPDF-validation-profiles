@@ -1300,38 +1300,14 @@
             </error>
             <references/>
         </rule>
-        <rule object="PDPage" tags="minor,human,page">
-            <id specification="WCAG_2_2" clause="1.3.4" testNumber="1"/>
-            <description>Pages shall have the same orientation</description>
-            <test>orientation == 'Square' || gMostCommonPageOrientation == orientation</test>
-            <error>
-                <message>Page %1 has different orientation</message>
-                <arguments>
-                    <argument>pageNumber + 1</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
         <rule object="SATextChunk" tags="major,machine,contrast">
             <id specification="WCAG_2_2" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1. Large-scale text and images of large-scale text have a contrast ratio of at least 3:1</description>
-            <test>textSize &lt; 4.5 || ((textSize &gt;= 18.0 || (textSize &gt;= 14.0 &amp;&amp; textWeight &gt;= 700.0)) ? (contrastRatio &gt;= 3) : (contrastRatio &gt;= 4.5)) || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
+            <test>((textSize &gt;= 18.0 || (textSize &gt;= 14.0 &amp;&amp; textWeight &gt;= 700.0)) ? (contrastRatio &gt;= 3) : (contrastRatio &gt;= 4.5)) || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
             <error>
                 <message>contrastRatio = %1</message>
                 <arguments>
                     <argument>contrastRatio</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SATextChunk" tags="major,machine,text">
-            <id specification="WCAG_2_2" clause="1.4.4" testNumber="1"/>
-            <description>Font size is too small: text may not be resized without assistive technology up to 200 percent without loss of content or functionality</description>
-            <test>textSize &gt;= 4.5 || isWhiteSpaceChunk == true || parentsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'Figure').length &gt; 0</test>
-            <error>
-                <message>textSize = %1</message>
-                <arguments>
-                    <argument>textSize</argument>
                 </arguments>
             </error>
             <references/>
@@ -2011,10 +1987,6 @@
         <variable name="gContainsCatalogLang" object="PDDocument">
             <defaultValue>false</defaultValue>
             <value>containsLang</value>
-        </variable>
-        <variable name="gMostCommonPageOrientation" object="PDDocument">
-            <defaultValue>null</defaultValue>
-            <value>mostCommonOrientation</value>
         </variable>
         <variable name="usesH" object="SAH">
             <defaultValue>false</defaultValue>
