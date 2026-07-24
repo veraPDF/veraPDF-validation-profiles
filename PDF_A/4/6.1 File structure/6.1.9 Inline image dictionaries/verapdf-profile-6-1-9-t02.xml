@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="PDFA_4">
     <details creator="veraPDF Consortium" created="2020-12-15T10:58:07.177+03:00">
-        <name>ISO 19005-4:2020 - 6.1.9 Inline image dictionaries</name>
+        <name>ISO 19005-4:2020 - 6.1.9 Inline image dictionaries - Correct Length</name>
         <description>Any inline image dictionary shall contain a L key whose value is the length of the data as it appears in the stream, before applying the filters, if any.</description>
     </details>
     <hash></hash>
@@ -18,6 +18,7 @@
                     <argument>streamLength</argument>
                 </arguments>
             </error>
+            <references/>
         </rule>
     </rules>
     <variables/>
