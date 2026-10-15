@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2_MACHINE">
-    <details creator="veraPDF Consortium" created="2021-03-03T10:58:04.098+03:00">
-        <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - Redundant paragraph</name>
-        <description>Redundant paragraph</description>
+    <details creator="veraPDF Consortium" created="2026-03-03T10:58:04.098+03:00">
+        <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - Redundant caption</name>
+        <description>Redundant caption</description>
     </details>
     <hash></hash>
     <rules>
-        <rule object="SAP" tags="minor,machine,structure,paragraph">
-            <id specification="WCAG_2_2" clause="4.1.2" testNumber="16"/>
-            <description>Redundant paragraph</description>
+        <rule object="SACaption" tags="minor,machine,structure,caption">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="56"/>
+            <description>Redundant caption</description>
             <test>correctType != null</test>
             <error>
                 <message>score = %1, correct type = %2</message>
