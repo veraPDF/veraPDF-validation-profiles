@@ -2,16 +2,16 @@
 <profile xmlns="http://www.verapdf.org/ValidationProfile" flavour="WCAG_2_2_HUMAN">
     <details creator="veraPDF Consortium" created="2026-03-03T10:58:04.098+03:00">
         <name>WCAG 2.2 - 4.1 Compatible - 4.1.2 Name, Role, Value - Alt value</name>
-        <description>Alt value shall not be empty</description>
+        <description>Alt value shall not be empty or contain only whitespace</description>
     </details>
     <hash></hash>
     <rules>
         <rule object="CosAlt" tags="minor,human,alt-text">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="58"/>
-            <description>Alt value shall not be empty</description>
-            <test>value != ''</test>
+            <description>Alt value shall not be empty or contain only whitespace</description>
+            <test>/\S/.test(value)</test>
             <error>
-                <message>Alt has empty value</message>
+                <message>Alt has blank value</message>
                 <arguments/>
             </error>
             <references/>
