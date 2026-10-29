@@ -6,9 +6,6 @@ on:
     branches:
       [ integration ]
     paths:
-      - 'PDF_UA/1/7.1 General/verapdf-profile-7-1-t01.xml'
-      - 'PDF_UA/1/7.1 General/verapdf-profile-7-1-t02.xml'
-      - 'PDF_UA/1/7.1 General/verapdf-profile-7-1-t09.xml'
       - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t03.xml'
       - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t04.xml'
       - 'PDF_UA/1/7.2 Text/verapdf-profile-7-2-t05.xml'
@@ -38,8 +35,6 @@ on:
       - 'PDF_UA/1/7.4 Headings/7.4.4 Unnumbered headings/verapdf-profile-7-4-4-t02.xml'
       - 'PDF_UA/1/7.4 Headings/7.4.4 Unnumbered headings/verapdf-profile-7-4-4-t03.xml'
       - 'PDF_UA/1/7.18 Annotations/7.18.5 Links/verapdf-profile-7-18-5-t01.xml'
-      - 'PDF_UA/1/7.18 Annotations/7.18.8 PrinterMark/verapdf-profile-7-18-8-t01.xml'
-      - 'PDF_UA/2/8.11 Metadata/8.11.1 General/verapdf-profile-8-11-1-t01.xml'
 
 jobs:
   slack-notification:
