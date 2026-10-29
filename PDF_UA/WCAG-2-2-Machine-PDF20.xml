@@ -1025,7 +1025,7 @@
         <rule object="MainXMPPackage" tags="major,machine,metadata">
             <id specification="ISO_14289_2" clause="8.11.1" testNumber="1"/>
             <description>The Metadata stream as specified in ISO 32000-2:2020, 14.3 in the document catalog dictionary shall contain a dc:title entry</description>
-            <test>dc_title != null &amp;&amp; dc_title != ''</test>
+            <test>dc_title != null</test>
             <error>
                 <message>Metadata stream does not contain dc:title</message>
                 <arguments/>
@@ -1071,30 +1071,6 @@
             </error>
             <references/>
         </rule>
-        <rule object="SARepeatedCharacters" tags="cosmetic,machine,text">
-            <id specification="WCAG_2_2" clause="1.3.1" testNumber="1"/>
-            <description>Text should not contain repeated non space characters</description>
-            <test>isNonSpace == false || numberOfRepeatedCharacters &lt; 5</test>
-            <error>
-                <message>Text contains %1 repeated non space characters</message>
-                <arguments>
-                    <argument>numberOfRepeatedCharacters</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SARepeatedCharacters" tags="cosmetic,machine,text">
-            <id specification="WCAG_2_2" clause="1.3.1" testNumber="2"/>
-            <description>Text should not contain repeated space characters</description>
-            <test>isNonSpace == true || numberOfRepeatedCharacters &lt; 3</test>
-            <error>
-                <message>Text contains %1 repeated space characters</message>
-                <arguments>
-                    <argument>numberOfRepeatedCharacters</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
         <rule object="SATextChunk" tags="major,machine,contrast">
             <id specification="WCAG_2_2" clause="1.4.3" testNumber="1"/>
             <description>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1. Large-scale text and images of large-scale text have a contrast ratio of at least 3:1</description>
@@ -1118,44 +1094,6 @@
             <references>
                 <reference specification="ISO 32000-1:2008" clause="14.8.5.4.3"/>
             </references>
-        </rule>
-        <rule object="SALinkAnnotation" tags="major,machine,alt-text,structure,annotation">
-            <id specification="WCAG_2_2" clause="2.4.9" testNumber="1"/>
-            <description>Links shall contain an alternate description via their Contents or Alt keys or in the text value</description>
-            <test>(Contents != null &amp;&amp; Contents != '' &amp;&amp; contentsIsLink == false) || isOutsideCropBox == true || (F &amp; 2) == 2 || (textValue != null &amp;&amp; textValue != '' &amp;&amp; textValueIsLink == false) || (Alt != null &amp;&amp; Alt != '' &amp;&amp; altIsLink == false)</test>
-            <error>
-                <message>A link annotation does not include an alternate description in the Contents or Alt Keys or in the text value</message>
-                <arguments/>
-            </error>
-            <references>
-                <reference specification="ISO 32000-1:2008" clause="14.9.3"/>
-            </references>
-        </rule>
-        <rule object="SAP" tags="minor,machine,structure,paragraph">
-            <id specification="WCAG_2_2" clause="4.1.2" testNumber="16"/>
-            <description>Redundant paragraph</description>
-            <test>correctType != null</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
-        </rule>
-        <rule object="SASpan" tags="minor,machine,structure,span">
-            <id specification="WCAG_2_2" clause="4.1.2" testNumber="17"/>
-            <description>Redundant span</description>
-            <test>correctType != null</test>
-            <error>
-                <message>score = %1, correct type = %2</message>
-                <arguments>
-                    <argument>correctSemanticScore</argument>
-                    <argument>correctType</argument>
-                </arguments>
-            </error>
-            <references/>
         </rule>
         <rule object="SAH" tags="minor,machine,structure,heading">
             <id specification="WCAG_2_2" clause="4.1.2" testNumber="18"/>
@@ -1193,6 +1131,32 @@
                     <argument></argument>
                     <argument></argument>
                     <argument name="structureID">structureID</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SACaption" tags="minor,machine,structure,caption">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="56"/>
+            <description>Redundant caption</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
+                </arguments>
+            </error>
+            <references/>
+        </rule>
+        <rule object="SATitle" tags="minor,machine,structure">
+            <id specification="WCAG_2_2" clause="4.1.2" testNumber="57"/>
+            <description>Redundant title</description>
+            <test>correctType != null</test>
+            <error>
+                <message>score = %1, correct type = %2</message>
+                <arguments>
+                    <argument>correctSemanticScore</argument>
+                    <argument>correctType</argument>
                 </arguments>
             </error>
             <references/>
